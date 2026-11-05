@@ -1,0 +1,270 @@
+{
+  "reference": "backend\\tests\\fixtures\\sif360-heatmap-12m-2026-10-14.json",
+  "localUrl": "http://127.0.0.1:3000/api/heatmap-all?window=12m&to_date=2026-10-14",
+  "funds": {
+    "counts": {
+      "exact": 409,
+      "reference-null-local-value": 31,
+      "numeric-mismatch": 2
+    },
+    "differences": [
+      {
+        "id": "2",
+        "month": "Oct '25",
+        "reference": null,
+        "local": 1.26,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "2",
+        "month": "Nov '25",
+        "reference": null,
+        "local": -0.52,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "2",
+        "month": "Dec '25",
+        "reference": null,
+        "local": -0.53,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "2",
+        "month": "Feb '26",
+        "reference": null,
+        "local": 1.13,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "3",
+        "month": "Dec '25",
+        "reference": null,
+        "local": -0.18,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "3",
+        "month": "Jan '26",
+        "reference": null,
+        "local": -1.38,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "3",
+        "month": "Feb '26",
+        "reference": null,
+        "local": 0.48,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "3",
+        "month": "Mar '26",
+        "reference": null,
+        "local": -0.98,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "5",
+        "month": "Oct '25",
+        "reference": null,
+        "local": 0.07,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "5",
+        "month": "Dec '25",
+        "reference": null,
+        "local": 1.6,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "5",
+        "month": "Feb '26",
+        "reference": null,
+        "local": 0.63,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "6",
+        "month": "Jan '26",
+        "reference": null,
+        "local": -1.47,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "6",
+        "month": "Feb '26",
+        "reference": null,
+        "local": -1.16,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "6",
+        "month": "Mar '26",
+        "reference": null,
+        "local": -2.36,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "7",
+        "month": "Feb '26",
+        "reference": null,
+        "local": 1.58,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "7",
+        "month": "Mar '26",
+        "reference": null,
+        "local": -6.29,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "8",
+        "month": "Feb '26",
+        "reference": null,
+        "local": 0.42,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "8",
+        "month": "Mar '26",
+        "reference": null,
+        "local": 0.08,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "11",
+        "month": "Mar '26",
+        "reference": null,
+        "local": -4.53,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "12",
+        "month": "Mar '26",
+        "reference": null,
+        "local": 0,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "12",
+        "month": "Oct '26",
+        "reference": 0.18,
+        "local": 0.02,
+        "status": "numeric-mismatch"
+      },
+      {
+        "id": "13",
+        "month": "Mar '26",
+        "reference": null,
+        "local": 0,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "14",
+        "month": "Mar '26",
+        "reference": null,
+        "local": 0,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "18",
+        "month": "Sept '26",
+        "reference": null,
+        "local": -3.41,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "18",
+        "month": "Oct '26",
+        "reference": null,
+        "local": 0.89,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "20",
+        "month": "Jun '26",
+        "reference": null,
+        "local": 0.62,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "20",
+        "month": "Aug '26",
+        "reference": null,
+        "local": -1.16,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "21",
+        "month": "May '26",
+        "reference": null,
+        "local": 2.26,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "21",
+        "month": "Oct '26",
+        "reference": null,
+        "local": -0.13,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "22",
+        "month": "Aug '26",
+        "reference": null,
+        "local": 3.47,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "25",
+        "month": "Oct '26",
+        "reference": -0.03,
+        "local": -0.41,
+        "status": "numeric-mismatch"
+      },
+      {
+        "id": "27",
+        "month": "Jul '26",
+        "reference": null,
+        "local": 3.81,
+        "status": "reference-null-local-value"
+      },
+      {
+        "id": "29",
+        "month": "Oct '26",
+        "reference": null,
+        "local": 0.02,
+        "status": "reference-null-local-value"
+      }
+    ]
+  },
+  "benchmarks": {
+    "counts": {
+      "exact": 37,
+      "numeric-mismatch": 2
+    },
+    "differences": [
+      {
+        "id": "bse500",
+        "month": "Oct '26",
+        "reference": -0.02,
+        "local": -0.24,
+        "status": "numeric-mismatch"
+      },
+      {
+        "id": "nifty50",
+        "month": "Oct '26",
+        "reference": 0.49,
+        "local": 0.45,
+        "status": "numeric-mismatch"
+      }
+    ]
+  },
+  "methodology": {
+    "funds": "closest observation to each calendar boundary; earlier on ties",
+    "benchmarks": "official PRICE index; previous month-end close to month-end close"
+  }
+}

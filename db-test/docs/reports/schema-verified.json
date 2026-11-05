@@ -1,0 +1,3542 @@
+{
+  "database": "VB-SIF",
+  "schema": "public",
+  "objects": {
+    "app_benchmark_history": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "benchmark_id",
+          "text",
+          true,
+          null
+        ],
+        [
+          "observation_date",
+          "date",
+          true,
+          null
+        ],
+        [
+          "index_level",
+          "numeric(28,10)",
+          true,
+          null
+        ],
+        [
+          "source_version",
+          "text",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_benchmark_history_benchmark_id_fkey",
+          "f",
+          "FOREIGN KEY (benchmark_id) REFERENCES app_benchmarks(benchmark_id)"
+        ],
+        [
+          "app_benchmark_history_benchmark_id_not_null",
+          "n",
+          "NOT NULL benchmark_id"
+        ],
+        [
+          "app_benchmark_history_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "app_benchmark_history_index_level_check",
+          "c",
+          "CHECK (((index_level > (0)::numeric) AND (index_level <> 'NaN'::numeric)))"
+        ],
+        [
+          "app_benchmark_history_index_level_not_null",
+          "n",
+          "NOT NULL index_level"
+        ],
+        [
+          "app_benchmark_history_observation_date_not_null",
+          "n",
+          "NOT NULL observation_date"
+        ],
+        [
+          "app_benchmark_history_pkey",
+          "p",
+          "PRIMARY KEY (benchmark_id, observation_date)"
+        ],
+        [
+          "app_benchmark_history_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_benchmark_history_pkey",
+          "CREATE UNIQUE INDEX app_benchmark_history_pkey ON public.app_benchmark_history USING btree (benchmark_id, observation_date)"
+        ],
+        [
+          "idx_app_benchmark_history_date",
+          "CREATE INDEX idx_app_benchmark_history_date ON public.app_benchmark_history USING btree (observation_date DESC)"
+        ]
+      ]
+    },
+    "app_benchmarks": {
+      "kind": "r",
+      "rows": 3,
+      "columns": [
+        [
+          "benchmark_id",
+          "text",
+          true,
+          null
+        ],
+        [
+          "label",
+          "text",
+          true,
+          null
+        ],
+        [
+          "subtitle",
+          "text",
+          true,
+          null
+        ],
+        [
+          "index_variant",
+          "text",
+          true,
+          "'UNKNOWN'::text"
+        ],
+        [
+          "currency",
+          "character(3)",
+          true,
+          "'INR'::bpchar"
+        ],
+        [
+          "source",
+          "text",
+          false,
+          null
+        ],
+        [
+          "source_identifier",
+          "text",
+          false,
+          null
+        ],
+        [
+          "coverage_status",
+          "text",
+          true,
+          "'unavailable'::text"
+        ],
+        [
+          "metadata",
+          "jsonb",
+          true,
+          "'{}'::jsonb"
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_benchmarks_benchmark_id_check",
+          "c",
+          "CHECK ((benchmark_id ~ '^[a-z0-9]+$'::text))"
+        ],
+        [
+          "app_benchmarks_benchmark_id_not_null",
+          "n",
+          "NOT NULL benchmark_id"
+        ],
+        [
+          "app_benchmarks_check",
+          "c",
+          "CHECK (((coverage_status = 'unavailable'::text) OR ((btrim(source) <> ''::text) AND (btrim(source_identifier) <> ''::text) AND (index_variant <> 'UNKNOWN'::text))))"
+        ],
+        [
+          "app_benchmarks_coverage_status_check",
+          "c",
+          "CHECK ((coverage_status = ANY (ARRAY['available'::text, 'partial'::text, 'unavailable'::text])))"
+        ],
+        [
+          "app_benchmarks_coverage_status_not_null",
+          "n",
+          "NOT NULL coverage_status"
+        ],
+        [
+          "app_benchmarks_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "app_benchmarks_currency_not_null",
+          "n",
+          "NOT NULL currency"
+        ],
+        [
+          "app_benchmarks_index_variant_check",
+          "c",
+          "CHECK ((index_variant = ANY (ARRAY['PRICE'::text, 'TRI'::text, 'UNKNOWN'::text])))"
+        ],
+        [
+          "app_benchmarks_index_variant_not_null",
+          "n",
+          "NOT NULL index_variant"
+        ],
+        [
+          "app_benchmarks_label_check",
+          "c",
+          "CHECK ((btrim(label) <> ''::text))"
+        ],
+        [
+          "app_benchmarks_label_not_null",
+          "n",
+          "NOT NULL label"
+        ],
+        [
+          "app_benchmarks_metadata_check",
+          "c",
+          "CHECK ((jsonb_typeof(metadata) = 'object'::text))"
+        ],
+        [
+          "app_benchmarks_metadata_not_null",
+          "n",
+          "NOT NULL metadata"
+        ],
+        [
+          "app_benchmarks_pkey",
+          "p",
+          "PRIMARY KEY (benchmark_id)"
+        ],
+        [
+          "app_benchmarks_subtitle_check",
+          "c",
+          "CHECK ((btrim(subtitle) <> ''::text))"
+        ],
+        [
+          "app_benchmarks_subtitle_not_null",
+          "n",
+          "NOT NULL subtitle"
+        ],
+        [
+          "app_benchmarks_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_benchmarks_pkey",
+          "CREATE UNIQUE INDEX app_benchmarks_pkey ON public.app_benchmarks USING btree (benchmark_id)"
+        ]
+      ]
+    },
+    "app_external_identifiers": {
+      "kind": "r",
+      "rows": 175,
+      "columns": [
+        [
+          "external_identifier_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "fund_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "namespace",
+          "text",
+          true,
+          null
+        ],
+        [
+          "identifier_value",
+          "text",
+          true,
+          null
+        ],
+        [
+          "source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "source_scheme_code",
+          "bigint",
+          false,
+          null
+        ],
+        [
+          "verified",
+          "boolean",
+          true,
+          "false"
+        ],
+        [
+          "verification_evidence",
+          "jsonb",
+          true,
+          "'{}'::jsonb"
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_external_identifiers_check",
+          "c",
+          "CHECK (((source_scheme_code IS NOT NULL) OR (source <> 'TIGZIG'::text)))"
+        ],
+        [
+          "app_external_identifiers_check1",
+          "c",
+          "CHECK (((NOT verified) OR (verification_evidence <> '{}'::jsonb)))"
+        ],
+        [
+          "app_external_identifiers_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "app_external_identifiers_external_identifier_id_not_null",
+          "n",
+          "NOT NULL external_identifier_id"
+        ],
+        [
+          "app_external_identifiers_fund_id_fkey",
+          "f",
+          "FOREIGN KEY (fund_id) REFERENCES app_funds(fund_id)"
+        ],
+        [
+          "app_external_identifiers_fund_id_not_null",
+          "n",
+          "NOT NULL fund_id"
+        ],
+        [
+          "app_external_identifiers_identifier_value_check",
+          "c",
+          "CHECK ((btrim(identifier_value) <> ''::text))"
+        ],
+        [
+          "app_external_identifiers_identifier_value_not_null",
+          "n",
+          "NOT NULL identifier_value"
+        ],
+        [
+          "app_external_identifiers_namespace_check",
+          "c",
+          "CHECK ((btrim(namespace) <> ''::text))"
+        ],
+        [
+          "app_external_identifiers_namespace_identifier_value_key",
+          "u",
+          "UNIQUE (namespace, identifier_value)"
+        ],
+        [
+          "app_external_identifiers_namespace_not_null",
+          "n",
+          "NOT NULL namespace"
+        ],
+        [
+          "app_external_identifiers_pkey",
+          "p",
+          "PRIMARY KEY (external_identifier_id)"
+        ],
+        [
+          "app_external_identifiers_source_check",
+          "c",
+          "CHECK ((btrim(source) <> ''::text))"
+        ],
+        [
+          "app_external_identifiers_source_not_null",
+          "n",
+          "NOT NULL source"
+        ],
+        [
+          "app_external_identifiers_source_source_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (source, source_scheme_code) REFERENCES tigzig_schemes(source, scheme_code)"
+        ],
+        [
+          "app_external_identifiers_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ],
+        [
+          "app_external_identifiers_verification_evidence_check",
+          "c",
+          "CHECK ((jsonb_typeof(verification_evidence) = 'object'::text))"
+        ],
+        [
+          "app_external_identifiers_verification_evidence_not_null",
+          "n",
+          "NOT NULL verification_evidence"
+        ],
+        [
+          "app_external_identifiers_verified_not_null",
+          "n",
+          "NOT NULL verified"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_external_identifiers_namespace_identifier_value_key",
+          "CREATE UNIQUE INDEX app_external_identifiers_namespace_identifier_value_key ON public.app_external_identifiers USING btree (namespace, identifier_value)"
+        ],
+        [
+          "app_external_identifiers_pkey",
+          "CREATE UNIQUE INDEX app_external_identifiers_pkey ON public.app_external_identifiers USING btree (external_identifier_id)"
+        ],
+        [
+          "idx_app_external_identifiers_fund",
+          "CREATE INDEX idx_app_external_identifiers_fund ON public.app_external_identifiers USING btree (fund_id)"
+        ]
+      ]
+    },
+    "app_funds": {
+      "kind": "r",
+      "rows": 34,
+      "columns": [
+        [
+          "fund_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "canonical_name",
+          "text",
+          true,
+          null
+        ],
+        [
+          "slug",
+          "text",
+          true,
+          null
+        ],
+        [
+          "status",
+          "text",
+          true,
+          "'pending'::text"
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_funds_canonical_name_check",
+          "c",
+          "CHECK ((btrim(canonical_name) <> ''::text))"
+        ],
+        [
+          "app_funds_canonical_name_not_null",
+          "n",
+          "NOT NULL canonical_name"
+        ],
+        [
+          "app_funds_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "app_funds_fund_id_not_null",
+          "n",
+          "NOT NULL fund_id"
+        ],
+        [
+          "app_funds_pkey",
+          "p",
+          "PRIMARY KEY (fund_id)"
+        ],
+        [
+          "app_funds_slug_check",
+          "c",
+          "CHECK ((slug ~ '^[a-z0-9]+(-[a-z0-9]+)*$'::text))"
+        ],
+        [
+          "app_funds_slug_key",
+          "u",
+          "UNIQUE (slug)"
+        ],
+        [
+          "app_funds_slug_not_null",
+          "n",
+          "NOT NULL slug"
+        ],
+        [
+          "app_funds_status_check",
+          "c",
+          "CHECK ((status = ANY (ARRAY['pending'::text, 'active'::text, 'inactive'::text])))"
+        ],
+        [
+          "app_funds_status_not_null",
+          "n",
+          "NOT NULL status"
+        ],
+        [
+          "app_funds_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_funds_pkey",
+          "CREATE UNIQUE INDEX app_funds_pkey ON public.app_funds USING btree (fund_id)"
+        ],
+        [
+          "app_funds_slug_key",
+          "CREATE UNIQUE INDEX app_funds_slug_key ON public.app_funds USING btree (slug)"
+        ]
+      ]
+    },
+    "app_monthly_returns": {
+      "kind": "r",
+      "rows": 882,
+      "columns": [
+        [
+          "source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "month_end",
+          "date",
+          true,
+          null
+        ],
+        [
+          "start_nav_date",
+          "date",
+          true,
+          null
+        ],
+        [
+          "end_nav_date",
+          "date",
+          true,
+          null
+        ],
+        [
+          "start_nav",
+          "numeric(24,10)",
+          true,
+          null
+        ],
+        [
+          "end_nav",
+          "numeric(24,10)",
+          true,
+          null
+        ],
+        [
+          "absolute_return_pct",
+          "numeric(18,8)",
+          true,
+          null
+        ],
+        [
+          "is_partial_month",
+          "boolean",
+          true,
+          "false"
+        ],
+        [
+          "calculated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_monthly_returns_absolute_return_pct_not_null",
+          "n",
+          "NOT NULL absolute_return_pct"
+        ],
+        [
+          "app_monthly_returns_calculated_at_not_null",
+          "n",
+          "NOT NULL calculated_at"
+        ],
+        [
+          "app_monthly_returns_check",
+          "c",
+          "CHECK (((start_nav_date <= end_nav_date) AND (end_nav_date <= month_end)))"
+        ],
+        [
+          "app_monthly_returns_end_nav_check",
+          "c",
+          "CHECK ((end_nav > (0)::numeric))"
+        ],
+        [
+          "app_monthly_returns_end_nav_date_not_null",
+          "n",
+          "NOT NULL end_nav_date"
+        ],
+        [
+          "app_monthly_returns_end_nav_not_null",
+          "n",
+          "NOT NULL end_nav"
+        ],
+        [
+          "app_monthly_returns_is_partial_month_not_null",
+          "n",
+          "NOT NULL is_partial_month"
+        ],
+        [
+          "app_monthly_returns_month_end_not_null",
+          "n",
+          "NOT NULL month_end"
+        ],
+        [
+          "app_monthly_returns_pkey",
+          "p",
+          "PRIMARY KEY (source, scheme_code, month_end)"
+        ],
+        [
+          "app_monthly_returns_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "app_monthly_returns_source_not_null",
+          "n",
+          "NOT NULL source"
+        ],
+        [
+          "app_monthly_returns_source_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (source, scheme_code) REFERENCES tigzig_schemes(source, scheme_code)"
+        ],
+        [
+          "app_monthly_returns_start_nav_check",
+          "c",
+          "CHECK ((start_nav > (0)::numeric))"
+        ],
+        [
+          "app_monthly_returns_start_nav_date_not_null",
+          "n",
+          "NOT NULL start_nav_date"
+        ],
+        [
+          "app_monthly_returns_start_nav_not_null",
+          "n",
+          "NOT NULL start_nav"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_monthly_returns_pkey",
+          "CREATE UNIQUE INDEX app_monthly_returns_pkey ON public.app_monthly_returns USING btree (source, scheme_code, month_end)"
+        ],
+        [
+          "idx_app_monthly_returns_month",
+          "CREATE INDEX idx_app_monthly_returns_month ON public.app_monthly_returns USING btree (month_end DESC)"
+        ]
+      ]
+    },
+    "app_performance_cache": {
+      "kind": "r",
+      "rows": 126,
+      "columns": [
+        [
+          "source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "as_of_date",
+          "date",
+          true,
+          null
+        ],
+        [
+          "latest_nav",
+          "numeric(24,10)",
+          true,
+          null
+        ],
+        [
+          "daily_return_pct",
+          "numeric(18,8)",
+          false,
+          null
+        ],
+        [
+          "one_month_return_pct",
+          "numeric(18,8)",
+          false,
+          null
+        ],
+        [
+          "three_month_return_pct",
+          "numeric(18,8)",
+          false,
+          null
+        ],
+        [
+          "since_inception_return_pct",
+          "numeric(18,8)",
+          false,
+          null
+        ],
+        [
+          "calculation_metadata",
+          "jsonb",
+          true,
+          "'{}'::jsonb"
+        ],
+        [
+          "calculated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_performance_cache_as_of_date_not_null",
+          "n",
+          "NOT NULL as_of_date"
+        ],
+        [
+          "app_performance_cache_calculated_at_not_null",
+          "n",
+          "NOT NULL calculated_at"
+        ],
+        [
+          "app_performance_cache_calculation_metadata_check",
+          "c",
+          "CHECK ((jsonb_typeof(calculation_metadata) = 'object'::text))"
+        ],
+        [
+          "app_performance_cache_calculation_metadata_not_null",
+          "n",
+          "NOT NULL calculation_metadata"
+        ],
+        [
+          "app_performance_cache_latest_nav_check",
+          "c",
+          "CHECK ((latest_nav > (0)::numeric))"
+        ],
+        [
+          "app_performance_cache_latest_nav_not_null",
+          "n",
+          "NOT NULL latest_nav"
+        ],
+        [
+          "app_performance_cache_pkey",
+          "p",
+          "PRIMARY KEY (source, scheme_code)"
+        ],
+        [
+          "app_performance_cache_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "app_performance_cache_source_not_null",
+          "n",
+          "NOT NULL source"
+        ],
+        [
+          "app_performance_cache_source_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (source, scheme_code) REFERENCES tigzig_schemes(source, scheme_code)"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_performance_cache_pkey",
+          "CREATE UNIQUE INDEX app_performance_cache_pkey ON public.app_performance_cache USING btree (source, scheme_code)"
+        ]
+      ]
+    },
+    "app_performance_config": {
+      "kind": "r",
+      "rows": 34,
+      "columns": [
+        [
+          "reference_fund_id",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "fund_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "preferred_source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "preferred_scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "mapping_confidence",
+          "text",
+          true,
+          null
+        ],
+        [
+          "selection_verified",
+          "boolean",
+          true,
+          "false"
+        ],
+        [
+          "selection_evidence",
+          "jsonb",
+          true,
+          "'{}'::jsonb"
+        ],
+        [
+          "verified_by",
+          "text",
+          false,
+          null
+        ],
+        [
+          "verified_at",
+          "timestamp with time zone",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_performance_config_check",
+          "c",
+          "CHECK (((selection_verified AND (verified_at IS NOT NULL) AND (btrim(verified_by) <> ''::text) AND (selection_evidence <> '{}'::jsonb)) OR ((NOT selection_verified) AND (verified_at IS NULL) AND (verified_by IS NULL))))"
+        ],
+        [
+          "app_performance_config_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "app_performance_config_fund_id_fkey",
+          "f",
+          "FOREIGN KEY (fund_id) REFERENCES app_funds(fund_id)"
+        ],
+        [
+          "app_performance_config_fund_id_key",
+          "u",
+          "UNIQUE (fund_id)"
+        ],
+        [
+          "app_performance_config_fund_id_not_null",
+          "n",
+          "NOT NULL fund_id"
+        ],
+        [
+          "app_performance_config_fund_id_preferred_source_preferred__fkey",
+          "f",
+          "FOREIGN KEY (fund_id, preferred_source, preferred_scheme_code) REFERENCES app_tigzig_fund_mapping(fund_id, source, scheme_code)"
+        ],
+        [
+          "app_performance_config_mapping_confidence_check",
+          "c",
+          "CHECK ((mapping_confidence = ANY (ARRAY['high'::text, 'medium'::text, 'low'::text, 'unresolved'::text])))"
+        ],
+        [
+          "app_performance_config_mapping_confidence_not_null",
+          "n",
+          "NOT NULL mapping_confidence"
+        ],
+        [
+          "app_performance_config_pkey",
+          "p",
+          "PRIMARY KEY (reference_fund_id)"
+        ],
+        [
+          "app_performance_config_preferred_scheme_code_not_null",
+          "n",
+          "NOT NULL preferred_scheme_code"
+        ],
+        [
+          "app_performance_config_preferred_source_not_null",
+          "n",
+          "NOT NULL preferred_source"
+        ],
+        [
+          "app_performance_config_preferred_source_preferred_scheme_co_key",
+          "u",
+          "UNIQUE (preferred_source, preferred_scheme_code)"
+        ],
+        [
+          "app_performance_config_reference_fund_id_check",
+          "c",
+          "CHECK (((reference_fund_id >= 1) AND (reference_fund_id <= 34)))"
+        ],
+        [
+          "app_performance_config_reference_fund_id_not_null",
+          "n",
+          "NOT NULL reference_fund_id"
+        ],
+        [
+          "app_performance_config_selection_evidence_check",
+          "c",
+          "CHECK ((jsonb_typeof(selection_evidence) = 'object'::text))"
+        ],
+        [
+          "app_performance_config_selection_evidence_not_null",
+          "n",
+          "NOT NULL selection_evidence"
+        ],
+        [
+          "app_performance_config_selection_verified_not_null",
+          "n",
+          "NOT NULL selection_verified"
+        ],
+        [
+          "app_performance_config_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_performance_config_fund_id_key",
+          "CREATE UNIQUE INDEX app_performance_config_fund_id_key ON public.app_performance_config USING btree (fund_id)"
+        ],
+        [
+          "app_performance_config_pkey",
+          "CREATE UNIQUE INDEX app_performance_config_pkey ON public.app_performance_config USING btree (reference_fund_id)"
+        ],
+        [
+          "app_performance_config_preferred_source_preferred_scheme_co_key",
+          "CREATE UNIQUE INDEX app_performance_config_preferred_source_preferred_scheme_co_key ON public.app_performance_config USING btree (preferred_source, preferred_scheme_code)"
+        ],
+        [
+          "idx_app_performance_verified_reference",
+          "CREATE INDEX idx_app_performance_verified_reference ON public.app_performance_config USING btree (reference_fund_id) WHERE selection_verified"
+        ]
+      ]
+    },
+    "app_schema_migrations": {
+      "kind": "r",
+      "rows": 5,
+      "columns": [
+        [
+          "version",
+          "text",
+          true,
+          null
+        ],
+        [
+          "filename",
+          "text",
+          true,
+          null
+        ],
+        [
+          "sha256",
+          "text",
+          true,
+          null
+        ],
+        [
+          "applied_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_schema_migrations_applied_at_not_null",
+          "n",
+          "NOT NULL applied_at"
+        ],
+        [
+          "app_schema_migrations_filename_key",
+          "u",
+          "UNIQUE (filename)"
+        ],
+        [
+          "app_schema_migrations_filename_not_null",
+          "n",
+          "NOT NULL filename"
+        ],
+        [
+          "app_schema_migrations_pkey",
+          "p",
+          "PRIMARY KEY (version)"
+        ],
+        [
+          "app_schema_migrations_sha256_check",
+          "c",
+          "CHECK ((sha256 ~ '^[0-9a-f]{64}$'::text))"
+        ],
+        [
+          "app_schema_migrations_sha256_not_null",
+          "n",
+          "NOT NULL sha256"
+        ],
+        [
+          "app_schema_migrations_version_check",
+          "c",
+          "CHECK ((version ~ '^[0-9]{4}$'::text))"
+        ],
+        [
+          "app_schema_migrations_version_not_null",
+          "n",
+          "NOT NULL version"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_schema_migrations_filename_key",
+          "CREATE UNIQUE INDEX app_schema_migrations_filename_key ON public.app_schema_migrations USING btree (filename)"
+        ],
+        [
+          "app_schema_migrations_pkey",
+          "CREATE UNIQUE INDEX app_schema_migrations_pkey ON public.app_schema_migrations USING btree (version)"
+        ]
+      ]
+    },
+    "app_ticker_config": {
+      "kind": "r",
+      "rows": 34,
+      "columns": [
+        [
+          "fund_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "preferred_source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "preferred_scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "display_order",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "is_visible",
+          "boolean",
+          true,
+          "true"
+        ],
+        [
+          "selection_verified",
+          "boolean",
+          true,
+          "false"
+        ],
+        [
+          "selection_evidence",
+          "jsonb",
+          true,
+          "'{}'::jsonb"
+        ],
+        [
+          "verified_by",
+          "text",
+          false,
+          null
+        ],
+        [
+          "verified_at",
+          "timestamp with time zone",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_ticker_config_check",
+          "c",
+          "CHECK (((selection_verified AND (verified_at IS NOT NULL) AND (btrim(verified_by) <> ''::text) AND (selection_evidence <> '{}'::jsonb)) OR ((NOT selection_verified) AND (verified_at IS NULL) AND (verified_by IS NULL))))"
+        ],
+        [
+          "app_ticker_config_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "app_ticker_config_display_order_check",
+          "c",
+          "CHECK ((display_order > 0))"
+        ],
+        [
+          "app_ticker_config_display_order_not_null",
+          "n",
+          "NOT NULL display_order"
+        ],
+        [
+          "app_ticker_config_fund_id_fkey",
+          "f",
+          "FOREIGN KEY (fund_id) REFERENCES app_funds(fund_id)"
+        ],
+        [
+          "app_ticker_config_fund_id_not_null",
+          "n",
+          "NOT NULL fund_id"
+        ],
+        [
+          "app_ticker_config_fund_id_preferred_source_preferred_schem_fkey",
+          "f",
+          "FOREIGN KEY (fund_id, preferred_source, preferred_scheme_code) REFERENCES app_tigzig_fund_mapping(fund_id, source, scheme_code)"
+        ],
+        [
+          "app_ticker_config_is_visible_not_null",
+          "n",
+          "NOT NULL is_visible"
+        ],
+        [
+          "app_ticker_config_pkey",
+          "p",
+          "PRIMARY KEY (fund_id)"
+        ],
+        [
+          "app_ticker_config_preferred_scheme_code_not_null",
+          "n",
+          "NOT NULL preferred_scheme_code"
+        ],
+        [
+          "app_ticker_config_preferred_source_not_null",
+          "n",
+          "NOT NULL preferred_source"
+        ],
+        [
+          "app_ticker_config_selection_evidence_check",
+          "c",
+          "CHECK ((jsonb_typeof(selection_evidence) = 'object'::text))"
+        ],
+        [
+          "app_ticker_config_selection_evidence_not_null",
+          "n",
+          "NOT NULL selection_evidence"
+        ],
+        [
+          "app_ticker_config_selection_verified_not_null",
+          "n",
+          "NOT NULL selection_verified"
+        ],
+        [
+          "app_ticker_config_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ],
+        [
+          "uq_app_ticker_display_order",
+          "u",
+          "UNIQUE (display_order) DEFERRABLE INITIALLY DEFERRED"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_ticker_config_pkey",
+          "CREATE UNIQUE INDEX app_ticker_config_pkey ON public.app_ticker_config USING btree (fund_id)"
+        ],
+        [
+          "idx_app_ticker_visible_order",
+          "CREATE INDEX idx_app_ticker_visible_order ON public.app_ticker_config USING btree (display_order) WHERE is_visible"
+        ],
+        [
+          "uq_app_ticker_display_order",
+          "CREATE UNIQUE INDEX uq_app_ticker_display_order ON public.app_ticker_config USING btree (display_order)"
+        ]
+      ]
+    },
+    "app_tigzig_fund_mapping": {
+      "kind": "r",
+      "rows": 126,
+      "columns": [
+        [
+          "fund_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "verification_method",
+          "text",
+          true,
+          null
+        ],
+        [
+          "verification_evidence",
+          "jsonb",
+          true,
+          null
+        ],
+        [
+          "verified_by",
+          "text",
+          true,
+          null
+        ],
+        [
+          "verified_at",
+          "timestamp with time zone",
+          true,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_tigzig_fund_mapping_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "app_tigzig_fund_mapping_fund_id_fkey",
+          "f",
+          "FOREIGN KEY (fund_id) REFERENCES app_funds(fund_id)"
+        ],
+        [
+          "app_tigzig_fund_mapping_fund_id_not_null",
+          "n",
+          "NOT NULL fund_id"
+        ],
+        [
+          "app_tigzig_fund_mapping_pkey",
+          "p",
+          "PRIMARY KEY (source, scheme_code)"
+        ],
+        [
+          "app_tigzig_fund_mapping_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "app_tigzig_fund_mapping_source_not_null",
+          "n",
+          "NOT NULL source"
+        ],
+        [
+          "app_tigzig_fund_mapping_source_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (source, scheme_code) REFERENCES tigzig_schemes(source, scheme_code)"
+        ],
+        [
+          "app_tigzig_fund_mapping_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ],
+        [
+          "app_tigzig_fund_mapping_verification_evidence_check",
+          "c",
+          "CHECK (((jsonb_typeof(verification_evidence) = 'object'::text) AND (verification_evidence <> '{}'::jsonb)))"
+        ],
+        [
+          "app_tigzig_fund_mapping_verification_evidence_not_null",
+          "n",
+          "NOT NULL verification_evidence"
+        ],
+        [
+          "app_tigzig_fund_mapping_verification_method_check",
+          "c",
+          "CHECK ((btrim(verification_method) <> ''::text))"
+        ],
+        [
+          "app_tigzig_fund_mapping_verification_method_not_null",
+          "n",
+          "NOT NULL verification_method"
+        ],
+        [
+          "app_tigzig_fund_mapping_verified_at_not_null",
+          "n",
+          "NOT NULL verified_at"
+        ],
+        [
+          "app_tigzig_fund_mapping_verified_by_check",
+          "c",
+          "CHECK ((btrim(verified_by) <> ''::text))"
+        ],
+        [
+          "app_tigzig_fund_mapping_verified_by_not_null",
+          "n",
+          "NOT NULL verified_by"
+        ],
+        [
+          "uq_app_mapping_fund_scheme",
+          "u",
+          "UNIQUE (fund_id, source, scheme_code)"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_tigzig_fund_mapping_pkey",
+          "CREATE UNIQUE INDEX app_tigzig_fund_mapping_pkey ON public.app_tigzig_fund_mapping USING btree (source, scheme_code)"
+        ],
+        [
+          "idx_app_tigzig_mapping_fund",
+          "CREATE INDEX idx_app_tigzig_mapping_fund ON public.app_tigzig_fund_mapping USING btree (fund_id)"
+        ],
+        [
+          "uq_app_mapping_fund_scheme",
+          "CREATE UNIQUE INDEX uq_app_mapping_fund_scheme ON public.app_tigzig_fund_mapping USING btree (fund_id, source, scheme_code)"
+        ]
+      ]
+    },
+    "app_tigzig_mapping_reviews": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "review_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "proposed_fund_key",
+          "text",
+          false,
+          null
+        ],
+        [
+          "reason_code",
+          "text",
+          true,
+          null
+        ],
+        [
+          "evidence",
+          "jsonb",
+          true,
+          null
+        ],
+        [
+          "status",
+          "text",
+          true,
+          "'pending'::text"
+        ],
+        [
+          "reviewed_by",
+          "text",
+          false,
+          null
+        ],
+        [
+          "reviewed_at",
+          "timestamp with time zone",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "app_tigzig_mapping_reviews_check",
+          "c",
+          "CHECK ((((status = 'pending'::text) AND (reviewed_at IS NULL)) OR ((status <> 'pending'::text) AND (reviewed_at IS NOT NULL) AND (btrim(reviewed_by) <> ''::text))))"
+        ],
+        [
+          "app_tigzig_mapping_reviews_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "app_tigzig_mapping_reviews_evidence_check",
+          "c",
+          "CHECK ((jsonb_typeof(evidence) = 'object'::text))"
+        ],
+        [
+          "app_tigzig_mapping_reviews_evidence_not_null",
+          "n",
+          "NOT NULL evidence"
+        ],
+        [
+          "app_tigzig_mapping_reviews_pkey",
+          "p",
+          "PRIMARY KEY (review_id)"
+        ],
+        [
+          "app_tigzig_mapping_reviews_reason_code_check",
+          "c",
+          "CHECK ((btrim(reason_code) <> ''::text))"
+        ],
+        [
+          "app_tigzig_mapping_reviews_reason_code_not_null",
+          "n",
+          "NOT NULL reason_code"
+        ],
+        [
+          "app_tigzig_mapping_reviews_review_id_not_null",
+          "n",
+          "NOT NULL review_id"
+        ],
+        [
+          "app_tigzig_mapping_reviews_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "app_tigzig_mapping_reviews_source_not_null",
+          "n",
+          "NOT NULL source"
+        ],
+        [
+          "app_tigzig_mapping_reviews_source_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (source, scheme_code) REFERENCES tigzig_schemes(source, scheme_code)"
+        ],
+        [
+          "app_tigzig_mapping_reviews_source_scheme_code_key",
+          "u",
+          "UNIQUE (source, scheme_code)"
+        ],
+        [
+          "app_tigzig_mapping_reviews_status_check",
+          "c",
+          "CHECK ((status = ANY (ARRAY['pending'::text, 'approved'::text, 'rejected'::text, 'resolved'::text])))"
+        ],
+        [
+          "app_tigzig_mapping_reviews_status_not_null",
+          "n",
+          "NOT NULL status"
+        ],
+        [
+          "app_tigzig_mapping_reviews_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "app_tigzig_mapping_reviews_pkey",
+          "CREATE UNIQUE INDEX app_tigzig_mapping_reviews_pkey ON public.app_tigzig_mapping_reviews USING btree (review_id)"
+        ],
+        [
+          "app_tigzig_mapping_reviews_source_scheme_code_key",
+          "CREATE UNIQUE INDEX app_tigzig_mapping_reviews_source_scheme_code_key ON public.app_tigzig_mapping_reviews USING btree (source, scheme_code)"
+        ],
+        [
+          "idx_app_mapping_reviews_pending",
+          "CREATE INDEX idx_app_mapping_reviews_pending ON public.app_tigzig_mapping_reviews USING btree (created_at) WHERE (status = 'pending'::text)"
+        ]
+      ]
+    },
+    "sif_aaum_history": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "id",
+          "bigint",
+          true,
+          "nextval('sif_aaum_history_id_seq'::regclass)"
+        ],
+        [
+          "scheme_code",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "aaum_quarter",
+          "character varying(20)",
+          false,
+          null
+        ],
+        [
+          "quarter_start",
+          "date",
+          true,
+          null
+        ],
+        [
+          "quarter_end",
+          "date",
+          true,
+          null
+        ],
+        [
+          "aaum_cr",
+          "numeric(20,6)",
+          true,
+          null
+        ],
+        [
+          "aaum_lakhs",
+          "numeric(22,4)",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_aaum_history_aaum_cr_check",
+          "c",
+          "CHECK ((aaum_cr >= (0)::numeric))"
+        ],
+        [
+          "sif_aaum_history_aaum_cr_not_null",
+          "n",
+          "NOT NULL aaum_cr"
+        ],
+        [
+          "sif_aaum_history_aaum_lakhs_check",
+          "c",
+          "CHECK ((aaum_lakhs >= (0)::numeric))"
+        ],
+        [
+          "sif_aaum_history_check",
+          "c",
+          "CHECK ((quarter_start <= quarter_end))"
+        ],
+        [
+          "sif_aaum_history_id_not_null",
+          "n",
+          "NOT NULL id"
+        ],
+        [
+          "sif_aaum_history_pkey",
+          "p",
+          "PRIMARY KEY (id)"
+        ],
+        [
+          "sif_aaum_history_quarter_end_not_null",
+          "n",
+          "NOT NULL quarter_end"
+        ],
+        [
+          "sif_aaum_history_quarter_start_not_null",
+          "n",
+          "NOT NULL quarter_start"
+        ],
+        [
+          "sif_aaum_history_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (scheme_code) REFERENCES sif_schemes(scheme_code)"
+        ],
+        [
+          "sif_aaum_history_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "sif_aaum_history_scheme_code_quarter_end_key",
+          "u",
+          "UNIQUE (scheme_code, quarter_end)"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_sif_aaum_quarter",
+          "CREATE INDEX idx_sif_aaum_quarter ON public.sif_aaum_history USING btree (quarter_end DESC)"
+        ],
+        [
+          "sif_aaum_history_pkey",
+          "CREATE UNIQUE INDEX sif_aaum_history_pkey ON public.sif_aaum_history USING btree (id)"
+        ],
+        [
+          "sif_aaum_history_scheme_code_quarter_end_key",
+          "CREATE UNIQUE INDEX sif_aaum_history_scheme_code_quarter_end_key ON public.sif_aaum_history USING btree (scheme_code, quarter_end)"
+        ]
+      ]
+    },
+    "sif_amcs": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "amc_id",
+          "bigint",
+          true,
+          "nextval('sif_amcs_amc_id_seq'::regclass)"
+        ],
+        [
+          "amc_name",
+          "character varying(255)",
+          true,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_amcs_amc_id_not_null",
+          "n",
+          "NOT NULL amc_id"
+        ],
+        [
+          "sif_amcs_amc_name_key",
+          "u",
+          "UNIQUE (amc_name)"
+        ],
+        [
+          "sif_amcs_amc_name_not_null",
+          "n",
+          "NOT NULL amc_name"
+        ],
+        [
+          "sif_amcs_pkey",
+          "p",
+          "PRIMARY KEY (amc_id)"
+        ]
+      ],
+      "indexes": [
+        [
+          "sif_amcs_amc_name_key",
+          "CREATE UNIQUE INDEX sif_amcs_amc_name_key ON public.sif_amcs USING btree (amc_name)"
+        ],
+        [
+          "sif_amcs_pkey",
+          "CREATE UNIQUE INDEX sif_amcs_pkey ON public.sif_amcs USING btree (amc_id)"
+        ]
+      ]
+    },
+    "sif_nav_history": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "id",
+          "bigint",
+          true,
+          "nextval('sif_nav_history_id_seq'::regclass)"
+        ],
+        [
+          "scheme_code",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "nav_date",
+          "date",
+          true,
+          null
+        ],
+        [
+          "nav",
+          "numeric(18,6)",
+          true,
+          null
+        ],
+        [
+          "source_upload_ts",
+          "timestamp without time zone",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_nav_history_id_not_null",
+          "n",
+          "NOT NULL id"
+        ],
+        [
+          "sif_nav_history_nav_check",
+          "c",
+          "CHECK ((nav >= (0)::numeric))"
+        ],
+        [
+          "sif_nav_history_nav_date_not_null",
+          "n",
+          "NOT NULL nav_date"
+        ],
+        [
+          "sif_nav_history_nav_not_null",
+          "n",
+          "NOT NULL nav"
+        ],
+        [
+          "sif_nav_history_pkey",
+          "p",
+          "PRIMARY KEY (id)"
+        ],
+        [
+          "sif_nav_history_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (scheme_code) REFERENCES sif_schemes(scheme_code)"
+        ],
+        [
+          "sif_nav_history_scheme_code_nav_date_key",
+          "u",
+          "UNIQUE (scheme_code, nav_date)"
+        ],
+        [
+          "sif_nav_history_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_sif_nav_date",
+          "CREATE INDEX idx_sif_nav_date ON public.sif_nav_history USING btree (nav_date DESC)"
+        ],
+        [
+          "sif_nav_history_pkey",
+          "CREATE UNIQUE INDEX sif_nav_history_pkey ON public.sif_nav_history USING btree (id)"
+        ],
+        [
+          "sif_nav_history_scheme_code_nav_date_key",
+          "CREATE UNIQUE INDEX sif_nav_history_scheme_code_nav_date_key ON public.sif_nav_history USING btree (scheme_code, nav_date)"
+        ]
+      ]
+    },
+    "sif_scheme_isins": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "id",
+          "bigint",
+          true,
+          "nextval('sif_scheme_isins_id_seq'::regclass)"
+        ],
+        [
+          "scheme_code",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "isin",
+          "character varying(20)",
+          true,
+          null
+        ],
+        [
+          "isin_type",
+          "character varying(20)",
+          true,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_scheme_isins_id_not_null",
+          "n",
+          "NOT NULL id"
+        ],
+        [
+          "sif_scheme_isins_isin_not_null",
+          "n",
+          "NOT NULL isin"
+        ],
+        [
+          "sif_scheme_isins_isin_type_check",
+          "c",
+          "CHECK (((isin_type)::text = ANY ((ARRAY['PRIMARY'::character varying, 'SECONDARY'::character varying])::text[])))"
+        ],
+        [
+          "sif_scheme_isins_isin_type_not_null",
+          "n",
+          "NOT NULL isin_type"
+        ],
+        [
+          "sif_scheme_isins_pkey",
+          "p",
+          "PRIMARY KEY (id)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (scheme_code) REFERENCES sif_schemes(scheme_code)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_isin_key",
+          "u",
+          "UNIQUE (scheme_code, isin)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_isin_type_key",
+          "u",
+          "UNIQUE (scheme_code, isin_type)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_sif_isins_isin",
+          "CREATE INDEX idx_sif_isins_isin ON public.sif_scheme_isins USING btree (isin)"
+        ],
+        [
+          "sif_scheme_isins_pkey",
+          "CREATE UNIQUE INDEX sif_scheme_isins_pkey ON public.sif_scheme_isins USING btree (id)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_isin_key",
+          "CREATE UNIQUE INDEX sif_scheme_isins_scheme_code_isin_key ON public.sif_scheme_isins USING btree (scheme_code, isin)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_isin_type_key",
+          "CREATE UNIQUE INDEX sif_scheme_isins_scheme_code_isin_type_key ON public.sif_scheme_isins USING btree (scheme_code, isin_type)"
+        ]
+      ]
+    },
+    "sif_schemes": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "scheme_code",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "temp_sif_code",
+          "character varying(30)",
+          true,
+          null
+        ],
+        [
+          "amc_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "scheme_name",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_type",
+          "character varying(150)",
+          false,
+          null
+        ],
+        [
+          "category",
+          "text",
+          false,
+          null
+        ],
+        [
+          "category_sub",
+          "character varying(255)",
+          false,
+          null
+        ],
+        [
+          "category_group_clean",
+          "character varying(150)",
+          false,
+          null
+        ],
+        [
+          "category_group",
+          "character varying(255)",
+          false,
+          null
+        ],
+        [
+          "scheme_plan",
+          "character varying(50)",
+          false,
+          null
+        ],
+        [
+          "scheme_option",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "first_date",
+          "date",
+          false,
+          null
+        ],
+        [
+          "last_date",
+          "date",
+          false,
+          null
+        ],
+        [
+          "is_active",
+          "boolean",
+          false,
+          "true"
+        ],
+        [
+          "is_stale",
+          "boolean",
+          false,
+          "false"
+        ],
+        [
+          "txic_code",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "source",
+          "character varying(50)",
+          false,
+          null
+        ],
+        [
+          "temp_plan_basis",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "temp_idcw_mode",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "temp_idcw_freq",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "temp_n_nav_days",
+          "integer",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_schemes_amc_id_fkey",
+          "f",
+          "FOREIGN KEY (amc_id) REFERENCES sif_amcs(amc_id)"
+        ],
+        [
+          "sif_schemes_amc_id_not_null",
+          "n",
+          "NOT NULL amc_id"
+        ],
+        [
+          "sif_schemes_pkey",
+          "p",
+          "PRIMARY KEY (scheme_code)"
+        ],
+        [
+          "sif_schemes_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "sif_schemes_scheme_name_not_null",
+          "n",
+          "NOT NULL scheme_name"
+        ],
+        [
+          "sif_schemes_temp_sif_code_key",
+          "u",
+          "UNIQUE (temp_sif_code)"
+        ],
+        [
+          "sif_schemes_temp_sif_code_not_null",
+          "n",
+          "NOT NULL temp_sif_code"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_sif_schemes_active",
+          "CREATE INDEX idx_sif_schemes_active ON public.sif_schemes USING btree (is_active)"
+        ],
+        [
+          "idx_sif_schemes_amc",
+          "CREATE INDEX idx_sif_schemes_amc ON public.sif_schemes USING btree (amc_id)"
+        ],
+        [
+          "idx_sif_schemes_category",
+          "CREATE INDEX idx_sif_schemes_category ON public.sif_schemes USING btree (category_group_clean)"
+        ],
+        [
+          "idx_sif_schemes_plan_option",
+          "CREATE INDEX idx_sif_schemes_plan_option ON public.sif_schemes USING btree (scheme_plan, scheme_option)"
+        ],
+        [
+          "sif_schemes_pkey",
+          "CREATE UNIQUE INDEX sif_schemes_pkey ON public.sif_schemes USING btree (scheme_code)"
+        ],
+        [
+          "sif_schemes_temp_sif_code_key",
+          "CREATE UNIQUE INDEX sif_schemes_temp_sif_code_key ON public.sif_schemes USING btree (temp_sif_code)"
+        ]
+      ]
+    },
+    "tigzig_fund_houses": {
+      "kind": "r",
+      "rows": 17,
+      "columns": [
+        [
+          "fund_house_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "original_amc_name",
+          "text",
+          true,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "tigzig_fund_houses_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "tigzig_fund_houses_fund_house_id_not_null",
+          "n",
+          "NOT NULL fund_house_id"
+        ],
+        [
+          "tigzig_fund_houses_original_amc_name_check",
+          "c",
+          "CHECK ((btrim(original_amc_name) <> ''::text))"
+        ],
+        [
+          "tigzig_fund_houses_original_amc_name_key",
+          "u",
+          "UNIQUE (original_amc_name)"
+        ],
+        [
+          "tigzig_fund_houses_original_amc_name_not_null",
+          "n",
+          "NOT NULL original_amc_name"
+        ],
+        [
+          "tigzig_fund_houses_pkey",
+          "p",
+          "PRIMARY KEY (fund_house_id)"
+        ],
+        [
+          "tigzig_fund_houses_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "tigzig_fund_houses_original_amc_name_key",
+          "CREATE UNIQUE INDEX tigzig_fund_houses_original_amc_name_key ON public.tigzig_fund_houses USING btree (original_amc_name)"
+        ],
+        [
+          "tigzig_fund_houses_pkey",
+          "CREATE UNIQUE INDEX tigzig_fund_houses_pkey ON public.tigzig_fund_houses USING btree (fund_house_id)"
+        ]
+      ]
+    },
+    "tigzig_ingestion_rejections": {
+      "kind": "r",
+      "rows": 28,
+      "columns": [
+        [
+          "rejection_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "run_id",
+          "uuid",
+          true,
+          null
+        ],
+        [
+          "dataset_name",
+          "text",
+          true,
+          null
+        ],
+        [
+          "raw_record",
+          "jsonb",
+          true,
+          null
+        ],
+        [
+          "rejection_reason",
+          "text",
+          true,
+          null
+        ],
+        [
+          "resolution_status",
+          "text",
+          true,
+          "'pending'::text"
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "resolved_at",
+          "timestamp with time zone",
+          false,
+          null
+        ]
+      ],
+      "constraints": [
+        [
+          "tigzig_ingestion_rejections_check",
+          "c",
+          "CHECK ((((resolution_status = 'pending'::text) AND (resolved_at IS NULL)) OR ((resolution_status <> 'pending'::text) AND (resolved_at IS NOT NULL))))"
+        ],
+        [
+          "tigzig_ingestion_rejections_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "tigzig_ingestion_rejections_dataset_name_check",
+          "c",
+          "CHECK ((dataset_name = ANY (ARRAY['meta'::text, 'nav'::text, 'aaum'::text])))"
+        ],
+        [
+          "tigzig_ingestion_rejections_dataset_name_not_null",
+          "n",
+          "NOT NULL dataset_name"
+        ],
+        [
+          "tigzig_ingestion_rejections_pkey",
+          "p",
+          "PRIMARY KEY (rejection_id)"
+        ],
+        [
+          "tigzig_ingestion_rejections_raw_record_not_null",
+          "n",
+          "NOT NULL raw_record"
+        ],
+        [
+          "tigzig_ingestion_rejections_rejection_id_not_null",
+          "n",
+          "NOT NULL rejection_id"
+        ],
+        [
+          "tigzig_ingestion_rejections_rejection_reason_check",
+          "c",
+          "CHECK ((btrim(rejection_reason) <> ''::text))"
+        ],
+        [
+          "tigzig_ingestion_rejections_rejection_reason_not_null",
+          "n",
+          "NOT NULL rejection_reason"
+        ],
+        [
+          "tigzig_ingestion_rejections_resolution_status_check",
+          "c",
+          "CHECK ((resolution_status = ANY (ARRAY['pending'::text, 'resolved'::text, 'ignored'::text])))"
+        ],
+        [
+          "tigzig_ingestion_rejections_resolution_status_not_null",
+          "n",
+          "NOT NULL resolution_status"
+        ],
+        [
+          "tigzig_ingestion_rejections_run_id_fkey",
+          "f",
+          "FOREIGN KEY (run_id) REFERENCES tigzig_sync_runs(run_id)"
+        ],
+        [
+          "tigzig_ingestion_rejections_run_id_not_null",
+          "n",
+          "NOT NULL run_id"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_tigzig_rejections_pending",
+          "CREATE INDEX idx_tigzig_rejections_pending ON public.tigzig_ingestion_rejections USING btree (created_at) WHERE (resolution_status = 'pending'::text)"
+        ],
+        [
+          "idx_tigzig_rejections_run",
+          "CREATE INDEX idx_tigzig_rejections_run ON public.tigzig_ingestion_rejections USING btree (run_id)"
+        ],
+        [
+          "tigzig_ingestion_rejections_pkey",
+          "CREATE UNIQUE INDEX tigzig_ingestion_rejections_pkey ON public.tigzig_ingestion_rejections USING btree (rejection_id)"
+        ]
+      ]
+    },
+    "tigzig_scheme_aaum": {
+      "kind": "r",
+      "rows": 292,
+      "columns": [
+        [
+          "source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "quarter_start",
+          "date",
+          true,
+          null
+        ],
+        [
+          "quarter_end",
+          "date",
+          true,
+          null
+        ],
+        [
+          "aaum_quarter",
+          "text",
+          true,
+          null
+        ],
+        [
+          "aaum_lakhs",
+          "numeric(26,4)",
+          true,
+          null
+        ],
+        [
+          "aaum_cr",
+          "numeric(24,6)",
+          true,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "tigzig_scheme_aaum_aaum_cr_check",
+          "c",
+          "CHECK (((aaum_cr >= (0)::numeric) AND (aaum_cr <> 'NaN'::numeric)))"
+        ],
+        [
+          "tigzig_scheme_aaum_aaum_cr_not_null",
+          "n",
+          "NOT NULL aaum_cr"
+        ],
+        [
+          "tigzig_scheme_aaum_aaum_lakhs_check",
+          "c",
+          "CHECK (((aaum_lakhs >= (0)::numeric) AND (aaum_lakhs <> 'NaN'::numeric)))"
+        ],
+        [
+          "tigzig_scheme_aaum_aaum_lakhs_not_null",
+          "n",
+          "NOT NULL aaum_lakhs"
+        ],
+        [
+          "tigzig_scheme_aaum_aaum_quarter_check",
+          "c",
+          "CHECK ((btrim(aaum_quarter) <> ''::text))"
+        ],
+        [
+          "tigzig_scheme_aaum_aaum_quarter_not_null",
+          "n",
+          "NOT NULL aaum_quarter"
+        ],
+        [
+          "tigzig_scheme_aaum_check",
+          "c",
+          "CHECK ((quarter_start <= quarter_end))"
+        ],
+        [
+          "tigzig_scheme_aaum_check1",
+          "c",
+          "CHECK ((aaum_cr = round((aaum_lakhs / (100)::numeric), 6)))"
+        ],
+        [
+          "tigzig_scheme_aaum_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "tigzig_scheme_aaum_pkey",
+          "p",
+          "PRIMARY KEY (source, scheme_code, quarter_end)"
+        ],
+        [
+          "tigzig_scheme_aaum_quarter_end_not_null",
+          "n",
+          "NOT NULL quarter_end"
+        ],
+        [
+          "tigzig_scheme_aaum_quarter_start_not_null",
+          "n",
+          "NOT NULL quarter_start"
+        ],
+        [
+          "tigzig_scheme_aaum_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "tigzig_scheme_aaum_source_not_null",
+          "n",
+          "NOT NULL source"
+        ],
+        [
+          "tigzig_scheme_aaum_source_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (source, scheme_code) REFERENCES tigzig_schemes(source, scheme_code)"
+        ],
+        [
+          "tigzig_scheme_aaum_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_tigzig_scheme_aaum_quarter",
+          "CREATE INDEX idx_tigzig_scheme_aaum_quarter ON public.tigzig_scheme_aaum USING btree (quarter_end)"
+        ],
+        [
+          "tigzig_scheme_aaum_pkey",
+          "CREATE UNIQUE INDEX tigzig_scheme_aaum_pkey ON public.tigzig_scheme_aaum USING btree (source, scheme_code, quarter_end)"
+        ]
+      ]
+    },
+    "tigzig_scheme_isins": {
+      "kind": "r",
+      "rows": 175,
+      "columns": [
+        [
+          "source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "identifier_type",
+          "text",
+          true,
+          null
+        ],
+        [
+          "isin",
+          "text",
+          true,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "tigzig_scheme_isins_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "tigzig_scheme_isins_identifier_type_check",
+          "c",
+          "CHECK ((identifier_type = ANY (ARRAY['PRIMARY'::text, 'SECONDARY'::text])))"
+        ],
+        [
+          "tigzig_scheme_isins_identifier_type_not_null",
+          "n",
+          "NOT NULL identifier_type"
+        ],
+        [
+          "tigzig_scheme_isins_isin_check",
+          "c",
+          "CHECK (((btrim(isin) <> ''::text) AND (isin = btrim(isin))))"
+        ],
+        [
+          "tigzig_scheme_isins_isin_not_null",
+          "n",
+          "NOT NULL isin"
+        ],
+        [
+          "tigzig_scheme_isins_pkey",
+          "p",
+          "PRIMARY KEY (source, scheme_code, identifier_type)"
+        ],
+        [
+          "tigzig_scheme_isins_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "tigzig_scheme_isins_source_isin_key",
+          "u",
+          "UNIQUE (source, isin)"
+        ],
+        [
+          "tigzig_scheme_isins_source_not_null",
+          "n",
+          "NOT NULL source"
+        ],
+        [
+          "tigzig_scheme_isins_source_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (source, scheme_code) REFERENCES tigzig_schemes(source, scheme_code)"
+        ],
+        [
+          "tigzig_scheme_isins_source_scheme_code_isin_key",
+          "u",
+          "UNIQUE (source, scheme_code, isin)"
+        ],
+        [
+          "tigzig_scheme_isins_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "tigzig_scheme_isins_pkey",
+          "CREATE UNIQUE INDEX tigzig_scheme_isins_pkey ON public.tigzig_scheme_isins USING btree (source, scheme_code, identifier_type)"
+        ],
+        [
+          "tigzig_scheme_isins_source_isin_key",
+          "CREATE UNIQUE INDEX tigzig_scheme_isins_source_isin_key ON public.tigzig_scheme_isins USING btree (source, isin)"
+        ],
+        [
+          "tigzig_scheme_isins_source_scheme_code_isin_key",
+          "CREATE UNIQUE INDEX tigzig_scheme_isins_source_scheme_code_isin_key ON public.tigzig_scheme_isins USING btree (source, scheme_code, isin)"
+        ]
+      ]
+    },
+    "tigzig_scheme_nav": {
+      "kind": "r",
+      "rows": 15616,
+      "columns": [
+        [
+          "source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "nav_date",
+          "date",
+          true,
+          null
+        ],
+        [
+          "nav",
+          "numeric(24,10)",
+          true,
+          null
+        ],
+        [
+          "upload_ts_raw",
+          "text",
+          false,
+          null
+        ],
+        [
+          "upload_ts_ist",
+          "timestamp without time zone",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "tigzig_scheme_nav_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "tigzig_scheme_nav_nav_check",
+          "c",
+          "CHECK (((nav > (0)::numeric) AND (nav <> 'NaN'::numeric)))"
+        ],
+        [
+          "tigzig_scheme_nav_nav_date_not_null",
+          "n",
+          "NOT NULL nav_date"
+        ],
+        [
+          "tigzig_scheme_nav_nav_not_null",
+          "n",
+          "NOT NULL nav"
+        ],
+        [
+          "tigzig_scheme_nav_pkey",
+          "p",
+          "PRIMARY KEY (source, scheme_code, nav_date)"
+        ],
+        [
+          "tigzig_scheme_nav_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "tigzig_scheme_nav_source_not_null",
+          "n",
+          "NOT NULL source"
+        ],
+        [
+          "tigzig_scheme_nav_source_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (source, scheme_code) REFERENCES tigzig_schemes(source, scheme_code)"
+        ],
+        [
+          "tigzig_scheme_nav_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_tigzig_scheme_nav_date",
+          "CREATE INDEX idx_tigzig_scheme_nav_date ON public.tigzig_scheme_nav USING btree (nav_date)"
+        ],
+        [
+          "tigzig_scheme_nav_pkey",
+          "CREATE UNIQUE INDEX tigzig_scheme_nav_pkey ON public.tigzig_scheme_nav USING btree (source, scheme_code, nav_date)"
+        ]
+      ]
+    },
+    "tigzig_schemes": {
+      "kind": "r",
+      "rows": 126,
+      "columns": [
+        [
+          "source",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_code",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "fund_house_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "scheme_name",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_type",
+          "text",
+          false,
+          null
+        ],
+        [
+          "category",
+          "text",
+          false,
+          null
+        ],
+        [
+          "category_sub",
+          "text",
+          false,
+          null
+        ],
+        [
+          "category_group_clean",
+          "text",
+          false,
+          null
+        ],
+        [
+          "category_group",
+          "text",
+          false,
+          null
+        ],
+        [
+          "scheme_plan",
+          "text",
+          false,
+          null
+        ],
+        [
+          "scheme_option",
+          "text",
+          false,
+          null
+        ],
+        [
+          "first_nav_date",
+          "date",
+          false,
+          null
+        ],
+        [
+          "last_nav_date",
+          "date",
+          false,
+          null
+        ],
+        [
+          "is_active",
+          "boolean",
+          false,
+          null
+        ],
+        [
+          "is_stale",
+          "boolean",
+          false,
+          null
+        ],
+        [
+          "latest_nav",
+          "numeric(24,10)",
+          false,
+          null
+        ],
+        [
+          "latest_nav_date",
+          "date",
+          false,
+          null
+        ],
+        [
+          "latest_aaum_quarter",
+          "text",
+          false,
+          null
+        ],
+        [
+          "latest_aaum_quarter_end",
+          "date",
+          false,
+          null
+        ],
+        [
+          "latest_aaum_cr",
+          "numeric(24,6)",
+          false,
+          null
+        ],
+        [
+          "latest_aaum_lakhs",
+          "numeric(26,4)",
+          false,
+          null
+        ],
+        [
+          "txic_code",
+          "text",
+          false,
+          null
+        ],
+        [
+          "temp_sif_code",
+          "text",
+          false,
+          null
+        ],
+        [
+          "temp_plan_basis",
+          "text",
+          false,
+          null
+        ],
+        [
+          "temp_idcw_mode",
+          "text",
+          false,
+          null
+        ],
+        [
+          "temp_idcw_freq",
+          "text",
+          false,
+          null
+        ],
+        [
+          "temp_n_nav_days",
+          "integer",
+          false,
+          null
+        ],
+        [
+          "source_metadata",
+          "jsonb",
+          true,
+          "'{}'::jsonb"
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "tigzig_schemes_check",
+          "c",
+          "CHECK ((first_nav_date <= last_nav_date))"
+        ],
+        [
+          "tigzig_schemes_check1",
+          "c",
+          "CHECK (((latest_nav IS NULL) = (latest_nav_date IS NULL)))"
+        ],
+        [
+          "tigzig_schemes_check2",
+          "c",
+          "CHECK (((latest_aaum_cr IS NULL) OR (latest_aaum_lakhs IS NULL) OR (latest_aaum_cr = round((latest_aaum_lakhs / (100)::numeric), 6))))"
+        ],
+        [
+          "tigzig_schemes_created_at_not_null",
+          "n",
+          "NOT NULL created_at"
+        ],
+        [
+          "tigzig_schemes_fund_house_id_fkey",
+          "f",
+          "FOREIGN KEY (fund_house_id) REFERENCES tigzig_fund_houses(fund_house_id)"
+        ],
+        [
+          "tigzig_schemes_fund_house_id_not_null",
+          "n",
+          "NOT NULL fund_house_id"
+        ],
+        [
+          "tigzig_schemes_latest_aaum_cr_check",
+          "c",
+          "CHECK (((latest_aaum_cr >= (0)::numeric) AND (latest_aaum_cr <> 'NaN'::numeric)))"
+        ],
+        [
+          "tigzig_schemes_latest_aaum_lakhs_check",
+          "c",
+          "CHECK (((latest_aaum_lakhs >= (0)::numeric) AND (latest_aaum_lakhs <> 'NaN'::numeric)))"
+        ],
+        [
+          "tigzig_schemes_latest_nav_check",
+          "c",
+          "CHECK (((latest_nav > (0)::numeric) AND (latest_nav <> 'NaN'::numeric)))"
+        ],
+        [
+          "tigzig_schemes_pkey",
+          "p",
+          "PRIMARY KEY (source, scheme_code)"
+        ],
+        [
+          "tigzig_schemes_scheme_code_check",
+          "c",
+          "CHECK ((scheme_code >= 0))"
+        ],
+        [
+          "tigzig_schemes_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "tigzig_schemes_scheme_name_check",
+          "c",
+          "CHECK ((btrim(scheme_name) <> ''::text))"
+        ],
+        [
+          "tigzig_schemes_scheme_name_not_null",
+          "n",
+          "NOT NULL scheme_name"
+        ],
+        [
+          "tigzig_schemes_source_check",
+          "c",
+          "CHECK (((btrim(source) <> ''::text) AND (source = btrim(source))))"
+        ],
+        [
+          "tigzig_schemes_source_metadata_check",
+          "c",
+          "CHECK ((jsonb_typeof(source_metadata) = 'object'::text))"
+        ],
+        [
+          "tigzig_schemes_source_metadata_not_null",
+          "n",
+          "NOT NULL source_metadata"
+        ],
+        [
+          "tigzig_schemes_source_not_null",
+          "n",
+          "NOT NULL source"
+        ],
+        [
+          "tigzig_schemes_temp_n_nav_days_check",
+          "c",
+          "CHECK ((temp_n_nav_days >= 0))"
+        ],
+        [
+          "tigzig_schemes_updated_at_not_null",
+          "n",
+          "NOT NULL updated_at"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_tigzig_schemes_category",
+          "CREATE INDEX idx_tigzig_schemes_category ON public.tigzig_schemes USING btree (category_group_clean)"
+        ],
+        [
+          "idx_tigzig_schemes_fund_house",
+          "CREATE INDEX idx_tigzig_schemes_fund_house ON public.tigzig_schemes USING btree (fund_house_id)"
+        ],
+        [
+          "tigzig_schemes_pkey",
+          "CREATE UNIQUE INDEX tigzig_schemes_pkey ON public.tigzig_schemes USING btree (source, scheme_code)"
+        ]
+      ]
+    },
+    "tigzig_sync_file_versions": {
+      "kind": "r",
+      "rows": 3,
+      "columns": [
+        [
+          "dataset_name",
+          "text",
+          true,
+          null
+        ],
+        [
+          "filename",
+          "text",
+          true,
+          null
+        ],
+        [
+          "sha256",
+          "text",
+          false,
+          null
+        ],
+        [
+          "manifest_generated_at",
+          "timestamp with time zone",
+          false,
+          null
+        ],
+        [
+          "last_checked_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "last_successful_import_at",
+          "timestamp with time zone",
+          false,
+          null
+        ],
+        [
+          "row_count",
+          "bigint",
+          false,
+          null
+        ],
+        [
+          "last_import_run_id",
+          "uuid",
+          false,
+          null
+        ]
+      ],
+      "constraints": [
+        [
+          "tigzig_sync_file_versions_check",
+          "c",
+          "CHECK ((((sha256 IS NULL) AND (last_successful_import_at IS NULL) AND (last_import_run_id IS NULL)) OR ((sha256 IS NOT NULL) AND (last_successful_import_at IS NOT NULL) AND (last_import_run_id IS NOT NULL) AND (manifest_generated_at IS NOT NULL) AND (row_count IS NOT NULL))))"
+        ],
+        [
+          "tigzig_sync_file_versions_dataset_name_check",
+          "c",
+          "CHECK ((dataset_name = ANY (ARRAY['meta'::text, 'nav'::text, 'aaum'::text])))"
+        ],
+        [
+          "tigzig_sync_file_versions_dataset_name_not_null",
+          "n",
+          "NOT NULL dataset_name"
+        ],
+        [
+          "tigzig_sync_file_versions_filename_check",
+          "c",
+          "CHECK ((btrim(filename) <> ''::text))"
+        ],
+        [
+          "tigzig_sync_file_versions_filename_not_null",
+          "n",
+          "NOT NULL filename"
+        ],
+        [
+          "tigzig_sync_file_versions_last_checked_at_not_null",
+          "n",
+          "NOT NULL last_checked_at"
+        ],
+        [
+          "tigzig_sync_file_versions_last_import_run_id_fkey",
+          "f",
+          "FOREIGN KEY (last_import_run_id) REFERENCES tigzig_sync_runs(run_id)"
+        ],
+        [
+          "tigzig_sync_file_versions_pkey",
+          "p",
+          "PRIMARY KEY (dataset_name)"
+        ],
+        [
+          "tigzig_sync_file_versions_row_count_check",
+          "c",
+          "CHECK ((row_count >= 0))"
+        ],
+        [
+          "tigzig_sync_file_versions_sha256_check",
+          "c",
+          "CHECK ((sha256 ~ '^[0-9a-f]{64}$'::text))"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_tigzig_versions_run",
+          "CREATE INDEX idx_tigzig_versions_run ON public.tigzig_sync_file_versions USING btree (last_import_run_id)"
+        ],
+        [
+          "tigzig_sync_file_versions_pkey",
+          "CREATE UNIQUE INDEX tigzig_sync_file_versions_pkey ON public.tigzig_sync_file_versions USING btree (dataset_name)"
+        ]
+      ]
+    },
+    "tigzig_sync_runs": {
+      "kind": "r",
+      "rows": 6,
+      "columns": [
+        [
+          "run_id",
+          "uuid",
+          true,
+          "gen_random_uuid()"
+        ],
+        [
+          "trigger_type",
+          "text",
+          true,
+          null
+        ],
+        [
+          "job_type",
+          "text",
+          true,
+          null
+        ],
+        [
+          "started_at",
+          "timestamp with time zone",
+          true,
+          "now()"
+        ],
+        [
+          "completed_at",
+          "timestamp with time zone",
+          false,
+          null
+        ],
+        [
+          "status",
+          "text",
+          true,
+          "'running'::text"
+        ],
+        [
+          "manifest_generated_at",
+          "timestamp with time zone",
+          false,
+          null
+        ],
+        [
+          "manifest_metadata",
+          "jsonb",
+          true,
+          "'{}'::jsonb"
+        ],
+        [
+          "files_processed",
+          "jsonb",
+          true,
+          "'[]'::jsonb"
+        ],
+        [
+          "records_read",
+          "bigint",
+          true,
+          "0"
+        ],
+        [
+          "inserted_count",
+          "bigint",
+          true,
+          "0"
+        ],
+        [
+          "updated_count",
+          "bigint",
+          true,
+          "0"
+        ],
+        [
+          "skipped_count",
+          "bigint",
+          true,
+          "0"
+        ],
+        [
+          "rejected_count",
+          "bigint",
+          true,
+          "0"
+        ],
+        [
+          "error_message",
+          "text",
+          false,
+          null
+        ],
+        [
+          "execution_duration_seconds",
+          "numeric(18,3)",
+          false,
+          null
+        ]
+      ],
+      "constraints": [
+        [
+          "tigzig_sync_runs_check",
+          "c",
+          "CHECK ((completed_at >= started_at))"
+        ],
+        [
+          "tigzig_sync_runs_check1",
+          "c",
+          "CHECK ((((status = 'running'::text) AND (completed_at IS NULL) AND (execution_duration_seconds IS NULL)) OR ((status <> 'running'::text) AND (completed_at IS NOT NULL) AND (execution_duration_seconds IS NOT NULL))))"
+        ],
+        [
+          "tigzig_sync_runs_execution_duration_seconds_check",
+          "c",
+          "CHECK (((execution_duration_seconds >= (0)::numeric) AND (execution_duration_seconds <> 'NaN'::numeric)))"
+        ],
+        [
+          "tigzig_sync_runs_files_processed_check",
+          "c",
+          "CHECK ((jsonb_typeof(files_processed) = 'array'::text))"
+        ],
+        [
+          "tigzig_sync_runs_files_processed_not_null",
+          "n",
+          "NOT NULL files_processed"
+        ],
+        [
+          "tigzig_sync_runs_inserted_count_check",
+          "c",
+          "CHECK ((inserted_count >= 0))"
+        ],
+        [
+          "tigzig_sync_runs_inserted_count_not_null",
+          "n",
+          "NOT NULL inserted_count"
+        ],
+        [
+          "tigzig_sync_runs_job_type_check",
+          "c",
+          "CHECK ((job_type = ANY (ARRAY['manifest'::text, 'backfill'::text, 'sync'::text, 'revalidate'::text])))"
+        ],
+        [
+          "tigzig_sync_runs_job_type_not_null",
+          "n",
+          "NOT NULL job_type"
+        ],
+        [
+          "tigzig_sync_runs_manifest_metadata_check",
+          "c",
+          "CHECK ((jsonb_typeof(manifest_metadata) = 'object'::text))"
+        ],
+        [
+          "tigzig_sync_runs_manifest_metadata_not_null",
+          "n",
+          "NOT NULL manifest_metadata"
+        ],
+        [
+          "tigzig_sync_runs_pkey",
+          "p",
+          "PRIMARY KEY (run_id)"
+        ],
+        [
+          "tigzig_sync_runs_records_read_check",
+          "c",
+          "CHECK ((records_read >= 0))"
+        ],
+        [
+          "tigzig_sync_runs_records_read_not_null",
+          "n",
+          "NOT NULL records_read"
+        ],
+        [
+          "tigzig_sync_runs_rejected_count_check",
+          "c",
+          "CHECK ((rejected_count >= 0))"
+        ],
+        [
+          "tigzig_sync_runs_rejected_count_not_null",
+          "n",
+          "NOT NULL rejected_count"
+        ],
+        [
+          "tigzig_sync_runs_run_id_not_null",
+          "n",
+          "NOT NULL run_id"
+        ],
+        [
+          "tigzig_sync_runs_skipped_count_check",
+          "c",
+          "CHECK ((skipped_count >= 0))"
+        ],
+        [
+          "tigzig_sync_runs_skipped_count_not_null",
+          "n",
+          "NOT NULL skipped_count"
+        ],
+        [
+          "tigzig_sync_runs_started_at_not_null",
+          "n",
+          "NOT NULL started_at"
+        ],
+        [
+          "tigzig_sync_runs_status_check",
+          "c",
+          "CHECK ((status = ANY (ARRAY['running'::text, 'succeeded'::text, 'failed'::text, 'skipped'::text, 'interrupted'::text])))"
+        ],
+        [
+          "tigzig_sync_runs_status_not_null",
+          "n",
+          "NOT NULL status"
+        ],
+        [
+          "tigzig_sync_runs_trigger_type_check",
+          "c",
+          "CHECK ((trigger_type = ANY (ARRAY['manual'::text, 'scheduled'::text, 'recovery'::text, 'test'::text])))"
+        ],
+        [
+          "tigzig_sync_runs_trigger_type_not_null",
+          "n",
+          "NOT NULL trigger_type"
+        ],
+        [
+          "tigzig_sync_runs_updated_count_check",
+          "c",
+          "CHECK ((updated_count >= 0))"
+        ],
+        [
+          "tigzig_sync_runs_updated_count_not_null",
+          "n",
+          "NOT NULL updated_count"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_tigzig_sync_runs_failures",
+          "CREATE INDEX idx_tigzig_sync_runs_failures ON public.tigzig_sync_runs USING btree (started_at DESC) WHERE (status = ANY (ARRAY['failed'::text, 'interrupted'::text]))"
+        ],
+        [
+          "idx_tigzig_sync_runs_started",
+          "CREATE INDEX idx_tigzig_sync_runs_started ON public.tigzig_sync_runs USING btree (started_at DESC)"
+        ],
+        [
+          "tigzig_sync_runs_pkey",
+          "CREATE UNIQUE INDEX tigzig_sync_runs_pkey ON public.tigzig_sync_runs USING btree (run_id)"
+        ]
+      ]
+    },
+    "vw_sif_scheme_latest": {
+      "kind": "v",
+      "rows": 0,
+      "columns": [
+        [
+          "scheme_code",
+          "integer",
+          false,
+          null
+        ],
+        [
+          "temp_sif_code",
+          "character varying(30)",
+          false,
+          null
+        ],
+        [
+          "scheme_name",
+          "text",
+          false,
+          null
+        ],
+        [
+          "amc_name",
+          "character varying(255)",
+          false,
+          null
+        ],
+        [
+          "category",
+          "text",
+          false,
+          null
+        ],
+        [
+          "category_sub",
+          "character varying(255)",
+          false,
+          null
+        ],
+        [
+          "scheme_plan",
+          "character varying(50)",
+          false,
+          null
+        ],
+        [
+          "scheme_option",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "is_active",
+          "boolean",
+          false,
+          null
+        ],
+        [
+          "nav_date",
+          "date",
+          false,
+          null
+        ],
+        [
+          "nav",
+          "numeric(18,6)",
+          false,
+          null
+        ],
+        [
+          "aaum_quarter",
+          "character varying(20)",
+          false,
+          null
+        ],
+        [
+          "aaum_quarter_end",
+          "date",
+          false,
+          null
+        ],
+        [
+          "aaum_cr",
+          "numeric(20,6)",
+          false,
+          null
+        ],
+        [
+          "aaum_lakhs",
+          "numeric(22,4)",
+          false,
+          null
+        ]
+      ],
+      "constraints": [],
+      "indexes": [],
+      "definition": " SELECT s.scheme_code,\n    s.temp_sif_code,\n    s.scheme_name,\n    a.amc_name,\n    s.category,\n    s.category_sub,\n    s.scheme_plan,\n    s.scheme_option,\n    s.is_active,\n    n.nav_date,\n    n.nav,\n    q.aaum_quarter,\n    q.quarter_end AS aaum_quarter_end,\n    q.aaum_cr,\n    q.aaum_lakhs\n   FROM sif_schemes s\n     JOIN sif_amcs a ON a.amc_id = s.amc_id\n     LEFT JOIN LATERAL ( SELECT sif_nav_history.nav_date,\n            sif_nav_history.nav\n           FROM sif_nav_history\n          WHERE sif_nav_history.scheme_code = s.scheme_code\n          ORDER BY sif_nav_history.nav_date DESC\n         LIMIT 1) n ON true\n     LEFT JOIN LATERAL ( SELECT sif_aaum_history.aaum_quarter,\n            sif_aaum_history.quarter_end,\n            sif_aaum_history.aaum_cr,\n            sif_aaum_history.aaum_lakhs\n           FROM sif_aaum_history\n          WHERE sif_aaum_history.scheme_code = s.scheme_code\n          ORDER BY sif_aaum_history.quarter_end DESC\n         LIMIT 1) q ON true;"
+    }
+  }
+}

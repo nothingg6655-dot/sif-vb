@@ -1,0 +1,162 @@
+{
+ "status": "separate_pipeline",
+ "notice": "Runs on its own pipeline, separate from the mutual fund data behind MFPro. The two will be brought together once a few integration issues are worked out.",
+ "generated_at": "2026-10-13T06:16:27+00:00",
+ "source": "AMFI (Association of Mutual Funds in India). Third-party copy, not affiliated with or endorsed by AMFI.",
+ "coverage": {
+  "first_nav_date": "2025-10-08",
+  "last_nav_date": "2026-10-12",
+  "trading_dates": 253,
+  "nav_rows": 15500,
+  "scheme_variants": 126,
+  "funds": 34,
+  "funds_ever_seen": 34,
+  "brands": 17,
+  "brands_ever_seen": 17,
+  "funds_basis": "distinct fund house and SEBI strategy, counted for funds with a NAV in the last 45 days",
+  "schemes": 126
+ },
+ "files": [
+  {
+   "name": "sif_nav.csv",
+   "rows": 15500,
+   "columns": [
+    "scheme_code",
+    "date",
+    "nav",
+    "scheme_name",
+    "isin",
+    "isin2",
+    "amc",
+    "upload_ts",
+    "temp_sif_code"
+   ],
+   "bytes": 2136088,
+   "sha256": "76902af930594ff537d1a18e55fee945d13282eef0f1043446ba41e4ca79ad1c"
+  },
+  {
+   "name": "sif_nav.parquet",
+   "rows": 15500,
+   "columns": [
+    "scheme_code",
+    "date",
+    "nav",
+    "scheme_name",
+    "isin",
+    "isin2",
+    "amc",
+    "upload_ts",
+    "temp_sif_code"
+   ],
+   "bytes": 96199,
+   "sha256": "f705158793de2bfcc7e6788514c9df736c69e92d7799351d01aa96266cc44616"
+  },
+  {
+   "name": "sif_meta.csv",
+   "rows": 126,
+   "columns": [
+    "scheme_code",
+    "isin",
+    "isin2",
+    "scheme_name",
+    "amc",
+    "scheme_type",
+    "category",
+    "category_sub",
+    "category_group_clean",
+    "category_group",
+    "scheme_plan",
+    "scheme_option",
+    "first_date",
+    "last_date",
+    "is_active",
+    "is_stale",
+    "txic_code",
+    "aaum_cr",
+    "aaum_quarter",
+    "aaum_quarter_end",
+    "nav_date",
+    "nav",
+    "source",
+    "temp_sif_code",
+    "temp_plan_basis",
+    "temp_idcw_mode",
+    "temp_idcw_freq",
+    "temp_n_nav_days"
+   ],
+   "bytes": 47255,
+   "sha256": "38caa0e81a679ad666df1a12ca7329aeb7d3d7ad5410d5d74c6d518c4ec37f7a"
+  },
+  {
+   "name": "sif_meta.parquet",
+   "rows": 126,
+   "columns": [
+    "scheme_code",
+    "isin",
+    "isin2",
+    "scheme_name",
+    "amc",
+    "scheme_type",
+    "category",
+    "category_sub",
+    "category_group_clean",
+    "category_group",
+    "scheme_plan",
+    "scheme_option",
+    "first_date",
+    "last_date",
+    "is_active",
+    "is_stale",
+    "txic_code",
+    "aaum_cr",
+    "aaum_quarter",
+    "aaum_quarter_end",
+    "nav_date",
+    "nav",
+    "source",
+    "temp_sif_code",
+    "temp_plan_basis",
+    "temp_idcw_mode",
+    "temp_idcw_freq",
+    "temp_n_nav_days"
+   ],
+   "bytes": 11468,
+   "sha256": "2645448cd077e1fc20b03d96381d51d4c11a32cb05f2328b3fb6f2ead3d89007"
+  },
+  {
+   "name": "sif_aaum.csv",
+   "rows": 295,
+   "columns": [
+    "scheme_code",
+    "aaum_quarter",
+    "aaum_quarter_end",
+    "aaum_cr",
+    "aaum_lakhs",
+    "scheme_name",
+    "amc",
+    "quarter_start",
+    "temp_sif_code"
+   ],
+   "bytes": 38485,
+   "sha256": "0dcd18646f30bffe87fd7f0e74372306df1a07ed17d23445cf1e20b99ac03b02"
+  },
+  {
+   "name": "sif_aaum.parquet",
+   "rows": 295,
+   "columns": [
+    "scheme_code",
+    "aaum_quarter",
+    "aaum_quarter_end",
+    "aaum_cr",
+    "aaum_lakhs",
+    "scheme_name",
+    "amc",
+    "quarter_start",
+    "temp_sif_code"
+   ],
+   "bytes": 8936,
+   "sha256": "0f74bd6dda3b236202507f6aed4d619fd38d91b5e67b81d651635ac222c740fa"
+  }
+ ],
+ "docs": "https://sif.tigzig.com/README.txt"
+}

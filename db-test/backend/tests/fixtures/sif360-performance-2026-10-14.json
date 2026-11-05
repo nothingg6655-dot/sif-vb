@@ -1,0 +1,278 @@
+{
+    "success": true,
+    "isBadData": false,
+    "performanceMap": {
+        "1": {
+            "changePct": 2.68,
+            "return1m": -0.86,
+            "return3m": -1.38,
+            "latestNav": 10.3021,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "29 Oct 2025"
+        },
+        "2": {
+            "changePct": 8.49,
+            "return1m": -0.12,
+            "return3m": -1.37,
+            "latestNav": 10.8542,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "08 Oct 2025"
+        },
+        "3": {
+            "changePct": 29.53,
+            "return1m": -1.55,
+            "return3m": 21.44,
+            "latestNav": 12.9738,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "20 Oct 2025"
+        },
+        "4": {
+            "changePct": 11.91,
+            "return1m": -1.21,
+            "return3m": 4.14,
+            "latestNav": 11.2028,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "13 Nov 2025"
+        },
+        "5": {
+            "changePct": 9.45,
+            "return1m": -0.17,
+            "return3m": 1.3,
+            "latestNav": 10.9551,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "24 Oct 2025"
+        },
+        "6": {
+            "changePct": -13.05,
+            "return1m": -2.4,
+            "return3m": -7.7,
+            "latestNav": 870.238,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "03 Dec 2025"
+        },
+        "7": {
+            "changePct": -1.11,
+            "return1m": -0.65,
+            "return3m": -2.38,
+            "latestNav": 9.8887,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "17 Dec 2025"
+        },
+        "8": {
+            "changePct": 3.55,
+            "return1m": 0.18,
+            "return3m": 0.76,
+            "latestNav": 10.389,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "04 Feb 2026"
+        },
+        "9": {
+            "changePct": 2.89,
+            "return1m": -0.24,
+            "return3m": 0.62,
+            "latestNav": 10.3074,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "05 Feb 2026"
+        },
+        "10": {
+            "changePct": 1.9,
+            "return1m": 0.69,
+            "return3m": -0.68,
+            "latestNav": 10.18,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "05 Feb 2026"
+        },
+        "11": {
+            "changePct": 1.34,
+            "return1m": -1.42,
+            "return3m": -3.84,
+            "latestNav": 10.1397,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "27 Feb 2026"
+        },
+        "12": {
+            "changePct": 3.7,
+            "return1m": -0.6,
+            "return3m": 0.27,
+            "latestNav": 10.3892,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "30 Mar 2026"
+        },
+        "13": {
+            "changePct": 2.47,
+            "return1m": -1.61,
+            "return3m": -3.37,
+            "latestNav": 10.067,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "30 Mar 2026"
+        },
+        "14": {
+            "changePct": 7.2,
+            "return1m": 0.61,
+            "return3m": 3.96,
+            "latestNav": 10.7416,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "30 Mar 2026"
+        },
+        "15": {
+            "changePct": -4.34,
+            "return1m": -1.52,
+            "return3m": -4.33,
+            "latestNav": 956.5907,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "29 Apr 2026"
+        },
+        "16": {
+            "changePct": 0.92,
+            "return1m": -1.08,
+            "return3m": -5.61,
+            "latestNav": 10.0897,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "11 May 2026"
+        },
+        "17": {
+            "changePct": 3.13,
+            "return1m": -1.1,
+            "return3m": -4.01,
+            "latestNav": 10.3055,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "11 May 2026"
+        },
+        "18": {
+            "changePct": 1.59,
+            "return1m": -0.51,
+            "return3m": -0.94,
+            "latestNav": 10.1947,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "20 May 2026"
+        },
+        "19": {
+            "changePct": 1.75,
+            "return1m": -1.1,
+            "return3m": -1.45,
+            "latestNav": 10.1833,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "18 May 2026"
+        },
+        "20": {
+            "changePct": -3.13,
+            "return1m": -1.14,
+            "return3m": -3.66,
+            "latestNav": 9.6764,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "29 May 2026"
+        },
+        "21": {
+            "changePct": 29.06,
+            "return1m": -2.96,
+            "return3m": 18.67,
+            "latestNav": 12.9182,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "24 Apr 2026"
+        },
+        "22": {
+            "changePct": 7.08,
+            "return1m": -0.16,
+            "return3m": -1.37,
+            "latestNav": 10.6732,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "10 Jun 2026"
+        },
+        "23": {
+            "changePct": 0.1,
+            "return1m": -0.72,
+            "return3m": -0.91,
+            "latestNav": 10.011,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "11 Jun 2026"
+        },
+        "24": {
+            "changePct": 5.1,
+            "return1m": -0.57,
+            "return3m": 1.25,
+            "latestNav": 10.51,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "08 Jun 2026"
+        },
+        "25": {
+            "changePct": 2.2,
+            "return1m": -0.5,
+            "return3m": 0.23,
+            "latestNav": 10.2155,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "08 Jun 2026"
+        },
+        "26": {
+            "changePct": 1.96,
+            "return1m": 0.03,
+            "return3m": 1.6,
+            "latestNav": 10.2162,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "25 Jun 2026"
+        },
+        "27": {
+            "changePct": 13.22,
+            "return1m": 2.32,
+            "return3m": 10.04,
+            "latestNav": 11.2964,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "29 Jun 2026"
+        },
+        "28": {
+            "changePct": 3.1,
+            "return1m": 0.69,
+            "return3m": 2.7,
+            "latestNav": 10.372,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "09 Jul 2026"
+        },
+        "29": {
+            "changePct": 1.96,
+            "return1m": 0.27,
+            "return3m": 1.96,
+            "latestNav": 10.2086,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "23 Jul 2026"
+        },
+        "30": {
+            "changePct": 3.01,
+            "return1m": 0.78,
+            "return3m": 3.01,
+            "latestNav": 10.28,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "24 Jul 2026"
+        },
+        "31": {
+            "changePct": -1.78,
+            "return1m": 0.53,
+            "return3m": -1.78,
+            "latestNav": 9.7854,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "02 Sep 2026"
+        },
+        "32": {
+            "changePct": -1.1,
+            "return1m": 0.41,
+            "return3m": -1.1,
+            "latestNav": 9.9,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "01 Sep 2026"
+        },
+        "33": {
+            "changePct": null,
+            "return1m": 0.81,
+            "return3m": null,
+            "latestNav": 10.01,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "01 Sep 2026"
+        },
+        "34": {
+            "changePct": 0.91,
+            "return1m": 0.91,
+            "return3m": 0.91,
+            "latestNav": 10.1077,
+            "latestDate": "13 Oct 2026",
+            "inceptionDate": "05 Oct 2026"
+        }
+    }
+}

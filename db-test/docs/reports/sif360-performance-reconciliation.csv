@@ -1,0 +1,205 @@
+Fund ID,Scheme Code,Metric,SIF360 Value,Calculated Value,Difference,Status
+1,13,changePct,2.68,2.68,0,exact
+1,13,return1m,-0.86,-0.86,0,exact
+1,13,return3m,-1.38,-1.38,0,exact
+1,13,latestNav,10.3021,10.3021,0,exact
+1,13,latestDate,13 Oct 2026,13 Oct 2026,,exact
+1,13,inceptionDate,29 Oct 2025,29 Oct 2025,,exact
+2,3,changePct,8.49,8.49,0,exact
+2,3,return1m,-0.12,-0.12,0,exact
+2,3,return3m,-1.37,-1.37,0,exact
+2,3,latestNav,10.8542,10.8542,0,exact
+2,3,latestDate,13 Oct 2026,13 Oct 2026,,exact
+2,3,inceptionDate,08 Oct 2025,08 Oct 2025,,exact
+3,7,changePct,29.53,29.53,0,exact
+3,7,return1m,-1.55,-1.55,0,exact
+3,7,return3m,21.44,21.44,0,exact
+3,7,latestNav,12.9738,12.9738,0,exact
+3,7,latestDate,13 Oct 2026,13 Oct 2026,,exact
+3,7,inceptionDate,20 Oct 2025,20 Oct 2025,,exact
+4,25,changePct,11.91,11.91,0,exact
+4,25,return1m,-1.21,-1.21,0,exact
+4,25,return3m,4.14,4.14,0,exact
+4,25,latestNav,11.2028,11.2028,0,exact
+4,25,latestDate,13 Oct 2026,13 Oct 2026,,exact
+4,25,inceptionDate,13 Nov 2025,13 Nov 2025,,exact
+5,11,changePct,9.45,9.45,0,exact
+5,11,return1m,-0.17,-0.17,0,exact
+5,11,return3m,1.3,1.3,0,exact
+5,11,latestNav,10.9551,10.9551,0,exact
+5,11,latestDate,13 Oct 2026,13 Oct 2026,,exact
+5,11,inceptionDate,24 Oct 2025,24 Oct 2025,,exact
+6,21,changePct,-13.05,-13.05,0,exact
+6,21,return1m,-2.4,-2.4,0,exact
+6,21,return3m,-7.7,-7.7,0,exact
+6,21,latestNav,870.238,870.238,0,exact
+6,21,latestDate,13 Oct 2026,13 Oct 2026,,exact
+6,21,inceptionDate,03 Dec 2025,03 Dec 2025,,exact
+7,29,changePct,-1.11,-1.11,0,exact
+7,29,return1m,-0.65,-0.65,0,exact
+7,29,return3m,-2.38,-2.38,0,exact
+7,29,latestNav,9.8887,9.8887,0,exact
+7,29,latestDate,13 Oct 2026,13 Oct 2026,,exact
+7,29,inceptionDate,17 Dec 2025,17 Dec 2025,,exact
+8,40,changePct,3.55,3.55,0,exact
+8,40,return1m,0.18,0.18,0,exact
+8,40,return3m,0.76,0.76,0,exact
+8,40,latestNav,10.389,10.389,0,exact
+8,40,latestDate,13 Oct 2026,13 Oct 2026,,exact
+8,40,inceptionDate,04 Feb 2026,04 Feb 2026,,exact
+9,35,changePct,2.89,2.89,0,exact
+9,35,return1m,-0.24,-0.24,0,exact
+9,35,return3m,0.62,0.62,0,exact
+9,35,latestNav,10.3074,10.3074,0,exact
+9,35,latestDate,13 Oct 2026,13 Oct 2026,,exact
+9,35,inceptionDate,05 Feb 2026,05 Feb 2026,,exact
+10,34,changePct,1.9,1.9,0,exact
+10,34,return1m,0.69,0.69,0,exact
+10,34,return3m,-0.68,-0.68,0,exact
+10,34,latestNav,10.18,10.18,0,exact
+10,34,latestDate,13 Oct 2026,13 Oct 2026,,exact
+10,34,inceptionDate,05 Feb 2026,05 Feb 2026,,exact
+11,55,changePct,1.34,1.34,0,exact
+11,55,return1m,-1.42,-1.42,0,exact
+11,55,return3m,-3.84,-3.84,0,exact
+11,55,latestNav,10.1397,10.1397,0,exact
+11,55,latestDate,13 Oct 2026,13 Oct 2026,,exact
+11,55,inceptionDate,27 Feb 2026,27 Feb 2026,,exact
+12,87,changePct,3.7,3.53,-0.17,mismatch
+12,87,return1m,-0.6,-0.76,-0.16,mismatch
+12,87,return3m,0.27,0.11,-0.16,mismatch
+12,87,latestNav,10.3892,10.3728,-0.0164,mismatch
+12,87,latestDate,13 Oct 2026,12 Oct 2026,,mismatch
+12,87,inceptionDate,30 Mar 2026,30 Mar 2026,,exact
+13,62,changePct,2.47,2.47,0,exact
+13,62,return1m,-1.61,-1.61,0,exact
+13,62,return3m,-3.37,-3.37,0,exact
+13,62,latestNav,10.067,10.067,0,exact
+13,62,latestDate,13 Oct 2026,13 Oct 2026,,exact
+13,62,inceptionDate,30 Mar 2026,30 Mar 2026,,exact
+14,80,changePct,7.2,7.2,0,exact
+14,80,return1m,0.61,0.61,0,exact
+14,80,return3m,3.96,3.96,0,exact
+14,80,latestNav,10.7416,10.7416,0,exact
+14,80,latestDate,13 Oct 2026,13 Oct 2026,,exact
+14,80,inceptionDate,30 Mar 2026,30 Mar 2026,,exact
+15,96,changePct,-4.34,-4.34,0,exact
+15,96,return1m,-1.52,-1.52,0,exact
+15,96,return3m,-4.33,-4.33,0,exact
+15,96,latestNav,956.5907,956.5907,0,exact
+15,96,latestDate,13 Oct 2026,13 Oct 2026,,exact
+15,96,inceptionDate,29 Apr 2026,29 Apr 2026,,exact
+16,111,changePct,0.92,0.92,0,exact
+16,111,return1m,-1.08,-1.08,0,exact
+16,111,return3m,-5.61,-5.61,0,exact
+16,111,latestNav,10.0897,10.0897,0,exact
+16,111,latestDate,13 Oct 2026,13 Oct 2026,,exact
+16,111,inceptionDate,11 May 2026,11 May 2026,,exact
+17,105,changePct,3.13,3.13,0,exact
+17,105,return1m,-1.1,-1.1,0,exact
+17,105,return3m,-4.01,-4.01,0,exact
+17,105,latestNav,10.3055,10.3055,0,exact
+17,105,latestDate,13 Oct 2026,13 Oct 2026,,exact
+17,105,inceptionDate,11 May 2026,11 May 2026,,exact
+18,102,changePct,1.59,1.59,0,exact
+18,102,return1m,-0.51,-0.51,0,exact
+18,102,return3m,-0.94,-0.94,0,exact
+18,102,latestNav,10.1947,10.1947,0,exact
+18,102,latestDate,13 Oct 2026,13 Oct 2026,,exact
+18,102,inceptionDate,20 May 2026,20 May 2026,,exact
+19,117,changePct,1.75,1.75,0,exact
+19,117,return1m,-1.1,-1.1,0,exact
+19,117,return3m,-1.45,-1.45,0,exact
+19,117,latestNav,10.1833,10.1833,0,exact
+19,117,latestDate,13 Oct 2026,13 Oct 2026,,exact
+19,117,inceptionDate,18 May 2026,18 May 2026,,exact
+20,114,changePct,-3.13,-3.13,0,exact
+20,114,return1m,-1.14,-1.14,0,exact
+20,114,return3m,-3.66,-3.66,0,exact
+20,114,latestNav,9.6764,9.6764,0,exact
+20,114,latestDate,13 Oct 2026,13 Oct 2026,,exact
+20,114,inceptionDate,29 May 2026,29 May 2026,,exact
+21,93,changePct,29.06,29.06,0,exact
+21,93,return1m,-2.96,-2.96,0,exact
+21,93,return3m,18.67,18.67,0,exact
+21,93,latestNav,12.9182,12.9182,0,exact
+21,93,latestDate,13 Oct 2026,13 Oct 2026,,exact
+21,93,inceptionDate,24 Apr 2026,24 Apr 2026,,exact
+22,122,changePct,7.08,7.08,0,exact
+22,122,return1m,-0.16,-0.16,0,exact
+22,122,return3m,-1.37,-1.37,0,exact
+22,122,latestNav,10.6732,10.6732,0,exact
+22,122,latestDate,13 Oct 2026,13 Oct 2026,,exact
+22,122,inceptionDate,10 Jun 2026,10 Jun 2026,,exact
+23,136,changePct,0.1,0.1,0,exact
+23,136,return1m,-0.72,-0.72,0,exact
+23,136,return3m,-0.91,-0.91,0,exact
+23,136,latestNav,10.011,10.011,0,exact
+23,136,latestDate,13 Oct 2026,13 Oct 2026,,exact
+23,136,inceptionDate,11 Jun 2026,11 Jun 2026,,exact
+24,126,changePct,5.1,5.1,0,exact
+24,126,return1m,-0.57,-0.57,0,exact
+24,126,return3m,1.25,1.25,0,exact
+24,126,latestNav,10.51,10.51,0,exact
+24,126,latestDate,13 Oct 2026,13 Oct 2026,,exact
+24,126,inceptionDate,08 Jun 2026,08 Jun 2026,,exact
+25,124,changePct,2.2,1.8,-0.4,mismatch
+25,124,return1m,-0.5,-0.88,-0.38,mismatch
+25,124,return3m,0.23,-0.15,-0.38,mismatch
+25,124,latestNav,10.2155,10.1764,-0.0391,mismatch
+25,124,latestDate,13 Oct 2026,12 Oct 2026,,mismatch
+25,124,inceptionDate,08 Jun 2026,08 Jun 2026,,exact
+26,128,changePct,1.96,1.96,0,exact
+26,128,return1m,0.03,0.03,0,exact
+26,128,return3m,1.6,1.6,0,exact
+26,128,latestNav,10.2162,10.2162,0,exact
+26,128,latestDate,13 Oct 2026,13 Oct 2026,,exact
+26,128,inceptionDate,25 Jun 2026,25 Jun 2026,,exact
+27,143,changePct,13.22,13.22,0,exact
+27,143,return1m,2.32,2.32,0,exact
+27,143,return3m,10.04,10.04,0,exact
+27,143,latestNav,11.2964,11.2964,0,exact
+27,143,latestDate,13 Oct 2026,13 Oct 2026,,exact
+27,143,inceptionDate,29 Jun 2026,29 Jun 2026,,exact
+28,146,changePct,3.1,3.1,0,exact
+28,146,return1m,0.69,0.69,0,exact
+28,146,return3m,2.7,2.7,0,exact
+28,146,latestNav,10.372,10.372,0,exact
+28,146,latestDate,13 Oct 2026,13 Oct 2026,,exact
+28,146,inceptionDate,09 Jul 2026,09 Jul 2026,,exact
+29,138,changePct,1.96,1.96,0,exact
+29,138,return1m,0.27,0.27,0,exact
+29,138,return3m,1.96,1.96,0,exact
+29,138,latestNav,10.2086,10.2086,0,exact
+29,138,latestDate,13 Oct 2026,13 Oct 2026,,exact
+29,138,inceptionDate,23 Jul 2026,23 Jul 2026,,exact
+30,150,changePct,3.01,3.01,0,exact
+30,150,return1m,0.78,0.78,0,exact
+30,150,return3m,3.01,3.01,0,exact
+30,150,latestNav,10.28,10.28,0,exact
+30,150,latestDate,13 Oct 2026,13 Oct 2026,,exact
+30,150,inceptionDate,24 Jul 2026,24 Jul 2026,,exact
+31,157,changePct,-1.78,-1.78,0,exact
+31,157,return1m,0.53,0.53,0,exact
+31,157,return3m,-1.78,-1.78,0,exact
+31,157,latestNav,9.7854,9.7854,0,exact
+31,157,latestDate,13 Oct 2026,13 Oct 2026,,exact
+31,157,inceptionDate,02 Sep 2026,02 Sep 2026,,exact
+32,154,changePct,-1.1,-1.1,0,exact
+32,154,return1m,0.41,0.41,0,exact
+32,154,return3m,-1.1,-1.1,0,exact
+32,154,latestNav,9.9,9.9,0,exact
+32,154,latestDate,13 Oct 2026,13 Oct 2026,,exact
+32,154,inceptionDate,01 Sep 2026,01 Sep 2026,,exact
+33,156,changePct,,,,exact-null
+33,156,return1m,0.81,0.81,0,exact
+33,156,return3m,,,,exact-null
+33,156,latestNav,10.01,10.01,0,exact
+33,156,latestDate,13 Oct 2026,13 Oct 2026,,exact
+33,156,inceptionDate,01 Sep 2026,01 Sep 2026,,exact
+34,161,changePct,0.91,0.91,0,exact
+34,161,return1m,0.91,0.91,0,exact
+34,161,return3m,0.91,0.91,0,exact
+34,161,latestNav,10.1077,10.1077,0,exact
+34,161,latestDate,13 Oct 2026,13 Oct 2026,,exact
+34,161,inceptionDate,05 Oct 2026,05 Oct 2026,,exact

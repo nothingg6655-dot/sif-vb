@@ -1,0 +1,15 @@
+{
+  "reports_checked": 28,
+  "checks": 29650,
+  "mismatches": [],
+  "sections": {
+    "allocations": 806,
+    "holdings": 1741,
+    "quant_indicators": 14,
+    "published_performance": 38,
+    "idcw_events": 16,
+    "external_links": 11,
+    "extension_sections": 94
+  },
+  "status": "PASSED"
+}

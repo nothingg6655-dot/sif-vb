@@ -1,0 +1,14 @@
+{
+  "7e6b46536ba1cd38af1f77b91a3d68e40cb8451026d38fba14f8179857fccd7e": {
+    "Level": 2,
+    "Method": "Visually verified selected circle and arrow at Level 2 in the embedded chart",
+    "Source": "HSBC RedHex September 2026, page 4; identical image used for fund and benchmark",
+    "Image SHA256": "7e6b46536ba1cd38af1f77b91a3d68e40cb8451026d38fba14f8179857fccd7e"
+  },
+  "a7240896878d93932a9ba4d1ce9749c11532eff5f401eb6ce05a02961daf5384": {
+    "Level": 5,
+    "Method": "Visually verified selected circle and arrow at Level 5 with explicit RISK LEVEL 5 caption",
+    "Source": "Titanium September 2026, equity page 6 and hybrid page 3; identical chart bytes for fund and benchmark",
+    "Image SHA256": "a7240896878d93932a9ba4d1ce9749c11532eff5f401eb6ce05a02961daf5384"
+  }
+}

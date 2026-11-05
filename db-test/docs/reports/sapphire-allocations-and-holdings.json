@@ -1,0 +1,998 @@
+{
+  "Scheme": "Sapphire Equity Long-Short Fund",
+  "As Of": "September 30, 2026",
+  "Asset Allocation (%)": {
+    "Total Holdings": 93.75,
+    "Margin on Derivatives": 0.82,
+    "Call,cash and other current asset": 5.43
+  },
+  "Sector Allocation (%)": {
+    "BANKS": 17.47,
+    "PHARMACEUTICALS & BIOTECHNOLOGY": 7.24,
+    "FINANCE": 6.08,
+    "IT - SOFTWARE": 5.7,
+    "PETROLEUM PRODUCTS": 5.61,
+    "AUTOMOBILES": 3.96,
+    "TELECOM - SERVICES": 3.88,
+    "CONSUMER DURABLES": 3.45,
+    "CONSTRUCTION": 3.41,
+    "POWER": 2.77,
+    "INDUSTRIAL PRODUCTS": 2.77,
+    "RETAILING": 2.61,
+    "INSURANCE": 2.45,
+    "NON - FERROUS METALS": 2.27,
+    "DIVERSIFIED FMCG": 1.95,
+    "CHEMICALS & PETROCHEMICALS": 1.88,
+    "AUTO COMPONENTS": 1.86,
+    "ELECTRICAL EQUIPMENT": 1.76,
+    "AEROSPACE & DEFENSE": 1.69,
+    "CAPITAL MARKETS": 1.48,
+    "PERSONAL PRODUCTS": 1.46,
+    "AGRICULTURAL, COMMERCIAL & CONSTRUCTION VEHICLES": 1.39,
+    "FOOD PRODUCTS": 1.37,
+    "LEISURE SERVICES": 1.3,
+    "HEALTHCARE SERVICES": 1.24,
+    "FERROUS METALS": 1.23,
+    "CONSUMABLE FUELS": 1.2,
+    "TRANSPORT SERVICES": 0.84,
+    "REALTY": 0.82,
+    "BEVERAGES": 0.82,
+    "COMMERCIAL SERVICES & SUPPLIES": 0.62,
+    "CEMENT & CEMENT PRODUCTS": 0.62,
+    "MINERALS & MINING": 0.53,
+    "GAS": 0.03,
+    "CALL,CASH AND OTHER CURRENT ASSET": 6.25
+  },
+  "Holdings": [
+    {
+      "Instrument": "Hindustan Aeronautics Ltd",
+      "Percent to Net Assets": 1.04,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 4684.0,
+      "Market Value (INR Lakhs)": 218.65,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Bharat Electronics Ltd",
+      "Percent to Net Assets": 0.66,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 35807.0,
+      "Market Value (INR Lakhs)": 139.04,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Tata Motors Ltd",
+      "Percent to Net Assets": 1.39,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 69721.0,
+      "Market Value (INR Lakhs)": 293.98,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Tata Consumer Products Ltd",
+      "Percent to Net Assets": null,
+      "Derivatives Percent to Net Assets": -0.37,
+      "Quantity": null,
+      "Market Value (INR Lakhs)": null,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Samvardhana Motherson International Ltd",
+      "Percent to Net Assets": 1.3,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 167429.0,
+      "Market Value (INR Lakhs)": 273.34,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Bosch Ltd",
+      "Percent to Net Assets": 0.36,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 162.0,
+      "Market Value (INR Lakhs)": 76.3,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Tenneco Clean Air India Ltd",
+      "Percent to Net Assets": 0.2,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 8369.0,
+      "Market Value (INR Lakhs)": 42.54,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Bajaj Auto Ltd",
+      "Percent to Net Assets": 1.27,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 2466.0,
+      "Market Value (INR Lakhs)": 268.15,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Hero MotoCorp Ltd",
+      "Percent to Net Assets": 1.26,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 5082.0,
+      "Market Value (INR Lakhs)": 266.35,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Mahindra & Mahindra Ltd",
+      "Percent to Net Assets": 0.99,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 7095.0,
+      "Market Value (INR Lakhs)": 209.3,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Tata Motors Passenger Vehicles Ltd",
+      "Percent to Net Assets": 0.43,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 32232.0,
+      "Market Value (INR Lakhs)": 91.38,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "HDFC Bank Ltd*",
+      "Percent to Net Assets": 4.81,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 143233.0,
+      "Market Value (INR Lakhs)": 1015.09,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "ICICI Bank Ltd*",
+      "Percent to Net Assets": 4.31,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 68872.0,
+      "Market Value (INR Lakhs)": 910.28,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "State Bank of India*",
+      "Percent to Net Assets": 2.33,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 51244.0,
+      "Market Value (INR Lakhs)": 491.69,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Axis Bank Ltd*",
+      "Percent to Net Assets": 1.83,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 31534.0,
+      "Market Value (INR Lakhs)": 386.61,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Bank Of Maharashtra",
+      "Percent to Net Assets": 0.94,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 248907.0,
+      "Market Value (INR Lakhs)": 197.56,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Punjab National Bank",
+      "Percent to Net Assets": 0.74,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 138616.0,
+      "Market Value (INR Lakhs)": 156.72,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Karur Vysya Bank Ltd",
+      "Percent to Net Assets": 0.74,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 48101.0,
+      "Market Value (INR Lakhs)": 156.23,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Canara Bank",
+      "Percent to Net Assets": 0.73,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 128456.0,
+      "Market Value (INR Lakhs)": 153.43,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Kotak Mahindra Bank Ltd",
+      "Percent to Net Assets": 0.61,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 30637.0,
+      "Market Value (INR Lakhs)": 127.76,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Bank of Baroda",
+      "Percent to Net Assets": 0.24,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 22039.0,
+      "Market Value (INR Lakhs)": 50.81,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Union Bank Of India",
+      "Percent to Net Assets": 0.19,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 23492.0,
+      "Market Value (INR Lakhs)": 40.17,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Radico Khaitan Ltd",
+      "Percent to Net Assets": 0.82,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 3976.0,
+      "Market Value (INR Lakhs)": 173.59,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Anand Rathi Wealth Ltd",
+      "Percent to Net Assets": 0.52,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 5222.0,
+      "Market Value (INR Lakhs)": 110.71,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Multi Commodity Exchange Of India Ltd",
+      "Percent to Net Assets": 0.52,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 3344.0,
+      "Market Value (INR Lakhs)": 110.37,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "HDFC Asset Management Co Ltd",
+      "Percent to Net Assets": 0.24,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 2219.0,
+      "Market Value (INR Lakhs)": 50.61,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Nippon Life India Asset Management Ltd",
+      "Percent to Net Assets": 0.19,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 3706.0,
+      "Market Value (INR Lakhs)": 39.65,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Ultratech Cement Ltd",
+      "Percent to Net Assets": 0.62,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 1185.0,
+      "Market Value (INR Lakhs)": 129.83,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Solar Industries India Ltd",
+      "Percent to Net Assets": 1.13,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 1213.0,
+      "Market Value (INR Lakhs)": 238.96,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Atul Ltd",
+      "Percent to Net Assets": 0.39,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 1390.0,
+      "Market Value (INR Lakhs)": 82.23,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Navin Fluorine International Ltd",
+      "Percent to Net Assets": 0.36,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 921.0,
+      "Market Value (INR Lakhs)": 75.94,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Redington Ltd",
+      "Percent to Net Assets": 0.62,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 32173.0,
+      "Market Value (INR Lakhs)": 130.94,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Larsen & Toubro Ltd*",
+      "Percent to Net Assets": 2.5,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 14008.0,
+      "Market Value (INR Lakhs)": 526.7,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Kalpataru Projects International Ltd",
+      "Percent to Net Assets": 0.73,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 11207.0,
+      "Market Value (INR Lakhs)": 154.72,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Cemindia Projects Ltd",
+      "Percent to Net Assets": 0.18,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 3146.0,
+      "Market Value (INR Lakhs)": 37.51,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Coal India Ltd",
+      "Percent to Net Assets": 1.2,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 59719.0,
+      "Market Value (INR Lakhs)": 253.81,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Titan Co Ltd",
+      "Percent to Net Assets": 1.44,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 6611.0,
+      "Market Value (INR Lakhs)": 303.25,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Dixon Technologies (India) Ltd",
+      "Percent to Net Assets": 0.76,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 1219.0,
+      "Market Value (INR Lakhs)": 159.69,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "LG Electronics India Ltd",
+      "Percent to Net Assets": 0.53,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 6528.0,
+      "Market Value (INR Lakhs)": 112.51,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Kajaria Ceramics Ltd",
+      "Percent to Net Assets": 0.53,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 8982.0,
+      "Market Value (INR Lakhs)": 110.94,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Asian Paints Ltd",
+      "Percent to Net Assets": 0.2,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 1761.0,
+      "Market Value (INR Lakhs)": 42.31,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "ITC Ltd*",
+      "Percent to Net Assets": 1.75,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 140362.0,
+      "Market Value (INR Lakhs)": 368.8,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Hindustan Unilever Ltd",
+      "Percent to Net Assets": 0.2,
+      "Derivatives Percent to Net Assets": -0.27,
+      "Quantity": 2282.0,
+      "Market Value (INR Lakhs)": 42.88,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Apar Industries Ltd",
+      "Percent to Net Assets": 0.99,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 1204.0,
+      "Market Value (INR Lakhs)": 209.3,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Hitachi Energy India Ltd",
+      "Percent to Net Assets": 0.77,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 531.0,
+      "Market Value (INR Lakhs)": 162.65,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Steel Authority of India Ltd",
+      "Percent to Net Assets": 0.98,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 114370.0,
+      "Market Value (INR Lakhs)": 207.57,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Tata Steel Ltd",
+      "Percent to Net Assets": 0.25,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 28173.0,
+      "Market Value (INR Lakhs)": 51.92,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Jindal Steel Ltd",
+      "Percent to Net Assets": null,
+      "Derivatives Percent to Net Assets": -0.34,
+      "Quantity": null,
+      "Market Value (INR Lakhs)": null,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Bajaj Finance Ltd*",
+      "Percent to Net Assets": 1.86,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 40989.0,
+      "Market Value (INR Lakhs)": 393.25,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Power Finance Corporation Ltd",
+      "Percent to Net Assets": 0.78,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 50390.0,
+      "Market Value (INR Lakhs)": 164.02,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Aditya Birla Capital Ltd",
+      "Percent to Net Assets": 0.71,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 39171.0,
+      "Market Value (INR Lakhs)": 149.08,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "REC Ltd",
+      "Percent to Net Assets": 0.59,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 41413.0,
+      "Market Value (INR Lakhs)": 123.82,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "LIC Housing Finance Ltd",
+      "Percent to Net Assets": 0.43,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 17065.0,
+      "Market Value (INR Lakhs)": 90.48,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Creditaccess Grameen Ltd",
+      "Percent to Net Assets": 0.35,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 5765.0,
+      "Market Value (INR Lakhs)": 73.33,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Tata Capital Ltd",
+      "Percent to Net Assets": 0.29,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 18864.0,
+      "Market Value (INR Lakhs)": 61.86,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "IIFL Finance Ltd",
+      "Percent to Net Assets": 0.25,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 8876.0,
+      "Market Value (INR Lakhs)": 53.32,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "JM Financial Ltd",
+      "Percent to Net Assets": 0.25,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 41137.0,
+      "Market Value (INR Lakhs)": 53.07,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Bajaj Holdings & Investment Ltd",
+      "Percent to Net Assets": 0.19,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 377.0,
+      "Market Value (INR Lakhs)": 40.67,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "HDB Financial Services Ltd",
+      "Percent to Net Assets": 0.19,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 6438.0,
+      "Market Value (INR Lakhs)": 40.0,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Capri Global Capital Ltd",
+      "Percent to Net Assets": 0.19,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 16078.0,
+      "Market Value (INR Lakhs)": 39.79,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Nestle India Ltd",
+      "Percent to Net Assets": 1.37,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 22034.0,
+      "Market Value (INR Lakhs)": 288.65,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Britannia Industries Ltd",
+      "Percent to Net Assets": null,
+      "Derivatives Percent to Net Assets": -0.43,
+      "Quantity": null,
+      "Market Value (INR Lakhs)": null,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "GSPL Transmission Ltd",
+      "Percent to Net Assets": 0.03,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 4823.0,
+      "Market Value (INR Lakhs)": 6.96,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Oil India Ltd",
+      "Percent to Net Assets": null,
+      "Derivatives Percent to Net Assets": -0.45,
+      "Quantity": null,
+      "Market Value (INR Lakhs)": null,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Apollo Hospitals Enterprise Ltd",
+      "Percent to Net Assets": 0.48,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 1246.0,
+      "Market Value (INR Lakhs)": 101.74,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Indegene Ltd",
+      "Percent to Net Assets": 0.46,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 16565.0,
+      "Market Value (INR Lakhs)": 97.86,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Vijaya Diagnostic Centre Ltd",
+      "Percent to Net Assets": 0.29,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 4256.0,
+      "Market Value (INR Lakhs)": 61.19,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Welspun Corp Ltd",
+      "Percent to Net Assets": 1.03,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 8033.0,
+      "Market Value (INR Lakhs)": 218.26,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Polycab India Ltd",
+      "Percent to Net Assets": 0.75,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 1966.0,
+      "Market Value (INR Lakhs)": 157.79,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Elgi Equipments Ltd",
+      "Percent to Net Assets": 0.5,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 17303.0,
+      "Market Value (INR Lakhs)": 105.35,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Cummins India Ltd",
+      "Percent to Net Assets": 0.48,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 2149.0,
+      "Market Value (INR Lakhs)": 102.29,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "APL Apollo Tubes Ltd",
+      "Percent to Net Assets": null,
+      "Derivatives Percent to Net Assets": -0.55,
+      "Quantity": null,
+      "Market Value (INR Lakhs)": null,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Life Insurance Corporation Of India",
+      "Percent to Net Assets": 0.97,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 51608.0,
+      "Market Value (INR Lakhs)": 203.95,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "SBI Life Insurance Co Ltd",
+      "Percent to Net Assets": 0.66,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 8237.0,
+      "Market Value (INR Lakhs)": 139.73,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "General Insurance Corporation Of India",
+      "Percent to Net Assets": 0.57,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 36362.0,
+      "Market Value (INR Lakhs)": 120.41,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Canara HSBC Life Insurance Co Ltd",
+      "Percent to Net Assets": 0.25,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 35924.0,
+      "Market Value (INR Lakhs)": 53.35,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Infosys Ltd*",
+      "Percent to Net Assets": 2.55,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 54199.0,
+      "Market Value (INR Lakhs)": 538.79,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Tata Consultancy Services Ltd",
+      "Percent to Net Assets": 1.72,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 17752.0,
+      "Market Value (INR Lakhs)": 364.02,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "HCL Technologies Ltd",
+      "Percent to Net Assets": 0.87,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 14870.0,
+      "Market Value (INR Lakhs)": 182.9,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Oracle Financial Services Software Ltd",
+      "Percent to Net Assets": 0.55,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 1094.0,
+      "Market Value (INR Lakhs)": 116.29,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Indian Hotels Co Ltd",
+      "Percent to Net Assets": 1.04,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 30003.0,
+      "Market Value (INR Lakhs)": 218.62,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "ITC Hotels Ltd",
+      "Percent to Net Assets": 0.26,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 33385.0,
+      "Market Value (INR Lakhs)": 54.79,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "NMDC Ltd",
+      "Percent to Net Assets": 0.53,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 145548.0,
+      "Market Value (INR Lakhs)": 111.4,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Hindalco Industries Ltd",
+      "Percent to Net Assets": 1.0,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 22508.0,
+      "Market Value (INR Lakhs)": 211.98,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Vedanta Aluminium Metal Ltd",
+      "Percent to Net Assets": 0.66,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 33916.0,
+      "Market Value (INR Lakhs)": 140.04,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "National Aluminium Co Ltd",
+      "Percent to Net Assets": 0.24,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 14757.0,
+      "Market Value (INR Lakhs)": 50.31,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Hindustan Zinc Ltd",
+      "Percent to Net Assets": 0.2,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 7357.0,
+      "Market Value (INR Lakhs)": 41.64,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Hindustan Copper Ltd",
+      "Percent to Net Assets": 0.17,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 7558.0,
+      "Market Value (INR Lakhs)": 35.72,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Dabur India Ltd",
+      "Percent to Net Assets": 0.57,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 31883.0,
+      "Market Value (INR Lakhs)": 121.19,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Colgate Palmolive (India) Ltd",
+      "Percent to Net Assets": 0.56,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 6665.0,
+      "Market Value (INR Lakhs)": 117.52,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Honasa Consumer Ltd",
+      "Percent to Net Assets": 0.33,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 16294.0,
+      "Market Value (INR Lakhs)": 70.28,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Reliance Industries Ltd*",
+      "Percent to Net Assets": 4.14,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 73647.0,
+      "Market Value (INR Lakhs)": 874.19,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Bharat Petroleum Corporation Ltd",
+      "Percent to Net Assets": 0.5,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 34729.0,
+      "Market Value (INR Lakhs)": 105.3,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Castrol India Ltd",
+      "Percent to Net Assets": 0.39,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 40670.0,
+      "Market Value (INR Lakhs)": 81.55,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Chennai Petroleum Corporation Ltd",
+      "Percent to Net Assets": 0.32,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 4671.0,
+      "Market Value (INR Lakhs)": 67.09,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Indian Oil Corporation Ltd",
+      "Percent to Net Assets": 0.26,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 41276.0,
+      "Market Value (INR Lakhs)": 55.69,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Sun Pharmaceutical Industries Ltd",
+      "Percent to Net Assets": 1.51,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 17519.0,
+      "Market Value (INR Lakhs)": 318.25,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Laurus Labs Ltd",
+      "Percent to Net Assets": 1.36,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 14446.0,
+      "Market Value (INR Lakhs)": 286.03,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Lupin Ltd",
+      "Percent to Net Assets": 1.21,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 12534.0,
+      "Market Value (INR Lakhs)": 254.47,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Aurobindo Pharma Ltd",
+      "Percent to Net Assets": 1.14,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 14334.0,
+      "Market Value (INR Lakhs)": 239.66,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Divi's Laboratories Ltd",
+      "Percent to Net Assets": 0.97,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 2209.0,
+      "Market Value (INR Lakhs)": 205.25,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Granules India Ltd",
+      "Percent to Net Assets": 0.44,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 11002.0,
+      "Market Value (INR Lakhs)": 93.14,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Natco Pharma Ltd",
+      "Percent to Net Assets": 0.41,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 10438.0,
+      "Market Value (INR Lakhs)": 86.37,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Anthem Biosciences Ltd",
+      "Percent to Net Assets": 0.21,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 5221.0,
+      "Market Value (INR Lakhs)": 44.83,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Adani Power Ltd",
+      "Percent to Net Assets": 1.34,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 138400.0,
+      "Market Value (INR Lakhs)": 282.34,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Adani Energy Solutions Ltd",
+      "Percent to Net Assets": 0.75,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 12085.0,
+      "Market Value (INR Lakhs)": 158.87,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "NLC India Ltd",
+      "Percent to Net Assets": 0.45,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 36633.0,
+      "Market Value (INR Lakhs)": 95.87,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Torrent Power Ltd",
+      "Percent to Net Assets": 0.23,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 3849.0,
+      "Market Value (INR Lakhs)": 47.95,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Lodha Developers Ltd",
+      "Percent to Net Assets": 0.82,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 15317.0,
+      "Market Value (INR Lakhs)": 173.85,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Trent Ltd",
+      "Percent to Net Assets": 1.33,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 10682.0,
+      "Market Value (INR Lakhs)": 280.04,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Eternal Ltd",
+      "Percent to Net Assets": 0.82,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 53773.0,
+      "Market Value (INR Lakhs)": 172.07,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Lenskart Solutions Ltd",
+      "Percent to Net Assets": 0.46,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 14285.0,
+      "Market Value (INR Lakhs)": 97.86,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Bharti Airtel Ltd*",
+      "Percent to Net Assets": 2.94,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 35369.0,
+      "Market Value (INR Lakhs)": 621.43,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Vodafone Idea Ltd",
+      "Percent to Net Assets": 0.55,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 897697.0,
+      "Market Value (INR Lakhs)": 116.25,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Indus Towers Ltd",
+      "Percent to Net Assets": 0.38,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 21667.0,
+      "Market Value (INR Lakhs)": 80.86,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Great Eastern Shipping Co Ltd",
+      "Percent to Net Assets": 0.84,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": 11372.0,
+      "Market Value (INR Lakhs)": 177.4,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Tata Consultancy Services Ltd",
+      "Percent to Net Assets": 0.0,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": -6750.0,
+      "Market Value (INR Lakhs)": -0.7,
+      "Source Page": 4
+    },
+    {
+      "Instrument": "Eternal Ltd",
+      "Percent to Net Assets": 0.0,
+      "Derivatives Percent to Net Assets": null,
+      "Quantity": -36375.0,
+      "Market Value (INR Lakhs)": -0.76,
+      "Source Page": 4
+    }
+  ],
+  "Source": {
+    "JSON": "C:\\Users\\shris\\Aikyam\\Projects\\Mutual Fund Guru - Vinayak Bhosale(SIF Project)\\Backennd\\db-test\\data\\factsheets\\latest\\extraction\\Sapphire Equity Long-Short Fund.json",
+    "PDF": "C:\\Users\\shris\\Aikyam\\Projects\\Mutual Fund Guru - Vinayak Bhosale(SIF Project)\\Backennd\\db-test\\data\\factsheets\\latest\\Franklin Templeton Mutual Fund.pdf",
+    "PDF Page": 4,
+    "PDF SHA256": "604af61d646f421d0fc12b4b4083465695e449dfba9afe41264dc137d52feb8e"
+  }
+}

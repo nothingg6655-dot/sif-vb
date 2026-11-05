@@ -1,0 +1,140 @@
+{
+  "manifest_generated_at": "2026-10-13 06:16:27+00:00",
+  "completed_at": "2026-10-13 14:34:36.488286+05:30",
+  "source_files": [
+    {
+      "dataset": "meta",
+      "filename": "sif_meta.parquet",
+      "rows": 126,
+      "bytes": 11468,
+      "sha256": "2645448cd077e1fc20b03d96381d51d4c11a32cb05f2328b3fb6f2ead3d89007"
+    },
+    {
+      "dataset": "nav",
+      "filename": "sif_nav.parquet",
+      "rows": 15500,
+      "bytes": 96199,
+      "sha256": "f705158793de2bfcc7e6788514c9df736c69e92d7799351d01aa96266cc44616"
+    },
+    {
+      "dataset": "aaum",
+      "filename": "sif_aaum.parquet",
+      "rows": 295,
+      "bytes": 8936,
+      "sha256": "0f74bd6dda3b236202507f6aed4d619fd38d91b5e67b81d651635ac222c740fa"
+    },
+    {
+      "dataset": "nav_raw_timestamp",
+      "filename": "sif_nav.csv",
+      "rows": 15500,
+      "bytes": 2136088,
+      "sha256": "76902af930594ff537d1a18e55fee945d13282eef0f1043446ba41e4ca79ad1c",
+      "purpose": "preserve exact provider publication timestamp text"
+    }
+  ],
+  "run": {
+    "run_id": "8155217b-855f-41ae-a36b-76d96d9466da",
+    "records_read": 15921,
+    "inserted": 0,
+    "updated": 0,
+    "skipped": 15914,
+    "rejected": 7,
+    "database_rejections_inserted": 7,
+    "deltas": {
+      "meta": {
+        "NEW": 0,
+        "CHANGED": 0,
+        "UNCHANGED": 126,
+        "INVALID": 0
+      },
+      "nav": {
+        "NEW": 0,
+        "CHANGED": 0,
+        "UNCHANGED": 15496,
+        "INVALID": 4
+      },
+      "aaum": {
+        "NEW": 0,
+        "CHANGED": 0,
+        "UNCHANGED": 292,
+        "INVALID": 3
+      },
+      "isins": {
+        "NEW": 0,
+        "CHANGED": 0,
+        "UNCHANGED": 175,
+        "INVALID": 0
+      }
+    },
+    "mutations": {
+      "fund_houses_inserted": 0,
+      "schemes_inserted": 0,
+      "schemes_updated": 0,
+      "isins_inserted": 0,
+      "isins_updated": 0,
+      "isins_removed": 0,
+      "nav_inserted": 0,
+      "nav_updated": 0,
+      "aaum_inserted": 0,
+      "aaum_updated": 0
+    },
+    "staged": {
+      "meta": 126,
+      "nav": 15496,
+      "aaum": 292,
+      "rejections": 7
+    }
+  },
+  "reconciliation": {
+    "database_counts": {
+      "fund_houses": 17,
+      "schemes": 126,
+      "isins": 175,
+      "nav": 15496,
+      "aaum": 292
+    },
+    "manifest_reconciliation": {
+      "meta": {
+        "manifest": 126,
+        "database_plus_latest_rejections": 126
+      },
+      "nav": {
+        "manifest": 15500,
+        "database_plus_latest_rejections": 15500
+      },
+      "aaum": {
+        "manifest": 295,
+        "database_plus_latest_rejections": 295
+      }
+    },
+    "date_coverage": {
+      "nav": {
+        "min": "2025-10-08",
+        "max": "2026-10-12"
+      },
+      "aaum_quarter_end": {
+        "min": "2025-12-31",
+        "max": "2026-09-30"
+      }
+    },
+    "duplicate_groups": {
+      "schemes": 0,
+      "nav": 0,
+      "aaum": 0
+    },
+    "orphan_rows": {
+      "nav": 0,
+      "aaum": 0,
+      "isins": 0
+    },
+    "aaum_conversion_mismatches": 0,
+    "latest_run_rejections": {
+      "aaum": 3,
+      "nav": 4
+    },
+    "expected_nullable_fields": {
+      "schemes_without_latest_aaum": 5,
+      "schemes_without_txic_code": 126
+    }
+  }
+}

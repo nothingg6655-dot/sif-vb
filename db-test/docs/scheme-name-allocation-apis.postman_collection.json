@@ -1,0 +1,1720 @@
+{
+  "variable": [
+    {
+      "key": "baseUrl",
+      "type": "string",
+      "value": "http://127.0.0.1:3000"
+    }
+  ],
+  "info": {
+    "description": "Five name-based GET APIs per registered strategy: four allocations and risk bands. Missing eligible factsheets return 404 FACTSHEET_NOT_FOUND.",
+    "name": "VB-SIF - All Scheme Names - Allocations and Risk Bands",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Altiva Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Altiva%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Altiva%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Altiva%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Altiva%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Altiva%20Equity%20Ex-Top%20100%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Altiva Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Altiva%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Altiva%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Altiva%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Altiva%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Altiva%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Altiva Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Altiva%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Altiva%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Altiva%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Altiva%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Altiva%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Apex Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Apex%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Apex%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Apex%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Apex%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Apex%20Equity%20Ex-Top%20100%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Apex Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Apex%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Apex%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Apex%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Apex%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Apex%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Apex Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Apex%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Apex%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Apex%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Apex%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Apex%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Arthaya Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Arthaya%20Equity%20Long-Short%20Fund",
+            "header": [],
+            "description": "Expected HTTP 200. Arthaya September 2026 official factsheet; rating allocation is NOT_PUBLISHED."
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Arthaya%20Equity%20Long-Short%20Fund",
+            "header": [],
+            "description": "Expected HTTP 200. Arthaya September 2026 official factsheet; rating allocation is NOT_PUBLISHED."
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Arthaya%20Equity%20Long-Short%20Fund",
+            "header": [],
+            "description": "Expected HTTP 200. Arthaya September 2026 official factsheet; rating allocation is NOT_PUBLISHED."
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Arthaya%20Equity%20Long-Short%20Fund",
+            "header": [],
+            "description": "Expected HTTP 200. Arthaya September 2026 official factsheet; rating allocation is NOT_PUBLISHED."
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Arthaya%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Arudha Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Arudha%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Arudha%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Arudha%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Arudha%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Arudha%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Arudha Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Arudha%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Arudha%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Arudha%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Arudha%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Arudha%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Diviniti Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Diviniti%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Diviniti%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Diviniti%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Diviniti%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Diviniti%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DynaSIF Active Asset Allocator Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=DynaSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=DynaSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=DynaSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=DynaSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=DynaSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DynaSIF Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=DynaSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=DynaSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=DynaSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=DynaSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=DynaSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DynaSIF Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=DynaSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=DynaSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=DynaSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=DynaSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=DynaSIF%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Infinity Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Infinity%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Infinity%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Infinity%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Infinity%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Infinity%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "iSIF Active Asset Allocator Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=iSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=iSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=iSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=iSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=iSIF%20Active%20Asset%20Allocator%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "iSIF Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=iSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=iSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=iSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=iSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=iSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "iSIF Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=iSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=iSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=iSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=iSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=iSIF%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "iSIF Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=iSIF%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=iSIF%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=iSIF%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=iSIF%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=iSIF%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Magnum Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Magnum%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Magnum%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Magnum%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Magnum%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Magnum%20Equity%20Ex-Top%20100%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Magnum Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Magnum%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Magnum%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Magnum%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Magnum%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Magnum%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Platinum Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Platinum%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Platinum%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Platinum%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Platinum%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Platinum%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prism Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Prism%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Prism%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Prism%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Prism%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Prism%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Active Asset Allocator Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=qsif%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=qsif%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=qsif%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=qsif%20Active%20Asset%20Allocator%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=qsif%20Active%20Asset%20Allocator%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=qsif%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=qsif%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=qsif%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=qsif%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=qsif%20Equity%20Ex-Top%20100%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=qsif%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=qsif%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=qsif%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=qsif%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=qsif%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=qsif%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=qsif%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=qsif%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=qsif%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=qsif%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Sector Rotation Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=qsif%20Sector%20Rotation%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=qsif%20Sector%20Rotation%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=qsif%20Sector%20Rotation%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=qsif%20Sector%20Rotation%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=qsif%20Sector%20Rotation%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "RedHex Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=RedHex%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=RedHex%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=RedHex%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=RedHex%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=RedHex%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sapphire Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Sapphire%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Sapphire%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Sapphire%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Sapphire%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Sapphire%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Summit Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Summit%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Summit%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Summit%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Summit%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Summit%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Titanium Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Titanium%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Titanium%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Titanium%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Titanium%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Titanium%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Titanium Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=Titanium%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=Titanium%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=Titanium%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=Titanium%20Hybrid%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=Titanium%20Hybrid%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "WSIF Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=WSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=WSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=WSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=WSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=WSIF%20Equity%20Ex-Top%20100%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "WSIF Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/asset-allocation?scheme_name=WSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Asset",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/market-cap-allocation?scheme_name=WSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Market cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/sector-allocation?scheme_name=WSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Sector",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/rating-wise-allocation?scheme_name=WSIF%20Equity%20Long-Short%20Fund",
+            "header": []
+          },
+          "name": "Rating",
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/band?scheme_name=WSIF%20Equity%20Long-Short%20Fund"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

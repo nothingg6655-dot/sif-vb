@@ -1,0 +1,282 @@
+{
+  "ee2b1515fae18b694db04f1f84a9a5afc87c34630e18253b3359c9d343e32ed9": {
+    "Source": "quant September 2026 official factsheet",
+    "Reviewed Source Page": 15,
+    "Method": "Visually verified printed chart labels; hash-bound transcription",
+    "Rows": [
+      {
+        "Label": "HEALTHCARE",
+        "Index": 7,
+        "Scheme": 17
+      },
+      {
+        "Label": "FIN SERV",
+        "Index": 31,
+        "Scheme": 11
+      },
+      {
+        "Label": "TELECOM",
+        "Index": 4,
+        "Scheme": 9
+      },
+      {
+        "Label": "O&G",
+        "Index": 7,
+        "Scheme": 7
+      },
+      {
+        "Label": "CAP GOODS",
+        "Index": 8,
+        "Scheme": 6
+      },
+      {
+        "Label": "Others",
+        "Index": 0,
+        "Scheme": 5
+      },
+      {
+        "Label": "CONS DUR",
+        "Index": 3,
+        "Scheme": 4
+      },
+      {
+        "Label": "AUTO",
+        "Index": 7,
+        "Scheme": 4
+      },
+      {
+        "Label": "SERVICES",
+        "Index": 2,
+        "Scheme": 3
+      },
+      {
+        "Label": "IT",
+        "Index": 6,
+        "Scheme": 3
+      },
+      {
+        "Label": "FMCG",
+        "Index": 5,
+        "Scheme": 2
+      },
+      {
+        "Label": "CONS SER",
+        "Index": 4,
+        "Scheme": 1
+      },
+      {
+        "Label": "CONSTN",
+        "Index": 3,
+        "Scheme": 1
+      },
+      {
+        "Label": "POWER",
+        "Index": 3,
+        "Scheme": 0
+      }
+    ]
+  },
+  "398722f6e1dc6da5fe6f7f230b4bf0bd7e5b3fd02d523f9ae7cd7298aab07546": {
+    "Source": "quant September 2026 official factsheet",
+    "Reviewed Source Page": 19,
+    "Method": "Visually verified printed chart labels; hash-bound transcription",
+    "Rows": [
+      {
+        "Label": "FIN SERV",
+        "Index": 31,
+        "Scheme": 13
+      },
+      {
+        "Label": "POWER",
+        "Index": 3,
+        "Scheme": 9
+      },
+      {
+        "Label": "TELECOM",
+        "Index": 4,
+        "Scheme": 9
+      },
+      {
+        "Label": "Others",
+        "Index": 0,
+        "Scheme": 8
+      },
+      {
+        "Label": "HEALTHCARE",
+        "Index": 7,
+        "Scheme": 8
+      },
+      {
+        "Label": "O&G",
+        "Index": 7,
+        "Scheme": 8
+      },
+      {
+        "Label": "CONS SER",
+        "Index": 4,
+        "Scheme": 4
+      },
+      {
+        "Label": "CONS DUR",
+        "Index": 3,
+        "Scheme": 4
+      },
+      {
+        "Label": "IT",
+        "Index": 6,
+        "Scheme": 3
+      },
+      {
+        "Label": "SERVICES",
+        "Index": 2,
+        "Scheme": 1
+      },
+      {
+        "Label": "FMCG",
+        "Index": 5,
+        "Scheme": 1
+      }
+    ]
+  },
+  "fabeeb52390518be7ee98180b88a30c4d29cbefd736623df091eab458c7db0bb": {
+    "Source": "quant September 2026 official factsheet",
+    "Reviewed Source Page": 23,
+    "Method": "Visually verified printed chart labels; hash-bound transcription",
+    "Rows": [
+      {
+        "Label": "IT",
+        "Index": 2,
+        "Scheme": 11
+      },
+      {
+        "Label": "HEALTHCARE",
+        "Index": 3,
+        "Scheme": 6
+      },
+      {
+        "Label": "FIN SERV",
+        "Index": 12,
+        "Scheme": 6
+      },
+      {
+        "Label": "CAP GOODS",
+        "Index": 3,
+        "Scheme": 4
+      },
+      {
+        "Label": "O&G",
+        "Index": 3,
+        "Scheme": 3
+      },
+      {
+        "Label": "CONS DUR",
+        "Index": 1,
+        "Scheme": 2
+      },
+      {
+        "Label": "POWER",
+        "Index": 1,
+        "Scheme": 1
+      },
+      {
+        "Label": "TELECOM",
+        "Index": 1,
+        "Scheme": 1
+      },
+      {
+        "Label": "CONS SER",
+        "Index": 2,
+        "Scheme": 1
+      },
+      {
+        "Label": "SERVICES",
+        "Index": 1,
+        "Scheme": 1
+      },
+      {
+        "Label": "FMCG",
+        "Index": 2,
+        "Scheme": -1
+      }
+    ]
+  },
+  "c2c5199cb1ebce04c301a707fca8209c35879160de839614c58fffe1120a2ee9": {
+    "Source": "quant September 2026 official factsheet",
+    "Reviewed Source Page": 27,
+    "Method": "Visually verified printed chart labels; hash-bound transcription",
+    "Rows": [
+      {
+        "Label": "IT",
+        "Index": 4,
+        "Scheme": 14
+      },
+      {
+        "Label": "HEALTHCARE",
+        "Index": 2,
+        "Scheme": 9
+      },
+      {
+        "Label": "O&G",
+        "Index": 5,
+        "Scheme": 6
+      },
+      {
+        "Label": "FIN SERV",
+        "Index": 19,
+        "Scheme": 5
+      },
+      {
+        "Label": "Others",
+        "Index": 0,
+        "Scheme": 3
+      },
+      {
+        "Label": "CONSTN",
+        "Index": 2,
+        "Scheme": 2
+      },
+      {
+        "Label": "REALTY",
+        "Index": 0,
+        "Scheme": 2
+      },
+      {
+        "Label": "CAP GOODS",
+        "Index": 1,
+        "Scheme": 1
+      },
+      {
+        "Label": "FMCG",
+        "Index": 3,
+        "Scheme": -1
+      }
+    ]
+  },
+  "d1d16dd5ce4264825ffde279b2802ae3a453199b3eb2b4941b8f6e162c8f3af6": {
+    "Source": "quant September 2026 official factsheet",
+    "Reviewed Source Page": 31,
+    "Method": "Visually verified printed chart labels; hash-bound transcription",
+    "Rows": [
+      {
+        "Label": "HEALTHCARE",
+        "Index": 7,
+        "Scheme": 37
+      },
+      {
+        "Label": "TELECOM",
+        "Index": 4,
+        "Scheme": 9
+      },
+      {
+        "Label": "O&G",
+        "Index": 7,
+        "Scheme": 7
+      },
+      {
+        "Label": "IT",
+        "Index": 6,
+        "Scheme": 4
+      }
+    ]
+  }
+}

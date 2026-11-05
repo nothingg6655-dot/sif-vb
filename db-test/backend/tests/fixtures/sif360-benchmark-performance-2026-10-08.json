@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "benchmarks": [
+    {
+      "id": "bse500",
+      "label": "BSE 500",
+      "subtitle": "Broad Market Index",
+      "metrics": {
+        "r1d": -2.04,
+        "r1w": -1.22,
+        "r1m": -6.47,
+        "r3m": -7.4,
+        "si": null,
+        "latestNav": "33805.41",
+        "latestDate": "2026-10-08"
+      }
+    },
+    {
+      "id": "nifty50",
+      "label": "NIFTY 50",
+      "subtitle": "Broad Market Index",
+      "metrics": {
+        "r1d": -1.64,
+        "r1w": -0.85,
+        "r1m": -5.94,
+        "r3m": -8.16,
+        "si": null,
+        "latestNav": "22231.80",
+        "latestDate": "2026-10-08"
+      }
+    },
+    {
+      "id": "niftymidsml",
+      "label": "NIFTY MidSmallcap 400",
+      "subtitle": "Mid & Small Cap Index",
+      "metrics": {
+        "r1d": -0.38,
+        "r1w": 0.15,
+        "r1m": -4.53,
+        "r3m": -2.85,
+        "si": null,
+        "latestNav": "20445.70",
+        "latestDate": "2026-10-07"
+      }
+    }
+  ]
+}

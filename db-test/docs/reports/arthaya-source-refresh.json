@@ -1,0 +1,89 @@
+{
+  "Checked At": "2026-10-20T11:44:18+00:00",
+  "Scheme": "Arthaya Equity Long-Short Fund",
+  "Factsheet Source": {
+    "Publishing Page": "https://www.unionmf.com/arthayasif/about-us/downloads",
+    "PDF URL": "https://www.unionmf.com/docs/arthayasiflibraries/funddetail-downloads/fund-factsheets/arthaya-equity-long-short-fund.pdf",
+    "Reporting Month": "2026-09",
+    "SHA256": "370d3cc04a4dd7cc0691e02898c03718dd65963b5b084c1945bac7fc92b5e22b",
+    "Local PDF": "C:\\Users\\shris\\Aikyam\\Projects\\Mutual Fund Guru - Vinayak Bhosale(SIF Project)\\Backennd\\db-test\\data\\factsheets\\latest\\Union Mutual Fund.pdf",
+    "Downloaded At": "2026-10-20T11:41:56+00:00",
+    "Official Only": true,
+    "Latest Listing Verified": false
+  },
+  "Extraction Validation": {
+    "Status": "passed",
+    "Adapter": "union_mutual_fund_coordinate_v1",
+    "Checks": {
+      "recognized_fund": true,
+      "portfolio_found": true,
+      "aum_found": true,
+      "nav_found": true,
+      "portfolio_subtotals": {
+        "Equity & Equity Related": {
+          "Published": 73.12,
+          "Sum of Displayed Holdings": 73.13,
+          "Rounding Tolerance": 0.2,
+          "Within Tolerance": true
+        },
+        "Treasury Bill": {
+          "Published": 15.14,
+          "Sum of Displayed Holdings": 15.14,
+          "Rounding Tolerance": 0.02,
+          "Within Tolerance": true
+        }
+      }
+    },
+    "Errors": [],
+    "Warnings": []
+  },
+  "Field Availability": {
+    "Investment Objective": "extracted",
+    "Fund Managers": "extracted",
+    "NAV": "extracted",
+    "Base Expense Ratio (%)": "extracted",
+    "Sector Allocation (%)": "PUBLISHED",
+    "Market Capitalization (%)": "PUBLISHED",
+    "Asset Allocation (%)": "PUBLISHED",
+    "Rating Profile (%)": "NOT_PUBLISHED"
+  },
+  "Allocations": {
+    "Asset Allocation (%)": {
+      "Unhedged Equity": 14.48,
+      "Hedged Equity": 58.65,
+      "Treasury Bills": 15.14,
+      "Triparty Repo, Cash, Cash Equivalents & Net Current Assets": 11.73
+    },
+    "Market Capitalization (%)": {
+      "Large Cap": 50.95,
+      "Mid Cap": 17.01,
+      "Small Cap": 5.16
+    },
+    "Sector Allocation (%)": {
+      "BANKS": 28.07,
+      "AUTOMOBILES": 9.42,
+      "RETAILING": 5.3,
+      "PHARMACEUTICALS & BIOTECHNOLOGY": 4.52,
+      "CAPITAL MARKETS": 4.04,
+      "PETROLEUM PRODUCTS": 3.9,
+      "IT - SOFTWARE": 3.38,
+      "HEALTHCARE SERVICES": 2.87,
+      "FINANCE": 2.2,
+      "TRANSPORT INFRASTRUCTURE": 2.09,
+      "FINANCIAL TECHNOLOGY (FINTECH)": 1.86,
+      "TRANSPORT SERVICES": 1.82,
+      "METALS & MINERALS TRADING": 0.96,
+      "CONSUMER DURABLES": 0.95,
+      "IT - SERVICES": 0.9,
+      "ELECTRICAL EQUIPMENT": 0.84,
+      "AGRICULTURAL, COMMERCIAL & CONSTRUCTION VEHICLES": 0.0
+    },
+    "Rating Profile (%)": {}
+  },
+  "Ingestion Run": 41,
+  "Storage Verification": {
+    "Checks": 814,
+    "Mismatches": 0,
+    "Status": "PASSED"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "matcher_version": "amc-category-isin-v1",
+  "source_schemes": 132,
+  "deterministic_groups": 35,
+  "mapped_this_run": 132,
+  "identifiers_seen": 181,
+  "review_candidates_this_run": 0,
+  "unresolved_performance_mappings": [],
+  "database_counts": {
+    "funds": 35,
+    "mappings": 132,
+    "ticker_configs": 35,
+    "performance_configs": 34,
+    "external_identifiers": 181,
+    "pending_reviews": 0
+  }
+}

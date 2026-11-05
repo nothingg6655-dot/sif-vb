@@ -1,0 +1,174 @@
+{
+    "data":  [
+                 {
+                     "fullName":  "Magnum Hybrid Long-Short Fund",
+                     "latestNAV":  10.3021,
+                     "change":  0.21
+                 },
+                 {
+                     "fullName":  "qsif Equity Long-Short Fund",
+                     "latestNAV":  10.8542,
+                     "change":  0.86
+                 },
+                 {
+                     "fullName":  "qsif Hybrid Long-Short Fund",
+                     "latestNAV":  12.9738,
+                     "change":  0.45
+                 },
+                 {
+                     "fullName":  "qsif Equity Ex-Top 100 Long-Short Fund",
+                     "latestNAV":  11.2028,
+                     "change":  0.84
+                 },
+                 {
+                     "fullName":  "Altiva Hybrid Long-Short Fund",
+                     "latestNAV":  10.9551,
+                     "change":  0.26
+                 },
+                 {
+                     "fullName":  "Diviniti Equity Long-Short Fund",
+                     "latestNAV":  870.238,
+                     "change":  0.91
+                 },
+                 {
+                     "fullName":  "Titanium Hybrid Long-Short Fund",
+                     "latestNAV":  9.8887,
+                     "change":  0.5
+                 },
+                 {
+                     "fullName":  "Arudha Hybrid Long-Short Fund",
+                     "latestNAV":  10.389,
+                     "change":  -0.09
+                 },
+                 {
+                     "fullName":  "iSIF Hybrid Long-Short Fund",
+                     "latestNAV":  10.3074,
+                     "change":  0.76
+                 },
+                 {
+                     "fullName":  "iSIF Equity Ex-Top 100 Long-Short Fund",
+                     "latestNAV":  10.18,
+                     "change":  0.59
+                 },
+                 {
+                     "fullName":  "Dyna Equity Long-Short Fund",
+                     "latestNAV":  10.1397,
+                     "change":  0.25
+                 },
+                 {
+                     "fullName":  "Dyna Active Asset Allocator Long-Short Fund",
+                     "latestNAV":  10.3892,
+                     "change":  0.16
+                 },
+                 {
+                     "fullName":  "Arudha Equity Long-Short Fund",
+                     "latestNAV":  10.067,
+                     "change":  0.63
+                 },
+                 {
+                     "fullName":  "Apex Hybrid Long-Short Fund",
+                     "latestNAV":  10.7416,
+                     "change":  0.1
+                 },
+                 {
+                     "fullName":  "Sapphire Equity Long-Short Fund",
+                     "latestNAV":  956.5907,
+                     "change":  0.95
+                 },
+                 {
+                     "fullName":  "WSIF Equity Long-Short Fund",
+                     "latestNAV":  10.0897,
+                     "change":  1.05
+                 },
+                 {
+                     "fullName":  "WSIF Equity Ex-Top 100 Long-Short Fund",
+                     "latestNAV":  10.3055,
+                     "change":  0.71
+                 },
+                 {
+                     "fullName":  "Titanium Equity Long-Short Fund",
+                     "latestNAV":  10.1947,
+                     "change":  0.8
+                 },
+                 {
+                     "fullName":  "qsif Sector Rotation Long-Short Fund",
+                     "latestNAV":  10.1833,
+                     "change":  0.17
+                 },
+                 {
+                     "fullName":  "Arthaya Equity Long-Short Fund",
+                     "latestNAV":  9.6764,
+                     "change":  -0.71
+                 },
+                 {
+                     "fullName":  "qsif Active Asset Allocator Long-Short Fund",
+                     "latestNAV":  12.9182,
+                     "change":  0.42
+                 },
+                 {
+                     "fullName":  "Altiva Equity Ex-Top 100 Long-Short Fund",
+                     "latestNAV":  10.6732,
+                     "change":  0.83
+                 },
+                 {
+                     "fullName":  "Platinum Hybrid Long-Short Fund",
+                     "latestNAV":  10.011,
+                     "change":  0.17
+                 },
+                 {
+                     "fullName":  "iSIF Equity Long-Short Fund",
+                     "latestNAV":  10.51,
+                     "change":  0.38
+                 },
+                 {
+                     "fullName":  "iSIF Active Asset Allocator Long-Short Fund",
+                     "latestNAV":  10.2155,
+                     "change":  0.38
+                 },
+                 {
+                     "fullName":  "RedHex Hybrid Long-Short Fund",
+                     "latestNAV":  10.2162,
+                     "change":  -0.01
+                 },
+                 {
+                     "fullName":  "Dyna Equity Ex-Top 100 Long-Short Fund",
+                     "latestNAV":  11.2964,
+                     "change":  0.58
+                 },
+                 {
+                     "fullName":  "Infinity Hybrid Long-Short Fund",
+                     "latestNAV":  10.372,
+                     "change":  0.27
+                 },
+                 {
+                     "fullName":  "Prism Hybrid Long-Short Fund",
+                     "latestNAV":  10.2086,
+                     "change":  0.11
+                 },
+                 {
+                     "fullName":  "Summit Equity Long-Short Fund",
+                     "latestNAV":  10.28,
+                     "change":  1.08
+                 },
+                 {
+                     "fullName":  "Magnum Equity Ex-Top 100 Long-Short Fund",
+                     "latestNAV":  9.7854,
+                     "change":  0.41
+                 },
+                 {
+                     "fullName":  "Apex Equity Long-Short Fund",
+                     "latestNAV":  9.9,
+                     "change":  0.41
+                 },
+                 {
+                     "fullName":  "Apex Equity Ex-Top 100 Long-Short Fund",
+                     "latestNAV":  10.01,
+                     "change":  -0.1
+                 },
+                 {
+                     "fullName":  "Altiva Equity Long-Short Fund",
+                     "latestNAV":  10.1077,
+                     "change":  1.23
+                 }
+             ]
+}

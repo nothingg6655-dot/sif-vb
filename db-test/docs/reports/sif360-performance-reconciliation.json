@@ -1,0 +1,3799 @@
+{
+  "generatedAt": "2026-10-14T07:09:29.749Z",
+  "source": {
+    "csv": "data/tigzig/sif_nav.csv",
+    "sha256": "7c715ec1fe87c0c8c8dfe77ce06fd9c957c62fe739d2e20669aa226a689e11b4",
+    "inputRows": 15620,
+    "validDatabaseRows": 15616,
+    "schemes": 126,
+    "duplicateBusinessKeys": 0,
+    "malformedRows": 0,
+    "nonPositiveRowsRejected": 4,
+    "dateRange": [
+      "2025-10-08",
+      "2026-10-13"
+    ]
+  },
+  "request": {
+    "toDate": "2026-10-14",
+    "from1m": "2026-09-14",
+    "from3m": "2026-07-16"
+  },
+  "methodology": {
+    "selected": {
+      "id": "sif360-observed-30d-90d-v1",
+      "oneMonthSelection": "on-or-after",
+      "threeMonthSelection": "on-or-after",
+      "zeroReturnAsNull": true,
+      "fallbackToInception": true
+    },
+    "oneMonthBoundaryUncertainty": "No NAV exists on 2026-09-14, so on-or-after and strictly-after cannot be distinguished by this fixture.",
+    "threeMonthBoundaryUncertainty": "A NAV exists on 2026-07-16, so on-or-before and on-or-after cannot be distinguished by this fixture; strictly-after is rejected.",
+    "candidateResults": [
+      {
+        "metric": "return1m",
+        "method": "30/calendar days; latest NAV on/before 2026-09-14",
+        "matches": 1,
+        "total": 34
+      },
+      {
+        "metric": "return1m",
+        "method": "30/calendar days; first NAV on/after 2026-09-14",
+        "matches": 32,
+        "total": 34
+      },
+      {
+        "metric": "return1m",
+        "method": "30/calendar days; first NAV strictly after 2026-09-14",
+        "matches": 32,
+        "total": 34
+      },
+      {
+        "metric": "return3m",
+        "method": "3 calendar months; first NAV on/after 2026-07-14",
+        "matches": 7,
+        "total": 34
+      },
+      {
+        "metric": "return3m",
+        "method": "90 days; latest NAV on/before 2026-07-16",
+        "matches": 32,
+        "total": 34
+      },
+      {
+        "metric": "return3m",
+        "method": "90 days; first NAV on/after 2026-07-16",
+        "matches": 32,
+        "total": 34
+      },
+      {
+        "metric": "return3m",
+        "method": "90 days; first NAV strictly after 2026-07-16",
+        "matches": 7,
+        "total": 34
+      },
+      {
+        "metric": "return1m",
+        "method": "best fixed observation interval (19)",
+        "matches": 31,
+        "total": 34
+      },
+      {
+        "metric": "return3m",
+        "method": "best fixed observation interval (61)",
+        "matches": 30,
+        "total": 34
+      }
+    ]
+  },
+  "mapping": [
+    {
+      "referenceFundId": 1,
+      "fundId": 82,
+      "canonicalName": "Magnum Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 13,
+      "schemeName": "Magnum Hybrid Long Short Fund - Regular Plan - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF200K30015"
+      ],
+      "firstNavDate": "2025-10-29",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 241,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Magnum Hybrid Long Short Fund - Regular Plan - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 1,
+        "canonical_name_exact": "Magnum Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF200K30015"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 2,
+      "fundId": 98,
+      "canonicalName": "qsif Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 3,
+      "schemeName": "qsif Equity Long Short Fund - Growth Option - Regular Plan",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF966L30027"
+      ],
+      "firstNavDate": "2025-10-08",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 250,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "qsif Equity Long Short Fund - Growth Option - Regular Plan",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 2,
+        "canonical_name_exact": "qsif Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF966L30027"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 3,
+      "fundId": 99,
+      "canonicalName": "qsif Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 7,
+      "schemeName": "qsif Hybrid Long-Short Fund - Growth Option - Regular Plan",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF966L30084"
+      ],
+      "firstNavDate": "2025-10-20",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 242,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "qsif Hybrid Long-Short Fund - Growth Option - Regular Plan",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 3,
+        "canonical_name_exact": "qsif Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF966L30084"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 4,
+      "fundId": 97,
+      "canonicalName": "qsif Equity Ex-Top 100 Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 25,
+      "schemeName": "qsif Equity Ex-Top 100 Long-Short Fund - Growth Option - Regular Plan",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF966L30183"
+      ],
+      "firstNavDate": "2025-11-13",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 227,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "qsif Equity Ex-Top 100 Long-Short Fund - Growth Option - Regular Plan",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 4,
+        "canonical_name_exact": "qsif Equity Ex-Top 100 Long-Short Fund",
+        "verified_identifiers": [
+          "INF966L30183"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 5,
+      "fundId": 69,
+      "canonicalName": "Altiva Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 11,
+      "schemeName": "Altiva Hybrid Long-Short Fund - Regular Plan - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF754K30052"
+      ],
+      "firstNavDate": "2025-10-24",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 240,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Altiva Hybrid Long-Short Fund - Regular Plan - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 5,
+        "canonical_name_exact": "Altiva Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF754K30052"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 6,
+      "fundId": 76,
+      "canonicalName": "Diviniti Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 21,
+      "schemeName": "Diviniti Equity Long Short Fund - Regular Plan Growth Option",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF00XX30019"
+      ],
+      "firstNavDate": "2025-12-03",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 213,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Diviniti Equity Long Short Fund - Regular Plan Growth Option",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 6,
+        "canonical_name_exact": "Diviniti Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF00XX30019"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 7,
+      "fundId": 89,
+      "canonicalName": "Titanium Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 29,
+      "schemeName": "Titanium Hybrid Long-Short Fund Regular Plan Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF277K30013"
+      ],
+      "firstNavDate": "2025-12-17",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 203,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Titanium Hybrid Long-Short Fund Regular Plan Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 7,
+        "canonical_name_exact": "Titanium Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF277K30013"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 8,
+      "fundId": 75,
+      "canonicalName": "Arudha Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 40,
+      "schemeName": "Arudha Hybrid Long-Short Fund-Regular Plan-Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF194K30010"
+      ],
+      "firstNavDate": "2026-02-04",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 169,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Arudha Hybrid Long-Short Fund-Regular Plan-Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 8,
+        "canonical_name_exact": "Arudha Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF194K30010"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 9,
+      "fundId": 95,
+      "canonicalName": "iSIF Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 35,
+      "schemeName": "iSIF Hybrid Long-Short Fund - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF109K30018"
+      ],
+      "firstNavDate": "2026-02-05",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 170,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "iSIF Hybrid Long-Short Fund - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 9,
+        "canonical_name_exact": "iSIF Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF109K30018"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 10,
+      "fundId": 93,
+      "canonicalName": "iSIF Equity Ex-Top 100 Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 34,
+      "schemeName": "iSIF Equity Ex-Top 100 Long-Short Fund - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF109K30034"
+      ],
+      "firstNavDate": "2026-02-05",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 170,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "iSIF Equity Ex-Top 100 Long-Short Fund - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 10,
+        "canonical_name_exact": "iSIF Equity Ex-Top 100 Long-Short Fund",
+        "verified_identifiers": [
+          "INF109K30034"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 11,
+      "fundId": 79,
+      "canonicalName": "DynaSIF Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 55,
+      "schemeName": "DynaSIF Equity Long - Short Fund - Regular Plan - Growth Option",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF579M30018"
+      ],
+      "firstNavDate": "2026-02-27",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 154,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "DynaSIF Equity Long - Short Fund - Regular Plan - Growth Option",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 11,
+        "canonical_name_exact": "DynaSIF Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF579M30018"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 12,
+      "fundId": 77,
+      "canonicalName": "DynaSIF Active Asset Allocator Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 87,
+      "schemeName": "DynaSIF Active Asset Allocator Long-Short Fund - Regular Plan - Growth Option",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF579M30075"
+      ],
+      "firstNavDate": "2026-03-30",
+      "latestNavDate": "2026-10-12",
+      "observationCount": 132,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "DynaSIF Active Asset Allocator Long-Short Fund - Regular Plan - Growth Option",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 12,
+        "canonical_name_exact": "DynaSIF Active Asset Allocator Long-Short Fund",
+        "verified_identifiers": [
+          "INF579M30075"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 13,
+      "fundId": 74,
+      "canonicalName": "Arudha Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 62,
+      "schemeName": "Arudha Equity Long-Short Fund-Regular Plan-Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF194K30358"
+      ],
+      "firstNavDate": "2026-03-30",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 136,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Arudha Equity Long-Short Fund-Regular Plan-Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 13,
+        "canonical_name_exact": "Arudha Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF194K30358"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 14,
+      "fundId": 72,
+      "canonicalName": "Apex Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 80,
+      "schemeName": "Apex Hybrid Long-Short Fund - Regular - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF209K30040"
+      ],
+      "firstNavDate": "2026-03-30",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 135,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Apex Hybrid Long-Short Fund - Regular - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 14,
+        "canonical_name_exact": "Apex Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF209K30040"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 15,
+      "fundId": 87,
+      "canonicalName": "Sapphire Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 96,
+      "schemeName": "Sapphire Equity Long-Short SIF - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF090I30014"
+      ],
+      "firstNavDate": "2026-04-29",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 114,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Sapphire Equity Long-Short SIF - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 15,
+        "canonical_name_exact": "Sapphire Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF090I30014"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 16,
+      "fundId": 91,
+      "canonicalName": "WSIF Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 111,
+      "schemeName": "WSIF Equity Long-Short Fund - Regular Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF2F0030072"
+      ],
+      "firstNavDate": "2026-05-11",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 108,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "WSIF Equity Long-Short Fund - Regular Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 16,
+        "canonical_name_exact": "WSIF Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF2F0030072"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 17,
+      "fundId": 90,
+      "canonicalName": "WSIF Equity Ex-Top 100 Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 105,
+      "schemeName": "WSIF Equity Ex-Top 100 Long-Short Fund - Regular Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF2F0030015"
+      ],
+      "firstNavDate": "2026-05-11",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 108,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "WSIF Equity Ex-Top 100 Long-Short Fund - Regular Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 17,
+        "canonical_name_exact": "WSIF Equity Ex-Top 100 Long-Short Fund",
+        "verified_identifiers": [
+          "INF2F0030015"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 18,
+      "fundId": 88,
+      "canonicalName": "Titanium Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 102,
+      "schemeName": "Titanium Equity Long-Short Fund Regular Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF277K30070"
+      ],
+      "firstNavDate": "2026-05-20",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 100,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Titanium Equity Long-Short Fund Regular Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 18,
+        "canonical_name_exact": "Titanium Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF277K30070"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 19,
+      "fundId": 100,
+      "canonicalName": "qsif Sector Rotation Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 117,
+      "schemeName": "qsif Sector Rotation Long-Short Fund - Growth Option - RegularPlan",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF966L30308"
+      ],
+      "firstNavDate": "2026-05-18",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 103,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "qsif Sector Rotation Long-Short Fund - Growth Option - RegularPlan",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 19,
+        "canonical_name_exact": "qsif Sector Rotation Long-Short Fund",
+        "verified_identifiers": [
+          "INF966L30308"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 20,
+      "fundId": 73,
+      "canonicalName": "Arthaya Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 114,
+      "schemeName": "Arthaya Equity Long Short Fund - Regular Plan - Growth Option",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF582M30012"
+      ],
+      "firstNavDate": "2026-05-29",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 95,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Arthaya Equity Long Short Fund - Regular Plan - Growth Option",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 20,
+        "canonical_name_exact": "Arthaya Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF582M30012"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 21,
+      "fundId": 96,
+      "canonicalName": "qsif Active Asset Allocator Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 93,
+      "schemeName": "qsif Active Asset Allocator Long-Short Fund - Growth Option - Regular Plan",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF966L30217"
+      ],
+      "firstNavDate": "2026-04-24",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 118,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "qsif Active Asset Allocator Long-Short Fund - Growth Option - Regular Plan",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 21,
+        "canonical_name_exact": "qsif Active Asset Allocator Long-Short Fund",
+        "verified_identifiers": [
+          "INF966L30217"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 22,
+      "fundId": 67,
+      "canonicalName": "Altiva Equity Ex-Top 100 Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 122,
+      "schemeName": "Altiva Equity Ex- Top 100 Long - Short Fund - Regular Plan - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF754K30136"
+      ],
+      "firstNavDate": "2026-06-10",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 87,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Altiva Equity Ex- Top 100 Long - Short Fund - Regular Plan - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 22,
+        "canonical_name_exact": "Altiva Equity Ex-Top 100 Long-Short Fund",
+        "verified_identifiers": [
+          "INF754K30136"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 23,
+      "fundId": 83,
+      "canonicalName": "Platinum Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 136,
+      "schemeName": "Platinum Hybrid Long-Short Fund - Regular Plan - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF769K30019"
+      ],
+      "firstNavDate": "2026-06-11",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 86,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Platinum Hybrid Long-Short Fund - Regular Plan - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 23,
+        "canonical_name_exact": "Platinum Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF769K30019"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 24,
+      "fundId": 94,
+      "canonicalName": "iSIF Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 126,
+      "schemeName": "iSIF Equity Long-Short Fund - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF109K30075"
+      ],
+      "firstNavDate": "2026-06-08",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 89,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "iSIF Equity Long-Short Fund - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 24,
+        "canonical_name_exact": "iSIF Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF109K30075"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 25,
+      "fundId": 92,
+      "canonicalName": "iSIF Active Asset Allocator Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 124,
+      "schemeName": "iSIF Active Asset Allocator Long-Short Fund - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF109K30059"
+      ],
+      "firstNavDate": "2026-06-08",
+      "latestNavDate": "2026-10-12",
+      "observationCount": 88,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "iSIF Active Asset Allocator Long-Short Fund - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 25,
+        "canonical_name_exact": "iSIF Active Asset Allocator Long-Short Fund",
+        "verified_identifiers": [
+          "INF109K30059"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 26,
+      "fundId": 85,
+      "canonicalName": "RedHex Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 128,
+      "schemeName": "RedHex Hybrid Long-Short Fund - Regular - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF336L30015"
+      ],
+      "firstNavDate": "2026-06-25",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 76,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "RedHex Hybrid Long-Short Fund - Regular - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 26,
+        "canonical_name_exact": "RedHex Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF336L30015"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 27,
+      "fundId": 78,
+      "canonicalName": "DynaSIF Equity Ex-Top 100 Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 143,
+      "schemeName": "DynaSIF Equity Ex-Top 100 Long - Short Fund - Regular Plan - Growth Option",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF579M30133"
+      ],
+      "firstNavDate": "2026-06-29",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 75,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "DynaSIF Equity Ex-Top 100 Long - Short Fund - Regular Plan - Growth Option",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 27,
+        "canonical_name_exact": "DynaSIF Equity Ex-Top 100 Long-Short Fund",
+        "verified_identifiers": [
+          "INF579M30133"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 28,
+      "fundId": 80,
+      "canonicalName": "Infinity Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 146,
+      "schemeName": "INFINITY HYBRID LONG-SHORT FUND-REGULAR - GROWTH",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF174K30046"
+      ],
+      "firstNavDate": "2026-07-09",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 67,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "INFINITY HYBRID LONG-SHORT FUND-REGULAR - GROWTH",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 28,
+        "canonical_name_exact": "Infinity Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF174K30046"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 29,
+      "fundId": 84,
+      "canonicalName": "Prism Hybrid Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 138,
+      "schemeName": "Prism Hybrid Long-Short Fund - Regular Plan- Growth Option",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF22M030019"
+      ],
+      "firstNavDate": "2026-07-23",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 57,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Prism Hybrid Long-Short Fund - Regular Plan- Growth Option",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 29,
+        "canonical_name_exact": "Prism Hybrid Long-Short Fund",
+        "verified_identifiers": [
+          "INF22M030019"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 30,
+      "fundId": 86,
+      "canonicalName": "SUMMIT Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 150,
+      "schemeName": "Summit Equity Long-Short Fund - Regular Plan - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF205K30014"
+      ],
+      "firstNavDate": "2026-07-24",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 56,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Summit Equity Long-Short Fund - Regular Plan - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 30,
+        "canonical_name_exact": "SUMMIT Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF205K30014"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 31,
+      "fundId": 81,
+      "canonicalName": "Magnum Equity Ex-Top 100 Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 157,
+      "schemeName": "Magnum Equity Ex-Top 100 Long Short Fund - Regular Plan - Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF200K30072"
+      ],
+      "firstNavDate": "2026-09-02",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 28,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Magnum Equity Ex-Top 100 Long Short Fund - Regular Plan - Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 31,
+        "canonical_name_exact": "Magnum Equity Ex-Top 100 Long-Short Fund",
+        "verified_identifiers": [
+          "INF200K30072"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 32,
+      "fundId": 71,
+      "canonicalName": "Apex Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 154,
+      "schemeName": "Apex Equity Long-short Fund-Regular Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF209K30107"
+      ],
+      "firstNavDate": "2026-09-01",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 29,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Apex Equity Long-short Fund-Regular Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 32,
+        "canonical_name_exact": "Apex Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF209K30107"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 33,
+      "fundId": 70,
+      "canonicalName": "Apex Equity Ex-Top 100 Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 156,
+      "schemeName": "Apex Equity Ex-Top 100 Long-short Fund-Regular Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF209K30081"
+      ],
+      "firstNavDate": "2026-09-01",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 29,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Apex Equity Ex-Top 100 Long-short Fund-Regular Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 33,
+        "canonical_name_exact": "Apex Equity Ex-Top 100 Long-Short Fund",
+        "verified_identifiers": [
+          "INF209K30081"
+        ]
+      }
+    },
+    {
+      "referenceFundId": 34,
+      "fundId": 68,
+      "canonicalName": "Altiva Equity Long-Short Fund",
+      "source": "SIF",
+      "schemeCode": 161,
+      "schemeName": "Altiva Equity Long-Short Fund-Regular Growth",
+      "plan": "Regular",
+      "option": "Growth",
+      "isins": [
+        "INF754K30219"
+      ],
+      "firstNavDate": "2026-10-05",
+      "latestNavDate": "2026-10-13",
+      "observationCount": 7,
+      "mappingConfidence": "high",
+      "evidence": {
+        "plan": "Regular",
+        "basis": "reference-response metrics plus canonical identity and ISIN",
+        "option": "Growth",
+        "scheme_name": "Altiva Equity Long-Short Fund-Regular Growth",
+        "mapping_version": "sif360-regular-growth-v1",
+        "reference_fund_id": 34,
+        "canonical_name_exact": "Altiva Equity Long-Short Fund",
+        "verified_identifiers": [
+          "INF754K30219"
+        ]
+      }
+    }
+  ],
+  "regressionCase": {
+    "referenceFundId": 1,
+    "schemeCode": 13,
+    "latest": {
+      "date": "2026-10-13",
+      "nav": 10.3021
+    },
+    "changePct": {
+      "targetDate": "2025-10-29",
+      "selectedDate": "2025-10-29",
+      "selectedNav": 10.0336,
+      "value": 2.68,
+      "unrounded": "2.676008611066"
+    },
+    "return1m": {
+      "targetDate": "2026-09-14",
+      "selectedDate": "2026-09-15",
+      "selectedNav": 10.3919,
+      "value": -0.86,
+      "unrounded": "-0.864134566344"
+    },
+    "return3m": {
+      "targetDate": "2026-07-16",
+      "selectedDate": "2026-07-16",
+      "selectedNav": 10.4461,
+      "value": -1.38,
+      "unrounded": "-1.378504896564"
+    }
+  },
+  "reconciliationSummary": {
+    "totalMetrics": 204,
+    "exact": 192,
+    "mismatch": 10,
+    "exact-null": 2
+  },
+  "unresolved": [
+    {
+      "referenceFundId": 12,
+      "reason": "TIGZIG Regular Growth series ends 2026-10-12; reference has 2026-10-13."
+    },
+    {
+      "referenceFundId": 25,
+      "reason": "TIGZIG Regular Growth series ends 2026-10-12; reference has 2026-10-13."
+    }
+  ],
+  "normalized": {
+    "1": {
+      "schemeId": "SIF:13",
+      "latestNav": 10.3021,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2025-10-29",
+      "changePct": 2.68,
+      "return1m": -0.86,
+      "return3m": -1.38,
+      "referenceNav1m": 10.3919,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.4461,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "2": {
+      "schemeId": "SIF:3",
+      "latestNav": 10.8542,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2025-10-08",
+      "changePct": 8.49,
+      "return1m": -0.12,
+      "return3m": -1.37,
+      "referenceNav1m": 10.8674,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 11.0049,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "3": {
+      "schemeId": "SIF:7",
+      "latestNav": 12.9738,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2025-10-20",
+      "changePct": 29.53,
+      "return1m": -1.55,
+      "return3m": 21.44,
+      "referenceNav1m": 13.1774,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.6833,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "4": {
+      "schemeId": "SIF:25",
+      "latestNav": 11.2028,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2025-11-13",
+      "changePct": 11.91,
+      "return1m": -1.21,
+      "return3m": 4.14,
+      "referenceNav1m": 11.3396,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.7573,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "5": {
+      "schemeId": "SIF:11",
+      "latestNav": 10.9551,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2025-10-24",
+      "changePct": 9.45,
+      "return1m": -0.17,
+      "return3m": 1.3,
+      "referenceNav1m": 10.9741,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.8147,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "6": {
+      "schemeId": "SIF:21",
+      "latestNav": 870.238,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2025-12-03",
+      "changePct": -13.05,
+      "return1m": -2.4,
+      "return3m": -7.7,
+      "referenceNav1m": 891.6747,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 942.8346,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "7": {
+      "schemeId": "SIF:29",
+      "latestNav": 9.8887,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2025-12-17",
+      "changePct": -1.11,
+      "return1m": -0.65,
+      "return3m": -2.38,
+      "referenceNav1m": 9.9533,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.1298,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "8": {
+      "schemeId": "SIF:40",
+      "latestNav": 10.389,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-02-04",
+      "changePct": 3.55,
+      "return1m": 0.18,
+      "return3m": 0.76,
+      "referenceNav1m": 10.37,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.311,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "9": {
+      "schemeId": "SIF:35",
+      "latestNav": 10.3074,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-02-05",
+      "changePct": 2.89,
+      "return1m": -0.24,
+      "return3m": 0.62,
+      "referenceNav1m": 10.332,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.244,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "10": {
+      "schemeId": "SIF:34",
+      "latestNav": 10.18,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-02-05",
+      "changePct": 1.9,
+      "return1m": 0.69,
+      "return3m": -0.68,
+      "referenceNav1m": 10.11,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.25,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "11": {
+      "schemeId": "SIF:55",
+      "latestNav": 10.1397,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-02-27",
+      "changePct": 1.34,
+      "return1m": -1.42,
+      "return3m": -3.84,
+      "referenceNav1m": 10.2856,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.5446,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "12": {
+      "schemeId": "SIF:87",
+      "latestNav": 10.3728,
+      "latestDate": "2026-10-12",
+      "inceptionDate": "2026-03-30",
+      "changePct": 3.53,
+      "return1m": -0.76,
+      "return3m": 0.11,
+      "referenceNav1m": 10.4522,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.3615,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "13": {
+      "schemeId": "SIF:62",
+      "latestNav": 10.067,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-03-30",
+      "changePct": 2.47,
+      "return1m": -1.61,
+      "return3m": -3.37,
+      "referenceNav1m": 10.232,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.418,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "14": {
+      "schemeId": "SIF:80",
+      "latestNav": 10.7416,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-03-30",
+      "changePct": 7.2,
+      "return1m": 0.61,
+      "return3m": 3.96,
+      "referenceNav1m": 10.6763,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.3329,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "15": {
+      "schemeId": "SIF:96",
+      "latestNav": 956.5907,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-04-29",
+      "changePct": -4.34,
+      "return1m": -1.52,
+      "return3m": -4.33,
+      "referenceNav1m": 971.3932,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 999.8999,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "16": {
+      "schemeId": "SIF:111",
+      "latestNav": 10.0897,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-05-11",
+      "changePct": 0.92,
+      "return1m": -1.08,
+      "return3m": -5.61,
+      "referenceNav1m": 10.1997,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.6896,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "17": {
+      "schemeId": "SIF:105",
+      "latestNav": 10.3055,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-05-11",
+      "changePct": 3.13,
+      "return1m": -1.1,
+      "return3m": -4.01,
+      "referenceNav1m": 10.4198,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.7361,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "18": {
+      "schemeId": "SIF:102",
+      "latestNav": 10.1947,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-05-20",
+      "changePct": 1.59,
+      "return1m": -0.51,
+      "return3m": -0.94,
+      "referenceNav1m": 10.2474,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.2911,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "19": {
+      "schemeId": "SIF:117",
+      "latestNav": 10.1833,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-05-18",
+      "changePct": 1.75,
+      "return1m": -1.1,
+      "return3m": -1.45,
+      "referenceNav1m": 10.2964,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.3334,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "20": {
+      "schemeId": "SIF:114",
+      "latestNav": 9.6764,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-05-29",
+      "changePct": -3.13,
+      "return1m": -1.14,
+      "return3m": -3.66,
+      "referenceNav1m": 9.7883,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.0436,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "21": {
+      "schemeId": "SIF:93",
+      "latestNav": 12.9182,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-04-24",
+      "changePct": 29.06,
+      "return1m": -2.96,
+      "return3m": 18.67,
+      "referenceNav1m": 13.3127,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.8854,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "22": {
+      "schemeId": "SIF:122",
+      "latestNav": 10.6732,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-06-10",
+      "changePct": 7.08,
+      "return1m": -0.16,
+      "return3m": -1.37,
+      "referenceNav1m": 10.6907,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.8213,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "23": {
+      "schemeId": "SIF:136",
+      "latestNav": 10.011,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-06-11",
+      "changePct": 0.1,
+      "return1m": -0.72,
+      "return3m": -0.91,
+      "referenceNav1m": 10.084,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.103,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "24": {
+      "schemeId": "SIF:126",
+      "latestNav": 10.51,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-06-08",
+      "changePct": 5.1,
+      "return1m": -0.57,
+      "return3m": 1.25,
+      "referenceNav1m": 10.57,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.38,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "25": {
+      "schemeId": "SIF:124",
+      "latestNav": 10.1764,
+      "latestDate": "2026-10-12",
+      "inceptionDate": "2026-06-08",
+      "changePct": 1.8,
+      "return1m": -0.88,
+      "return3m": -0.15,
+      "referenceNav1m": 10.2667,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.1918,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "26": {
+      "schemeId": "SIF:128",
+      "latestNav": 10.2162,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-06-25",
+      "changePct": 1.96,
+      "return1m": 0.03,
+      "return3m": 1.6,
+      "referenceNav1m": 10.2133,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.055,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "27": {
+      "schemeId": "SIF:143",
+      "latestNav": 11.2964,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-06-29",
+      "changePct": 13.22,
+      "return1m": 2.32,
+      "return3m": 10.04,
+      "referenceNav1m": 11.0401,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.2656,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "28": {
+      "schemeId": "SIF:146",
+      "latestNav": 10.372,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-07-09",
+      "changePct": 3.1,
+      "return1m": 0.69,
+      "return3m": 2.7,
+      "referenceNav1m": 10.301,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.099,
+      "referenceDate3m": "2026-07-16",
+      "calculationStatus": "complete",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": []
+    },
+    "29": {
+      "schemeId": "SIF:138",
+      "latestNav": 10.2086,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-07-23",
+      "changePct": 1.96,
+      "return1m": 0.27,
+      "return3m": 1.96,
+      "referenceNav1m": 10.181,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.0127,
+      "referenceDate3m": "2026-07-23",
+      "calculationStatus": "partial",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": [
+        "three_month_uses_inception"
+      ]
+    },
+    "30": {
+      "schemeId": "SIF:150",
+      "latestNav": 10.28,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-07-24",
+      "changePct": 3.01,
+      "return1m": 0.78,
+      "return3m": 3.01,
+      "referenceNav1m": 10.2,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 9.98,
+      "referenceDate3m": "2026-07-24",
+      "calculationStatus": "partial",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": [
+        "three_month_uses_inception"
+      ]
+    },
+    "31": {
+      "schemeId": "SIF:157",
+      "latestNav": 9.7854,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-09-02",
+      "changePct": -1.78,
+      "return1m": 0.53,
+      "return3m": -1.78,
+      "referenceNav1m": 9.7338,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 9.963,
+      "referenceDate3m": "2026-09-02",
+      "calculationStatus": "partial",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": [
+        "three_month_uses_inception"
+      ]
+    },
+    "32": {
+      "schemeId": "SIF:154",
+      "latestNav": 9.9,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-09-01",
+      "changePct": -1.1,
+      "return1m": 0.41,
+      "return3m": -1.1,
+      "referenceNav1m": 9.86,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.01,
+      "referenceDate3m": "2026-09-01",
+      "calculationStatus": "partial",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": [
+        "three_month_uses_inception"
+      ]
+    },
+    "33": {
+      "schemeId": "SIF:156",
+      "latestNav": 10.01,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-09-01",
+      "changePct": null,
+      "return1m": 0.81,
+      "return3m": null,
+      "referenceNav1m": 9.93,
+      "referenceDate1m": "2026-09-15",
+      "referenceNav3m": 10.01,
+      "referenceDate3m": "2026-09-01",
+      "calculationStatus": "partial",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": [
+        "change_pct_zero_normalized_to_null",
+        "three_month_uses_inception",
+        "three_month_zero_normalized_to_null"
+      ]
+    },
+    "34": {
+      "schemeId": "SIF:161",
+      "latestNav": 10.1077,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2026-10-05",
+      "changePct": 0.91,
+      "return1m": 0.91,
+      "return3m": 0.91,
+      "referenceNav1m": 10.017,
+      "referenceDate1m": "2026-10-05",
+      "referenceNav3m": 10.017,
+      "referenceDate3m": "2026-10-05",
+      "calculationStatus": "partial",
+      "calculationMethod": "sif360-observed-30d-90d-v1",
+      "dataQualityWarnings": [
+        "one_month_uses_inception",
+        "three_month_uses_inception"
+      ]
+    }
+  },
+  "reconciliation": [
+    {
+      "fundId": 1,
+      "schemeCode": 13,
+      "metric": "changePct",
+      "sif360Value": 2.68,
+      "calculatedValue": 2.68,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 1,
+      "schemeCode": 13,
+      "metric": "return1m",
+      "sif360Value": -0.86,
+      "calculatedValue": -0.86,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 1,
+      "schemeCode": 13,
+      "metric": "return3m",
+      "sif360Value": -1.38,
+      "calculatedValue": -1.38,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 1,
+      "schemeCode": 13,
+      "metric": "latestNav",
+      "sif360Value": 10.3021,
+      "calculatedValue": 10.3021,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 1,
+      "schemeCode": 13,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 1,
+      "schemeCode": 13,
+      "metric": "inceptionDate",
+      "sif360Value": "29 Oct 2025",
+      "calculatedValue": "29 Oct 2025",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 2,
+      "schemeCode": 3,
+      "metric": "changePct",
+      "sif360Value": 8.49,
+      "calculatedValue": 8.49,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 2,
+      "schemeCode": 3,
+      "metric": "return1m",
+      "sif360Value": -0.12,
+      "calculatedValue": -0.12,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 2,
+      "schemeCode": 3,
+      "metric": "return3m",
+      "sif360Value": -1.37,
+      "calculatedValue": -1.37,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 2,
+      "schemeCode": 3,
+      "metric": "latestNav",
+      "sif360Value": 10.8542,
+      "calculatedValue": 10.8542,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 2,
+      "schemeCode": 3,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 2,
+      "schemeCode": 3,
+      "metric": "inceptionDate",
+      "sif360Value": "08 Oct 2025",
+      "calculatedValue": "08 Oct 2025",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 3,
+      "schemeCode": 7,
+      "metric": "changePct",
+      "sif360Value": 29.53,
+      "calculatedValue": 29.53,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 3,
+      "schemeCode": 7,
+      "metric": "return1m",
+      "sif360Value": -1.55,
+      "calculatedValue": -1.55,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 3,
+      "schemeCode": 7,
+      "metric": "return3m",
+      "sif360Value": 21.44,
+      "calculatedValue": 21.44,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 3,
+      "schemeCode": 7,
+      "metric": "latestNav",
+      "sif360Value": 12.9738,
+      "calculatedValue": 12.9738,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 3,
+      "schemeCode": 7,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 3,
+      "schemeCode": 7,
+      "metric": "inceptionDate",
+      "sif360Value": "20 Oct 2025",
+      "calculatedValue": "20 Oct 2025",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 4,
+      "schemeCode": 25,
+      "metric": "changePct",
+      "sif360Value": 11.91,
+      "calculatedValue": 11.91,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 4,
+      "schemeCode": 25,
+      "metric": "return1m",
+      "sif360Value": -1.21,
+      "calculatedValue": -1.21,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 4,
+      "schemeCode": 25,
+      "metric": "return3m",
+      "sif360Value": 4.14,
+      "calculatedValue": 4.14,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 4,
+      "schemeCode": 25,
+      "metric": "latestNav",
+      "sif360Value": 11.2028,
+      "calculatedValue": 11.2028,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 4,
+      "schemeCode": 25,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 4,
+      "schemeCode": 25,
+      "metric": "inceptionDate",
+      "sif360Value": "13 Nov 2025",
+      "calculatedValue": "13 Nov 2025",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 5,
+      "schemeCode": 11,
+      "metric": "changePct",
+      "sif360Value": 9.45,
+      "calculatedValue": 9.45,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 5,
+      "schemeCode": 11,
+      "metric": "return1m",
+      "sif360Value": -0.17,
+      "calculatedValue": -0.17,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 5,
+      "schemeCode": 11,
+      "metric": "return3m",
+      "sif360Value": 1.3,
+      "calculatedValue": 1.3,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 5,
+      "schemeCode": 11,
+      "metric": "latestNav",
+      "sif360Value": 10.9551,
+      "calculatedValue": 10.9551,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 5,
+      "schemeCode": 11,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 5,
+      "schemeCode": 11,
+      "metric": "inceptionDate",
+      "sif360Value": "24 Oct 2025",
+      "calculatedValue": "24 Oct 2025",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 6,
+      "schemeCode": 21,
+      "metric": "changePct",
+      "sif360Value": -13.05,
+      "calculatedValue": -13.05,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 6,
+      "schemeCode": 21,
+      "metric": "return1m",
+      "sif360Value": -2.4,
+      "calculatedValue": -2.4,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 6,
+      "schemeCode": 21,
+      "metric": "return3m",
+      "sif360Value": -7.7,
+      "calculatedValue": -7.7,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 6,
+      "schemeCode": 21,
+      "metric": "latestNav",
+      "sif360Value": 870.238,
+      "calculatedValue": 870.238,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 6,
+      "schemeCode": 21,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 6,
+      "schemeCode": 21,
+      "metric": "inceptionDate",
+      "sif360Value": "03 Dec 2025",
+      "calculatedValue": "03 Dec 2025",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 7,
+      "schemeCode": 29,
+      "metric": "changePct",
+      "sif360Value": -1.11,
+      "calculatedValue": -1.11,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 7,
+      "schemeCode": 29,
+      "metric": "return1m",
+      "sif360Value": -0.65,
+      "calculatedValue": -0.65,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 7,
+      "schemeCode": 29,
+      "metric": "return3m",
+      "sif360Value": -2.38,
+      "calculatedValue": -2.38,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 7,
+      "schemeCode": 29,
+      "metric": "latestNav",
+      "sif360Value": 9.8887,
+      "calculatedValue": 9.8887,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 7,
+      "schemeCode": 29,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 7,
+      "schemeCode": 29,
+      "metric": "inceptionDate",
+      "sif360Value": "17 Dec 2025",
+      "calculatedValue": "17 Dec 2025",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 8,
+      "schemeCode": 40,
+      "metric": "changePct",
+      "sif360Value": 3.55,
+      "calculatedValue": 3.55,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 8,
+      "schemeCode": 40,
+      "metric": "return1m",
+      "sif360Value": 0.18,
+      "calculatedValue": 0.18,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 8,
+      "schemeCode": 40,
+      "metric": "return3m",
+      "sif360Value": 0.76,
+      "calculatedValue": 0.76,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 8,
+      "schemeCode": 40,
+      "metric": "latestNav",
+      "sif360Value": 10.389,
+      "calculatedValue": 10.389,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 8,
+      "schemeCode": 40,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 8,
+      "schemeCode": 40,
+      "metric": "inceptionDate",
+      "sif360Value": "04 Feb 2026",
+      "calculatedValue": "04 Feb 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 9,
+      "schemeCode": 35,
+      "metric": "changePct",
+      "sif360Value": 2.89,
+      "calculatedValue": 2.89,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 9,
+      "schemeCode": 35,
+      "metric": "return1m",
+      "sif360Value": -0.24,
+      "calculatedValue": -0.24,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 9,
+      "schemeCode": 35,
+      "metric": "return3m",
+      "sif360Value": 0.62,
+      "calculatedValue": 0.62,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 9,
+      "schemeCode": 35,
+      "metric": "latestNav",
+      "sif360Value": 10.3074,
+      "calculatedValue": 10.3074,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 9,
+      "schemeCode": 35,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 9,
+      "schemeCode": 35,
+      "metric": "inceptionDate",
+      "sif360Value": "05 Feb 2026",
+      "calculatedValue": "05 Feb 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 10,
+      "schemeCode": 34,
+      "metric": "changePct",
+      "sif360Value": 1.9,
+      "calculatedValue": 1.9,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 10,
+      "schemeCode": 34,
+      "metric": "return1m",
+      "sif360Value": 0.69,
+      "calculatedValue": 0.69,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 10,
+      "schemeCode": 34,
+      "metric": "return3m",
+      "sif360Value": -0.68,
+      "calculatedValue": -0.68,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 10,
+      "schemeCode": 34,
+      "metric": "latestNav",
+      "sif360Value": 10.18,
+      "calculatedValue": 10.18,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 10,
+      "schemeCode": 34,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 10,
+      "schemeCode": 34,
+      "metric": "inceptionDate",
+      "sif360Value": "05 Feb 2026",
+      "calculatedValue": "05 Feb 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 11,
+      "schemeCode": 55,
+      "metric": "changePct",
+      "sif360Value": 1.34,
+      "calculatedValue": 1.34,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 11,
+      "schemeCode": 55,
+      "metric": "return1m",
+      "sif360Value": -1.42,
+      "calculatedValue": -1.42,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 11,
+      "schemeCode": 55,
+      "metric": "return3m",
+      "sif360Value": -3.84,
+      "calculatedValue": -3.84,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 11,
+      "schemeCode": 55,
+      "metric": "latestNav",
+      "sif360Value": 10.1397,
+      "calculatedValue": 10.1397,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 11,
+      "schemeCode": 55,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 11,
+      "schemeCode": 55,
+      "metric": "inceptionDate",
+      "sif360Value": "27 Feb 2026",
+      "calculatedValue": "27 Feb 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 12,
+      "schemeCode": 87,
+      "metric": "changePct",
+      "sif360Value": 3.7,
+      "calculatedValue": 3.53,
+      "difference": -0.17,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 12,
+      "schemeCode": 87,
+      "metric": "return1m",
+      "sif360Value": -0.6,
+      "calculatedValue": -0.76,
+      "difference": -0.16,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 12,
+      "schemeCode": 87,
+      "metric": "return3m",
+      "sif360Value": 0.27,
+      "calculatedValue": 0.11,
+      "difference": -0.16,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 12,
+      "schemeCode": 87,
+      "metric": "latestNav",
+      "sif360Value": 10.3892,
+      "calculatedValue": 10.3728,
+      "difference": -0.0164,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 12,
+      "schemeCode": 87,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "12 Oct 2026",
+      "difference": null,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 12,
+      "schemeCode": 87,
+      "metric": "inceptionDate",
+      "sif360Value": "30 Mar 2026",
+      "calculatedValue": "30 Mar 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 13,
+      "schemeCode": 62,
+      "metric": "changePct",
+      "sif360Value": 2.47,
+      "calculatedValue": 2.47,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 13,
+      "schemeCode": 62,
+      "metric": "return1m",
+      "sif360Value": -1.61,
+      "calculatedValue": -1.61,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 13,
+      "schemeCode": 62,
+      "metric": "return3m",
+      "sif360Value": -3.37,
+      "calculatedValue": -3.37,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 13,
+      "schemeCode": 62,
+      "metric": "latestNav",
+      "sif360Value": 10.067,
+      "calculatedValue": 10.067,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 13,
+      "schemeCode": 62,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 13,
+      "schemeCode": 62,
+      "metric": "inceptionDate",
+      "sif360Value": "30 Mar 2026",
+      "calculatedValue": "30 Mar 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 14,
+      "schemeCode": 80,
+      "metric": "changePct",
+      "sif360Value": 7.2,
+      "calculatedValue": 7.2,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 14,
+      "schemeCode": 80,
+      "metric": "return1m",
+      "sif360Value": 0.61,
+      "calculatedValue": 0.61,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 14,
+      "schemeCode": 80,
+      "metric": "return3m",
+      "sif360Value": 3.96,
+      "calculatedValue": 3.96,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 14,
+      "schemeCode": 80,
+      "metric": "latestNav",
+      "sif360Value": 10.7416,
+      "calculatedValue": 10.7416,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 14,
+      "schemeCode": 80,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 14,
+      "schemeCode": 80,
+      "metric": "inceptionDate",
+      "sif360Value": "30 Mar 2026",
+      "calculatedValue": "30 Mar 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 15,
+      "schemeCode": 96,
+      "metric": "changePct",
+      "sif360Value": -4.34,
+      "calculatedValue": -4.34,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 15,
+      "schemeCode": 96,
+      "metric": "return1m",
+      "sif360Value": -1.52,
+      "calculatedValue": -1.52,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 15,
+      "schemeCode": 96,
+      "metric": "return3m",
+      "sif360Value": -4.33,
+      "calculatedValue": -4.33,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 15,
+      "schemeCode": 96,
+      "metric": "latestNav",
+      "sif360Value": 956.5907,
+      "calculatedValue": 956.5907,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 15,
+      "schemeCode": 96,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 15,
+      "schemeCode": 96,
+      "metric": "inceptionDate",
+      "sif360Value": "29 Apr 2026",
+      "calculatedValue": "29 Apr 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 16,
+      "schemeCode": 111,
+      "metric": "changePct",
+      "sif360Value": 0.92,
+      "calculatedValue": 0.92,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 16,
+      "schemeCode": 111,
+      "metric": "return1m",
+      "sif360Value": -1.08,
+      "calculatedValue": -1.08,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 16,
+      "schemeCode": 111,
+      "metric": "return3m",
+      "sif360Value": -5.61,
+      "calculatedValue": -5.61,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 16,
+      "schemeCode": 111,
+      "metric": "latestNav",
+      "sif360Value": 10.0897,
+      "calculatedValue": 10.0897,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 16,
+      "schemeCode": 111,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 16,
+      "schemeCode": 111,
+      "metric": "inceptionDate",
+      "sif360Value": "11 May 2026",
+      "calculatedValue": "11 May 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 17,
+      "schemeCode": 105,
+      "metric": "changePct",
+      "sif360Value": 3.13,
+      "calculatedValue": 3.13,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 17,
+      "schemeCode": 105,
+      "metric": "return1m",
+      "sif360Value": -1.1,
+      "calculatedValue": -1.1,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 17,
+      "schemeCode": 105,
+      "metric": "return3m",
+      "sif360Value": -4.01,
+      "calculatedValue": -4.01,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 17,
+      "schemeCode": 105,
+      "metric": "latestNav",
+      "sif360Value": 10.3055,
+      "calculatedValue": 10.3055,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 17,
+      "schemeCode": 105,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 17,
+      "schemeCode": 105,
+      "metric": "inceptionDate",
+      "sif360Value": "11 May 2026",
+      "calculatedValue": "11 May 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 18,
+      "schemeCode": 102,
+      "metric": "changePct",
+      "sif360Value": 1.59,
+      "calculatedValue": 1.59,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 18,
+      "schemeCode": 102,
+      "metric": "return1m",
+      "sif360Value": -0.51,
+      "calculatedValue": -0.51,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 18,
+      "schemeCode": 102,
+      "metric": "return3m",
+      "sif360Value": -0.94,
+      "calculatedValue": -0.94,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 18,
+      "schemeCode": 102,
+      "metric": "latestNav",
+      "sif360Value": 10.1947,
+      "calculatedValue": 10.1947,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 18,
+      "schemeCode": 102,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 18,
+      "schemeCode": 102,
+      "metric": "inceptionDate",
+      "sif360Value": "20 May 2026",
+      "calculatedValue": "20 May 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 19,
+      "schemeCode": 117,
+      "metric": "changePct",
+      "sif360Value": 1.75,
+      "calculatedValue": 1.75,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 19,
+      "schemeCode": 117,
+      "metric": "return1m",
+      "sif360Value": -1.1,
+      "calculatedValue": -1.1,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 19,
+      "schemeCode": 117,
+      "metric": "return3m",
+      "sif360Value": -1.45,
+      "calculatedValue": -1.45,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 19,
+      "schemeCode": 117,
+      "metric": "latestNav",
+      "sif360Value": 10.1833,
+      "calculatedValue": 10.1833,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 19,
+      "schemeCode": 117,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 19,
+      "schemeCode": 117,
+      "metric": "inceptionDate",
+      "sif360Value": "18 May 2026",
+      "calculatedValue": "18 May 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 20,
+      "schemeCode": 114,
+      "metric": "changePct",
+      "sif360Value": -3.13,
+      "calculatedValue": -3.13,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 20,
+      "schemeCode": 114,
+      "metric": "return1m",
+      "sif360Value": -1.14,
+      "calculatedValue": -1.14,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 20,
+      "schemeCode": 114,
+      "metric": "return3m",
+      "sif360Value": -3.66,
+      "calculatedValue": -3.66,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 20,
+      "schemeCode": 114,
+      "metric": "latestNav",
+      "sif360Value": 9.6764,
+      "calculatedValue": 9.6764,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 20,
+      "schemeCode": 114,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 20,
+      "schemeCode": 114,
+      "metric": "inceptionDate",
+      "sif360Value": "29 May 2026",
+      "calculatedValue": "29 May 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 21,
+      "schemeCode": 93,
+      "metric": "changePct",
+      "sif360Value": 29.06,
+      "calculatedValue": 29.06,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 21,
+      "schemeCode": 93,
+      "metric": "return1m",
+      "sif360Value": -2.96,
+      "calculatedValue": -2.96,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 21,
+      "schemeCode": 93,
+      "metric": "return3m",
+      "sif360Value": 18.67,
+      "calculatedValue": 18.67,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 21,
+      "schemeCode": 93,
+      "metric": "latestNav",
+      "sif360Value": 12.9182,
+      "calculatedValue": 12.9182,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 21,
+      "schemeCode": 93,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 21,
+      "schemeCode": 93,
+      "metric": "inceptionDate",
+      "sif360Value": "24 Apr 2026",
+      "calculatedValue": "24 Apr 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 22,
+      "schemeCode": 122,
+      "metric": "changePct",
+      "sif360Value": 7.08,
+      "calculatedValue": 7.08,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 22,
+      "schemeCode": 122,
+      "metric": "return1m",
+      "sif360Value": -0.16,
+      "calculatedValue": -0.16,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 22,
+      "schemeCode": 122,
+      "metric": "return3m",
+      "sif360Value": -1.37,
+      "calculatedValue": -1.37,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 22,
+      "schemeCode": 122,
+      "metric": "latestNav",
+      "sif360Value": 10.6732,
+      "calculatedValue": 10.6732,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 22,
+      "schemeCode": 122,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 22,
+      "schemeCode": 122,
+      "metric": "inceptionDate",
+      "sif360Value": "10 Jun 2026",
+      "calculatedValue": "10 Jun 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 23,
+      "schemeCode": 136,
+      "metric": "changePct",
+      "sif360Value": 0.1,
+      "calculatedValue": 0.1,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 23,
+      "schemeCode": 136,
+      "metric": "return1m",
+      "sif360Value": -0.72,
+      "calculatedValue": -0.72,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 23,
+      "schemeCode": 136,
+      "metric": "return3m",
+      "sif360Value": -0.91,
+      "calculatedValue": -0.91,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 23,
+      "schemeCode": 136,
+      "metric": "latestNav",
+      "sif360Value": 10.011,
+      "calculatedValue": 10.011,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 23,
+      "schemeCode": 136,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 23,
+      "schemeCode": 136,
+      "metric": "inceptionDate",
+      "sif360Value": "11 Jun 2026",
+      "calculatedValue": "11 Jun 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 24,
+      "schemeCode": 126,
+      "metric": "changePct",
+      "sif360Value": 5.1,
+      "calculatedValue": 5.1,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 24,
+      "schemeCode": 126,
+      "metric": "return1m",
+      "sif360Value": -0.57,
+      "calculatedValue": -0.57,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 24,
+      "schemeCode": 126,
+      "metric": "return3m",
+      "sif360Value": 1.25,
+      "calculatedValue": 1.25,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 24,
+      "schemeCode": 126,
+      "metric": "latestNav",
+      "sif360Value": 10.51,
+      "calculatedValue": 10.51,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 24,
+      "schemeCode": 126,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 24,
+      "schemeCode": 126,
+      "metric": "inceptionDate",
+      "sif360Value": "08 Jun 2026",
+      "calculatedValue": "08 Jun 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 25,
+      "schemeCode": 124,
+      "metric": "changePct",
+      "sif360Value": 2.2,
+      "calculatedValue": 1.8,
+      "difference": -0.4,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 25,
+      "schemeCode": 124,
+      "metric": "return1m",
+      "sif360Value": -0.5,
+      "calculatedValue": -0.88,
+      "difference": -0.38,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 25,
+      "schemeCode": 124,
+      "metric": "return3m",
+      "sif360Value": 0.23,
+      "calculatedValue": -0.15,
+      "difference": -0.38,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 25,
+      "schemeCode": 124,
+      "metric": "latestNav",
+      "sif360Value": 10.2155,
+      "calculatedValue": 10.1764,
+      "difference": -0.0391,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 25,
+      "schemeCode": 124,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "12 Oct 2026",
+      "difference": null,
+      "status": "mismatch"
+    },
+    {
+      "fundId": 25,
+      "schemeCode": 124,
+      "metric": "inceptionDate",
+      "sif360Value": "08 Jun 2026",
+      "calculatedValue": "08 Jun 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 26,
+      "schemeCode": 128,
+      "metric": "changePct",
+      "sif360Value": 1.96,
+      "calculatedValue": 1.96,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 26,
+      "schemeCode": 128,
+      "metric": "return1m",
+      "sif360Value": 0.03,
+      "calculatedValue": 0.03,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 26,
+      "schemeCode": 128,
+      "metric": "return3m",
+      "sif360Value": 1.6,
+      "calculatedValue": 1.6,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 26,
+      "schemeCode": 128,
+      "metric": "latestNav",
+      "sif360Value": 10.2162,
+      "calculatedValue": 10.2162,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 26,
+      "schemeCode": 128,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 26,
+      "schemeCode": 128,
+      "metric": "inceptionDate",
+      "sif360Value": "25 Jun 2026",
+      "calculatedValue": "25 Jun 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 27,
+      "schemeCode": 143,
+      "metric": "changePct",
+      "sif360Value": 13.22,
+      "calculatedValue": 13.22,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 27,
+      "schemeCode": 143,
+      "metric": "return1m",
+      "sif360Value": 2.32,
+      "calculatedValue": 2.32,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 27,
+      "schemeCode": 143,
+      "metric": "return3m",
+      "sif360Value": 10.04,
+      "calculatedValue": 10.04,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 27,
+      "schemeCode": 143,
+      "metric": "latestNav",
+      "sif360Value": 11.2964,
+      "calculatedValue": 11.2964,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 27,
+      "schemeCode": 143,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 27,
+      "schemeCode": 143,
+      "metric": "inceptionDate",
+      "sif360Value": "29 Jun 2026",
+      "calculatedValue": "29 Jun 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 28,
+      "schemeCode": 146,
+      "metric": "changePct",
+      "sif360Value": 3.1,
+      "calculatedValue": 3.1,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 28,
+      "schemeCode": 146,
+      "metric": "return1m",
+      "sif360Value": 0.69,
+      "calculatedValue": 0.69,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 28,
+      "schemeCode": 146,
+      "metric": "return3m",
+      "sif360Value": 2.7,
+      "calculatedValue": 2.7,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 28,
+      "schemeCode": 146,
+      "metric": "latestNav",
+      "sif360Value": 10.372,
+      "calculatedValue": 10.372,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 28,
+      "schemeCode": 146,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 28,
+      "schemeCode": 146,
+      "metric": "inceptionDate",
+      "sif360Value": "09 Jul 2026",
+      "calculatedValue": "09 Jul 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 29,
+      "schemeCode": 138,
+      "metric": "changePct",
+      "sif360Value": 1.96,
+      "calculatedValue": 1.96,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 29,
+      "schemeCode": 138,
+      "metric": "return1m",
+      "sif360Value": 0.27,
+      "calculatedValue": 0.27,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 29,
+      "schemeCode": 138,
+      "metric": "return3m",
+      "sif360Value": 1.96,
+      "calculatedValue": 1.96,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 29,
+      "schemeCode": 138,
+      "metric": "latestNav",
+      "sif360Value": 10.2086,
+      "calculatedValue": 10.2086,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 29,
+      "schemeCode": 138,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 29,
+      "schemeCode": 138,
+      "metric": "inceptionDate",
+      "sif360Value": "23 Jul 2026",
+      "calculatedValue": "23 Jul 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 30,
+      "schemeCode": 150,
+      "metric": "changePct",
+      "sif360Value": 3.01,
+      "calculatedValue": 3.01,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 30,
+      "schemeCode": 150,
+      "metric": "return1m",
+      "sif360Value": 0.78,
+      "calculatedValue": 0.78,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 30,
+      "schemeCode": 150,
+      "metric": "return3m",
+      "sif360Value": 3.01,
+      "calculatedValue": 3.01,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 30,
+      "schemeCode": 150,
+      "metric": "latestNav",
+      "sif360Value": 10.28,
+      "calculatedValue": 10.28,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 30,
+      "schemeCode": 150,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 30,
+      "schemeCode": 150,
+      "metric": "inceptionDate",
+      "sif360Value": "24 Jul 2026",
+      "calculatedValue": "24 Jul 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 31,
+      "schemeCode": 157,
+      "metric": "changePct",
+      "sif360Value": -1.78,
+      "calculatedValue": -1.78,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 31,
+      "schemeCode": 157,
+      "metric": "return1m",
+      "sif360Value": 0.53,
+      "calculatedValue": 0.53,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 31,
+      "schemeCode": 157,
+      "metric": "return3m",
+      "sif360Value": -1.78,
+      "calculatedValue": -1.78,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 31,
+      "schemeCode": 157,
+      "metric": "latestNav",
+      "sif360Value": 9.7854,
+      "calculatedValue": 9.7854,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 31,
+      "schemeCode": 157,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 31,
+      "schemeCode": 157,
+      "metric": "inceptionDate",
+      "sif360Value": "02 Sep 2026",
+      "calculatedValue": "02 Sep 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 32,
+      "schemeCode": 154,
+      "metric": "changePct",
+      "sif360Value": -1.1,
+      "calculatedValue": -1.1,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 32,
+      "schemeCode": 154,
+      "metric": "return1m",
+      "sif360Value": 0.41,
+      "calculatedValue": 0.41,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 32,
+      "schemeCode": 154,
+      "metric": "return3m",
+      "sif360Value": -1.1,
+      "calculatedValue": -1.1,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 32,
+      "schemeCode": 154,
+      "metric": "latestNav",
+      "sif360Value": 9.9,
+      "calculatedValue": 9.9,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 32,
+      "schemeCode": 154,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 32,
+      "schemeCode": 154,
+      "metric": "inceptionDate",
+      "sif360Value": "01 Sep 2026",
+      "calculatedValue": "01 Sep 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 33,
+      "schemeCode": 156,
+      "metric": "changePct",
+      "sif360Value": null,
+      "calculatedValue": null,
+      "difference": null,
+      "status": "exact-null"
+    },
+    {
+      "fundId": 33,
+      "schemeCode": 156,
+      "metric": "return1m",
+      "sif360Value": 0.81,
+      "calculatedValue": 0.81,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 33,
+      "schemeCode": 156,
+      "metric": "return3m",
+      "sif360Value": null,
+      "calculatedValue": null,
+      "difference": null,
+      "status": "exact-null"
+    },
+    {
+      "fundId": 33,
+      "schemeCode": 156,
+      "metric": "latestNav",
+      "sif360Value": 10.01,
+      "calculatedValue": 10.01,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 33,
+      "schemeCode": 156,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 33,
+      "schemeCode": 156,
+      "metric": "inceptionDate",
+      "sif360Value": "01 Sep 2026",
+      "calculatedValue": "01 Sep 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 34,
+      "schemeCode": 161,
+      "metric": "changePct",
+      "sif360Value": 0.91,
+      "calculatedValue": 0.91,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 34,
+      "schemeCode": 161,
+      "metric": "return1m",
+      "sif360Value": 0.91,
+      "calculatedValue": 0.91,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 34,
+      "schemeCode": 161,
+      "metric": "return3m",
+      "sif360Value": 0.91,
+      "calculatedValue": 0.91,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 34,
+      "schemeCode": 161,
+      "metric": "latestNav",
+      "sif360Value": 10.1077,
+      "calculatedValue": 10.1077,
+      "difference": 0,
+      "status": "exact"
+    },
+    {
+      "fundId": 34,
+      "schemeCode": 161,
+      "metric": "latestDate",
+      "sif360Value": "13 Oct 2026",
+      "calculatedValue": "13 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    },
+    {
+      "fundId": 34,
+      "schemeCode": 161,
+      "metric": "inceptionDate",
+      "sif360Value": "05 Oct 2026",
+      "calculatedValue": "05 Oct 2026",
+      "difference": null,
+      "status": "exact"
+    }
+  ],
+  "sampleApiResponse": {
+    "success": true,
+    "isBadData": false,
+    "performanceMap": {
+      "1": {
+        "changePct": 2.68,
+        "return1m": -0.86,
+        "return3m": -1.38,
+        "latestNav": 10.3021,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "29 Oct 2025"
+      },
+      "2": {
+        "changePct": 8.49,
+        "return1m": -0.12,
+        "return3m": -1.37,
+        "latestNav": 10.8542,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "08 Oct 2025"
+      },
+      "3": {
+        "changePct": 29.53,
+        "return1m": -1.55,
+        "return3m": 21.44,
+        "latestNav": 12.9738,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "20 Oct 2025"
+      },
+      "4": {
+        "changePct": 11.91,
+        "return1m": -1.21,
+        "return3m": 4.14,
+        "latestNav": 11.2028,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "13 Nov 2025"
+      },
+      "5": {
+        "changePct": 9.45,
+        "return1m": -0.17,
+        "return3m": 1.3,
+        "latestNav": 10.9551,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "24 Oct 2025"
+      },
+      "6": {
+        "changePct": -13.05,
+        "return1m": -2.4,
+        "return3m": -7.7,
+        "latestNav": 870.238,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "03 Dec 2025"
+      },
+      "7": {
+        "changePct": -1.11,
+        "return1m": -0.65,
+        "return3m": -2.38,
+        "latestNav": 9.8887,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "17 Dec 2025"
+      },
+      "8": {
+        "changePct": 3.55,
+        "return1m": 0.18,
+        "return3m": 0.76,
+        "latestNav": 10.389,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "04 Feb 2026"
+      },
+      "9": {
+        "changePct": 2.89,
+        "return1m": -0.24,
+        "return3m": 0.62,
+        "latestNav": 10.3074,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "05 Feb 2026"
+      },
+      "10": {
+        "changePct": 1.9,
+        "return1m": 0.69,
+        "return3m": -0.68,
+        "latestNav": 10.18,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "05 Feb 2026"
+      },
+      "11": {
+        "changePct": 1.34,
+        "return1m": -1.42,
+        "return3m": -3.84,
+        "latestNav": 10.1397,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "27 Feb 2026"
+      },
+      "12": {
+        "changePct": 3.53,
+        "return1m": -0.76,
+        "return3m": 0.11,
+        "latestNav": 10.3728,
+        "latestDate": "12 Oct 2026",
+        "inceptionDate": "30 Mar 2026"
+      },
+      "13": {
+        "changePct": 2.47,
+        "return1m": -1.61,
+        "return3m": -3.37,
+        "latestNav": 10.067,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "30 Mar 2026"
+      },
+      "14": {
+        "changePct": 7.2,
+        "return1m": 0.61,
+        "return3m": 3.96,
+        "latestNav": 10.7416,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "30 Mar 2026"
+      },
+      "15": {
+        "changePct": -4.34,
+        "return1m": -1.52,
+        "return3m": -4.33,
+        "latestNav": 956.5907,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "29 Apr 2026"
+      },
+      "16": {
+        "changePct": 0.92,
+        "return1m": -1.08,
+        "return3m": -5.61,
+        "latestNav": 10.0897,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "11 May 2026"
+      },
+      "17": {
+        "changePct": 3.13,
+        "return1m": -1.1,
+        "return3m": -4.01,
+        "latestNav": 10.3055,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "11 May 2026"
+      },
+      "18": {
+        "changePct": 1.59,
+        "return1m": -0.51,
+        "return3m": -0.94,
+        "latestNav": 10.1947,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "20 May 2026"
+      },
+      "19": {
+        "changePct": 1.75,
+        "return1m": -1.1,
+        "return3m": -1.45,
+        "latestNav": 10.1833,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "18 May 2026"
+      },
+      "20": {
+        "changePct": -3.13,
+        "return1m": -1.14,
+        "return3m": -3.66,
+        "latestNav": 9.6764,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "29 May 2026"
+      },
+      "21": {
+        "changePct": 29.06,
+        "return1m": -2.96,
+        "return3m": 18.67,
+        "latestNav": 12.9182,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "24 Apr 2026"
+      },
+      "22": {
+        "changePct": 7.08,
+        "return1m": -0.16,
+        "return3m": -1.37,
+        "latestNav": 10.6732,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "10 Jun 2026"
+      },
+      "23": {
+        "changePct": 0.1,
+        "return1m": -0.72,
+        "return3m": -0.91,
+        "latestNav": 10.011,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "11 Jun 2026"
+      },
+      "24": {
+        "changePct": 5.1,
+        "return1m": -0.57,
+        "return3m": 1.25,
+        "latestNav": 10.51,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "08 Jun 2026"
+      },
+      "25": {
+        "changePct": 1.8,
+        "return1m": -0.88,
+        "return3m": -0.15,
+        "latestNav": 10.1764,
+        "latestDate": "12 Oct 2026",
+        "inceptionDate": "08 Jun 2026"
+      },
+      "26": {
+        "changePct": 1.96,
+        "return1m": 0.03,
+        "return3m": 1.6,
+        "latestNav": 10.2162,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "25 Jun 2026"
+      },
+      "27": {
+        "changePct": 13.22,
+        "return1m": 2.32,
+        "return3m": 10.04,
+        "latestNav": 11.2964,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "29 Jun 2026"
+      },
+      "28": {
+        "changePct": 3.1,
+        "return1m": 0.69,
+        "return3m": 2.7,
+        "latestNav": 10.372,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "09 Jul 2026"
+      },
+      "29": {
+        "changePct": 1.96,
+        "return1m": 0.27,
+        "return3m": 1.96,
+        "latestNav": 10.2086,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "23 Jul 2026"
+      },
+      "30": {
+        "changePct": 3.01,
+        "return1m": 0.78,
+        "return3m": 3.01,
+        "latestNav": 10.28,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "24 Jul 2026"
+      },
+      "31": {
+        "changePct": -1.78,
+        "return1m": 0.53,
+        "return3m": -1.78,
+        "latestNav": 9.7854,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "02 Sep 2026"
+      },
+      "32": {
+        "changePct": -1.1,
+        "return1m": 0.41,
+        "return3m": -1.1,
+        "latestNav": 9.9,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "01 Sep 2026"
+      },
+      "33": {
+        "changePct": null,
+        "return1m": 0.81,
+        "return3m": null,
+        "latestNav": 10.01,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "01 Sep 2026"
+      },
+      "34": {
+        "changePct": 0.91,
+        "return1m": 0.91,
+        "return3m": 0.91,
+        "latestNav": 10.1077,
+        "latestDate": "13 Oct 2026",
+        "inceptionDate": "05 Oct 2026"
+      }
+    }
+  }
+}

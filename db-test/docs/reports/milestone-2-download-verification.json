@@ -1,0 +1,378 @@
+{
+  "generated_at": "2026-10-13T06:16:27+00:00",
+  "verified_at": "2026-10-13T14:13:02.605493+05:30",
+  "base_url": "https://sif.tigzig.com/",
+  "files": {
+    "meta": {
+      "filename": "sif_meta.parquet",
+      "change_status": "changed",
+      "successful_sha256": null,
+      "downloaded": false,
+      "attempts": 0,
+      "bytes": 11468,
+      "sha256": "2645448cd077e1fc20b03d96381d51d4c11a32cb05f2328b3fb6f2ead3d89007",
+      "rows": 126,
+      "columns": [
+        "scheme_code",
+        "isin",
+        "isin2",
+        "scheme_name",
+        "amc",
+        "scheme_type",
+        "category",
+        "category_sub",
+        "category_group_clean",
+        "category_group",
+        "scheme_plan",
+        "scheme_option",
+        "first_date",
+        "last_date",
+        "is_active",
+        "is_stale",
+        "txic_code",
+        "aaum_cr",
+        "aaum_quarter",
+        "aaum_quarter_end",
+        "nav_date",
+        "nav",
+        "source",
+        "temp_sif_code",
+        "temp_plan_basis",
+        "temp_idcw_mode",
+        "temp_idcw_freq",
+        "temp_n_nav_days"
+      ],
+      "types": {
+        "scheme_code": "int32",
+        "isin": "string",
+        "isin2": "string",
+        "scheme_name": "string",
+        "amc": "string",
+        "scheme_type": "string",
+        "category": "string",
+        "category_sub": "string",
+        "category_group_clean": "string",
+        "category_group": "string",
+        "scheme_plan": "string",
+        "scheme_option": "string",
+        "first_date": "date32[day]",
+        "last_date": "date32[day]",
+        "is_active": "string",
+        "is_stale": "string",
+        "txic_code": "int32",
+        "aaum_cr": "double",
+        "aaum_quarter": "string",
+        "aaum_quarter_end": "date32[day]",
+        "nav_date": "date32[day]",
+        "nav": "double",
+        "source": "string",
+        "temp_sif_code": "string",
+        "temp_plan_basis": "string",
+        "temp_idcw_mode": "string",
+        "temp_idcw_freq": "string",
+        "temp_n_nav_days": "int32"
+      },
+      "null_counts": {
+        "scheme_code": 0,
+        "isin": 4,
+        "isin2": 73,
+        "scheme_name": 0,
+        "amc": 0,
+        "scheme_type": 0,
+        "category": 0,
+        "category_sub": 0,
+        "category_group_clean": 0,
+        "category_group": 0,
+        "scheme_plan": 0,
+        "scheme_option": 0,
+        "first_date": 0,
+        "last_date": 0,
+        "is_active": 0,
+        "is_stale": 0,
+        "txic_code": 126,
+        "aaum_cr": 5,
+        "aaum_quarter": 5,
+        "aaum_quarter_end": 5,
+        "nav_date": 0,
+        "nav": 0,
+        "source": 0,
+        "temp_sif_code": 0,
+        "temp_plan_basis": 0,
+        "temp_idcw_mode": 114,
+        "temp_idcw_freq": 119,
+        "temp_n_nav_days": 0
+      },
+      "date_ranges": {
+        "first_date": {
+          "min": "2025-10-08",
+          "max": "2026-10-05"
+        },
+        "last_date": {
+          "min": "2026-10-12",
+          "max": "2026-10-12"
+        },
+        "aaum_quarter_end": {
+          "min": "2026-09-30",
+          "max": "2026-09-30"
+        },
+        "nav_date": {
+          "min": "2026-10-12",
+          "max": "2026-10-12"
+        }
+      }
+    },
+    "nav": {
+      "filename": "sif_nav.parquet",
+      "change_status": "changed",
+      "successful_sha256": null,
+      "downloaded": false,
+      "attempts": 0,
+      "bytes": 96199,
+      "sha256": "f705158793de2bfcc7e6788514c9df736c69e92d7799351d01aa96266cc44616",
+      "rows": 15500,
+      "columns": [
+        "scheme_code",
+        "date",
+        "nav",
+        "scheme_name",
+        "isin",
+        "isin2",
+        "amc",
+        "upload_ts",
+        "temp_sif_code"
+      ],
+      "types": {
+        "scheme_code": "int32",
+        "date": "date32[day]",
+        "nav": "double",
+        "scheme_name": "string",
+        "isin": "string",
+        "isin2": "string",
+        "amc": "string",
+        "upload_ts": "timestamp[us]",
+        "temp_sif_code": "string"
+      },
+      "null_counts": {
+        "scheme_code": 0,
+        "date": 0,
+        "nav": 0,
+        "scheme_name": 0,
+        "isin": 544,
+        "isin2": 8971,
+        "amc": 0,
+        "upload_ts": 0,
+        "temp_sif_code": 0
+      },
+      "date_ranges": {
+        "date": {
+          "min": "2025-10-08",
+          "max": "2026-10-12"
+        },
+        "upload_ts": {
+          "min": "2025-10-08T22:38:01",
+          "max": "2026-10-13T08:35:37"
+        }
+      }
+    },
+    "aaum": {
+      "filename": "sif_aaum.parquet",
+      "change_status": "changed",
+      "successful_sha256": null,
+      "downloaded": false,
+      "attempts": 0,
+      "bytes": 8936,
+      "sha256": "0f74bd6dda3b236202507f6aed4d619fd38d91b5e67b81d651635ac222c740fa",
+      "rows": 295,
+      "columns": [
+        "scheme_code",
+        "aaum_quarter",
+        "aaum_quarter_end",
+        "aaum_cr",
+        "aaum_lakhs",
+        "scheme_name",
+        "amc",
+        "quarter_start",
+        "temp_sif_code"
+      ],
+      "types": {
+        "scheme_code": "int32",
+        "aaum_quarter": "string",
+        "aaum_quarter_end": "date32[day]",
+        "aaum_cr": "double",
+        "aaum_lakhs": "double",
+        "scheme_name": "string",
+        "amc": "string",
+        "quarter_start": "date32[day]",
+        "temp_sif_code": "string"
+      },
+      "null_counts": {
+        "scheme_code": 3,
+        "aaum_quarter": 0,
+        "aaum_quarter_end": 0,
+        "aaum_cr": 0,
+        "aaum_lakhs": 0,
+        "scheme_name": 0,
+        "amc": 0,
+        "quarter_start": 0,
+        "temp_sif_code": 0
+      },
+      "date_ranges": {
+        "aaum_quarter_end": {
+          "min": "2025-12-31",
+          "max": "2026-09-30"
+        },
+        "quarter_start": {
+          "min": "2025-10-01",
+          "max": "2026-07-01"
+        }
+      }
+    }
+  },
+  "validation": {
+    "meta": {
+      "input_rows": 126,
+      "valid_rows": 126,
+      "rejected_rows": 0,
+      "duplicate_keys": 0,
+      "rejections": []
+    },
+    "nav": {
+      "input_rows": 15500,
+      "valid_rows": 15496,
+      "rejected_rows": 4,
+      "duplicate_keys": 0,
+      "rejections": [
+        {
+          "dataset": "nav",
+          "row_number": 5358,
+          "code": "INVALID_NAV",
+          "reason": "nav must be a positive finite number",
+          "raw_record": {
+            "scheme_code": 100,
+            "date": "2026-05-26",
+            "nav": 0.0,
+            "scheme_name": "Titanium Equity Long-Short Fund Direct IDCW Payout",
+            "isin": "INF277K30120",
+            "isin2": null,
+            "amc": "Titanium SIF",
+            "upload_ts": "2026-05-26T22:54:26",
+            "temp_sif_code": "SIF-100"
+          }
+        },
+        {
+          "dataset": "nav",
+          "row_number": 5361,
+          "code": "INVALID_NAV",
+          "reason": "nav must be a positive finite number",
+          "raw_record": {
+            "scheme_code": 103,
+            "date": "2026-05-26",
+            "nav": 0.0,
+            "scheme_name": "Titanium Equity Long-Short Fund Direct IDCW Reinvestment",
+            "isin": null,
+            "isin2": "INF277K30112",
+            "amc": "Titanium SIF",
+            "upload_ts": "2026-05-26T22:54:26",
+            "temp_sif_code": "SIF-103"
+          }
+        },
+        {
+          "dataset": "nav",
+          "row_number": 5999,
+          "code": "INVALID_NAV",
+          "reason": "nav must be a positive finite number",
+          "raw_record": {
+            "scheme_code": 100,
+            "date": "2026-06-08",
+            "nav": 0.0,
+            "scheme_name": "Titanium Equity Long-Short Fund Direct IDCW Payout",
+            "isin": "INF277K30120",
+            "isin2": null,
+            "amc": "Titanium SIF",
+            "upload_ts": "2026-06-08T22:54:16",
+            "temp_sif_code": "SIF-100"
+          }
+        },
+        {
+          "dataset": "nav",
+          "row_number": 6002,
+          "code": "INVALID_NAV",
+          "reason": "nav must be a positive finite number",
+          "raw_record": {
+            "scheme_code": 103,
+            "date": "2026-06-08",
+            "nav": 0.0,
+            "scheme_name": "Titanium Equity Long-Short Fund Direct IDCW Reinvestment",
+            "isin": null,
+            "isin2": "INF277K30112",
+            "amc": "Titanium SIF",
+            "upload_ts": "2026-06-08T22:54:16",
+            "temp_sif_code": "SIF-103"
+          }
+        }
+      ]
+    },
+    "aaum": {
+      "input_rows": 295,
+      "valid_rows": 292,
+      "rejected_rows": 3,
+      "duplicate_keys": 0,
+      "rejections": [
+        {
+          "dataset": "aaum",
+          "row_number": 66,
+          "code": "INVALID_SCHEME_CODE",
+          "reason": "scheme_code must be a positive integer",
+          "raw_record": {
+            "scheme_code": null,
+            "aaum_quarter": "September-2026",
+            "aaum_quarter_end": "2026-09-30",
+            "aaum_cr": 14.1097,
+            "aaum_lakhs": 1410.97,
+            "scheme_name": "Arudha Equity Long-Short Fund-Regular Plan-Daily IDCW",
+            "amc": "Arudha SIF",
+            "quarter_start": "2026-07-01",
+            "temp_sif_code": "SIF-63"
+          }
+        },
+        {
+          "dataset": "aaum",
+          "row_number": 173,
+          "code": "INVALID_SCHEME_CODE",
+          "reason": "scheme_code must be a positive integer",
+          "raw_record": {
+            "scheme_code": null,
+            "aaum_quarter": "June-2026",
+            "aaum_quarter_end": "2026-06-30",
+            "aaum_cr": 8.3382,
+            "aaum_lakhs": 833.82,
+            "scheme_name": "Arudha Equity Long-Short Fund-Regular Plan-Daily IDCW",
+            "amc": "Arudha SIF",
+            "quarter_start": "2026-04-01",
+            "temp_sif_code": "SIF-63"
+          }
+        },
+        {
+          "dataset": "aaum",
+          "row_number": 258,
+          "code": "INVALID_SCHEME_CODE",
+          "reason": "scheme_code must be a positive integer",
+          "raw_record": {
+            "scheme_code": null,
+            "aaum_quarter": "March-2026",
+            "aaum_quarter_end": "2026-03-31",
+            "aaum_cr": 0.2897,
+            "aaum_lakhs": 28.97,
+            "scheme_name": "Arudha Equity Long-Short Fund-Regular Plan-Daily IDCW",
+            "amc": "Arudha SIF",
+            "quarter_start": "2026-01-01",
+            "temp_sif_code": "SIF-63"
+          }
+        }
+      ]
+    }
+  },
+  "total_rejected_rows": 7,
+  "database_import_performed": false,
+  "successful_hashes_advanced": false
+}

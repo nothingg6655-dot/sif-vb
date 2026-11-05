@@ -1,0 +1,255 @@
+{
+  "manifest_generated_at": "2026-10-13 06:16:27+00:00",
+  "completed_at": "2026-10-13 14:22:55.957640+05:30",
+  "source_files": [
+    {
+      "dataset": "meta",
+      "filename": "sif_meta.parquet",
+      "rows": 126,
+      "bytes": 11468,
+      "sha256": "2645448cd077e1fc20b03d96381d51d4c11a32cb05f2328b3fb6f2ead3d89007"
+    },
+    {
+      "dataset": "nav",
+      "filename": "sif_nav.parquet",
+      "rows": 15500,
+      "bytes": 96199,
+      "sha256": "f705158793de2bfcc7e6788514c9df736c69e92d7799351d01aa96266cc44616"
+    },
+    {
+      "dataset": "aaum",
+      "filename": "sif_aaum.parquet",
+      "rows": 295,
+      "bytes": 8936,
+      "sha256": "0f74bd6dda3b236202507f6aed4d619fd38d91b5e67b81d651635ac222c740fa"
+    },
+    {
+      "dataset": "nav_raw_timestamp",
+      "filename": "sif_nav.csv",
+      "rows": 15500,
+      "bytes": 2136088,
+      "sha256": "76902af930594ff537d1a18e55fee945d13282eef0f1043446ba41e4ca79ad1c",
+      "purpose": "preserve exact provider publication timestamp text"
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "f8bff572-4688-4aab-9466-1e793a31b7c2",
+      "records_read": 15921,
+      "source_inserted": 15914,
+      "updated": 0,
+      "skipped": 0,
+      "rejected": 7,
+      "fund_houses_inserted": 17,
+      "isins_inserted": 175,
+      "schemes_inserted": 126,
+      "nav_inserted": 15496,
+      "aaum_inserted": 292,
+      "database_rejections_inserted": 7,
+      "staged": {
+        "meta": 126,
+        "nav": 15496,
+        "aaum": 292,
+        "rejections": 7
+      }
+    },
+    {
+      "run_id": "fd1371ed-1f53-4fac-938a-8dd74dd6b149",
+      "records_read": 15921,
+      "source_inserted": 0,
+      "updated": 0,
+      "skipped": 15914,
+      "rejected": 7,
+      "fund_houses_inserted": 0,
+      "isins_inserted": 0,
+      "schemes_inserted": 0,
+      "nav_inserted": 0,
+      "aaum_inserted": 0,
+      "database_rejections_inserted": 7,
+      "staged": {
+        "meta": 126,
+        "nav": 15496,
+        "aaum": 292,
+        "rejections": 7
+      }
+    }
+  ],
+  "reconciliation": {
+    "database_counts": {
+      "fund_houses": 17,
+      "schemes": 126,
+      "isins": 175,
+      "nav": 15496,
+      "aaum": 292
+    },
+    "manifest_reconciliation": {
+      "meta": {
+        "manifest": 126,
+        "database_plus_latest_rejections": 126
+      },
+      "nav": {
+        "manifest": 15500,
+        "database_plus_latest_rejections": 15500
+      },
+      "aaum": {
+        "manifest": 295,
+        "database_plus_latest_rejections": 295
+      }
+    },
+    "date_coverage": {
+      "nav": {
+        "min": "2025-10-08",
+        "max": "2026-10-12"
+      },
+      "aaum_quarter_end": {
+        "min": "2025-12-31",
+        "max": "2026-09-30"
+      }
+    },
+    "duplicate_groups": {
+      "schemes": 0,
+      "nav": 0,
+      "aaum": 0
+    },
+    "orphan_rows": {
+      "nav": 0,
+      "aaum": 0,
+      "isins": 0
+    },
+    "aaum_conversion_mismatches": 0,
+    "latest_run_rejections": {
+      "aaum": 3,
+      "nav": 4
+    },
+    "expected_nullable_fields": {
+      "schemes_without_latest_aaum": 5,
+      "schemes_without_txic_code": 126
+    }
+  },
+  "source_rejections": {
+    "meta": [],
+    "nav": [
+      {
+        "dataset": "nav",
+        "row_number": 5358,
+        "code": "INVALID_NAV",
+        "reason": "nav must be a positive finite number",
+        "raw_record": {
+          "scheme_code": 100,
+          "date": "2026-05-26",
+          "nav": 0.0,
+          "scheme_name": "Titanium Equity Long-Short Fund Direct IDCW Payout",
+          "isin": "INF277K30120",
+          "isin2": null,
+          "amc": "Titanium SIF",
+          "upload_ts": "2026-05-26 22:54:26",
+          "temp_sif_code": "SIF-100"
+        }
+      },
+      {
+        "dataset": "nav",
+        "row_number": 5361,
+        "code": "INVALID_NAV",
+        "reason": "nav must be a positive finite number",
+        "raw_record": {
+          "scheme_code": 103,
+          "date": "2026-05-26",
+          "nav": 0.0,
+          "scheme_name": "Titanium Equity Long-Short Fund Direct IDCW Reinvestment",
+          "isin": null,
+          "isin2": "INF277K30112",
+          "amc": "Titanium SIF",
+          "upload_ts": "2026-05-26 22:54:26",
+          "temp_sif_code": "SIF-103"
+        }
+      },
+      {
+        "dataset": "nav",
+        "row_number": 5999,
+        "code": "INVALID_NAV",
+        "reason": "nav must be a positive finite number",
+        "raw_record": {
+          "scheme_code": 100,
+          "date": "2026-06-08",
+          "nav": 0.0,
+          "scheme_name": "Titanium Equity Long-Short Fund Direct IDCW Payout",
+          "isin": "INF277K30120",
+          "isin2": null,
+          "amc": "Titanium SIF",
+          "upload_ts": "2026-06-08 22:54:16",
+          "temp_sif_code": "SIF-100"
+        }
+      },
+      {
+        "dataset": "nav",
+        "row_number": 6002,
+        "code": "INVALID_NAV",
+        "reason": "nav must be a positive finite number",
+        "raw_record": {
+          "scheme_code": 103,
+          "date": "2026-06-08",
+          "nav": 0.0,
+          "scheme_name": "Titanium Equity Long-Short Fund Direct IDCW Reinvestment",
+          "isin": null,
+          "isin2": "INF277K30112",
+          "amc": "Titanium SIF",
+          "upload_ts": "2026-06-08 22:54:16",
+          "temp_sif_code": "SIF-103"
+        }
+      }
+    ],
+    "aaum": [
+      {
+        "dataset": "aaum",
+        "row_number": 66,
+        "code": "INVALID_SCHEME_CODE",
+        "reason": "scheme_code must be a positive integer",
+        "raw_record": {
+          "scheme_code": null,
+          "aaum_quarter": "September-2026",
+          "aaum_quarter_end": "2026-09-30",
+          "aaum_cr": 14.1097,
+          "aaum_lakhs": 1410.97,
+          "scheme_name": "Arudha Equity Long-Short Fund-Regular Plan-Daily IDCW",
+          "amc": "Arudha SIF",
+          "quarter_start": "2026-07-01",
+          "temp_sif_code": "SIF-63"
+        }
+      },
+      {
+        "dataset": "aaum",
+        "row_number": 173,
+        "code": "INVALID_SCHEME_CODE",
+        "reason": "scheme_code must be a positive integer",
+        "raw_record": {
+          "scheme_code": null,
+          "aaum_quarter": "June-2026",
+          "aaum_quarter_end": "2026-06-30",
+          "aaum_cr": 8.3382,
+          "aaum_lakhs": 833.82,
+          "scheme_name": "Arudha Equity Long-Short Fund-Regular Plan-Daily IDCW",
+          "amc": "Arudha SIF",
+          "quarter_start": "2026-04-01",
+          "temp_sif_code": "SIF-63"
+        }
+      },
+      {
+        "dataset": "aaum",
+        "row_number": 258,
+        "code": "INVALID_SCHEME_CODE",
+        "reason": "scheme_code must be a positive integer",
+        "raw_record": {
+          "scheme_code": null,
+          "aaum_quarter": "March-2026",
+          "aaum_quarter_end": "2026-03-31",
+          "aaum_cr": 0.2897,
+          "aaum_lakhs": 28.97,
+          "scheme_name": "Arudha Equity Long-Short Fund-Regular Plan-Daily IDCW",
+          "amc": "Arudha SIF",
+          "quarter_start": "2026-01-01",
+          "temp_sif_code": "SIF-63"
+        }
+      }
+    ]
+  }
+}

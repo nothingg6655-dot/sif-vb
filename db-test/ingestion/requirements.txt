@@ -1,0 +1,5 @@
+# Runtime dependencies for the foundation and TIGZIG download/validation worker.
+psycopg[binary]>=3.2,<4
+python-dotenv>=1.0,<2
+pyarrow>=18,<24
+APScheduler>=3.11,<4

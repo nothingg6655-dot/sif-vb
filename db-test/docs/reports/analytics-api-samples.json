@@ -1,0 +1,1605 @@
+{
+  "generatedAt": "2026-10-14",
+  "performance": {
+    "success": true,
+    "asOfDate": "2026-10-14",
+    "methodology": "sif-unified-returns-v1",
+    "periods": [
+      {
+        "id": "r1d",
+        "label": "1 Day"
+      },
+      {
+        "id": "r1w",
+        "label": "1 Week"
+      },
+      {
+        "id": "r1m",
+        "label": "1 Month"
+      },
+      {
+        "id": "r3m",
+        "label": "3 Months"
+      },
+      {
+        "id": "r6m",
+        "label": "6 Months"
+      },
+      {
+        "id": "r1y",
+        "label": "1 Year"
+      },
+      {
+        "id": "r2y",
+        "label": "2 Years"
+      },
+      {
+        "id": "r3y",
+        "label": "3 Years"
+      },
+      {
+        "id": "r5y",
+        "label": "5 Years"
+      },
+      {
+        "id": "ytd",
+        "label": "Year to Date"
+      },
+      {
+        "id": "si",
+        "label": "Since Inception"
+      }
+    ],
+    "fund": {
+      "id": 1,
+      "fundId": 82,
+      "fullName": "Magnum Hybrid Long-Short Fund",
+      "slug": "magnum-hybrid-long-short-fund",
+      "scheme": {
+        "source": "SIF",
+        "schemeCode": 13,
+        "plan": "Regular",
+        "option": "Growth"
+      },
+      "latestNav": 10.3021,
+      "latestDate": "2026-10-13",
+      "inceptionDate": "2025-10-29",
+      "dataQualityStatus": "ok",
+      "dataQualityWarnings": [],
+      "returns": {
+        "r1d": {
+          "value": 0.21,
+          "requestedStartDate": null,
+          "startDate": "2026-10-12",
+          "startValue": 10.2803,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 1,
+          "calculationMethod": "previous-available-observation",
+          "status": "complete",
+          "warnings": []
+        },
+        "r1w": {
+          "value": -0.08,
+          "requestedStartDate": "2026-10-07",
+          "startDate": "2026-10-07",
+          "startValue": 10.3104,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 6,
+          "calculationMethod": "fixed-days:first-on-or-after",
+          "status": "complete",
+          "warnings": []
+        },
+        "r1m": {
+          "value": -0.86,
+          "requestedStartDate": "2026-09-14",
+          "startDate": "2026-09-15",
+          "startValue": 10.3919,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 28,
+          "calculationMethod": "fixed-days:first-on-or-after",
+          "status": "complete",
+          "warnings": []
+        },
+        "r3m": {
+          "value": -1.38,
+          "requestedStartDate": "2026-07-16",
+          "startDate": "2026-07-16",
+          "startValue": 10.4461,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 89,
+          "calculationMethod": "fixed-days:first-on-or-after",
+          "status": "complete",
+          "warnings": []
+        },
+        "r6m": {
+          "value": 1.65,
+          "requestedStartDate": "2026-04-14",
+          "startDate": "2026-04-15",
+          "startValue": 10.1353,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 181,
+          "calculationMethod": "calendar-months:first-on-or-after",
+          "status": "complete",
+          "warnings": []
+        },
+        "r1y": {
+          "value": null,
+          "requestedStartDate": "2025-10-14",
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "target:first-on-or-after",
+          "status": "insufficient-history",
+          "warnings": [
+            "history_begins_after_requested_start"
+          ]
+        },
+        "r2y": {
+          "value": null,
+          "requestedStartDate": "2024-10-14",
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "target:first-on-or-after",
+          "status": "insufficient-history",
+          "warnings": [
+            "history_begins_after_requested_start"
+          ]
+        },
+        "r3y": {
+          "value": null,
+          "requestedStartDate": "2023-10-14",
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "target:first-on-or-after",
+          "status": "insufficient-history",
+          "warnings": [
+            "history_begins_after_requested_start"
+          ]
+        },
+        "r5y": {
+          "value": null,
+          "requestedStartDate": "2021-10-14",
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "target:first-on-or-after",
+          "status": "insufficient-history",
+          "warnings": [
+            "history_begins_after_requested_start"
+          ]
+        },
+        "ytd": {
+          "value": 0.78,
+          "requestedStartDate": "2026-01-01",
+          "startDate": "2026-01-01",
+          "startValue": 10.2222,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 285,
+          "calculationMethod": "calendar-year-start:on-or-before",
+          "status": "complete",
+          "warnings": []
+        },
+        "si": {
+          "value": 2.68,
+          "requestedStartDate": "2025-10-29",
+          "startDate": "2025-10-29",
+          "startValue": 10.0336,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 349,
+          "calculationMethod": "inception-observation",
+          "status": "complete",
+          "warnings": []
+        }
+      }
+    }
+  },
+  "monthlyHeatmap": {
+    "success": true,
+    "asOfDate": "2026-10-14",
+    "range": "12m",
+    "methodology": "calendar-month-boundaries-on-or-before-v1",
+    "months": [
+      {
+        "key": "2025-11",
+        "label": "Nov '25",
+        "fromDate": "2025-11-01",
+        "toDate": "2025-11-30",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2025-12",
+        "label": "Dec '25",
+        "fromDate": "2025-12-01",
+        "toDate": "2025-12-31",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-01",
+        "label": "Jan '26",
+        "fromDate": "2026-01-01",
+        "toDate": "2026-01-31",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-02",
+        "label": "Feb '26",
+        "fromDate": "2026-02-01",
+        "toDate": "2026-02-28",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-03",
+        "label": "Mar '26",
+        "fromDate": "2026-03-01",
+        "toDate": "2026-03-31",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-04",
+        "label": "Apr '26",
+        "fromDate": "2026-04-01",
+        "toDate": "2026-04-30",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-05",
+        "label": "May '26",
+        "fromDate": "2026-05-01",
+        "toDate": "2026-05-31",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-06",
+        "label": "Jun '26",
+        "fromDate": "2026-06-01",
+        "toDate": "2026-06-30",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-07",
+        "label": "Jul '26",
+        "fromDate": "2026-07-01",
+        "toDate": "2026-07-31",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-08",
+        "label": "Aug '26",
+        "fromDate": "2026-08-01",
+        "toDate": "2026-08-31",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-09",
+        "label": "Sept '26",
+        "fromDate": "2026-09-01",
+        "toDate": "2026-09-30",
+        "completed": true,
+        "status": "complete"
+      },
+      {
+        "key": "2026-10",
+        "label": "Oct '26",
+        "fromDate": "2026-10-01",
+        "toDate": "2026-10-14",
+        "completed": false,
+        "status": "partial"
+      }
+    ],
+    "fund": {
+      "id": 1,
+      "fundId": 82,
+      "fullName": "Magnum Hybrid Long-Short Fund",
+      "slug": "magnum-hybrid-long-short-fund",
+      "source": "SIF",
+      "schemeCode": 13,
+      "plan": "Regular",
+      "option": "Growth"
+    },
+    "values": {
+      "Nov '25": 1.18,
+      "Dec '25": 0.77,
+      "Jan '26": -1.04,
+      "Feb '26": 0.71,
+      "Mar '26": -2.22,
+      "Apr '26": 2.04,
+      "May '26": 0.62,
+      "Jun '26": 1.5,
+      "Jul '26": 0.57,
+      "Aug '26": 0.87,
+      "Sept '26": -2.17,
+      "Oct '26": 0.28
+    },
+    "metadata": {
+      "Nov '25": {
+        "value": 1.18,
+        "requestedStartDate": "2025-11-01",
+        "startDate": "2025-10-31",
+        "startValue": 9.9992,
+        "endDate": "2025-11-30",
+        "endValue": 10.1175,
+        "actualElapsedDays": 30,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Dec '25": {
+        "value": 0.77,
+        "requestedStartDate": "2025-12-01",
+        "startDate": "2025-12-01",
+        "startValue": 10.1285,
+        "endDate": "2025-12-31",
+        "endValue": 10.2069,
+        "actualElapsedDays": 30,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Jan '26": {
+        "value": -1.04,
+        "requestedStartDate": "2026-01-01",
+        "startDate": "2026-01-01",
+        "startValue": 10.2222,
+        "endDate": "2026-01-31",
+        "endValue": 10.1156,
+        "actualElapsedDays": 30,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Feb '26": {
+        "value": 0.71,
+        "requestedStartDate": "2026-02-01",
+        "startDate": "2026-01-31",
+        "startValue": 10.1156,
+        "endDate": "2026-02-28",
+        "endValue": 10.1876,
+        "actualElapsedDays": 28,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Mar '26": {
+        "value": -2.22,
+        "requestedStartDate": "2026-03-01",
+        "startDate": "2026-02-28",
+        "startValue": 10.1876,
+        "endDate": "2026-03-31",
+        "endValue": 9.9611,
+        "actualElapsedDays": 31,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Apr '26": {
+        "value": 2.04,
+        "requestedStartDate": "2026-04-01",
+        "startDate": "2026-04-01",
+        "startValue": 9.9785,
+        "endDate": "2026-04-30",
+        "endValue": 10.1817,
+        "actualElapsedDays": 29,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "May '26": {
+        "value": 0.62,
+        "requestedStartDate": "2026-05-01",
+        "startDate": "2026-04-30",
+        "startValue": 10.1817,
+        "endDate": "2026-05-31",
+        "endValue": 10.2444,
+        "actualElapsedDays": 31,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Jun '26": {
+        "value": 1.5,
+        "requestedStartDate": "2026-06-01",
+        "startDate": "2026-06-01",
+        "startValue": 10.2255,
+        "endDate": "2026-06-30",
+        "endValue": 10.3785,
+        "actualElapsedDays": 29,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Jul '26": {
+        "value": 0.57,
+        "requestedStartDate": "2026-07-01",
+        "startDate": "2026-07-01",
+        "startValue": 10.4102,
+        "endDate": "2026-07-31",
+        "endValue": 10.4692,
+        "actualElapsedDays": 30,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Aug '26": {
+        "value": 0.87,
+        "requestedStartDate": "2026-08-01",
+        "startDate": "2026-07-31",
+        "startValue": 10.4692,
+        "endDate": "2026-08-31",
+        "endValue": 10.5599,
+        "actualElapsedDays": 31,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Sept '26": {
+        "value": -2.17,
+        "requestedStartDate": "2026-09-01",
+        "startDate": "2026-09-01",
+        "startValue": 10.5374,
+        "endDate": "2026-09-30",
+        "endValue": 10.3084,
+        "actualElapsedDays": 29,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "complete",
+        "warnings": []
+      },
+      "Oct '26": {
+        "value": 0.28,
+        "requestedStartDate": "2026-10-01",
+        "startDate": "2026-10-01",
+        "startValue": 10.2737,
+        "endDate": "2026-10-13",
+        "endValue": 10.3021,
+        "actualElapsedDays": 12,
+        "calculationMethod": "calendar-month-boundaries:on-or-before",
+        "status": "partial",
+        "warnings": []
+      }
+    },
+    "benchmarkMap": {
+      "bse500": {
+        "Nov '25": null,
+        "Dec '25": null,
+        "Jan '26": null,
+        "Feb '26": null,
+        "Mar '26": null,
+        "Apr '26": null,
+        "May '26": null,
+        "Jun '26": null,
+        "Jul '26": null,
+        "Aug '26": null,
+        "Sept '26": null,
+        "Oct '26": null
+      },
+      "nifty50": {
+        "Nov '25": null,
+        "Dec '25": null,
+        "Jan '26": null,
+        "Feb '26": null,
+        "Mar '26": null,
+        "Apr '26": null,
+        "May '26": null,
+        "Jun '26": null,
+        "Jul '26": null,
+        "Aug '26": null,
+        "Sept '26": null,
+        "Oct '26": null
+      },
+      "niftymidsml": {
+        "Nov '25": null,
+        "Dec '25": null,
+        "Jan '26": null,
+        "Feb '26": null,
+        "Mar '26": null,
+        "Apr '26": null,
+        "May '26": null,
+        "Jun '26": null,
+        "Jul '26": null,
+        "Aug '26": null,
+        "Sept '26": null,
+        "Oct '26": null
+      }
+    }
+  },
+  "annual": {
+    "success": true,
+    "asOfDate": "2026-10-14",
+    "methodology": "calendar-and-indian-financial-year-boundaries-v1",
+    "calendarPeriods": [
+      {
+        "key": "2025",
+        "label": "2025",
+        "fromDate": "2025-01-01",
+        "toDate": "2025-12-31",
+        "completed": true
+      },
+      {
+        "key": "2026",
+        "label": "2026",
+        "fromDate": "2026-01-01",
+        "toDate": "2026-10-14",
+        "completed": false
+      }
+    ],
+    "financialPeriods": [
+      {
+        "key": "FY 2025-26",
+        "label": "FY 2025-26",
+        "fromDate": "2025-04-01",
+        "toDate": "2026-03-31",
+        "completed": true
+      },
+      {
+        "key": "FY 2026-27",
+        "label": "FY 2026-27",
+        "fromDate": "2026-04-01",
+        "toDate": "2026-10-14",
+        "completed": false
+      }
+    ],
+    "fund": {
+      "id": 1,
+      "fullName": "Magnum Hybrid Long-Short Fund",
+      "slug": "magnum-hybrid-long-short-fund"
+    },
+    "calendar": {
+      "2025": null,
+      "2026": null
+    },
+    "financial": {
+      "FY 2025-26": null,
+      "FY 2026-27": null
+    },
+    "ytd": {
+      "value": 0.78,
+      "requestedStartDate": "2026-01-01",
+      "startDate": "2026-01-01",
+      "startValue": 10.2222,
+      "endDate": "2026-10-13",
+      "endValue": 10.3021,
+      "actualElapsedDays": 285,
+      "calculationMethod": "calendar-year-boundaries:on-or-before",
+      "status": "ongoing",
+      "warnings": []
+    },
+    "financialYtd": {
+      "value": 3.24,
+      "requestedStartDate": "2026-04-01",
+      "startDate": "2026-04-01",
+      "startValue": 9.9785,
+      "endDate": "2026-10-13",
+      "endValue": 10.3021,
+      "actualElapsedDays": 195,
+      "calculationMethod": "financial-year-boundaries:on-or-before",
+      "status": "ongoing",
+      "warnings": []
+    }
+  },
+  "rolling": {
+    "success": true,
+    "asOfDate": "2026-10-14",
+    "window": "1m",
+    "methodology": "rolling-calendar-target-first-on-or-after-v1",
+    "fund": {
+      "id": 1,
+      "fundId": 82,
+      "fullName": "Magnum Hybrid Long-Short Fund",
+      "slug": "magnum-hybrid-long-short-fund",
+      "source": "SIF",
+      "schemeCode": 13
+    },
+    "summary": {
+      "average": 0.32,
+      "minimum": -2.5,
+      "maximum": 2.38,
+      "median": 0.59,
+      "validObservations": 220
+    },
+    "firstPoint": {
+      "value": 0.83,
+      "requestedStartDate": "2025-10-29",
+      "startDate": "2025-10-29",
+      "startValue": 10.0336,
+      "endDate": "2025-11-28",
+      "endValue": 10.1169,
+      "actualElapsedDays": 30,
+      "calculationMethod": "rolling:first-on-or-after",
+      "status": "complete",
+      "warnings": [],
+      "observationDate": "2025-11-28"
+    },
+    "latestPoint": {
+      "value": -0.86,
+      "requestedStartDate": "2026-09-13",
+      "startDate": "2026-09-15",
+      "startValue": 10.3919,
+      "endDate": "2026-10-13",
+      "endValue": 10.3021,
+      "actualElapsedDays": 28,
+      "calculationMethod": "rolling:first-on-or-after",
+      "status": "complete",
+      "warnings": [],
+      "observationDate": "2026-10-13"
+    }
+  },
+  "trend": {
+    "success": true,
+    "requestedFromDate": "2026-09-01",
+    "asOfDate": "2026-10-14",
+    "methodology": "observed-nav-and-cumulative-absolute-return-v1",
+    "fund": {
+      "id": 1,
+      "fundId": 82,
+      "fullName": "Magnum Hybrid Long-Short Fund",
+      "slug": "magnum-hybrid-long-short-fund",
+      "source": "SIF",
+      "schemeCode": 13
+    },
+    "baseDate": "2026-09-01",
+    "baseNav": 10.5374,
+    "status": "available",
+    "firstPoint": {
+      "date": "2026-09-01",
+      "nav": 10.5374,
+      "cumulativeReturnPct": 0
+    },
+    "latestPoint": {
+      "date": "2026-10-13",
+      "nav": 10.3021,
+      "cumulativeReturnPct": -2.23
+    }
+  },
+  "benchmarks": {
+    "success": true,
+    "asOfDate": "2026-10-14",
+    "benchmarks": [
+      {
+        "id": "bse500",
+        "label": "BSE 500",
+        "subtitle": "Broad Market Index",
+        "indexVariant": "UNKNOWN",
+        "currency": "INR",
+        "source": null,
+        "sourceIdentifier": null,
+        "coverageStatus": "unavailable",
+        "metadata": {
+          "reason": "No verified historical index-level source is configured"
+        },
+        "observationCount": 0,
+        "firstDate": null,
+        "latestDate": null,
+        "returns": {
+          "r1d": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r1w": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r1m": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r3m": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r6m": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r1y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r2y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r3y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r5y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "ytd": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "si": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          }
+        }
+      },
+      {
+        "id": "nifty50",
+        "label": "NIFTY 50",
+        "subtitle": "Broad Market Index",
+        "indexVariant": "UNKNOWN",
+        "currency": "INR",
+        "source": null,
+        "sourceIdentifier": null,
+        "coverageStatus": "unavailable",
+        "metadata": {
+          "reason": "No verified historical index-level source is configured"
+        },
+        "observationCount": 0,
+        "firstDate": null,
+        "latestDate": null,
+        "returns": {
+          "r1d": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r1w": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r1m": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r3m": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r6m": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r1y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r2y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r3y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r5y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "ytd": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "si": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          }
+        }
+      },
+      {
+        "id": "niftymidsml",
+        "label": "NIFTY MidSmallcap 400",
+        "subtitle": "Mid & Small Cap Index",
+        "indexVariant": "UNKNOWN",
+        "currency": "INR",
+        "source": null,
+        "sourceIdentifier": null,
+        "coverageStatus": "unavailable",
+        "metadata": {
+          "reason": "No verified historical index-level source is configured"
+        },
+        "observationCount": 0,
+        "firstDate": null,
+        "latestDate": null,
+        "returns": {
+          "r1d": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r1w": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r1m": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r3m": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r6m": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r1y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r2y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r3y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "r5y": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "ytd": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          },
+          "si": {
+            "value": null,
+            "requestedStartDate": null,
+            "startDate": null,
+            "startValue": null,
+            "endDate": null,
+            "endValue": null,
+            "actualElapsedDays": null,
+            "calculationMethod": "benchmark-history-unavailable",
+            "status": "unavailable",
+            "warnings": [
+              "verified_benchmark_history_unavailable"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "benchmarkComparison": {
+    "success": true,
+    "asOfDate": "2026-10-14",
+    "methodology": "absolute-excess-and-relative-compounded-v1",
+    "fund": {
+      "id": 1,
+      "fullName": "Magnum Hybrid Long-Short Fund",
+      "scheme": {
+        "source": "SIF",
+        "schemeCode": 13,
+        "plan": "Regular",
+        "option": "Growth"
+      }
+    },
+    "benchmark": {
+      "id": "bse500",
+      "label": "BSE 500",
+      "subtitle": "Broad Market Index",
+      "indexVariant": "UNKNOWN",
+      "currency": "INR",
+      "source": null,
+      "sourceIdentifier": null,
+      "coverageStatus": "unavailable",
+      "metadata": {
+        "reason": "No verified historical index-level source is configured"
+      },
+      "observationCount": 0,
+      "firstDate": null,
+      "latestDate": null
+    },
+    "periods": {
+      "r1d": {
+        "fundReturn": 0.21,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": 0.21,
+          "requestedStartDate": null,
+          "startDate": "2026-10-12",
+          "startValue": 10.2803,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 1,
+          "calculationMethod": "previous-available-observation",
+          "status": "complete",
+          "warnings": []
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "r1w": {
+        "fundReturn": -0.08,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": -0.08,
+          "requestedStartDate": "2026-10-07",
+          "startDate": "2026-10-07",
+          "startValue": 10.3104,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 6,
+          "calculationMethod": "fixed-days:first-on-or-after",
+          "status": "complete",
+          "warnings": []
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "r1m": {
+        "fundReturn": -0.86,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": -0.86,
+          "requestedStartDate": "2026-09-14",
+          "startDate": "2026-09-15",
+          "startValue": 10.3919,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 28,
+          "calculationMethod": "fixed-days:first-on-or-after",
+          "status": "complete",
+          "warnings": []
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "r3m": {
+        "fundReturn": -1.38,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": -1.38,
+          "requestedStartDate": "2026-07-16",
+          "startDate": "2026-07-16",
+          "startValue": 10.4461,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 89,
+          "calculationMethod": "fixed-days:first-on-or-after",
+          "status": "complete",
+          "warnings": []
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "r6m": {
+        "fundReturn": 1.65,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": 1.65,
+          "requestedStartDate": "2026-04-14",
+          "startDate": "2026-04-15",
+          "startValue": 10.1353,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 181,
+          "calculationMethod": "calendar-months:first-on-or-after",
+          "status": "complete",
+          "warnings": []
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "r1y": {
+        "fundReturn": null,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": null,
+          "requestedStartDate": "2025-10-14",
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "target:first-on-or-after",
+          "status": "insufficient-history",
+          "warnings": [
+            "history_begins_after_requested_start"
+          ]
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "r2y": {
+        "fundReturn": null,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": null,
+          "requestedStartDate": "2024-10-14",
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "target:first-on-or-after",
+          "status": "insufficient-history",
+          "warnings": [
+            "history_begins_after_requested_start"
+          ]
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "r3y": {
+        "fundReturn": null,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": null,
+          "requestedStartDate": "2023-10-14",
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "target:first-on-or-after",
+          "status": "insufficient-history",
+          "warnings": [
+            "history_begins_after_requested_start"
+          ]
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "r5y": {
+        "fundReturn": null,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": null,
+          "requestedStartDate": "2021-10-14",
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "target:first-on-or-after",
+          "status": "insufficient-history",
+          "warnings": [
+            "history_begins_after_requested_start"
+          ]
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "ytd": {
+        "fundReturn": 0.78,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": 0.78,
+          "requestedStartDate": "2026-01-01",
+          "startDate": "2026-01-01",
+          "startValue": 10.2222,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 285,
+          "calculationMethod": "calendar-year-start:on-or-before",
+          "status": "complete",
+          "warnings": []
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      },
+      "si": {
+        "fundReturn": 2.68,
+        "benchmarkReturn": null,
+        "excessReturnPctPoints": null,
+        "relativeReturnPct": null,
+        "status": "unavailable",
+        "fundMetadata": {
+          "value": 2.68,
+          "requestedStartDate": "2025-10-29",
+          "startDate": "2025-10-29",
+          "startValue": 10.0336,
+          "endDate": "2026-10-13",
+          "endValue": 10.3021,
+          "actualElapsedDays": 349,
+          "calculationMethod": "inception-observation",
+          "status": "complete",
+          "warnings": []
+        },
+        "benchmarkMetadata": {
+          "value": null,
+          "requestedStartDate": null,
+          "startDate": null,
+          "startValue": null,
+          "endDate": null,
+          "endValue": null,
+          "actualElapsedDays": null,
+          "calculationMethod": "benchmark-history-unavailable",
+          "status": "unavailable",
+          "warnings": [
+            "verified_benchmark_history_unavailable"
+          ]
+        }
+      }
+    }
+  }
+}

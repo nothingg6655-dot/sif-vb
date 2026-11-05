@@ -1,0 +1,154 @@
+{
+  "scheme": "Sapphire Equity Long-Short Fund",
+  "as_of": "2026-09-30",
+  "source_heading": "Industry Allocation - Equity Assets",
+  "source_pdf_url": "https://www.franklintempletonindia.com/download/en-in/sif-fund-factsheets/b51f3af1-b5b0-4969-bc54-b4bb4ff34598/Sapphire-SIF-Factsheet-as-on-September-30-2026.pdf",
+  "source_page": 4,
+  "database_report_id": 23,
+  "source": "Published chart retained in database page evidence; not aggregated from holdings.",
+  "units": "%",
+  "display_note": "A leading + follows the screenshot format; these are allocation weights, not returns.",
+  "published_total_percent": 100.01,
+  "allocations": [
+    {
+      "sector": "Banks",
+      "percentage": 17.47
+    },
+    {
+      "sector": "Pharmaceuticals & Biotechnology",
+      "percentage": 7.24
+    },
+    {
+      "sector": "Finance",
+      "percentage": 6.08
+    },
+    {
+      "sector": "IT - Software",
+      "percentage": 5.7
+    },
+    {
+      "sector": "Petroleum Products",
+      "percentage": 5.61
+    },
+    {
+      "sector": "Automobiles",
+      "percentage": 3.96
+    },
+    {
+      "sector": "Telecom - Services",
+      "percentage": 3.88
+    },
+    {
+      "sector": "Consumer Durables",
+      "percentage": 3.45
+    },
+    {
+      "sector": "Construction",
+      "percentage": 3.41
+    },
+    {
+      "sector": "Power",
+      "percentage": 2.77
+    },
+    {
+      "sector": "Industrial Products",
+      "percentage": 2.77
+    },
+    {
+      "sector": "Retailing",
+      "percentage": 2.61
+    },
+    {
+      "sector": "Insurance",
+      "percentage": 2.45
+    },
+    {
+      "sector": "Non - Ferrous Metals",
+      "percentage": 2.27
+    },
+    {
+      "sector": "Diversified FMCG",
+      "percentage": 1.95
+    },
+    {
+      "sector": "Chemicals & Petrochemicals",
+      "percentage": 1.88
+    },
+    {
+      "sector": "Auto Components",
+      "percentage": 1.86
+    },
+    {
+      "sector": "Electrical Equipment",
+      "percentage": 1.76
+    },
+    {
+      "sector": "Aerospace & Defense",
+      "percentage": 1.69
+    },
+    {
+      "sector": "Capital Markets",
+      "percentage": 1.48
+    },
+    {
+      "sector": "Personal Products",
+      "percentage": 1.46
+    },
+    {
+      "sector": "Agricultural, Commercial & Construction Vehicles",
+      "percentage": 1.39
+    },
+    {
+      "sector": "Food Products",
+      "percentage": 1.37
+    },
+    {
+      "sector": "Leisure Services",
+      "percentage": 1.3
+    },
+    {
+      "sector": "Healthcare Services",
+      "percentage": 1.24
+    },
+    {
+      "sector": "Ferrous Metals",
+      "percentage": 1.23
+    },
+    {
+      "sector": "Consumable Fuels",
+      "percentage": 1.2
+    },
+    {
+      "sector": "Transport Services",
+      "percentage": 0.84
+    },
+    {
+      "sector": "Realty",
+      "percentage": 0.82
+    },
+    {
+      "sector": "Beverages",
+      "percentage": 0.82
+    },
+    {
+      "sector": "Commercial Services & Supplies",
+      "percentage": 0.62
+    },
+    {
+      "sector": "Cement & Cement Products",
+      "percentage": 0.62
+    },
+    {
+      "sector": "Minerals & Mining",
+      "percentage": 0.53
+    },
+    {
+      "sector": "Gas",
+      "percentage": 0.03
+    },
+    {
+      "sector": "Call,Cash And Other Current Asset",
+      "percentage": 6.25
+    }
+  ]
+}

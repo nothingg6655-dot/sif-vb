@@ -1,0 +1,1730 @@
+{
+  "variable": [
+    {
+      "key": "baseUrl",
+      "type": "string",
+      "value": "http://127.0.0.1:3000"
+    },
+    {
+      "key": "schemeName",
+      "value": "DynaSIF Equity Long-Short Fund",
+      "type": "string"
+    }
+  ],
+  "info": {
+    "description": "All registered fund allocation APIs. Strategies without eligible stored factsheets return 404 FACTSHEET_NOT_FOUND on individual routes and MISSING status in bulk responses. Arthaya September 2026 is now available.",
+    "name": "VB-SIF - All Fund Allocation APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health",
+        "header": []
+      },
+      "name": "Health",
+      "response": []
+    },
+    {
+      "name": "All funds - bulk endpoints",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/allocations/allocation",
+            "header": []
+          },
+          "name": "All funds - allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/allocations/market-cap",
+            "header": []
+          },
+          "name": "All funds - market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/allocations/sector-allocation",
+            "header": []
+          },
+          "name": "All funds - sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/allocations/rating-allocation",
+            "header": []
+          },
+          "name": "All funds - rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Altiva Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-equity-ex-top-100-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-equity-ex-top-100-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-equity-ex-top-100-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-equity-ex-top-100-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Altiva Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-equity-long-short-fund/allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-equity-long-short-fund/market-cap",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-equity-long-short-fund/sector-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-equity-long-short-fund/rating-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Altiva Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/altiva-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Apex Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-equity-ex-top-100-long-short-fund/allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-equity-ex-top-100-long-short-fund/market-cap",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-equity-ex-top-100-long-short-fund/sector-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-equity-ex-top-100-long-short-fund/rating-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Apex Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-equity-long-short-fund/allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-equity-long-short-fund/market-cap",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-equity-long-short-fund/sector-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-equity-long-short-fund/rating-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Apex Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-hybrid-long-short-fund/allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-hybrid-long-short-fund/market-cap",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-hybrid-long-short-fund/sector-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/apex-hybrid-long-short-fund/rating-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Arthaya Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arthaya-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Arthaya September 2026 official factsheet; rating allocation is NOT_PUBLISHED.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arthaya-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Arthaya September 2026 official factsheet; rating allocation is NOT_PUBLISHED.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arthaya-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Arthaya September 2026 official factsheet; rating allocation is NOT_PUBLISHED.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arthaya-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Arthaya September 2026 official factsheet; rating allocation is NOT_PUBLISHED.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Arudha Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arudha-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arudha-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arudha-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arudha-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Arudha Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arudha-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arudha-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arudha-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/arudha-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Diviniti Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/diviniti-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/diviniti-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/diviniti-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/diviniti-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DynaSIF Active Asset Allocator Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-active-asset-allocator-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-active-asset-allocator-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-active-asset-allocator-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-active-asset-allocator-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DynaSIF Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-equity-ex-top-100-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-equity-ex-top-100-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-equity-ex-top-100-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-equity-ex-top-100-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DynaSIF Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/dynasif-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Infinity Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/infinity-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/infinity-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/infinity-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/infinity-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "iSIF Active Asset Allocator Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-active-asset-allocator-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-active-asset-allocator-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-active-asset-allocator-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-active-asset-allocator-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "iSIF Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-equity-ex-top-100-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-equity-ex-top-100-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-equity-ex-top-100-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-equity-ex-top-100-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "iSIF Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "iSIF Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/isif-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Magnum Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/magnum-equity-ex-top-100-long-short-fund/allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/magnum-equity-ex-top-100-long-short-fund/market-cap",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/magnum-equity-ex-top-100-long-short-fund/sector-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/magnum-equity-ex-top-100-long-short-fund/rating-allocation",
+            "description": "No eligible stored factsheet: expected HTTP 404 FACTSHEET_NOT_FOUND.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Magnum Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/magnum-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/magnum-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/magnum-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/magnum-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Platinum Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/platinum-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/platinum-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/platinum-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/platinum-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prism Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/prism-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/prism-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/prism-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/prism-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Active Asset Allocator Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-active-asset-allocator-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-active-asset-allocator-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-active-asset-allocator-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-active-asset-allocator-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-equity-ex-top-100-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-equity-ex-top-100-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-equity-ex-top-100-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-equity-ex-top-100-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "qsif Sector Rotation Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-sector-rotation-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-sector-rotation-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-sector-rotation-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/qsif-sector-rotation-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "RedHex Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/redhex-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/redhex-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/redhex-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/redhex-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sapphire Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/sapphire-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/sapphire-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/sapphire-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/sapphire-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Summit Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/summit-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/summit-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/summit-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/summit-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Titanium Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/titanium-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/titanium-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/titanium-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/titanium-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Titanium Hybrid Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/titanium-hybrid-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/titanium-hybrid-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/titanium-hybrid-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/titanium-hybrid-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "WSIF Equity Ex-Top 100 Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/wsif-equity-ex-top-100-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/wsif-equity-ex-top-100-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/wsif-equity-ex-top-100-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/wsif-equity-ex-top-100-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "WSIF Equity Long-Short Fund",
+      "item": [
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/wsif-equity-long-short-fund/allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/wsif-equity-long-short-fund/market-cap",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "market-cap",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/wsif-equity-long-short-fund/sector-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "sector-allocation",
+          "response": []
+        },
+        {
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/funds/wsif-equity-long-short-fund/rating-allocation",
+            "description": "Expected HTTP 200. Check availability for PUBLISHED, NOT_PUBLISHED, or other source status.",
+            "header": []
+          },
+          "name": "rating-allocation",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dynamic allocations by scheme name",
+      "item": [
+        {
+          "name": "asset-allocation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/asset-allocation?scheme_name={{schemeName}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "asset-allocation"
+              ],
+              "query": [
+                {
+                  "key": "scheme_name",
+                  "value": "{{schemeName}}"
+                }
+              ]
+            },
+            "description": "Set the schemeName collection variable to a registered strategy name or a verified full Direct/Regular scheme name."
+          },
+          "response": []
+        },
+        {
+          "name": "market-cap-allocation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/market-cap-allocation?scheme_name={{schemeName}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "market-cap-allocation"
+              ],
+              "query": [
+                {
+                  "key": "scheme_name",
+                  "value": "{{schemeName}}"
+                }
+              ]
+            },
+            "description": "Set the schemeName collection variable to a registered strategy name or a verified full Direct/Regular scheme name."
+          },
+          "response": []
+        },
+        {
+          "name": "sector-allocation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/sector-allocation?scheme_name={{schemeName}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "sector-allocation"
+              ],
+              "query": [
+                {
+                  "key": "scheme_name",
+                  "value": "{{schemeName}}"
+                }
+              ]
+            },
+            "description": "Set the schemeName collection variable to a registered strategy name or a verified full Direct/Regular scheme name."
+          },
+          "response": []
+        },
+        {
+          "name": "rating-wise-allocation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/rating-wise-allocation?scheme_name={{schemeName}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "rating-wise-allocation"
+              ],
+              "query": [
+                {
+                  "key": "scheme_name",
+                  "value": "{{schemeName}}"
+                }
+              ]
+            },
+            "description": "Set the schemeName collection variable to a registered strategy name or a verified full Direct/Regular scheme name."
+          },
+          "response": []
+        },
+        {
+          "name": "Risk band",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/band?scheme_name={{schemeName}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "band"
+              ],
+              "query": [
+                {
+                  "key": "scheme_name",
+                  "value": "{{schemeName}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,710 @@
+﻿{
+  "database": "VB-SIF",
+  "schema": "public",
+  "objects": {
+    "sif_aaum_history": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "id",
+          "bigint",
+          true,
+          "nextval('sif_aaum_history_id_seq'::regclass)"
+        ],
+        [
+          "scheme_code",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "aaum_quarter",
+          "character varying(20)",
+          false,
+          null
+        ],
+        [
+          "quarter_start",
+          "date",
+          true,
+          null
+        ],
+        [
+          "quarter_end",
+          "date",
+          true,
+          null
+        ],
+        [
+          "aaum_cr",
+          "numeric(20,6)",
+          true,
+          null
+        ],
+        [
+          "aaum_lakhs",
+          "numeric(22,4)",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_aaum_history_aaum_cr_check",
+          "c",
+          "CHECK ((aaum_cr >= (0)::numeric))"
+        ],
+        [
+          "sif_aaum_history_aaum_cr_not_null",
+          "n",
+          "NOT NULL aaum_cr"
+        ],
+        [
+          "sif_aaum_history_aaum_lakhs_check",
+          "c",
+          "CHECK ((aaum_lakhs >= (0)::numeric))"
+        ],
+        [
+          "sif_aaum_history_check",
+          "c",
+          "CHECK ((quarter_start <= quarter_end))"
+        ],
+        [
+          "sif_aaum_history_id_not_null",
+          "n",
+          "NOT NULL id"
+        ],
+        [
+          "sif_aaum_history_pkey",
+          "p",
+          "PRIMARY KEY (id)"
+        ],
+        [
+          "sif_aaum_history_quarter_end_not_null",
+          "n",
+          "NOT NULL quarter_end"
+        ],
+        [
+          "sif_aaum_history_quarter_start_not_null",
+          "n",
+          "NOT NULL quarter_start"
+        ],
+        [
+          "sif_aaum_history_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (scheme_code) REFERENCES sif_schemes(scheme_code)"
+        ],
+        [
+          "sif_aaum_history_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "sif_aaum_history_scheme_code_quarter_end_key",
+          "u",
+          "UNIQUE (scheme_code, quarter_end)"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_sif_aaum_quarter",
+          "CREATE INDEX idx_sif_aaum_quarter ON public.sif_aaum_history USING btree (quarter_end DESC)"
+        ],
+        [
+          "sif_aaum_history_pkey",
+          "CREATE UNIQUE INDEX sif_aaum_history_pkey ON public.sif_aaum_history USING btree (id)"
+        ],
+        [
+          "sif_aaum_history_scheme_code_quarter_end_key",
+          "CREATE UNIQUE INDEX sif_aaum_history_scheme_code_quarter_end_key ON public.sif_aaum_history USING btree (scheme_code, quarter_end)"
+        ]
+      ]
+    },
+    "sif_amcs": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "amc_id",
+          "bigint",
+          true,
+          "nextval('sif_amcs_amc_id_seq'::regclass)"
+        ],
+        [
+          "amc_name",
+          "character varying(255)",
+          true,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_amcs_amc_id_not_null",
+          "n",
+          "NOT NULL amc_id"
+        ],
+        [
+          "sif_amcs_amc_name_key",
+          "u",
+          "UNIQUE (amc_name)"
+        ],
+        [
+          "sif_amcs_amc_name_not_null",
+          "n",
+          "NOT NULL amc_name"
+        ],
+        [
+          "sif_amcs_pkey",
+          "p",
+          "PRIMARY KEY (amc_id)"
+        ]
+      ],
+      "indexes": [
+        [
+          "sif_amcs_amc_name_key",
+          "CREATE UNIQUE INDEX sif_amcs_amc_name_key ON public.sif_amcs USING btree (amc_name)"
+        ],
+        [
+          "sif_amcs_pkey",
+          "CREATE UNIQUE INDEX sif_amcs_pkey ON public.sif_amcs USING btree (amc_id)"
+        ]
+      ]
+    },
+    "sif_nav_history": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "id",
+          "bigint",
+          true,
+          "nextval('sif_nav_history_id_seq'::regclass)"
+        ],
+        [
+          "scheme_code",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "nav_date",
+          "date",
+          true,
+          null
+        ],
+        [
+          "nav",
+          "numeric(18,6)",
+          true,
+          null
+        ],
+        [
+          "source_upload_ts",
+          "timestamp without time zone",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_nav_history_id_not_null",
+          "n",
+          "NOT NULL id"
+        ],
+        [
+          "sif_nav_history_nav_check",
+          "c",
+          "CHECK ((nav >= (0)::numeric))"
+        ],
+        [
+          "sif_nav_history_nav_date_not_null",
+          "n",
+          "NOT NULL nav_date"
+        ],
+        [
+          "sif_nav_history_nav_not_null",
+          "n",
+          "NOT NULL nav"
+        ],
+        [
+          "sif_nav_history_pkey",
+          "p",
+          "PRIMARY KEY (id)"
+        ],
+        [
+          "sif_nav_history_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (scheme_code) REFERENCES sif_schemes(scheme_code)"
+        ],
+        [
+          "sif_nav_history_scheme_code_nav_date_key",
+          "u",
+          "UNIQUE (scheme_code, nav_date)"
+        ],
+        [
+          "sif_nav_history_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_sif_nav_date",
+          "CREATE INDEX idx_sif_nav_date ON public.sif_nav_history USING btree (nav_date DESC)"
+        ],
+        [
+          "sif_nav_history_pkey",
+          "CREATE UNIQUE INDEX sif_nav_history_pkey ON public.sif_nav_history USING btree (id)"
+        ],
+        [
+          "sif_nav_history_scheme_code_nav_date_key",
+          "CREATE UNIQUE INDEX sif_nav_history_scheme_code_nav_date_key ON public.sif_nav_history USING btree (scheme_code, nav_date)"
+        ]
+      ]
+    },
+    "sif_scheme_isins": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "id",
+          "bigint",
+          true,
+          "nextval('sif_scheme_isins_id_seq'::regclass)"
+        ],
+        [
+          "scheme_code",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "isin",
+          "character varying(20)",
+          true,
+          null
+        ],
+        [
+          "isin_type",
+          "character varying(20)",
+          true,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_scheme_isins_id_not_null",
+          "n",
+          "NOT NULL id"
+        ],
+        [
+          "sif_scheme_isins_isin_not_null",
+          "n",
+          "NOT NULL isin"
+        ],
+        [
+          "sif_scheme_isins_isin_type_check",
+          "c",
+          "CHECK (((isin_type)::text = ANY ((ARRAY['PRIMARY'::character varying, 'SECONDARY'::character varying])::text[])))"
+        ],
+        [
+          "sif_scheme_isins_isin_type_not_null",
+          "n",
+          "NOT NULL isin_type"
+        ],
+        [
+          "sif_scheme_isins_pkey",
+          "p",
+          "PRIMARY KEY (id)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_fkey",
+          "f",
+          "FOREIGN KEY (scheme_code) REFERENCES sif_schemes(scheme_code)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_isin_key",
+          "u",
+          "UNIQUE (scheme_code, isin)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_isin_type_key",
+          "u",
+          "UNIQUE (scheme_code, isin_type)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_sif_isins_isin",
+          "CREATE INDEX idx_sif_isins_isin ON public.sif_scheme_isins USING btree (isin)"
+        ],
+        [
+          "sif_scheme_isins_pkey",
+          "CREATE UNIQUE INDEX sif_scheme_isins_pkey ON public.sif_scheme_isins USING btree (id)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_isin_key",
+          "CREATE UNIQUE INDEX sif_scheme_isins_scheme_code_isin_key ON public.sif_scheme_isins USING btree (scheme_code, isin)"
+        ],
+        [
+          "sif_scheme_isins_scheme_code_isin_type_key",
+          "CREATE UNIQUE INDEX sif_scheme_isins_scheme_code_isin_type_key ON public.sif_scheme_isins USING btree (scheme_code, isin_type)"
+        ]
+      ]
+    },
+    "sif_schemes": {
+      "kind": "r",
+      "rows": 0,
+      "columns": [
+        [
+          "scheme_code",
+          "integer",
+          true,
+          null
+        ],
+        [
+          "temp_sif_code",
+          "character varying(30)",
+          true,
+          null
+        ],
+        [
+          "amc_id",
+          "bigint",
+          true,
+          null
+        ],
+        [
+          "scheme_name",
+          "text",
+          true,
+          null
+        ],
+        [
+          "scheme_type",
+          "character varying(150)",
+          false,
+          null
+        ],
+        [
+          "category",
+          "text",
+          false,
+          null
+        ],
+        [
+          "category_sub",
+          "character varying(255)",
+          false,
+          null
+        ],
+        [
+          "category_group_clean",
+          "character varying(150)",
+          false,
+          null
+        ],
+        [
+          "category_group",
+          "character varying(255)",
+          false,
+          null
+        ],
+        [
+          "scheme_plan",
+          "character varying(50)",
+          false,
+          null
+        ],
+        [
+          "scheme_option",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "first_date",
+          "date",
+          false,
+          null
+        ],
+        [
+          "last_date",
+          "date",
+          false,
+          null
+        ],
+        [
+          "is_active",
+          "boolean",
+          false,
+          "true"
+        ],
+        [
+          "is_stale",
+          "boolean",
+          false,
+          "false"
+        ],
+        [
+          "txic_code",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "source",
+          "character varying(50)",
+          false,
+          null
+        ],
+        [
+          "temp_plan_basis",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "temp_idcw_mode",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "temp_idcw_freq",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "temp_n_nav_days",
+          "integer",
+          false,
+          null
+        ],
+        [
+          "created_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ],
+        [
+          "updated_at",
+          "timestamp with time zone",
+          false,
+          "now()"
+        ]
+      ],
+      "constraints": [
+        [
+          "sif_schemes_amc_id_fkey",
+          "f",
+          "FOREIGN KEY (amc_id) REFERENCES sif_amcs(amc_id)"
+        ],
+        [
+          "sif_schemes_amc_id_not_null",
+          "n",
+          "NOT NULL amc_id"
+        ],
+        [
+          "sif_schemes_pkey",
+          "p",
+          "PRIMARY KEY (scheme_code)"
+        ],
+        [
+          "sif_schemes_scheme_code_not_null",
+          "n",
+          "NOT NULL scheme_code"
+        ],
+        [
+          "sif_schemes_scheme_name_not_null",
+          "n",
+          "NOT NULL scheme_name"
+        ],
+        [
+          "sif_schemes_temp_sif_code_key",
+          "u",
+          "UNIQUE (temp_sif_code)"
+        ],
+        [
+          "sif_schemes_temp_sif_code_not_null",
+          "n",
+          "NOT NULL temp_sif_code"
+        ]
+      ],
+      "indexes": [
+        [
+          "idx_sif_schemes_active",
+          "CREATE INDEX idx_sif_schemes_active ON public.sif_schemes USING btree (is_active)"
+        ],
+        [
+          "idx_sif_schemes_amc",
+          "CREATE INDEX idx_sif_schemes_amc ON public.sif_schemes USING btree (amc_id)"
+        ],
+        [
+          "idx_sif_schemes_category",
+          "CREATE INDEX idx_sif_schemes_category ON public.sif_schemes USING btree (category_group_clean)"
+        ],
+        [
+          "idx_sif_schemes_plan_option",
+          "CREATE INDEX idx_sif_schemes_plan_option ON public.sif_schemes USING btree (scheme_plan, scheme_option)"
+        ],
+        [
+          "sif_schemes_pkey",
+          "CREATE UNIQUE INDEX sif_schemes_pkey ON public.sif_schemes USING btree (scheme_code)"
+        ],
+        [
+          "sif_schemes_temp_sif_code_key",
+          "CREATE UNIQUE INDEX sif_schemes_temp_sif_code_key ON public.sif_schemes USING btree (temp_sif_code)"
+        ]
+      ]
+    },
+    "vw_sif_scheme_latest": {
+      "kind": "v",
+      "rows": 0,
+      "columns": [
+        [
+          "scheme_code",
+          "integer",
+          false,
+          null
+        ],
+        [
+          "temp_sif_code",
+          "character varying(30)",
+          false,
+          null
+        ],
+        [
+          "scheme_name",
+          "text",
+          false,
+          null
+        ],
+        [
+          "amc_name",
+          "character varying(255)",
+          false,
+          null
+        ],
+        [
+          "category",
+          "text",
+          false,
+          null
+        ],
+        [
+          "category_sub",
+          "character varying(255)",
+          false,
+          null
+        ],
+        [
+          "scheme_plan",
+          "character varying(50)",
+          false,
+          null
+        ],
+        [
+          "scheme_option",
+          "character varying(100)",
+          false,
+          null
+        ],
+        [
+          "is_active",
+          "boolean",
+          false,
+          null
+        ],
+        [
+          "nav_date",
+          "date",
+          false,
+          null
+        ],
+        [
+          "nav",
+          "numeric(18,6)",
+          false,
+          null
+        ],
+        [
+          "aaum_quarter",
+          "character varying(20)",
+          false,
+          null
+        ],
+        [
+          "aaum_quarter_end",
+          "date",
+          false,
+          null
+        ],
+        [
+          "aaum_cr",
+          "numeric(20,6)",
+          false,
+          null
+        ],
+        [
+          "aaum_lakhs",
+          "numeric(22,4)",
+          false,
+          null
+        ]
+      ],
+      "constraints": [],
+      "indexes": [],
+      "definition": " SELECT s.scheme_code,\n    s.temp_sif_code,\n    s.scheme_name,\n    a.amc_name,\n    s.category,\n    s.category_sub,\n    s.scheme_plan,\n    s.scheme_option,\n    s.is_active,\n    n.nav_date,\n    n.nav,\n    q.aaum_quarter,\n    q.quarter_end AS aaum_quarter_end,\n    q.aaum_cr,\n    q.aaum_lakhs\n   FROM sif_schemes s\n     JOIN sif_amcs a ON a.amc_id = s.amc_id\n     LEFT JOIN LATERAL ( SELECT sif_nav_history.nav_date,\n            sif_nav_history.nav\n           FROM sif_nav_history\n          WHERE sif_nav_history.scheme_code = s.scheme_code\n          ORDER BY sif_nav_history.nav_date DESC\n         LIMIT 1) n ON true\n     LEFT JOIN LATERAL ( SELECT sif_aaum_history.aaum_quarter,\n            sif_aaum_history.quarter_end,\n            sif_aaum_history.aaum_cr,\n            sif_aaum_history.aaum_lakhs\n           FROM sif_aaum_history\n          WHERE sif_aaum_history.scheme_code = s.scheme_code\n          ORDER BY sif_aaum_history.quarter_end DESC\n         LIMIT 1) q ON true;"
+    }
+  }
+}

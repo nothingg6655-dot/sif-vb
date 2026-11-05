@@ -1,0 +1,49 @@
+
+> vb-sif-backend@0.1.0 test
+> tsx --test tests/*.test.ts
+
+✔ unified engine calculates every trailing period with explicit metadata (19.9315ms)
+✔ trailing periods remain null when a new fund lacks sufficient history (0.7904ms)
+✔ monthly analytics uses NAV on or before month start and marks current month partial (1.1534ms)
+✔ calendar-year, YTD and Indian financial-year boundaries stay distinct (1.0527ms)
+✔ rolling returns provide deterministic series and summary statistics (1.4202ms)
+✔ benchmark comparison distinguishes excess points and compounded relative return (0.6999ms)
+✔ live ticker returns configured funds with numeric NAV and daily change (1347.0991ms)
+✔ live ticker reconciles all 34 reference funds and identifies source gaps (172.2143ms)
+✔ NAV history validates parameters and paginates ascending observations (230.4968ms)
+✔ heatmap and performance preserve keyed response style and methodology (1221.0124ms)
+✔ performance reconciles every source-complete fund to the 34-entry reference (426.4157ms)
+✔ normalized analytics APIs expose periods, heatmaps, annual and rolling data (1098.3171ms)
+✔ benchmark APIs expose verified coverage and preserve unavailable values as null (361.6066ms)
+✔ benchmark and TER compatibility routes preserve shape without fabricated data (394.4491ms)
+✔ fund details expose variants and source data without invented factsheet values (410.8391ms)
+✔ non-loopback server configuration requires an admin API key (32.5335ms)
+✔ daily change handles positive, negative, zero, high-NAV and half-up rounding (32.184ms)
+✔ previous observation is the immediately preceding available date (0.6477ms)
+✔ missing or invalid previous NAV returns null with a warning (0.6792ms)
+✔ identical duplicates are deterministic and conflicting duplicates are rejected (2.1295ms)
+✔ similar names, different schemes, plans and options remain isolated (0.8383ms)
+✔ mixing multiple scheme series under one configured fund is rejected (0.5342ms)
+✔ configuration refuses any database other than VB-SIF (11.1569ms)
+✔ pool size must be bounded (4.273ms)
+✔ health and read-only sync monitoring connect to the real database (1465.0897ms)
+✔ health returns 503 without exposing database connection errors (1074.5895ms)
+✔ calendar and fixed-day shifting are UTC-stable (3.0659ms)
+✔ percentage calculation preserves decimal precision until half-up rounding (2.206ms)
+✔ observed SIF360 policy reproduces the reported fund 1 calculations (21.6587ms)
+✔ reference selection direction is explicit around missing dates (0.415ms)
+✔ recent funds use inception with partial status and preserve observed null zeros (0.9443ms)
+✔ duplicates and invalid observations are handled deterministically (1.9145ms)
+✔ performance API adapter uses 30/90-day targets and keeps the legacy shape (2.2266ms)
+✔ compatibility heatmap uses month-start boundary and explicit null cells (7.1318ms)
+✔ all candidate boundary and fixed-observation methods have measured match rates (735.1647ms)
+✔ admin sync status hides database error details (1054.249ms)
+✔ configured admin endpoint requires a bearer key before querying (11.457ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7106.7053

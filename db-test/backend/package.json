@@ -1,0 +1,29 @@
+{
+  "name": "vb-sif-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "db:check": "tsx src/utils/check-database.ts",
+    "performance:reconcile": "tsx src/utils/reconcile-performance.ts",
+    "daily-change:reconcile": "tsx src/utils/reconcile-daily-change.ts",
+    "analytics:reconcile": "tsx src/utils/reconcile-analytics.ts",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.0",
+    "fastify": "^5.0.0",
+    "pg": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}

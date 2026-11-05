@@ -1,0 +1,22 @@
+benchmarkId,period,referenceValue,calculatedValue,matchStatus,reason
+bse500,r1d,-2.04,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+bse500,r1w,-1.22,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+bse500,r1m,-6.47,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+bse500,r3m,-7.4,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+bse500,si,,,exact-null,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+bse500,latestNav,33805.41,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+bse500,latestDate,2026-10-08,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+nifty50,r1d,-1.64,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+nifty50,r1w,-0.85,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+nifty50,r1m,-5.94,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+nifty50,r3m,-8.16,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+nifty50,si,,,exact-null,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+nifty50,latestNav,22231.80,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+nifty50,latestDate,2026-10-08,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+niftymidsml,r1d,-0.38,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+niftymidsml,r1w,0.15,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+niftymidsml,r1m,-4.53,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+niftymidsml,r3m,-2.85,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+niftymidsml,si,,,exact-null,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+niftymidsml,latestNav,20445.70,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
+niftymidsml,latestDate,2026-10-07,,verified-source-unavailable,Reference output has no auditable historical index-level series or PRICE/TRI declaration
