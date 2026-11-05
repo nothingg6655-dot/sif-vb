@@ -1,0 +1,30 @@
+{
+  "sources": [
+    {
+      "id": "360-one-dynasif",
+      "fund_house": "360 ONE Asset",
+      "page_urls": ["https://www.360.one/dyna-sif/download"],
+      "allowed_url_prefixes": [
+        "https://www.360.one/",
+        "https://s3.ap-south-1.amazonaws.com/x-web-s3.360.one/"
+      ],
+      "pdf_pattern": "(?i)(?:dyna_?sif|dyna_sif|dyn_sif).*(?:factsheet|funds)|factsheet.*dyna",
+      "required_funds": [
+        "DynaSIF Equity Long-Short Fund",
+        "DynaSIF Active Asset Allocator Long-Short Fund",
+        "DynaSIF Equity Ex-Top 100 Long-Short Fund"
+      ]
+    },
+    {
+      "id": "edelweiss-altiva-hybrid",
+      "fund_house": "Edelweiss Mutual Fund",
+      "page_urls": [
+        "https://www.edelweissmf.com/altivasif/downloads/factsheet",
+        "https://www.edelweissmf.com/altivasif/altiva-hybrid-long-short-fund"
+      ],
+      "allowed_url_prefixes": ["https://www.edelweissmf.com/"],
+      "pdf_pattern": "(?i)altiva[_ -]*hybrid[_ -]*long[_ -]*short.*(?:portfolio[_ -]*update|factsheet)",
+      "required_funds": ["Altiva Hybrid Long-Short Fund"]
+    }
+  ]
+}

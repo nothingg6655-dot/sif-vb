@@ -1,0 +1,388 @@
+{
+  "official_only": true,
+  "sources": [
+    {
+      "id": "dyna",
+      "fund_house": "360 ONE Asset",
+      "pages": [
+        "https://www.360.one/dyna-sif/download"
+      ],
+      "allowed_prefixes": [
+        "https://www.360.one/",
+        "https://s3.ap-south-1.amazonaws.com/x-web-s3.360.one/",
+        "https://s3.ap-south-1.amazonaws.com/x-web-s3.360.one/"
+      ],
+      "strategy": "html",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://s3.ap-south-1.amazonaws.com/x-web-s3.360.one/Dyna_SIF_Factsheet_as_on_September_30_2026_2191c44f31.pdf",
+          "page_url": "https://www.360.one/dyna-sif/download",
+          "local_path": "output/latest/360 ONE Asset.pdf",
+          "sha256": "e5ef47b1f145ed8598ed013902308bb07510d420075eba644e0081dfe2f3e242"
+        }
+      ]
+    },
+    {
+      "id": "apex",
+      "fund_house": "Aditya Birla Sun Life Mutual Fund",
+      "pages": [
+        "https://apexsif.adityabirlacapital.com/download-resource?tab=factsheets"
+      ],
+      "allowed_prefixes": [
+        "https://apexsif.adityabirlacapital.com/"
+      ],
+      "strategy": "html",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": true,
+      "known_documents": []
+    },
+    {
+      "id": "arudha",
+      "fund_house": "Bandhan Mutual Fund",
+      "pages": [
+        "https://arudhasif.com/downloads/"
+      ],
+      "allowed_prefixes": [
+        "https://arudhasif.com/"
+      ],
+      "strategy": "html",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://arudhasif.com/downloads/assest/file/downloads/Arudha_Factsheet_August_2026.pdf",
+          "page_url": "https://arudhasif.com/downloads/",
+          "local_path": "output/latest/Bandhan Mutual Fund.pdf",
+          "sha256": "e708b31653d436cd60fa1bbd74c5236fc0c3811bb9f362de0f3286e345476f60"
+        }
+      ]
+    },
+    {
+      "id": "altiva",
+      "fund_house": "Edelweiss Mutual Fund",
+      "pages": [
+        "https://www.edelweissmf.com/altivasif/downloads/factsheet"
+      ],
+      "allowed_prefixes": [
+        "https://www.edelweissmf.com/",
+        "https://api.edelweissmf.com/edelweissmf/api/v1/sif-download-menu/"
+      ],
+      "strategy": "altiva",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://www.edelweissmf.com/Files/SIF/Downloads/Factsheet/Factsheets/Altiva_Hybrid_LongShort_Fund_Portfolio_Update_September_2026_08102026093631.pdf",
+          "page_url": "https://www.edelweissmf.com/altivasif/downloads/factsheet",
+          "local_path": "output/latest/Edelweiss Mutual Fund - hybrid - 2026-09 - e59571cb.pdf",
+          "sha256": "e59571cb4e267f2f975714b58bae99de58cb9a541f0d9a3776f9cda2db2a6626"
+        },
+        {
+          "url": "https://www.edelweissmf.com/Files/SIF/Downloads/Factsheet/Factsheets/Altiva_Equity_ExTop_100_LongShort_Fund_Portfolio_Update_September_2026_07102026202207.pdf",
+          "page_url": "https://www.edelweissmf.com/altivasif/downloads/factsheet",
+          "local_path": "output/latest/Edelweiss Mutual Fund - equity-ex-top-100 - 2026-09 - b417592b.pdf",
+          "sha256": "b417592b613ee2f44c431088521fb688dc32c1b972914131ac9a34cbade570b0"
+        }
+      ],
+      "api": "https://api.edelweissmf.com/edelweissmf/api/v1/sif-download-menu/getSingleDownloadMenu?category=Downloads&menuName=factsheet"
+    },
+    {
+      "id": "sapphire",
+      "fund_house": "Franklin Templeton Mutual Fund",
+      "pages": [
+        "https://www.franklintempletonindia.com/sapphiresif/downloads/fund-documents"
+      ],
+      "allowed_prefixes": [
+        "https://www.franklintempletonindia.com/"
+      ],
+      "strategy": "sapphire",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://www.franklintempletonindia.com/download/en-in/sif-fund-factsheets/6b5b3d4e-5c00-4583-87e4-6e3f5771f127/Sapphire-SIF-Factsheet-as-on-August-31-2026.pdf",
+          "page_url": "https://www.franklintempletonindia.com/sapphiresif/downloads/fund-documents",
+          "local_path": "output/latest/Franklin Templeton Mutual Fund.pdf",
+          "sha256": "b691bf0de1f28602c7c27f2579fba1d484100d827879b57e7f5f3fe36d010019"
+        }
+      ],
+      "api": "https://www.franklintempletonindia.com/api/literature/v1/responseLitJson?type=sifDownload"
+    },
+    {
+      "id": "redhex",
+      "fund_house": "HSBC Mutual Fund",
+      "pages": [
+        "https://www.assetmanagement.hsbc.co.in/en/redhex-sif/investor-resources?Date=&Cap=&Doc=redhex-sif-factsheet"
+      ],
+      "allowed_prefixes": [
+        "https://www.assetmanagement.hsbc.co.in/"
+      ],
+      "strategy": "html",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": true,
+      "known_documents": [
+        {
+          "url": "https://www.assetmanagement.hsbc.co.in/assets/documents/redhex-sif/en/a594e539-3e76-4367-a6ab-7d2090b73beb/redhex-sif-factsheet-as-on-august-2026.pdf",
+          "page_url": "https://www.assetmanagement.hsbc.co.in/en/redhex-sif/investor-resources?Date=&Cap=&Doc=redhex-sif-factsheet",
+          "local_path": "output/latest/HSBC Mutual Fund.pdf",
+          "sha256": "c67da0782f725ce3ef0203d5a6416b911016ae646f29026affacc21f5c4a8a50"
+        }
+      ]
+    },
+    {
+      "id": "isif",
+      "fund_house": "ICICI Prudential Mutual Fund",
+      "pages": [
+        "https://www.isif.icicipruamc.com/media-center/downloads?currentTabFilter=Factsheets"
+      ],
+      "allowed_prefixes": [
+        "https://www.isif.icicipruamc.com/",
+        "https://www.icicipruamc.com/",
+        "https://apimf.icicipruamc.com/sif/nms/v1/downloads/",
+        "https://www.icicipruamc.com/blob/"
+      ],
+      "strategy": "icici",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://www.icicipruamc.com/blob/downloads/Files/sif%20factsheets/iSIF Factsheet September 2026.pdf",
+          "page_url": "https://www.isif.icicipruamc.com/media-center/downloads?currentTabFilter=Factsheets",
+          "local_path": "output/latest/ICICI Prudential Mutual Fund.pdf",
+          "sha256": "987442ef3ecdfa39fca595b60edea8ffb62f7234a905a5c865df9a0b2d9d46ba"
+        }
+      ],
+      "api_categories": "https://apimf.icicipruamc.com/sif/nms/v1/downloads/categories?userType=Investor",
+      "api_files": "https://apimf.icicipruamc.com/sif/nms/v1/downloads/files"
+    },
+    {
+      "id": "diviniti",
+      "fund_house": "ITI Mutual Fund",
+      "pages": [
+        "https://sif.itiamc.com/"
+      ],
+      "allowed_prefixes": [
+        "https://sif.itiamc.com/"
+      ],
+      "strategy": "html",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://sif.itiamc.com/Files/ITI DIVINITI SIF-Factsheet.pdf",
+          "page_url": "https://sif.itiamc.com/",
+          "local_path": "output/latest/ITI Mutual Fund.pdf",
+          "sha256": "538707e582365a5203a077b58005b8db17b69813cca01f2c8859fe69b20b3317"
+        }
+      ]
+    },
+    {
+      "id": "infinity",
+      "fund_house": "Kotak Mahindra Mutual Fund",
+      "pages": [
+        "https://www.kotakmf.com/sif/forms-and-downloads"
+      ],
+      "allowed_prefixes": [
+        "https://www.kotakmf.com/",
+        "https://vatseelabs-s3.kotakmf.com/",
+        "https://java17vlbapi.kotakmf.com/kotakapi/sif-forms/user/",
+        "https://vatseelabs-s3.kotakmf.com/"
+      ],
+      "strategy": "kotak",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://vatseelabs-s3.kotakmf.com/SIFForms/2026/Factsheet---September/KotakSIFFactsheetSeptember2026.pdf",
+          "page_url": "https://www.kotakmf.com/sif/forms-and-downloads",
+          "local_path": "output/latest/Kotak Mahindra Mutual Fund.pdf",
+          "sha256": "6c7c2d90098a64c083e4aa5f8ae102fec344de86fc15b2595c237f6a5e293366"
+        }
+      ],
+      "api_catalog": "https://java17vlbapi.kotakmf.com/kotakapi/sif-forms/user/getsuperheaderlist",
+      "api_base": "https://java17vlbapi.kotakmf.com/kotakapi/sif-forms/user",
+      "document_base": "https://vatseelabs-s3.kotakmf.com/"
+    },
+    {
+      "id": "magnum",
+      "fund_house": "SBI Mutual Fund",
+      "pages": [
+        "https://www.sbimf.com/magnumsif-factsheets"
+      ],
+      "allowed_prefixes": [
+        "https://www.sbimf.com/"
+      ],
+      "strategy": "sbi",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://www.sbimf.com/docs/default-source/sif-scheme-facsheets/magnum-sif-as-on-august-2026-final.pdf?sfvrsn=38eb72b9_8",
+          "page_url": "https://www.sbimf.com/magnumsif-factsheets",
+          "local_path": "output/latest/SBI Mutual Fund.pdf",
+          "sha256": "0d473f7c276ab856234d5c36bfe6f0b02e33857d28af5c5b86b50fe83663740d"
+        }
+      ],
+      "api": "https://www.sbimf.com/ajaxcall/CMS/GetRecentSIFFactSheets",
+      "method": "POST"
+    },
+    {
+      "id": "prism",
+      "fund_house": "Jio BlackRock Mutual Fund",
+      "pages": [
+        "https://www.jioblackrockamc.com/prismsif/statutory-disclosure/fund-document/factsheet"
+      ],
+      "allowed_prefixes": [
+        "https://www.jioblackrockamc.com/",
+        "https://cdnstorage-ddh3hqhvg3gyedd9.a02.azurefd.net/brcms/"
+      ],
+      "strategy": "html",
+      "pdf_pattern": "factsheet|siffactshe|fact.sheet|portfolio.update",
+      "browser_discovery": true,
+      "known_documents": [
+        {
+          "url": "https://cdnstorage-ddh3hqhvg3gyedd9.a02.azurefd.net/brcms/siffactshe-mu5f5ved-ebdfd2.pdf",
+          "page_url": "https://www.jioblackrockamc.com/prismsif/statutory-disclosure/fund-document/factsheet",
+          "local_path": "output/latest/Jio BlackRock Mutual Fund.pdf",
+          "sha256": "d8e3fbde0359c8538d59cbd1b47c1df2c733145b57d72abbfa67f4ff4913fb64"
+        }
+      ]
+    },
+    {
+      "id": "titanium",
+      "fund_house": "Tata Mutual Fund",
+      "pages": [
+        "https://www.tatamutualfund.com/titanium-sif/schemes-related"
+      ],
+      "allowed_prefixes": [
+        "https://www.tatamutualfund.com/",
+        "https://betacms.tatamutualfund.com/",
+        "https://prod-dist-api.tatamfdev.com/cms-data/api/",
+        "https://betacms.tatamutualfund.com/system/files/"
+      ],
+      "strategy": "tata",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://betacms.tatamutualfund.com/system/files/2026-10/Titanium%20SIF-Factsheet-30Sept2026.pdf",
+          "page_url": "https://www.tatamutualfund.com/titanium-sif/schemes-related",
+          "local_path": "output/latest/Tata Mutual Fund.pdf",
+          "sha256": "6de54d85d1e0dec42f71135a0b8dfc1f50e6a334b051f1b1c79093535e5a62c1"
+        }
+      ],
+      "api": "https://prod-dist-api.tatamfdev.com/cms-data/api/CMSDATA_sif_documents?document_type=factsheet"
+    },
+    {
+      "id": "wsif",
+      "fund_house": "The Wealth Company Mutual Fund",
+      "pages": [
+        "https://www.wealthcompanyamc.in/wsif/downloads/scheme-information-document/factsheets/"
+      ],
+      "allowed_prefixes": [
+        "https://www.wealthcompanyamc.in/"
+      ],
+      "strategy": "html",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://www.wealthcompanyamc.in/uploads/WSIF_Factsheet_September_2026_ba57f4ec45.pdf",
+          "page_url": "https://www.wealthcompanyamc.in/wsif/downloads/scheme-information-document/factsheets/",
+          "local_path": "output/latest/The Wealth Company Mutual Fund.pdf",
+          "sha256": "c000b027e776f36097f63b89958055f90d3b4f31734d59fe813e7d3305b53ec0"
+        }
+      ]
+    },
+    {
+      "id": "summit",
+      "fund_house": "Invesco Mutual Fund",
+      "pages": [
+        "https://summitsif.invescomutualfund.com/literature-forms/factsheet"
+      ],
+      "allowed_prefixes": [
+        "https://summitsif.invescomutualfund.com/"
+      ],
+      "strategy": "summit",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://summitsif.invescomutualfund.com/docs/siflibraries/literature---forms/factsheet/summit-sif---factsheet-sep-2026.pdf?sfvrsn=dc8f47cd_1",
+          "page_url": "https://summitsif.invescomutualfund.com/literature-forms/factsheet",
+          "local_path": "output/latest/Invesco Mutual Fund.pdf",
+          "sha256": "915a907d54a36a291a35e3ba8f60f1bee2b0dbee511e945967b8e9162b4d6339"
+        }
+      ],
+      "api": "https://summitsif.invescomutualfund.com/api/default/files?$expand=document&$filter=ParentId%20eq%209f89fe07-eee8-616a-aa28-ff00007d74af"
+    },
+    {
+      "id": "qsif",
+      "fund_house": "quant Mutual Fund",
+      "pages": [
+        "https://www.qsif.com/downloads/factsheet"
+      ],
+      "allowed_prefixes": [
+        "https://www.qsif.com/"
+      ],
+      "strategy": "html",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": false,
+      "known_documents": [
+        {
+          "url": "https://www.qsif.com/Admin/Factsheet/qsif_-_Factsheet_-_October_2026.pdf",
+          "page_url": "https://www.qsif.com/downloads/factsheet",
+          "local_path": "output/latest/quant Mutual Fund.pdf",
+          "sha256": "66f5a4a8fd131c61a38c7db807763c8077e7263cf7f5701f8f7fe106a9a02e6d"
+        }
+      ]
+    },
+    {
+      "id": "arthaya",
+      "fund_house": "Union Mutual Fund",
+      "pages": [
+        "https://www.unionmf.com/arthayasif/about-us/downloads"
+      ],
+      "allowed_prefixes": [
+        "https://www.unionmf.com/"
+      ],
+      "strategy": "html",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": true,
+      "known_documents": [
+        {
+          "url": "https://www.unionmf.com/docs/arthayasiflibraries/funddetail-downloads/fund-factsheets/arthaya-equity-long-short-fund.pdf",
+          "page_url": "https://www.unionmf.com/arthayasif/about-us/downloads",
+          "local_path": "output/latest/Union Mutual Fund.pdf",
+          "sha256": "f54ca6592bbd7df42b61798ab2ed29a941b3d857f29ee4cb2cf551bb5e35c29d"
+        }
+      ]
+    },
+    {
+      "id": "platinum",
+      "fund_house": "Mirae Asset Mutual Fund",
+      "pages": [
+        "https://platinumsif.miraeassetmf.co.in/forms-downloads",
+        "https://platinumsif.miraeassetmf.co.in/fund?schemeCode=3166"
+      ],
+      "allowed_prefixes": [
+        "https://platinumsif.miraeassetmf.co.in/",
+        "https://miraeassetetf.co.in/"
+      ],
+      "strategy": "platinum",
+      "api": "https://platinumsif.miraeassetmf.co.in/api/sif-dynamic-get?endpoint=download-forms-sub%3FmainLink%3Dproduct-literature%26sideLink%3Dfactsheet%26pageNo%3D1%26NoOfRows%3D100&noCache=true",
+      "pdf_pattern": "factsheet|fact.sheet|portfolio.update",
+      "browser_discovery": true,
+      "known_documents": [
+        {
+          "url": "https://miraeassetetf.co.in/wp-content/uploads/2026/09/Platinum-SIF-Factsheet-September-2026.pdf",
+          "page_url": "https://platinumsif.miraeassetmf.co.in/forms-downloads",
+          "local_path": "output/latest/Mirae Asset Mutual Fund.pdf",
+          "sha256": "0af1f7153a907753f8200eceb3e4fee538df36a6b546b010e68f587df2abb6be"
+        }
+      ]
+    }
+  ]
+}
