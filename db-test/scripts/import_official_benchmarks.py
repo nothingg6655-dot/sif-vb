@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from ingestion.tigzig.config import DatabaseConfig  # noqa: E402
+from database.migrate import verify_target  # noqa: E402
 
 
 REPORTS = ROOT / 'docs' / 'reports'
@@ -66,9 +67,7 @@ def main() -> int:
     config = DatabaseConfig.from_env()
     imported = {}
     with psycopg.connect(**config.connection_kwargs()) as connection:
-        target = connection.execute('SELECT current_database(), current_schema()').fetchone()
-        if target != ('VB-SIF', 'public'):
-            raise RuntimeError('Refusing import outside VB-SIF/public')
+        verify_target(connection)
         with connection.transaction():
             for benchmark_id, definition in BENCHMARKS.items():
                 rows = definition['rows']()
@@ -104,7 +103,7 @@ def main() -> int:
                     'rows': len(rows), 'firstDate': rows[0][0].isoformat(),
                     'latestDate': rows[-1][0].isoformat(), 'variant': 'PRICE',
                 }
-    print(json.dumps({'database': 'VB-SIF', 'imported': imported}, indent=2))
+    print(json.dumps({'database': config.dbname, 'imported': imported}, indent=2))
     return 0
 
 

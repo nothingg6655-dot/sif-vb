@@ -49,6 +49,13 @@ class MigrationTests(unittest.TestCase):
             ).fetchone()[0], 0)
 
     def test_wrong_database_configuration_is_refused_before_connection(self):
-        with patch.dict('os.environ', {'PGDATABASE': 'postgres'}):
+        with patch.dict('os.environ', {'PGDATABASE': 'postgres', 'PGEXPECTED_DATABASE': 'VB-SIF'}):
             with self.assertRaisesRegex(ValueError, 'PGDATABASE must be VB-SIF'):
                 migration_module.migrate()
+
+    def test_cloud_database_requires_explicit_target_and_verified_tls(self):
+        with patch.dict('os.environ', {'PGDATABASE': 'postgres', 'PGEXPECTED_DATABASE': 'postgres',
+                                      'PGSSLMODE': 'verify-full'}):
+            config = DatabaseConfig.from_env()
+            self.assertEqual(config.dbname, 'postgres')
+            self.assertEqual(config.connection_kwargs()['sslmode'], 'verify-full')

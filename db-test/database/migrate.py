@@ -19,8 +19,8 @@ LEGACY_OBJECTS = {
 
 def verify_target(connection):
     target = connection.execute('SELECT current_database(), current_schema()').fetchone()
-    if target != ('VB-SIF', 'public'):
-        raise RuntimeError('Refusing migration: target must be VB-SIF / public')
+    if target != (DatabaseConfig.from_env().dbname, 'public'):
+        raise RuntimeError('Refusing migration: target must match the configured database / public')
 
 
 def inventory(connection):
@@ -87,7 +87,7 @@ def migrate(*, preserve_legacy=False):
                 )
                 pending.append(path.name)
         # Report only after commit.
-        return {'database': 'VB-SIF', 'schema': 'public', 'applied': pending,
+        return {'database': DatabaseConfig.from_env().dbname, 'schema': 'public', 'applied': pending,
                 'already_applied': sorted(applied), 'public_objects': inventory(connection)}
 
 

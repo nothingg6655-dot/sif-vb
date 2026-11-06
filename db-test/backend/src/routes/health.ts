@@ -2,7 +2,7 @@ import type { FastifyInstance } from 'fastify';
 import type pg from 'pg';
 import { verifyDatabase } from '../config/database.js';
 
-export function registerHealth(app: FastifyInstance, pool: pg.Pool) {
+export function registerHealth(app: FastifyInstance, pool: pg.Pool, expectedDatabase = 'VB-SIF') {
   app.get('/health', {
     schema: {
       response: {
@@ -20,7 +20,7 @@ export function registerHealth(app: FastifyInstance, pool: pg.Pool) {
     }
   }, async (_request, reply) => {
     try {
-      await verifyDatabase(pool);
+      await verifyDatabase(pool, expectedDatabase);
       return { status: 'ok', database: 'connected' };
     } catch {
       app.log.warn('Database health check failed');

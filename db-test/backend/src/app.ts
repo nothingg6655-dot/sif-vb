@@ -22,8 +22,8 @@ export async function buildApp(config: AppConfig = readConfig()) {
     }
   });
   try {
-    await verifyDatabase(pool);
-    registerHealth(app, pool);
+    await verifyDatabase(pool, config.database.database);
+    registerHealth(app, pool, config.database.database);
     registerAdminSync(app, pool, config.syncFreshnessMaxMinutes, config.adminApiKey);
     registerFundRoutes(app, pool);
     registerFundAllocationRoutes(app, pool);

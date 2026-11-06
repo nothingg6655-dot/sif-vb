@@ -1,0 +1,44 @@
+# Repository: nothingg6655-dot/sif-vb. Never add passwords to this file.
+services:
+  - type: web
+    name: sif-vb-api
+    runtime: node
+    rootDir: db-test/backend
+    plan: free
+    region: singapore
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PGHOST
+        value: aws-0-ap-southeast-1.pooler.supabase.com
+      - key: PGPORT
+        value: "5432"
+      - key: PGDATABASE
+        value: postgres
+      - key: PGEXPECTED_DATABASE
+        value: postgres
+      - key: PGUSER
+        value: sif_backend.pduxixfhejkslwafxplw
+      - key: PGPASSWORD
+        sync: false
+      - key: PGSSLMODE
+        value: verify-full
+      - key: PGPOOL_MAX
+        value: "5"
+      - key: PGCONNECT_TIMEOUT
+        value: "30"
+      - key: PGSTATEMENT_TIMEOUT_MS
+        value: "30000"
+      - key: APP_TIMEZONE
+        value: Asia/Kolkata
+      - key: LOG_LEVEL
+        value: info
+      - key: ADMIN_API_KEY
+        generateValue: true

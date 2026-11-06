@@ -3,8 +3,10 @@ import { test } from 'node:test';
 import { buildApp } from '../src/app.js';
 import { readConfig } from '../src/config/env.js';
 
-test('configuration refuses any database other than VB-SIF', () => {
-  assert.throws(() => readConfig({ ...process.env, PGDATABASE: 'postgres' }), /VB-SIF/);
+test('database changes require an explicitly matching expected target', () => {
+  assert.throws(() => readConfig({ ...process.env, PGDATABASE: 'postgres', PGEXPECTED_DATABASE: 'VB-SIF' }), /PGEXPECTED_DATABASE/);
+  const configured = readConfig({ ...process.env, PGDATABASE: 'postgres', PGEXPECTED_DATABASE: 'postgres' });
+  assert.equal(configured.database.database, 'postgres');
 });
 
 test('pool size must be bounded', () => {

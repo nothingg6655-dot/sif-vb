@@ -22,13 +22,14 @@ class DatabaseConfig:
 
     @classmethod
     def from_env(cls):
-        load_dotenv(PROJECT_ROOT / '.env', override=False)
+        load_dotenv(PROJECT_ROOT / os.environ.get('SIF_ENV_FILE', '.env'), override=False)
         required = ('PGHOST', 'PGDATABASE', 'PGUSER', 'PGPASSWORD')
         for name in required:
             if not os.environ.get(name, '').strip():
                 raise ValueError(f'Missing environment variable: {name}')
-        if os.environ['PGDATABASE'] != 'VB-SIF':
-            raise ValueError('PGDATABASE must be VB-SIF')
+        expected = os.environ.get('PGEXPECTED_DATABASE', 'VB-SIF').strip() or 'VB-SIF'
+        if os.environ['PGDATABASE'] != expected:
+            raise ValueError(f'PGDATABASE must be {expected} (PGEXPECTED_DATABASE)')
         sslmode = os.environ.get('PGSSLMODE', 'disable')
         if sslmode not in ('disable', 'verify-full'):
             raise ValueError('PGSSLMODE must be disable or verify-full')
@@ -48,13 +49,16 @@ class DatabaseConfig:
         )
 
     def connection_kwargs(self):
-        return {
+        kwargs = {
             'host': self.host, 'port': self.port, 'dbname': self.dbname,
             'user': self.user, 'password': self.password, 'sslmode': self.sslmode,
             'connect_timeout': self.connect_timeout,
             'application_name': 'vb-sif-foundation',
             'options': f'-c search_path=public -c timezone=Asia/Kolkata -c statement_timeout={self.statement_timeout_ms}',
         }
+        if os.environ.get('PGSSLROOTCERT'):
+            kwargs['sslrootcert'] = str((PROJECT_ROOT / os.environ['PGSSLROOTCERT']).resolve())
+        return kwargs
 
 
 @dataclass(frozen=True)
