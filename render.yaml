@@ -1,7 +1,7 @@
 # Repository: nothingg6655-dot/sif-vb. Never add passwords to this file.
 services:
   - type: web
-    name: sif-vb-api
+    name: sif-vb
     runtime: node
     rootDir: db-test/backend
     plan: free
@@ -37,6 +37,8 @@ services:
       - key: PGSTATEMENT_TIMEOUT_MS
         value: "30000"
       - key: APP_TIMEZONE
+        value: Asia/Kolkata
+      - key: TZ
         value: Asia/Kolkata
       - key: LOG_LEVEL
         value: info

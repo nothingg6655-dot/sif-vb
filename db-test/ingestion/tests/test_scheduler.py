@@ -1,13 +1,14 @@
 """Milestone 5 scheduling, locking, retry, and restart recovery tests."""
 from contextlib import redirect_stdout
 from dataclasses import replace
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from io import StringIO
 import json
 import os
 import unittest
 from threading import Event, Thread
 from unittest.mock import patch
+from zoneinfo import ZoneInfo
 from apscheduler.events import EVENT_JOB_SUBMITTED
 from apscheduler.triggers.date import DateTrigger
 
@@ -83,6 +84,51 @@ class SchedulerTests(unittest.TestCase):
         with patch.dict(os.environ, {'TIGZIG_SCHEDULE_EARLY': '25:00'}):
             with self.assertRaisesRegex(ValueError, 'TIGZIG_SCHEDULE_EARLY'):
                 SchedulerConfig.from_env()
+
+    def test_trigger_times_are_ist_under_utc_singapore_and_us_clocks(self):
+        config = SchedulerConfig.from_env()
+        scheduler = build_scheduler(config, runner=lambda *_: None)
+        for instant in [datetime(2026, 1, 5, 18, 30, tzinfo=timezone.utc),
+                        datetime(2026, 7, 5, 18, 30, tzinfo=timezone.utc)]:
+            ist_day = instant.astimezone(ZoneInfo('Asia/Kolkata')).date()
+            for server_zone in ['UTC', 'Asia/Singapore', 'America/Los_Angeles']:
+                server_now = instant.astimezone(ZoneInfo(server_zone))
+                for spec in config.schedules:
+                    job = next(job for job in scheduler.get_jobs() if job.id == spec.job_id)
+                    due = job.trigger.get_next_fire_time(None, server_now)
+                    expected = datetime.combine(ist_day, datetime.min.time()).replace(
+                        hour=spec.hour, minute=spec.minute, tzinfo=ZoneInfo('Asia/Kolkata'))
+                    self.assertEqual(due, expected, (server_zone, spec.job_id))
+                    self.assertEqual(due.utcoffset(), timedelta(hours=5, minutes=30))
+
+    def test_early_ist_job_rolls_over_to_the_correct_utc_day(self):
+        config = replace(SchedulerConfig.from_env(), schedules=(
+            replace(SchedulerConfig.from_env().schedules[0], hour=5, minute=20),))
+        job = build_scheduler(config, runner=lambda *_: None).get_jobs()[0]
+        before = datetime(2026, 11, 5, 23, 49, tzinfo=timezone.utc)
+        first = job.trigger.get_next_fire_time(None, before)
+        self.assertEqual(first.isoformat(), '2026-11-06T05:20:00+05:30')
+        self.assertEqual(first.astimezone(timezone.utc).isoformat(), '2026-11-05T23:50:00+00:00')
+        after = datetime(2026, 11, 5, 23, 51, tzinfo=timezone.utc)
+        self.assertEqual(job.trigger.get_next_fire_time(None, after).isoformat(), '2026-11-07T05:20:00+05:30')
+
+    def test_non_ist_scheduler_configuration_is_refused(self):
+        config = replace(SchedulerConfig.from_env(), timezone='UTC')
+        with self.assertRaisesRegex(ValueError, 'Asia/Kolkata'):
+            build_scheduler(config, runner=lambda *_: None)
+        with patch.dict(os.environ, {'APP_TIMEZONE': 'UTC'}):
+            with self.assertRaisesRegex(ValueError, 'Asia/Kolkata'):
+                SchedulerConfig.from_env()
+
+    def test_environment_selection_is_shared_by_all_worker_configuration(self):
+        from ingestion.tigzig.config import TigzigConfig
+        with patch.dict(os.environ, {'SIF_ENV_FILE': '.env.local-backup'}), \
+             patch('ingestion.tigzig.config.load_dotenv') as load:
+            DatabaseConfig.from_env()
+            TigzigConfig.from_env()
+            SchedulerConfig.from_env()
+        self.assertEqual(load.call_count, 3)
+        self.assertTrue(all(call.args[0].name == '.env.local-backup' for call in load.call_args_list))
 
     def test_retry_delays_are_exponential_capped_and_jittered(self):
         base = SchedulerConfig.from_env()

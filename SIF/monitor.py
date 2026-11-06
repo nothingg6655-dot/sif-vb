@@ -12,6 +12,7 @@ import tempfile
 import copy
 import calendar
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.parse import unquote,urljoin,urlsplit
@@ -67,7 +68,9 @@ def walk(value):
 
 def prism_periods(now=None,months=12):
     """Search month filters newest first, including the fiscal-year boundary."""
-    now=now or datetime.now()
+    ist=ZoneInfo('Asia/Kolkata')
+    now=now or datetime.now(ist)
+    now=now.replace(tzinfo=ist) if now.tzinfo is None else now.astimezone(ist)
     current=now.year*12+now.month-1
     for offset in range(months):
         year,month=divmod(current-offset,12);month+=1

@@ -1,11 +1,12 @@
 """Exercise repeat cycles and recovery without downloading PDFs or changing data."""
 from argparse import Namespace
+from datetime import datetime, timezone
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
 from factsheetDataIngestion.cli import cmd_scheduler
-from factsheetDataIngestion.monitor import Publisher, coverage
+from factsheetDataIngestion.monitor import Publisher, coverage, prism_periods
 
 
 class StopTestScheduler(BaseException):
@@ -13,6 +14,13 @@ class StopTestScheduler(BaseException):
 
 
 class FactsheetSchedulerTests(unittest.TestCase):
+    def test_month_and_financial_year_selection_follow_ist_at_utc_boundary(self):
+        now = datetime(2026, 3, 31, 20, 0, tzinfo=timezone.utc)
+        self.assertEqual(next(prism_periods(now)), ('2026-2027', 'April'))
+        self.assertEqual(next(prism_periods(datetime(2026, 12, 31, 19, 0, tzinfo=timezone.utc))),
+                         ('2026-2027', 'January'))
+        self.assertEqual(next(prism_periods(datetime(2026, 4, 1))), ('2026-2027', 'April'))
+
     def test_new_registered_amc_without_source_does_not_abort_coverage_publication(self):
         with patch('factsheetDataIngestion.monitor.FUND_HOUSES', {'New Fund': 'New AMC'}):
             report = coverage([], {'sources': {}}, {})

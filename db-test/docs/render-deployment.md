@@ -61,6 +61,7 @@ PGPOOL_MAX=5
 PGCONNECT_TIMEOUT=30
 PGSTATEMENT_TIMEOUT_MS=30000
 APP_TIMEZONE=Asia/Kolkata
+TZ=Asia/Kolkata
 LOG_LEVEL=info
 ```
 
@@ -76,12 +77,12 @@ connection. Database and admin secrets must never be passed to Flutter.
 
 ## Verify the deployment
 
-After Render reports the service Live, use the actual URL shown by Render:
+The production API origin is `https://sif-vb.onrender.com`:
 
 ```text
-https://YOUR-SERVICE.onrender.com/health
-https://YOUR-SERVICE.onrender.com/api/analytics/category-comparison
-https://YOUR-SERVICE.onrender.com/api/analytics/monthly-heatmap?range=all
+https://sif-vb.onrender.com/health
+https://sif-vb.onrender.com/api/analytics/category-comparison
+https://sif-vb.onrender.com/api/analytics/monthly-heatmap?range=all
 ```
 
 `/health` should return `{"status":"ok","database":"connected"}`.
@@ -91,31 +92,31 @@ the public app must not contain that key.
 ## Flutter development and production
 
 Run commands from `sif_research/`. Local development defaults to
-`http://127.0.0.1:3000`. Production builds require an explicit public HTTPS API
-origin, without `/api` or any path suffix. Debug defaults to development; release
-defaults to production. Explicit `APP_ENV` flags make the intended mode clear.
+`http://127.0.0.1:3000`. Production builds default to
+`https://sif-vb.onrender.com`. Debug defaults to development; release defaults to
+production. `API_BASE_URL` can override the origin, without `/api` or a path suffix.
 
 ```powershell
 # Local Chrome development
 flutter run -d chrome --dart-define=APP_ENV=development --dart-define=API_BASE_URL=http://127.0.0.1:3000
 
 # Local Chrome preview using the deployed backend
-flutter run -d chrome --dart-define=APP_ENV=production --dart-define=API_BASE_URL=https://YOUR-SERVICE.onrender.com
+flutter run -d chrome --dart-define=APP_ENV=production --dart-define=API_BASE_URL=https://sif-vb.onrender.com
 
 # Production web files: build/web
-flutter build web --release --dart-define=APP_ENV=production --dart-define=API_BASE_URL=https://YOUR-SERVICE.onrender.com
+flutter build web --release --dart-define=APP_ENV=production --dart-define=API_BASE_URL=https://sif-vb.onrender.com
 
 # Production Android APK
-flutter build apk --release --dart-define=APP_ENV=production --dart-define=API_BASE_URL=https://YOUR-SERVICE.onrender.com
+flutter build apk --release --dart-define=APP_ENV=production --dart-define=API_BASE_URL=https://sif-vb.onrender.com
 ```
 
 For the Android emulator's local backend, use `http://10.0.2.2:3000` with
 `APP_ENV=development`. A USB-connected physical phone can use localhost with the
 existing `adb reverse tcp:3000 tcp:3000` workflow.
 
-These values are compiled into the Flutter build; changing the Render hostname
-requires rebuilding and redeploying the Flutter app. There is no production
-hostname guessed or hardcoded in the source.
+The production default is configured in `ApiConfig.productionBaseUrl`. An
+`API_BASE_URL` override is compiled into the Flutter build, so changing the backend
+hostname requires rebuilding and redeploying the Flutter app.
 
 ## Ongoing data updates
 
@@ -125,9 +126,46 @@ database configuration and require a separately deployed worker/cron service for
 updates while the development computer is off. Do not run migrations or ingestion
 as the web service's build/start command.
 
+### IST scheduler configuration
+
+Set both `APP_TIMEZONE=Asia/Kolkata` and `TZ=Asia/Kolkata` on the API and on any
+separate ingestion worker. The Python scheduler explicitly sets Asia/Kolkata on
+the scheduler and every cron trigger, so the server region never controls its
+wall-clock schedule. The five configurable default trigger times are:
+
+- `TIGZIG_SCHEDULE_EARLY=05:20` IST
+- `TIGZIG_SCHEDULE_MIDDAY=12:00` IST
+- `TIGZIG_SCHEDULE_AAUM=12:15` IST
+- `TIGZIG_SCHEDULE_CATCHUP=18:00` IST
+- `TIGZIG_SCHEDULE_RECOVERY=21:00` IST
+
+An always-running Python worker uses `python -m ingestion.tigzig.worker scheduler`
+from `db-test/`. Its configured startup recovery also runs once immediately on
+startup; retries run after delays. Those are recovery behavior rather than daily
+cron times. Factsheet polling uses elapsed-second intervals, which are independent
+of server timezone. Factsheet month selection explicitly uses the IST date.
+
+Render's native Cron Job schedule is always evaluated in UTC, even when `TZ` or
+`APP_TIMEZONE` is set. If using separate Render Cron Jobs instead of the Python
+scheduler worker, enter the UTC expressions corresponding to the intended IST
+times:
+
+- 05:20 IST: `50 23 * * *` UTC (previous UTC calendar day)
+- 12:00 IST: `30 6 * * *` UTC
+- 12:15 IST: `45 6 * * *` UTC
+- 18:00 IST: `30 12 * * *` UTC
+- 21:00 IST: `30 15 * * *` UTC
+
+Native cron jobs must run a one-shot command such as
+`python -m ingestion.tigzig.worker sync`, which exits. Do not use the continuous
+`scheduler` command as a Render Cron Job. Choose one scheduling mechanism to avoid
+duplicate scheduled runs. The current blueprint defines only the API web service;
+it does not deploy or start a Python scheduler worker or native cron jobs.
+
 Official references:
 
 - https://render.com/docs/web-services
 - https://render.com/docs/configure-environment-variables
 - https://render.com/docs/blueprint-spec
+- https://render.com/docs/cronjobs
 - https://dart.dev/libraries/core/environment-declarations

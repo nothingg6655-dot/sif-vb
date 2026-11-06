@@ -14,6 +14,8 @@ def build_scheduler(
     runner=run_sync_job,
 ) -> BlockingScheduler:
     config = config or SchedulerConfig.from_env()
+    if config.timezone != 'Asia/Kolkata':
+        raise ValueError('Scheduler timezone must be Asia/Kolkata (IST)')
     timezone = ZoneInfo(config.timezone)
     scheduler = BlockingScheduler(
         timezone=timezone,

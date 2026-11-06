@@ -9,6 +9,11 @@ from dotenv import load_dotenv
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
+def load_environment():
+    """Use the same selected environment for database, downloads, and schedules."""
+    load_dotenv(PROJECT_ROOT / os.environ.get('SIF_ENV_FILE', '.env'), override=False)
+
+
 @dataclass(frozen=True)
 class DatabaseConfig:
     host: str
@@ -22,7 +27,7 @@ class DatabaseConfig:
 
     @classmethod
     def from_env(cls):
-        load_dotenv(PROJECT_ROOT / os.environ.get('SIF_ENV_FILE', '.env'), override=False)
+        load_environment()
         required = ('PGHOST', 'PGDATABASE', 'PGUSER', 'PGPASSWORD')
         for name in required:
             if not os.environ.get(name, '').strip():
@@ -71,7 +76,7 @@ class TigzigConfig:
 
     @classmethod
     def from_env(cls):
-        load_dotenv(PROJECT_ROOT / '.env', override=False)
+        load_environment()
         base_url = os.environ.get('TIGZIG_BASE_URL', 'https://sif.tigzig.com/')
         if not base_url.startswith('https://') or not base_url.endswith('/'):
             raise ValueError('TIGZIG_BASE_URL must be an HTTPS URL ending in /')
@@ -116,7 +121,7 @@ class SchedulerConfig:
 
     @classmethod
     def from_env(cls):
-        load_dotenv(PROJECT_ROOT / '.env', override=False)
+        load_environment()
         timezone_name = os.environ.get('APP_TIMEZONE', 'Asia/Kolkata')
         if timezone_name != 'Asia/Kolkata':
             raise ValueError('APP_TIMEZONE must be Asia/Kolkata')
