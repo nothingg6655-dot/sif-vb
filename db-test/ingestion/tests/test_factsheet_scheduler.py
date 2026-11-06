@@ -5,6 +5,7 @@ import unittest
 from unittest.mock import patch
 
 from factsheetDataIngestion.cli import cmd_scheduler
+from factsheetDataIngestion.monitor import Publisher, coverage
 
 
 class StopTestScheduler(BaseException):
@@ -12,6 +13,24 @@ class StopTestScheduler(BaseException):
 
 
 class FactsheetSchedulerTests(unittest.TestCase):
+    def test_new_registered_amc_without_source_does_not_abort_coverage_publication(self):
+        with patch('factsheetDataIngestion.monitor.FUND_HOUSES', {'New Fund': 'New AMC'}):
+            report = coverage([], {'sources': {}}, {})
+        self.assertEqual(report['Registered Schemes'], 1)
+        self.assertEqual(report['Extracted Schemes'], 0)
+        self.assertEqual(report['Schemes'][0]['Status'], 'unavailable')
+        self.assertIn('No official publisher source', report['Schemes'][0]['Reason'])
+
+    def test_rate_limited_publishers_are_deferred_instead_of_sleeping_on_retry_after(self):
+        publisher = Publisher({'pages': ['https://example.invalid/']}, browser=False)
+        try:
+            retry = publisher.session.get_adapter('https://').max_retries
+            self.assertFalse(retry.is_retry('GET', 429, has_retry_after=True))
+            self.assertFalse(retry.is_retry('GET', 503, has_retry_after=True))
+            self.assertTrue(retry.is_retry('GET', 502))
+        finally:
+            publisher.session.close()
+
     def test_online_scheduler_repeats_complete_cycle_after_configured_interval(self):
         args = Namespace(interval=3600, watch=True, offline=False, no_browser=True)
         calls = []

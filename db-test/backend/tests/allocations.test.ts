@@ -4,6 +4,7 @@ import Fastify from 'fastify';
 import type pg from 'pg';
 import { buildApp } from '../src/app.js';
 import { readConfig } from '../src/config/env.js';
+import { createPool } from '../src/config/database.js';
 import { registerFundAllocationRoutes } from '../src/routes/allocations.js';
 import type { AllocationRow } from '../src/repositories/allocations.js';
 import { allocationDefinitions } from '../src/services/allocations.js';
@@ -91,18 +92,22 @@ test('rating API distinguishes unpublished Dynasif data from published rating bu
   } finally { await app.close(); }
 });
 
-test('bulk APIs include all 34 funds and reconcile every fund with its individual endpoint', async () => {
+test('bulk APIs include the registered strategies and reconcile every fund with its individual endpoint', async () => {
   const app = await buildApp(readConfig({ ...process.env, LOG_LEVEL: 'silent' }));
+  const pool = createPool(readConfig());
   try {
+    const registry = (await pool.query<{ slug: string }>(
+      'SELECT slug FROM public.sif_strategies ORDER BY slug')).rows.map((row) => row.slug);
     let registeredSlugs: string[] | undefined;
     for (const type of Object.keys(allocationDefinitions)) {
       const response = await app.inject(`/api/funds/allocations/${type}`);
       assert.equal(response.statusCode, 200, response.body);
       const { success, count, data } = response.json();
       assert.equal(success, true);
-      assert.equal(count, 34);
+      assert.equal(count, registry.length);
       assert.equal(data.length, count);
       const slugs = data.map((fund: { slug: string }) => fund.slug);
+      assert.deepEqual(slugs, registry);
       assert.equal(new Set(slugs).size, count);
       if (registeredSlugs) assert.deepEqual(slugs, registeredSlugs);
       registeredSlugs = slugs;
@@ -123,7 +128,7 @@ test('bulk APIs include all 34 funds and reconcile every fund with its individua
         }
       }
     }
-  } finally { await app.close(); }
+  } finally { await app.close(); await pool.end(); }
 });
 
 function fixtureApp(rows: AllocationRow[], failure = false) {

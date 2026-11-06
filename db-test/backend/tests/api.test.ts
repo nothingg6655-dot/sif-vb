@@ -273,11 +273,14 @@ test('fund details expose variants and source data without invented factsheet va
     assert.equal(response.statusCode, 200);
     const body = response.json().data;
     assert.equal(body.fullName, 'Magnum Hybrid Long-Short Fund');
-    assert.equal(body.schemes.length, 4);
+    assert.equal(body.schemes.length, 2);
+    assert.ok(body.schemes.every((scheme: { plan: string }) => scheme.plan === 'Regular'));
     assert.ok(body.quarterlyAAUM.length > 0);
-    assert.equal(body.factsheet, null);
+    assert.match(body.factsheet, /^https:\/\//);
     assert.equal(body.benchmark.available, false);
-    assert.equal(body.expenseRatio.available, false);
+    assert.equal(body.expenseRatio.available, true);
+    assert.equal(body.expenseRatio.type, 'BASE');
+    assert.equal(typeof body.expenseRatio.percent, 'number');
 
     const missing = await app.inject({ method: 'GET', url: '/api/funds/not-a-real-fund' });
     assert.equal(missing.statusCode, 404);

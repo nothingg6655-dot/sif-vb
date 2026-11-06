@@ -119,10 +119,19 @@ calculation records for every trailing period.
 
 ## `GET /api/funds/:slug`
 
-Returns canonical fund identity and status, every verified Direct/Regular and
-Growth/IDCW scheme variant, ISINs, latest NAV and daily change per variant, quarterly
-AAUM records, and source/import timestamps. `factsheet` is `null`. `benchmark` and
-`expenseRatio` explicitly report unavailable status until verified sources exist.
+Returns canonical fund identity and status, verified Regular-plan
+Growth/IDCW scheme variants, ISINs, latest NAV and daily change per variant, Regular-plan quarterly
+AAUM records, and source/import timestamps. The latest eligible official factsheet
+supplies `factsheet` (PDF URL), `profile` (report dates, net AUM, launch date,
+published benchmark), and a single current `managers` roster. Documents must belong
+to the strategy's AMC. `expenseRatio` supplies the published Regular-plan percentage,
+as-of date, and type (`TER` or `BASE`); a base ratio is never labelled TER. Missing
+published fields remain null or explicitly unavailable.
+
+Public performance, ticker, comparison, trend, rolling and monthly-return queries
+select verified Regular Growth schemes explicitly. A Direct mapping is excluded
+rather than labelled Regular. NAV-history requests for Direct scheme IDs return
+404. Source ingestion continues retaining all publisher plans for audit purposes.
 
 ## Risk band by SIF scheme name
 
@@ -392,3 +401,11 @@ window does not establish the indices' true inception.
 `funds` fields with a zero count and empty fund list. These endpoints preserve the
 client contract without copying the unverified benchmark and factsheet values from
 the example response.
+## Category performance comparison
+
+`GET /api/analytics/category-comparison?to_date=YYYY-MM-DD` powers the overview comparison table. The date defaults to the current server date. Returns and volatility use the verified Regular Growth scheme mapping. Metadata comes from canonical strategy/AMC identities and the latest designated, verified official factsheet whose reporting and portfolio dates are no later than the requested date.
+
+The response contains category counts, fund identities, published launch dates (or separately identified first-NAV dates), per-fund latest NAV dates, net AUM in crore with its publication date, explicit published risk bands, published return profiles when present, and five return/volatility periods. Missing disclosures and insufficient history remain null. Quarterly average AUM and catalog examples are never substituted.
+
+Returns are absolute NAV changes. One and three months use 30 and 90 days; six months and one year use calendar subtraction with the first NAV on or after the target. Volatility is the sample standard deviation of consecutive daily NAV percentage returns multiplied by the square root of 252, with at least two observations. Gaps over seven calendar days make volatility unavailable. Zero values remain numeric zero. Conflicting duplicate NAVs invalidate the affected series. Colours in the client rank funds within a row and reverse the scale for volatility.
+

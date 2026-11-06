@@ -26,8 +26,18 @@ test('risk band API resolves every registered and verified plan name to its own 
         UNION SELECT strategy_id,scheme_name FROM public.vw_sif_verified_strategy_schemes
       )
       SELECT n.strategy_id::integer AS "strategyId",n.name,lr.report_id::integer AS "reportId",
-             lr.investment_strategy_risk_band AS "strategyBand",lr.benchmark_risk_band AS "benchmarkBand"
-      FROM names n JOIN public.vw_sif_strategy_latest_report lr USING(strategy_id)
+             rb.investment_strategy_risk_band AS "strategyBand",rb.benchmark_risk_band AS "benchmarkBand"
+      FROM names n JOIN public.sif_strategies st USING(strategy_id)
+      LEFT JOIN LATERAL (
+        SELECT r.report_id FROM public.sif_factsheet_reports r
+        JOIN public.sif_factsheet_documents d USING(document_id)
+        WHERE r.strategy_id=st.strategy_id AND r.is_primary
+          AND d.amc_id=st.amc_id AND d.official_only IS TRUE
+          AND r.validation_status IN ('PASSED','WARNING')
+          AND coalesce(r.portfolio_as_of,r.report_month) <= CURRENT_DATE
+        ORDER BY r.report_month DESC,r.extracted_at DESC,r.report_id DESC LIMIT 1
+      ) lr ON true
+      LEFT JOIN public.sif_report_risk_bands rb ON rb.report_id=lr.report_id
       ORDER BY n.strategy_id,n.name
     `)).rows;
     assert.ok(expected.length >= 34);

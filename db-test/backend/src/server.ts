@@ -18,7 +18,7 @@ try {
     await app.close();
     throw error;
   }
-} catch {
-  console.error('Server startup failed. Check environment and database connectivity.');
+} catch (error) {
+  console.error('Server startup failed. Check environment and database connectivity.', error);
   process.exitCode = 1;
 }

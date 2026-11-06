@@ -31,7 +31,7 @@ export async function readLiveTicker(pool: pg.Pool) {
       JOIN public.tigzig_scheme_nav n
         ON (n.source,n.scheme_code)=(c.preferred_source,c.preferred_scheme_code)
       WHERE c.selection_verified AND c.mapping_confidence IN ('high','medium')
-        AND f.status='active'
+        AND f.status='active' AND s.scheme_plan='Regular' AND s.scheme_option='Growth'
     )
     SELECT "displayOrder","fundId","fullName",source,"schemeCode",plan,option,date,nav
     FROM ranked WHERE observation_rank <= 2
@@ -63,10 +63,13 @@ export async function readPerformanceNav(
            n.nav_date::text AS date,n.nav::text
     FROM public.app_performance_config c
     JOIN public.app_funds f USING(fund_id)
+    JOIN public.tigzig_schemes s
+      ON (s.source,s.scheme_code)=(c.preferred_source,c.preferred_scheme_code)
     JOIN public.tigzig_scheme_nav n
       ON (n.source,n.scheme_code)=(c.preferred_source,c.preferred_scheme_code)
     WHERE c.selection_verified AND c.mapping_confidence IN ('high','medium')
-      AND f.status='active' AND n.nav_date <= $1::date
+      AND f.status='active' AND s.scheme_plan='Regular' AND s.scheme_option='Growth'
+      AND n.nav_date <= $1::date
       AND ($2::integer IS NULL OR c.reference_fund_id=$2)
     ORDER BY c.reference_fund_id,n.nav_date`, [toDate, referenceFundId ?? null])).rows;
 }
@@ -74,7 +77,7 @@ export async function readPerformanceNav(
 export async function resolveScheme(pool: pg.Pool, sdId: string) {
   return (await pool.query<{ source: string; schemeCode: number }>(`
     SELECT source,scheme_code::integer AS "schemeCode"
-    FROM public.tigzig_schemes WHERE temp_sif_code=$1 ORDER BY source
+    FROM public.tigzig_schemes WHERE temp_sif_code=$1 AND scheme_plan='Regular' ORDER BY source
   `, [sdId])).rows;
 }
 
@@ -105,7 +108,7 @@ export async function readFundDetails(pool: pg.Pool, slug: string) {
     FROM public.app_funds WHERE slug=$1
   `, [slug])).rows[0];
   if (!fund) return null;
-  const [schemes, aaum, source, managers] = await Promise.all([
+  const [schemes, aaum, source, profile] = await Promise.all([
     pool.query<{
       source: string; schemeCode: number; tempSifCode: string | null; schemeName: string;
       schemeType: string | null; category: string | null; categorySub: string | null;
@@ -124,10 +127,9 @@ export async function readFundDetails(pool: pg.Pool, slug: string) {
       JOIN public.tigzig_schemes s USING(source,scheme_code)
       LEFT JOIN public.tigzig_scheme_isins i USING(source,scheme_code)
       LEFT JOIN public.app_performance_cache p USING(source,scheme_code)
-      WHERE m.fund_id=$1
+      WHERE m.fund_id=$1 AND s.scheme_plan='Regular'
       GROUP BY s.source,s.scheme_code,p.as_of_date,p.latest_nav,p.daily_return_pct
-      ORDER BY CASE s.scheme_plan WHEN 'Direct' THEN 0 ELSE 1 END,
-               CASE s.scheme_option WHEN 'Growth' THEN 0 ELSE 1 END,s.scheme_code
+      ORDER BY CASE s.scheme_option WHEN 'Growth' THEN 0 ELSE 1 END,s.scheme_code
     `, [fund.fundId]),
     pool.query<{
       source: string; schemeCode: number; schemeName: string; quarter: string;
@@ -140,7 +142,7 @@ export async function readFundDetails(pool: pg.Pool, slug: string) {
       FROM public.app_tigzig_fund_mapping m
       JOIN public.tigzig_scheme_aaum a USING(source,scheme_code)
       JOIN public.tigzig_schemes s USING(source,scheme_code)
-      WHERE m.fund_id=$1 ORDER BY a.quarter_end DESC,a.scheme_code
+      WHERE m.fund_id=$1 AND s.scheme_plan='Regular' ORDER BY a.quarter_end DESC,a.scheme_code
     `, [fund.fundId]),
     pool.query<{
       manifestGeneratedAt: Date | null; lastSuccessfulImportAt: Date | null;
@@ -152,7 +154,7 @@ export async function readFundDetails(pool: pg.Pool, slug: string) {
                AS "lastSuccessfulImportAt",
              n.upload_ts_raw AS "latestNavPublicationRaw",
              n.upload_ts_ist AS "latestNavPublicationIst"
-      FROM public.app_ticker_config t
+      FROM public.app_performance_config t
       LEFT JOIN LATERAL (
         SELECT upload_ts_raw,upload_ts_ist FROM public.tigzig_scheme_nav
         WHERE (source,scheme_code)=(t.preferred_source,t.preferred_scheme_code)
@@ -160,17 +162,50 @@ export async function readFundDetails(pool: pg.Pool, slug: string) {
       ) n ON true WHERE t.fund_id=$1
     `, [fund.fundId]),
     pool.query<{
-      name: string; role: string; managingSince: string | null;
+      reportId: number; reportAsOf: string; pdfUrl: string | null;
+      benchmarkName: string | null; expenseRatioPercent: string | null;
+      expenseRatioType: string | null; expenseRatioAsOf: string | null;
+      netAumCr: string | null; aumAsOf: string | null; launchDate: string | null;
+      managers: Array<{ name: string; role: string; managingSince: string | null }>;
     }>(`
-      SELECT fm.manager_name AS "name", COALESCE(rfm.manager_role, 'Fund Manager') AS "role",
-             rfm.managing_since::text AS "managingSince"
+      SELECT r.report_id::integer AS "reportId",
+             coalesce(r.portfolio_as_of,r.report_month)::text AS "reportAsOf",
+             d.official_pdf_url AS "pdfUrl",
+             coalesce(pr.published_benchmark,rb.benchmark_name) AS "benchmarkName",
+             er.ratio_percent::text AS "expenseRatioPercent",er.ratio_type AS "expenseRatioType",
+             coalesce(er.as_of_date,r.portfolio_as_of,r.report_month)::text AS "expenseRatioAsOf",
+             a.net_aum_cr::text AS "netAumCr",
+             coalesce(a.aum_as_of,r.portfolio_as_of)::text AS "aumAsOf",
+             coalesce(pr.launch_date,st.launch_date)::text AS "launchDate",
+             coalesce((SELECT jsonb_agg(jsonb_build_object(
+               'name',fm.manager_name,'role',rfm.manager_role,
+               'managingSince',rfm.managing_since::text) ORDER BY fm.manager_name,rfm.manager_role)
+               FROM public.sif_report_fund_managers rfm
+               JOIN public.sif_fund_managers fm USING(manager_id)
+               WHERE rfm.report_id=r.report_id),'[]'::jsonb) AS managers
       FROM public.sif_strategies st
-      JOIN public.sif_factsheet_reports r ON r.strategy_id = st.strategy_id AND r.is_primary AND r.validation_status IN ('PASSED', 'WARNING')
-      JOIN public.sif_report_fund_managers rfm ON rfm.report_id = r.report_id
-      JOIN public.sif_fund_managers fm ON fm.manager_id = rfm.manager_id
-      WHERE st.slug = $1
-      ORDER BY fm.manager_name
+      JOIN LATERAL (
+        SELECT report.* FROM public.sif_factsheet_reports report
+        JOIN public.sif_factsheet_documents doc ON doc.document_id=report.document_id
+        WHERE report.strategy_id=st.strategy_id AND report.is_primary
+          AND doc.official_only IS TRUE AND doc.amc_id=st.amc_id
+          AND report.validation_status IN ('PASSED','WARNING')
+          AND coalesce(report.portfolio_as_of,report.report_month) <= CURRENT_DATE
+        ORDER BY report.report_month DESC,report.extracted_at DESC,report.report_id DESC LIMIT 1
+      ) r ON true
+      JOIN public.sif_factsheet_documents d ON d.document_id=r.document_id
+      LEFT JOIN public.sif_report_strategy_profile pr ON pr.report_id=r.report_id
+      LEFT JOIN public.sif_report_risk_bands rb ON rb.report_id=r.report_id
+      LEFT JOIN public.sif_report_aum a ON a.report_id=r.report_id
+      LEFT JOIN LATERAL (
+        SELECT expense.* FROM public.sif_report_expense_ratios expense
+        WHERE expense.report_id=r.report_id AND expense.plan_type='REGULAR'
+          AND expense.ratio_type IN ('TER','BASE')
+        ORDER BY CASE expense.ratio_type WHEN 'TER' THEN 0 ELSE 1 END LIMIT 1
+      ) er ON true
+      WHERE st.slug=$1 AND st.is_active
     `, [slug])
   ]);
-  return { fund, schemes: schemes.rows, aaum: aaum.rows, source: source.rows[0] ?? null, managers: managers.rows };
+  return { fund, schemes: schemes.rows, aaum: aaum.rows, source: source.rows[0] ?? null,
+    profile: profile.rows[0] ?? null };
 }

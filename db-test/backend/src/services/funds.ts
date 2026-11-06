@@ -7,7 +7,7 @@ import {
   readAllBenchmarkHistory, readBenchmarkHistory, readBenchmarks,
 } from '../repositories/benchmarks.js';
 import {
-  benchmarkAvailability, benchmarkDefinitions, terAvailability
+  benchmarkDefinitions
 } from './benchmark.js';
 import { calculateDailyTicker } from './daily-change.js';
 import {
@@ -266,10 +266,20 @@ export async function fundDetails(pool: pg.Pool, slug: string) {
         ...row, aaumLakhs: numberOrNull(row.aaumLakhs), aaumCr: numberOrNull(row.aaumCr)
       })),
       sourceTimestamps: details.source,
-      managers: details.managers,
-      factsheet: null,
-      benchmark: benchmarkAvailability,
-      expenseRatio: terAvailability
+      managers: details.profile?.managers ?? [],
+      factsheet: details.profile?.pdfUrl ?? null,
+      profile: details.profile ? {
+        ...details.profile,
+        expenseRatioPercent: numberOrNull(details.profile.expenseRatioPercent),
+        netAumCr: numberOrNull(details.profile.netAumCr),
+      } : null,
+      benchmark: details.profile?.benchmarkName
+        ? { available: true, name: details.profile.benchmarkName }
+        : { available: false, reason: 'Benchmark is not disclosed in the latest verified factsheet' },
+      expenseRatio: details.profile && details.profile.expenseRatioPercent !== null
+        ? { available: true, percent: numberOrNull(details.profile.expenseRatioPercent),
+          type: details.profile.expenseRatioType, asOfDate: details.profile.expenseRatioAsOf }
+        : { available: false, reason: 'Regular plan expense ratio is not disclosed in the latest verified factsheet' }
     }
   };
 }

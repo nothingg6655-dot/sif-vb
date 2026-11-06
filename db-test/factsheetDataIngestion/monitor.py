@@ -84,7 +84,11 @@ class Publisher:
         self.profile=profile;self.browser=browser
         self.session=requests.Session()
         self.session.headers.update({'User-Agent':'Mozilla/5.0','Accept':'text/html,application/json,*/*'})
-        retry=Retry(total=1,backoff_factor=.4,status_forcelist=[429,500,502,503,504],allowed_methods=['GET','POST'])
+        # Rate-limited/unavailable publishers are checked on the next cycle.
+        # urllib3 otherwise sleeps for an unbounded publisher Retry-After value,
+        # blocking publication of every other AMC's completed refresh.
+        retry=Retry(total=1,backoff_factor=.4,status_forcelist=[500,502,504],
+                    respect_retry_after_header=False,allowed_methods=['GET','POST'])
         self.session.mount('https://',HTTPAdapter(max_retries=retry))
 
     def request(self,url,method='GET',body=None,referer=None):
@@ -316,8 +320,12 @@ def load_saved_schemes(profile,directory,previous):
         if saved and saved.get('Extraction Validation',{}).get('Status') in {'passed','passed_with_warnings'}:
             source=saved.get('Factsheet Source',{})
             local=Path(source.get('Local PDF',''))
-            if source.get('SHA256') and not local.is_file():
-                for candidate in folder.parent.glob('*.pdf'):
+            if source.get('SHA256') and (not local.is_file() or
+                    hashlib.sha256(local.read_bytes()).hexdigest()!=source['SHA256']):
+                candidates=[folder.parent.parent/'archive'/(source['SHA256']+'.pdf'),
+                            *folder.parent.glob('*.pdf')]
+                for candidate in candidates:
+                    if not candidate.is_file():continue
                     if hashlib.sha256(candidate.read_bytes()).hexdigest()==source['SHA256']:
                         source['Local PDF']=str(candidate.resolve());break
             funds[name]=saved
@@ -455,7 +463,13 @@ def _refresh_house(profile,directory,previous,browser,offline,staging):
 def coverage(profiles,state,all_funds):
     by_house={p['fund_house']:p for p in profiles};rows=[]
     for name,house in FUND_HOUSES.items():
-        p=by_house[house];s=state['sources'].get(p['id'],{});data=all_funds.get(name)
+        p=by_house.get(house)
+        if p is None:
+            rows.append({'Scheme':name,'Fund House':house,'Status':'unavailable',
+                         'Reporting Month':None,'Reason':'No official publisher source is configured.',
+                         'Publishing Pages':[],'Checked At':None})
+            continue
+        s=state['sources'].get(p['id'],{});data=all_funds.get(name)
         if data:
             source=data['Factsheet Source']
             latest=s.get('listing_verified',False) and source.get('Latest Listing Verified',False) and source['PDF URL'] in {d['url'] for d in s.get('documents',[])}

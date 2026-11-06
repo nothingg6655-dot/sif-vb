@@ -1,6 +1,7 @@
 """Integration tests for Factsheet Data Ingestion in the VB-SIF domain."""
 from datetime import date
 from decimal import Decimal
+import json
 import unittest
 from uuid import uuid4
 
@@ -38,12 +39,12 @@ class FactsheetDateUtilsTests(unittest.TestCase):
 
 
 class FactsheetRegistryTests(unittest.TestCase):
-    def test_34_registered_funds(self):
-        self.assertEqual(len(FUND_HOUSES), 34)
+    def test_36_registered_funds(self):
+        self.assertEqual(len(FUND_HOUSES), 36)
 
-    def test_17_amcs_registered(self):
-        self.assertEqual(len(set(FUND_HOUSES.values())), 17)
-        self.assertEqual(len(TIGZIG_TO_AMC), 17)
+    def test_18_amcs_registered(self):
+        self.assertEqual(len(set(FUND_HOUSES.values())), 18)
+        self.assertEqual(len(TIGZIG_TO_AMC), 18)
 
     def test_numeric_cleaning(self):
         self.assertEqual(_clean_numeric('1,234.56 %'), Decimal('1234.56'))
@@ -67,8 +68,8 @@ class FactsheetDatabaseIntegrationTests(unittest.TestCase):
     def test_strategy_manager_sync(self):
         manager = StrategyManager(self.connection)
         summary = manager.sync_all()
-        self.assertEqual(summary.amcs_synced, 17)
-        self.assertEqual(summary.strategies_synced, 34)
+        self.assertEqual(summary.amcs_synced, len(set(FUND_HOUSES.values())))
+        self.assertEqual(summary.strategies_synced, len(FUND_HOUSES))
         schemes = self.connection.execute('SELECT count(*) FROM public.sif_schemes').fetchone()[0]
         links = self.connection.execute('SELECT count(*) FROM public.sif_strategy_scheme_links').fetchone()[0]
         self.assertEqual(summary.schemes_synced, schemes)
@@ -91,16 +92,23 @@ class FactsheetDatabaseIntegrationTests(unittest.TestCase):
             pdfs_dir=base_dir if base_dir.is_dir() else None,
         )
 
-        self.assertIn(report.status, ('SUCCEEDED', 'PARTIAL'))
-        self.assertEqual(report.reports_ingested, 28)
-        self.assertEqual(report.documents_ingested, 16)
+        extracted = {
+            name: data
+            for path in (base_dir / 'extraction').glob('*.json')
+            for name, data in json.loads(path.read_text(encoding='utf-8')).items()
+        }
+        self.assertEqual(report.status, 'SUCCEEDED')
+        self.assertEqual(report.reports_ingested, len(extracted))
+        self.assertEqual(report.documents_ingested, len({
+            data['Factsheet Source']['SHA256'] for data in extracted.values()
+        }))
         self.assertEqual(len(report.errors), 0)
 
         # Verify database view vw_sif_strategy_latest_report
         views = self.connection.execute("""
             SELECT count(*) FROM public.vw_sif_strategy_latest_report WHERE report_id IS NOT NULL
         """).fetchone()[0]
-        self.assertEqual(views, 28)
+        self.assertGreaterEqual(views, report.reports_ingested)
 
         # Verify child table counts
         holdings = self.connection.execute("SELECT count(*) FROM public.sif_report_holdings").fetchone()[0]

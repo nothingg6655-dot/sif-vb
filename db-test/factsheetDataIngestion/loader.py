@@ -541,6 +541,15 @@ class FactsheetIngester:
             if Path(pdf_name).name != pdf_name:
                 raise ValueError('Manifest PDF name must not contain a directory')
             pdf = pdfs_dir / pdf_name if pdfs_dir else None
+            if not manifest.get('File Name'):
+                # A house filename can now contain a newer edition. Resolve older
+                # retained reports by their exact source hash, never by filename alone.
+                candidates = [Path(source.get('Local PDF') or '')]
+                if pdfs_dir:
+                    candidates += [pdfs_dir.parent / 'archive' / f'{digest}.pdf',
+                                   *pdfs_dir.glob('*.pdf')]
+                pdf = next((candidate for candidate in candidates if candidate.is_file()
+                            and hashlib.sha256(candidate.read_bytes()).hexdigest() == digest), pdf)
             if pdf is None or not pdf.is_file():
                 pdf = Path(source.get('Local PDF') or '')
             if not pdf.is_file():

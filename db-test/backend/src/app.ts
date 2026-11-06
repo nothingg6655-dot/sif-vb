@@ -6,6 +6,7 @@ import { registerAdminSync } from './routes/admin-sync.js';
 import { registerFundRoutes } from './routes/funds.js';
 import { registerFundAllocationRoutes } from './routes/allocations.js';
 import { registerRiskBandRoutes } from './routes/bands.js';
+import { registerCategoryComparison } from './routes/category-comparison.js';
 
 export async function buildApp(config: AppConfig = readConfig()) {
   const app = Fastify({ logger: { level: config.logLevel, redact: ['req.headers.authorization'] } });
@@ -27,6 +28,7 @@ export async function buildApp(config: AppConfig = readConfig()) {
     registerFundRoutes(app, pool);
     registerFundAllocationRoutes(app, pool);
     registerRiskBandRoutes(app, pool);
+    registerCategoryComparison(app, pool);
     return app;
   } catch (error) {
     await app.close();
