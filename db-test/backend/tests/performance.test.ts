@@ -120,7 +120,7 @@ test('duplicates and invalid observations are handled deterministically', () => 
   assert.ok(conflict.dataQualityWarnings.includes('conflicting_duplicate_observation'));
 });
 
-test('performance API adapter uses 30/90-day targets and keeps the legacy shape', () => {
+test('historical SIF360 policy adapter retains its explicitly selected 30/90-day convention', () => {
   const result = calculatePerformance(rows, '2026-04-15');
   const item = result.performanceMap['1']!;
   assert.equal(item.return1m, 10);

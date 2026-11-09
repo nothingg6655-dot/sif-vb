@@ -24,25 +24,25 @@ test('unified engine calculates every trailing period with explicit metadata', (
   const metrics = result.funds[0]!.returns;
   assert.deepEqual(Object.fromEntries(Object.entries(metrics).map(([key, value]) =>
     [key, value.value])), {
-    r1d: 2.56, r1w: 5.26, r1m: 11.11, r3m: 17.65, r6m: 25,
-    r1y: 33.33, r2y: 42.86, r3y: 53.85, r5y: 81.82,
+    r1d: 2.56, r1w: 5.26, r1m: 5.26, r3m: 17.65, r6m: 17.65,
+    r1y: 29.03, r2y: 42.86, r3y: 53.85, r5y: 81.82,
     ytd: 29.03, si: 100,
   });
-  assert.equal(metrics.r1m.startDate, '2026-09-14');
+  assert.equal(metrics.r1m.startDate, '2026-10-07');
   assert.equal(metrics.r1m.endDate, '2026-10-14');
-  assert.equal(metrics.r1m.actualElapsedDays, 30);
-  assert.equal(metrics.r1m.calculationMethod, 'fixed-days:first-on-or-after');
+  assert.equal(metrics.r1m.actualElapsedDays, 7);
+  assert.equal(metrics.r1m.calculationMethod, 'calendar-months:first-strictly-after');
 });
 
-test('trailing periods remain null when a new fund lacks sufficient history', () => {
+test('calendar periods use available history while unsupported long periods require full history', () => {
   const fund = calculateUnifiedPerformance(rows([
     ['2026-10-05', '10'], ['2026-10-13', '10.1'],
   ]), '2026-10-14').funds[0]!;
   assert.equal(fund.returns.r1d.value, 1);
-  assert.equal(fund.returns.r1m.value, null);
+  assert.equal(fund.returns.r1m.value, 1);
   assert.equal(fund.returns.r5y.value, null);
   assert.equal(fund.returns.ytd.value, null);
-  assert.equal(fund.returns.r1m.status, 'insufficient-history');
+  assert.equal(fund.returns.r1m.status, 'complete');
   assert.equal(fund.returns.si.value, 1);
 });
 

@@ -3,6 +3,8 @@ import { readComparisonMetadata, type ComparisonMetadata } from '../repositories
 import { readPerformanceNav, type PreferredNavRow } from '../repositories/funds.js';
 import { calculateUnifiedPerformance, type ReturnMetric } from './analytics.js';
 import { groupSeries, type NavObservation } from './performance.js';
+import { calculateDailyReturns, calculateAnnualizedVolatility } from './volatility.service.js';
+import { displayDecimal } from './scheme-performance-model.js';
 
 export const comparisonPeriods = [
   { id: 'r1m', label: '1 Month' }, { id: 'r3m', label: '3 Months' },
@@ -24,8 +26,8 @@ export interface VolatilityMetric {
   endDate: string | null; status: string;
 }
 
-// Sample SD of simple consecutive daily NAV returns, expressed in percent.
-// A window must have full return history and at least two daily return samples.
+// Filter consecutive returns by their return date, preserving the preceding NAV
+// even when it falls on or before the requested window boundary.
 export function annualizedVolatility(
   observations: NavObservation[], metric: ReturnMetric | undefined,
 ): VolatilityMetric {
@@ -33,25 +35,16 @@ export function annualizedVolatility(
     value: null, observations: 0, startDate: metric?.startDate ?? null,
     endDate: metric?.endDate ?? null, status: metric?.status ?? 'unavailable',
   };
-  if (metric?.value === null || !metric?.startDate || !metric.endDate) return missing;
-  const window = observations.filter((row) => row.date >= metric.startDate! && row.date <= metric.endDate!);
-  const daily: number[] = [];
-  for (let i = 1; i < window.length; i++) {
-    const previous = window[i - 1]!;
-    const current = window[i]!;
-    const gap = (Date.parse(current.date) - Date.parse(previous.date)) / 86400000;
-    if (gap > 7) return { ...missing, status: 'daily-nav-gaps' };
-    const change = (Number(current.nav) / Number(previous.nav) - 1) * 100;
-    if (!Number.isFinite(change)) return { ...missing, status: 'invalid' };
-    daily.push(change);
-  }
-  if (daily.length < 2) return { ...missing, observations: daily.length, status: 'insufficient-history' };
-  const mean = daily.reduce((a, b) => a + b, 0) / daily.length;
-  const variance = daily.reduce((sum, value) => sum + (value - mean) ** 2, 0) / (daily.length - 1);
-  return {
-    value: Math.round(Math.sqrt(variance * 252) * 100) / 100,
-    observations: daily.length, startDate: metric.startDate, endDate: metric.endDate, status: 'complete',
-  };
+  if (!metric?.endDate || metric.status === 'invalid') return missing;
+  try {
+    const daily = calculateDailyReturns(observations.filter((row) => row.date <= metric.endDate!))
+      .filter((row) => !metric.requestedStartDate || row.date > metric.requestedStartDate);
+    return {
+      value: displayDecimal(calculateAnnualizedVolatility(daily.map((row) => row.value))),
+      observations: daily.length, startDate: daily[0]?.date ?? null, endDate: metric.endDate,
+      status: daily.length >= 2 ? 'complete' : 'insufficient-history',
+    };
+  } catch { return { ...missing, status: 'invalid' }; }
 }
 
 function categoryId(row: ComparisonMetadata): string {
@@ -60,9 +53,9 @@ function categoryId(row: ComparisonMetadata): string {
 }
 
 export function calculateCategoryComparison(
-  rows: PreferredNavRow[], metadata: ComparisonMetadata[], toDate: string,
+  rows: PreferredNavRow[], metadata: ComparisonMetadata[], toDate: string, requestedAsOfDate: string | null = toDate,
 ) {
-  const analytics = calculateUnifiedPerformance(rows, toDate);
+  const analytics = calculateUnifiedPerformance(rows, toDate, requestedAsOfDate);
   const performance = new Map(analytics.funds.map((fund) => [fund.fundId, fund]));
   const series = new Map(groupSeries(rows, toDate).map((fund) => [fund.fundId, fund.observations]));
   const funds = metadata.map((row) => {
@@ -77,6 +70,7 @@ export function calculateCategoryComparison(
       categoryId: categoryId(row), category: row.category, strategy: row.strategy,
       launchDate: row.launchDate, inceptionDate: fund?.inceptionDate ?? null,
       plan: 'Regular', option: 'Growth', latestDate: fund?.latestDate ?? null,
+      asOfDate: fund?.asOfDate ?? null,
       netAumCr: amount !== null && Number.isFinite(amount) && amount >= 0 ? amount : null,
       aumAsOf: row.aumAsOf, riskBand: band, riskLevel: match ? Number(match[1]) : null,
       riskAsOf: row.riskAsOf, returnProfile: row.returnProfile, pdfUrl: row.pdfUrl,
@@ -97,8 +91,8 @@ export function calculateCategoryComparison(
       ...item, fundCount: funds.filter((fund) => fund.categoryId === item.id).length,
     })),
     methodology: {
-      returns: 'Absolute point-to-point NAV returns; 1M=30 days, 3M=90 days, 6M/1Y=calendar months. Full period history required.',
-      volatility: 'Sample standard deviation of consecutive daily NAV percentage returns × √252. At least two returns required; gaps over 7 calendar days are unavailable.',
+      returns: 'Absolute NAV returns; subtract 1, 3, 6 calendar months or 1 calendar year and select the first valid NAV strictly after the target. Since inception uses the first valid scheme NAV.',
+      volatility: 'Sample standard deviation of consecutive valid decimal NAV returns × √252 × 100. Return dates must be strictly after the target; at least two returns required. Missing dates are not filled.',
       aum: 'Published net AUM from the latest verified official factsheet up to the requested date; INR in crore. Quarterly average AUM is not substituted.',
       inception: 'Published launch date when available; otherwise first recorded NAV date.',
     },
@@ -106,9 +100,9 @@ export function calculateCategoryComparison(
   };
 }
 
-export async function categoryComparison(pool: pg.Pool, toDate: string) {
+export async function categoryComparison(pool: pg.Pool, toDate: string, requestedAsOfDate: string | null = toDate) {
   const [rows, metadata] = await Promise.all([
     readPerformanceNav(pool, toDate), readComparisonMetadata(pool, toDate),
   ]);
-  return calculateCategoryComparison(rows, metadata, toDate);
+  return calculateCategoryComparison(rows, metadata, toDate, requestedAsOfDate);
 }

@@ -26,10 +26,10 @@ test('volatility uses sample SD of daily percentage returns and sqrt(252)', () =
   assert.equal(annualizedVolatility(flat, metric).value, 0);
 });
 
-test('missing history, sparse observations and conflicting NAVs stay unavailable', () => {
+test('available history and sparse observations are calculated; conflicting NAVs stay unavailable', () => {
   const result = calculateCategoryComparison(rows, [metadata], '2026-10-03');
-  assert.equal(result.funds[0]!.returns.r1m?.value, null);
-  assert.equal(result.funds[0]!.volatility.r1m?.value, null);
+  assert.equal(result.funds[0]!.returns.r1m?.value, -1);
+  assert.equal(result.funds[0]!.volatility.r1m?.value, 224.5);
   assert.equal(result.funds[0]!.netAumCr, null);
   assert.equal(result.funds[0]!.riskLevel, null);
   assert.equal(result.funds[0]!.returnProfile, null);
@@ -40,7 +40,7 @@ test('missing history, sparse observations and conflicting NAVs stay unavailable
   assert.equal(invalid.funds[0]!.volatility.si?.value, null);
   const sparse = rows.map((row, i) => ({ ...row, date: `2026-0${i + 1}-01` }));
   const metric = calculateUnifiedPerformance(sparse, '2026-03-01').funds[0]!.returns.si;
-  assert.equal(annualizedVolatility(sparse, metric).status, 'daily-nav-gaps');
+  assert.equal(annualizedVolatility(sparse, metric).status, 'complete');
 });
 
 test('risk levels use only explicit published levels and unknown categories are retained', () => {

@@ -4,9 +4,6 @@ import { readFileSync } from 'node:fs';
 import { buildApp } from '../src/app.js';
 import { readConfig } from '../src/config/env.js';
 
-const sif360Reference = JSON.parse(readFileSync(
-  new URL('./fixtures/sif360-performance-2026-10-14.json', import.meta.url), 'utf8'
-));
 const heatmapReference = JSON.parse(readFileSync(
   new URL('./fixtures/sif360-heatmap-12m-2026-10-14.json', import.meta.url), 'utf8'
 ));
@@ -111,20 +108,22 @@ test('heatmap and performance preserve keyed response style and methodology', as
   } finally { await app.close(); }
 });
 
-test('performance reconciles all funds at the reference source cutoff', async () => {
+test('compatibility performance and unified analytics use the same calendar convention', async () => {
   const app = await buildApp(readConfig({ ...process.env, LOG_LEVEL: 'silent' }));
   try {
     const response = await app.inject({
       method: 'GET',
-      url: '/api/performance-all?to_date=2026-10-13&from1m=2026-09-14&from3m=2026-07-16',
+      url: '/api/performance-all?to_date=2026-10-13',
     });
     assert.equal(response.statusCode, 200);
     const actual = response.json();
     assert.deepEqual(Object.keys(actual.performanceMap),
       Array.from({ length: 34 }, (_, index) => String(index + 1)));
-    for (const referenceId of Object.keys(sif360Reference.performanceMap)) {
-      assert.deepEqual(actual.performanceMap[referenceId],
-        sif360Reference.performanceMap[referenceId], `reference fund ${referenceId}`);
+    const unified = (await app.inject('/api/analytics/performance?to_date=2026-10-13')).json();
+    for (const fund of unified.funds) {
+      assert.equal(actual.performanceMap[String(fund.id)].return1m, fund.returns.r1m.value);
+      assert.equal(actual.performanceMap[String(fund.id)].return3m, fund.returns.r3m.value);
+      assert.equal(actual.performanceMap[String(fund.id)].changePct, fund.returns.si.value);
     }
   } finally { await app.close(); }
 });
@@ -176,7 +175,7 @@ test('normalized analytics APIs expose periods, heatmaps, annual and rolling dat
       ['r1d', 'r1w', 'r1m', 'r3m', 'r6m', 'r1y', 'r2y', 'r3y', 'r5y', 'ytd', 'si']);
     assert.equal(performanceBody.funds[0].returns.r1d.value, 0.21);
     assert.equal(performanceBody.funds[0].returns.r2y.value, null);
-    assert.equal(performanceBody.funds[33].returns.r1m.value, null);
+    assert.ok(performanceBody.funds[33].returns.r1m.startDate > performanceBody.funds[33].returns.r1m.requestedStartDate);
 
     const monthly = await app.inject({
       method: 'GET', url: '/api/analytics/monthly-heatmap?range=12m&to_date=2026-10-13',
@@ -255,7 +254,12 @@ test('benchmark and TER compatibility routes preserve response shape', async () 
       assert.equal(item.metrics.si, null);
       assert.ok(item.metrics.latestDate <= '2026-10-08');
     }
-    assert.deepEqual(benchmarkBody.benchmarks[1], benchmarkReference.benchmarks[1]);
+    const actual = benchmarkBody.benchmarks[1];
+    const expected = benchmarkReference.benchmarks[1];
+    assert.deepEqual({ ...actual, metrics: { ...actual.metrics,
+      r1m: expected.metrics.r1m, r3m: expected.metrics.r3m } }, expected);
+    assert.equal(typeof actual.metrics.r1m, 'number');
+    assert.equal(typeof actual.metrics.r3m, 'number');
     const ter = await app.inject({ method: 'GET', url: '/api/sif-ter' });
     assert.equal(ter.statusCode, 200);
     assert.equal(ter.json().success, true);

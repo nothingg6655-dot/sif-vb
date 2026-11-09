@@ -17,8 +17,10 @@ import psycopg
 from psycopg.types.json import Jsonb
 
 from database.migrate import verify_target
-from .config import DatabaseConfig, PROJECT_ROOT, SchedulerConfig
+from .config import DatabaseConfig, PROJECT_ROOT, SchedulerConfig, TigzigConfig
 from .importer import _json_safe, import_prepared, prepare_source
+from .manifest import fetch_manifest, find_manifest_file
+from .source_versions import changed_source_files
 from .sync import sync_prepared
 from .verify_source import verify_current_source
 
@@ -158,7 +160,36 @@ def run_sync_job(
             prepared = None
             attempt_started = time.monotonic()
             try:
-                prepared = prepare_source()
+                source_config = TigzigConfig.from_env()
+                manifest = fetch_manifest(
+                    source_config.base_url, timeout_seconds=source_config.timeout_seconds,
+                )
+                if job_type != 'revalidate':
+                    changed = changed_source_files(manifest, lock_connection)
+                    if not changed:
+                        files = [*manifest.files.values(), find_manifest_file(
+                            manifest, 'sif_nav.csv', dataset='nav_raw_timestamp',
+                        )]
+                        run_id = _terminal_run(
+                            trigger_type=trigger_type, job_type=job_type,
+                            job_identifier=job_identifier, status='succeeded', started=started,
+                            manifest_generated_at=manifest.generated_at,
+                            manifest_metadata={**manifest.raw, '_source_unchanged': True},
+                            files_processed=[{
+                                'dataset': file.dataset, 'filename': file.name,
+                                'sha256': file.sha256, 'rows': file.rows,
+                                'downloaded': False,
+                            } for file in files],
+                        )
+                        result = {
+                            'status': 'unchanged', 'run_id': run_id,
+                            'reason': 'source_unchanged', 'inserted': 0, 'updated': 0,
+                            'attempt': attempt,
+                        }
+                        log_event('job_unchanged', job_identifier=job_identifier, **result)
+                        return result
+                    log_event('source_changed', job_identifier=job_identifier, files=changed)
+                prepared = prepare_source(manifest=manifest)
                 result = sync_prepared(
                     prepared, trigger_type=trigger_type, job_type=job_type,
                     job_identifier=job_identifier,

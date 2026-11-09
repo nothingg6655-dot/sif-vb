@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit -p tsconfig.json",
@@ -13,17 +15,22 @@
     "performance:reconcile": "tsx src/utils/reconcile-performance.ts",
     "daily-change:reconcile": "tsx src/utils/reconcile-daily-change.ts",
     "analytics:reconcile": "tsx src/utils/reconcile-analytics.ts",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "tsx --test tests/*.test.ts && vitest run",
+    "test:metrics": "vitest run",
+    "performance:calculate": "tsx src/utils/calculate-scheme-performance.ts"
   },
   "dependencies": {
+    "decimal.js": "^10.6.0",
     "dotenv": "^17.0.0",
     "fastify": "^5.0.0",
-    "pg": "^8.0.0"
+    "pg": "^8.0.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
     "@types/pg": "^8.0.0",
     "tsx": "^4.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^5.1.0"
   }
 }

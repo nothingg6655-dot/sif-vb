@@ -2,7 +2,7 @@
 
 `monitor.py` checks official publishing sources for all **34 registered schemes across 17 fund houses**, downloads available factsheets, and calls the AMC-specific extractor in `app.py`. Independent directories and mirrored PDFs are excluded.
 
-The installed Windows task, **SIF Factsheet Monitor**, runs hourly and at sign-in using `pythonw.exe`. The computer must be awake, online, and the user logged in. Polling detects a publication on the next successful check; it is not an AMC publication webhook.
+The installed Windows task, **SIF Factsheet Monitor**, runs daily at **11:01:59 AM IST** using `pythonw.exe`. Its paths resolve to this `Backennd/SIF` directory. The computer must be on, online, and the user logged in; the task requests wake from sleep and catches a missed run when available. Polling detects a publication on the next successful check; it is not an AMC publication webhook.
 
 ## Outputs
 
@@ -36,11 +36,11 @@ python monitor.py --offline --no-browser
 
 Offline results explicitly have no current listing verification. Use a separate `--output-dir` to keep offline results separate from production. Exit code 0 means at least one scheme is available; it does **not** mean all 34 have downloadable factsheets. Inspect `output/latest/coverage.json` for completeness.
 
-Install or update the hourly task:
+Install or update the daily task:
 
 ```powershell
 .\install_schedule.ps1
-.\install_schedule.ps1 -IntervalMinutes 30
+.\install_schedule.ps1 -DailyTime '11:01:59'
 ```
 
 The installer updates this project's existing task and refuses to replace an unrelated task with the same name. To stop scheduled checks:
@@ -61,7 +61,7 @@ python app.py "C:\path\to\factsheet.pdf" --output extracted_factsheet.json
 
 ICICI, Tata, Kotak, Franklin, Invesco, SBI, and Platinum use their public website document APIs. Platinum's Forms & Downloads catalog is checked page by page because its fund page still exposes an old factsheet. Prism's browser discovery checks up to twelve month filters, crossing fiscal years when needed; it does not stop after an empty current or previous month. Other houses use official page links, with browser discovery where applicable. Reporting dates come from the fund's financial/portfolio page, not its cover or upload month: quant's October publication reports September; Platinum's September publication reports August.
 
-Known official URLs remain retrievable when a publishing page is blocked. Such data has **Latest Listing Verified = false** and is not represented as a confirmed latest edition. Blocked pages are retried hourly. An invalid new PDF is discarded while the last validated scheme data and PDF remain in `latest`. Hashes detect publisher revisions; scheme extraction files are reused only when their checksums, source PDF hashes, and extractor version match. Redirects outside configured official prefixes, non-PDF responses, oversized responses, and mismatched fund-house identities are rejected.
+Known official URLs remain retrievable when a publishing page is blocked. Such data has **Latest Listing Verified = false** and is not represented as a confirmed latest edition. Blocked pages are retried on the next daily check. An invalid new PDF is discarded while the last validated scheme data and PDF remain in `latest`. Hashes detect publisher revisions; scheme extraction files are reused only when their checksums, source PDF hashes, and extractor version match. Redirects outside configured official prefixes, non-PDF responses, oversized responses, and mismatched fund-house identities are rejected.
 
 ## Extraction scope and validation
 

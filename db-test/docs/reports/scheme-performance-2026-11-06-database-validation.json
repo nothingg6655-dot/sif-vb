@@ -1,0 +1,61 @@
+{
+  "dataSource": "database",
+  "sourceCsv": "C:\\Users\\shris\\Aikyam\\Projects\\Mutual Fund Guru - Vinayak Bhosale(SIF Project)\\Backennd\\db-test\\data\\tigzig\\sif_nav.csv",
+  "sourceSha256": "fc49fc06ba71f754bd86f995313b01dd302acdeff0a8b9a8e8221ab147a11680",
+  "engineReport": "docs\\reports\\scheme-performance-2026-11-06.json",
+  "schemesChecked": 139,
+  "periodsChecked": 695,
+  "discrepantSchemes": [],
+  "discrepancies": [],
+  "referenceFunds": [
+    {
+      "fund": "qSIF",
+      "schemeId": "SIF:7",
+      "expected1m": -1.03,
+      "actual1m": -1.03,
+      "matches": true
+    },
+    {
+      "fund": "Altiva",
+      "schemeId": "SIF:11",
+      "expected1m": 0.3,
+      "actual1m": 0.3,
+      "matches": true
+    },
+    {
+      "fund": "Magnum",
+      "schemeId": "SIF:13",
+      "expected1m": 1.27,
+      "actual1m": 1.27,
+      "matches": true
+    },
+    {
+      "fund": "Titanium",
+      "schemeId": "SIF:29",
+      "expected1m": 4.73,
+      "actual1m": 4.73,
+      "matches": true
+    },
+    {
+      "fund": "iSIF",
+      "schemeId": "SIF:35",
+      "expected1m": 3.06,
+      "actual1m": 3.06,
+      "matches": true
+    },
+    {
+      "fund": "Arudha",
+      "schemeId": "SIF:40",
+      "expected1m": 0.41,
+      "actual1m": 0.41,
+      "matches": true
+    },
+    {
+      "fund": "Apex",
+      "schemeId": "SIF:80",
+      "expected1m": 1.28,
+      "actual1m": 1.28,
+      "matches": true
+    }
+  ]
+}

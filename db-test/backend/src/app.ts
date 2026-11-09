@@ -7,6 +7,8 @@ import { registerFundRoutes } from './routes/funds.js';
 import { registerFundAllocationRoutes } from './routes/allocations.js';
 import { registerRiskBandRoutes } from './routes/bands.js';
 import { registerCategoryComparison } from './routes/category-comparison.js';
+import { registerSchemePerformance } from './routes/scheme-performance.js';
+import { registerPipelineMonitor } from './routes/pipeline-monitor.js';
 
 export async function buildApp(config: AppConfig = readConfig()) {
   const app = Fastify({ logger: { level: config.logLevel, redact: ['req.headers.authorization'] } });
@@ -15,7 +17,7 @@ export async function buildApp(config: AppConfig = readConfig()) {
   app.addHook('onClose', async () => { await pool.end(); });
   app.addHook('onRequest', async (request, reply) => {
     reply.header('Access-Control-Allow-Origin', '*');
-    reply.header('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+    reply.header('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS');
     reply.header('Access-Control-Allow-Headers', '*');
     if (request.method === 'OPTIONS') {
       return reply.status(204).send();
@@ -29,6 +31,8 @@ export async function buildApp(config: AppConfig = readConfig()) {
     registerFundAllocationRoutes(app, pool);
     registerRiskBandRoutes(app, pool);
     registerCategoryComparison(app, pool);
+    registerSchemePerformance(app, pool, config.adminApiKey);
+    registerPipelineMonitor(app, pool, config.syncFreshnessMaxMinutes);
     return app;
   } catch (error) {
     await app.close();

@@ -131,13 +131,10 @@ as the web service's build/start command.
 Set both `APP_TIMEZONE=Asia/Kolkata` and `TZ=Asia/Kolkata` on the API and on any
 separate ingestion worker. The Python scheduler explicitly sets Asia/Kolkata on
 the scheduler and every cron trigger, so the server region never controls its
-wall-clock schedule. The five configurable default trigger times are:
-
-- `TIGZIG_SCHEDULE_EARLY=05:20` IST
-- `TIGZIG_SCHEDULE_MIDDAY=12:00` IST
-- `TIGZIG_SCHEDULE_AAUM=12:15` IST
-- `TIGZIG_SCHEDULE_CATCHUP=18:00` IST
-- `TIGZIG_SCHEDULE_RECOVERY=21:00` IST
+wall-clock schedule. `TIGZIG_SCHEDULE_INTERVAL_HOURS=2` schedules daily checks at
+00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00,
+and 22:00 IST. Unchanged source checksums skip imports; changed snapshots use the
+existing transactional, conditional UPSERT path.
 
 An always-running Python worker uses `python -m ingestion.tigzig.worker scheduler`
 from `db-test/`. Its configured startup recovery also runs once immediately on
@@ -148,13 +145,7 @@ of server timezone. Factsheet month selection explicitly uses the IST date.
 Render's native Cron Job schedule is always evaluated in UTC, even when `TZ` or
 `APP_TIMEZONE` is set. If using separate Render Cron Jobs instead of the Python
 scheduler worker, enter the UTC expressions corresponding to the intended IST
-times:
-
-- 05:20 IST: `50 23 * * *` UTC (previous UTC calendar day)
-- 12:00 IST: `30 6 * * *` UTC
-- 12:15 IST: `45 6 * * *` UTC
-- 18:00 IST: `30 12 * * *` UTC
-- 21:00 IST: `30 15 * * *` UTC
+times. For the two-hourly IST schedule above, use `30 */2 * * *` UTC.
 
 Native cron jobs must run a one-shot command such as
 `python -m ingestion.tigzig.worker sync`, which exits. Do not use the continuous

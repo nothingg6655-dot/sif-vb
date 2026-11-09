@@ -15,6 +15,7 @@ export interface SyncRunRow {
   skippedCount: number;
   rejectedCount: number;
   errorMessage: string | null;
+  sourceUnchanged: boolean;
 }
 
 export interface DatasetStatusRow {
@@ -35,7 +36,8 @@ const runColumns = `
   manifest_generated_at AS "manifestGeneratedAt",
   records_read::integer AS "recordsRead", inserted_count::integer AS "insertedCount",
   updated_count::integer AS "updatedCount", skipped_count::integer AS "skippedCount",
-  rejected_count::integer AS "rejectedCount", error_message AS "errorMessage"`;
+  rejected_count::integer AS "rejectedCount", error_message AS "errorMessage",
+  coalesce(manifest_metadata -> '_source_unchanged' = 'true'::jsonb,false) AS "sourceUnchanged"`;
 
 export async function readSyncStatus(pool: pg.Pool) {
   const [attempted, successful, failed, datasets] = await Promise.all([

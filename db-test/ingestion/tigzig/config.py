@@ -2,7 +2,6 @@
 from dataclasses import dataclass, field
 import os
 from pathlib import Path
-import re
 
 from dotenv import load_dotenv
 
@@ -132,30 +131,19 @@ class SchedulerConfig:
                 raise ValueError(f'Invalid environment variable: {name}')
             return int(raw)
 
-        def clock(name: str, fallback: str) -> tuple[int, int]:
-            raw = os.environ.get(name, fallback)
-            match = re.fullmatch(r'([01]\d|2[0-3]):([0-5]\d)', raw)
-            if match is None:
-                raise ValueError(f'Invalid environment variable: {name}')
-            return int(match.group(1)), int(match.group(2))
-
         def boolean(name: str, fallback: bool) -> bool:
             raw = os.environ.get(name, str(fallback).lower()).lower()
             if raw not in ('true', 'false'):
                 raise ValueError(f'Invalid environment variable: {name}')
             return raw == 'true'
 
-        definitions = (
-            ('metadata_nav_early', 'Metadata + NAV', 'TIGZIG_SCHEDULE_EARLY', '05:20', 'scheduled'),
-            ('metadata_nav_midday', 'Metadata + NAV', 'TIGZIG_SCHEDULE_MIDDAY', '12:00', 'scheduled'),
-            ('aaum_check', 'AAUM check', 'TIGZIG_SCHEDULE_AAUM', '12:15', 'scheduled'),
-            ('catch_up', 'Catch-up', 'TIGZIG_SCHEDULE_CATCHUP', '18:00', 'scheduled'),
-            ('recovery', 'Recovery', 'TIGZIG_SCHEDULE_RECOVERY', '21:00', 'recovery'),
-        )
-        schedules = []
-        for job_id, label, name, fallback, trigger_type in definitions:
-            hour, minute = clock(name, fallback)
-            schedules.append(ScheduleSpec(job_id, label, hour, minute, trigger_type))
+        interval = integer('TIGZIG_SCHEDULE_INTERVAL_HOURS', 2, 1, 24)
+        if 24 % interval:
+            raise ValueError('TIGZIG_SCHEDULE_INTERVAL_HOURS must divide 24 evenly')
+        schedules = [
+            ScheduleSpec(f'metadata_nav_{hour:02d}', 'Metadata + NAV + AAUM', hour, 0)
+            for hour in range(0, 24, interval)
+        ]
         return cls(
             timezone=timezone_name,
             schedules=tuple(schedules),

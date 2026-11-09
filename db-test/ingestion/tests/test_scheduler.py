@@ -62,28 +62,29 @@ class SchedulerTests(unittest.TestCase):
         self.assertFalse(thread.is_alive())
         self.assertEqual(thread_errors, [])
 
-    def test_default_schedule_is_five_ist_jobs(self):
-        names = [
-            'TIGZIG_SCHEDULE_EARLY', 'TIGZIG_SCHEDULE_MIDDAY',
-            'TIGZIG_SCHEDULE_AAUM', 'TIGZIG_SCHEDULE_CATCHUP',
-            'TIGZIG_SCHEDULE_RECOVERY',
-        ]
-        with patch.dict(os.environ, {name: '' for name in names}, clear=False):
-            for name in names:
-                os.environ.pop(name, None)
+    def test_default_schedule_is_two_hourly_ist_jobs(self):
+        with patch.dict(os.environ, {}, clear=False):
+            os.environ.pop('TIGZIG_SCHEDULE_INTERVAL_HOURS', None)
             config = SchedulerConfig.from_env()
         self.assertEqual(config.timezone, 'Asia/Kolkata')
         self.assertEqual([(item.hour, item.minute) for item in config.schedules],
-                         [(5, 20), (12, 0), (12, 15), (18, 0), (21, 0)])
+                         [(hour, 0) for hour in range(0, 24, 2)])
         scheduler = build_scheduler(config, runner=lambda *_: None)
-        self.assertEqual(len(scheduler.get_jobs()), 5)
+        self.assertEqual(len(scheduler.get_jobs()), 12)
         self.assertTrue(all(getattr(job.trigger.timezone, 'key', None) == 'Asia/Kolkata'
                             for job in scheduler.get_jobs()))
 
-    def test_schedule_rejects_invalid_clock(self):
-        with patch.dict(os.environ, {'TIGZIG_SCHEDULE_EARLY': '25:00'}):
-            with self.assertRaisesRegex(ValueError, 'TIGZIG_SCHEDULE_EARLY'):
-                SchedulerConfig.from_env()
+    def test_schedule_rejects_invalid_intervals(self):
+        for value in ['0', '5', '25', '2.5', 'two']:
+            with self.subTest(value=value), patch.dict(os.environ, {'TIGZIG_SCHEDULE_INTERVAL_HOURS': value}):
+                with self.assertRaisesRegex(ValueError, 'TIGZIG_SCHEDULE_INTERVAL_HOURS'):
+                    SchedulerConfig.from_env()
+
+    def test_two_hourly_job_rolls_over_midnight(self):
+        scheduler = build_scheduler(SchedulerConfig.from_env(), runner=lambda *_: None)
+        before = datetime(2026, 11, 9, 23, 59, tzinfo=ZoneInfo('Asia/Kolkata'))
+        due = min(job.trigger.get_next_fire_time(None, before) for job in scheduler.get_jobs())
+        self.assertEqual(due.isoformat(), '2026-11-10T00:00:00+05:30')
 
     def test_trigger_times_are_ist_under_utc_singapore_and_us_clocks(self):
         config = SchedulerConfig.from_env()
@@ -137,6 +138,18 @@ class SchedulerTests(unittest.TestCase):
         self.assertEqual(retry_delays(config, jitter=lambda: 0.5),
                          [12.5, 22.5, 27.5, 27.5])
 
+    def test_structured_log_is_json(self):
+        output = StringIO()
+        with redirect_stdout(output):
+            log_event('test_event', job_identifier='job-1', inserted=2)
+        payload = json.loads(output.getvalue())
+        self.assertEqual(payload['event'], 'test_event')
+        self.assertEqual(payload['job_identifier'], 'job-1')
+        self.assertEqual(payload['inserted'], 2)
+        self.assertIn('+05:30', payload['timestamp'])
+
+
+class SchedulerDatabaseTests(unittest.TestCase):
     def test_advisory_lock_excludes_second_database_session(self):
         with ingestion_lock() as (first, _):
             self.assertTrue(first)
@@ -158,16 +171,6 @@ class SchedulerTests(unittest.TestCase):
             (run_id,)).fetchone()
         self.assertEqual(status, 'interrupted')
         self.assertIn('recovered on restart', message)
-
-    def test_structured_log_is_json(self):
-        output = StringIO()
-        with redirect_stdout(output):
-            log_event('test_event', job_identifier='job-1', inserted=2)
-        payload = json.loads(output.getvalue())
-        self.assertEqual(payload['event'], 'test_event')
-        self.assertEqual(payload['job_identifier'], 'job-1')
-        self.assertEqual(payload['inserted'], 2)
-        self.assertIn('+05:30', payload['timestamp'])
 
 
 if __name__ == '__main__':

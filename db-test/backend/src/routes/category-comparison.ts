@@ -8,7 +8,7 @@ export function registerCategoryComparison(app: FastifyInstance, pool: pg.Pool) 
     '/api/analytics/category-comparison', async (request, reply) => {
       const toDate = request.query.to_date ?? new Date().toISOString().slice(0, 10);
       if (!isIsoDate(toDate)) return apiError(reply, 400, 'INVALID_QUERY', 'to_date is invalid');
-      try { return await categoryComparison(pool, toDate); }
+      try { return await categoryComparison(pool, toDate, request.query.to_date ? toDate : null); }
       catch {
         app.log.error('Category comparison query failed');
         return apiError(reply, 500, 'COMPARISON_UNAVAILABLE', 'Category comparison is unavailable');

@@ -64,7 +64,7 @@ export function registerFundRoutes(app: FastifyInstance, pool: pg.Pool) {
         || (from3m !== undefined && (!isIsoDate(from3m) || from3m > toDate))) {
       return apiError(reply, 400, 'INVALID_QUERY', 'to_date, from1m, or from3m is invalid');
     }
-    try { return await performance(pool, toDate, from1m, from3m); }
+    try { return await performance(pool, toDate, from1m, from3m, request.query.to_date ? toDate : null); }
     catch { app.log.error('Performance query failed'); return apiError(reply, 500, 'PERFORMANCE_UNAVAILABLE', 'Performance data is unavailable'); }
   });
 
@@ -72,7 +72,7 @@ export function registerFundRoutes(app: FastifyInstance, pool: pg.Pool) {
     '/api/analytics/performance', async (request, reply) => {
       const toDate = request.query.to_date ?? today();
       if (!isIsoDate(toDate)) return apiError(reply, 400, 'INVALID_QUERY', 'to_date is invalid');
-      try { return await unifiedPerformance(pool, toDate); }
+      try { return await unifiedPerformance(pool, toDate, request.query.to_date ? toDate : null); }
       catch { app.log.error('Unified performance query failed'); return apiError(reply, 500, 'ANALYTICS_UNAVAILABLE', 'Performance analytics are unavailable'); }
     },
   );

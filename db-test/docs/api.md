@@ -7,6 +7,32 @@ numbers after finite-value checks. Errors use:
 {"success":false,"error":{"code":"INVALID_QUERY","message":"..."}}
 ```
 
+## `GET /api/sync/status`
+
+Read-only monitoring used by the frontend's Sync & Freshness page. Returns
+`{success:true,data:{checkedAt,timezone,backend,jobs}}` with exactly two jobs:
+`factsheets` and `nav`. The backend reads the registered Windows tasks
+`SIF Factsheet Monitor` and `SIF NAV Sync` using the fixed helper in
+`backend/scripts/read-scheduler-status.ps1`. Each job includes the actual schedule,
+execution state, last and next run timestamps, exit code, and data checks.
+
+Factsheet checks read `SIF/output/monitor_state.json`, `latest/coverage.json`, and
+`latest/manifest.json`. They report extraction coverage, publisher issues, and the
+age of the last monitor check (26-hour limit). A successful task exit does not
+imply every publisher check succeeded. Reporting months are displayed separately.
+NAV checks read sync audit records and database observations, reporting the latest
+NAV date, source manifest time, inserted/updated counts, and unchanged-source
+checks. NAV checks become overdue after three hours; source freshness uses
+`SYNC_FRESHNESS_MAX_MINUTES` independently.
+
+Dates are ISO timestamps; the frontend displays them in IST and refreshes every
+30 seconds. Scheduler reads are cached for 15 seconds. Missing tasks, non-Windows
+hosts, unreadable files, and database failures remain explicitly unavailable;
+available checks are preserved when another check fails. The response exposes
+sanitized messages, never credentials, local paths, or raw database errors. This
+endpoint does not start jobs or write data. The existing admin status endpoint
+retains its bearer-key protection.
+
 ## `GET /api/liveTicker`
 
 Returns `{ "data": [...] }` in configured ticker order. Each item has `fullName`,
@@ -407,5 +433,23 @@ the example response.
 
 The response contains category counts, fund identities, published launch dates (or separately identified first-NAV dates), per-fund latest NAV dates, net AUM in crore with its publication date, explicit published risk bands, published return profiles when present, and five return/volatility periods. Missing disclosures and insufficient history remain null. Quarterly average AUM and catalog examples are never substituted.
 
-Returns are absolute NAV changes. One and three months use 30 and 90 days; six months and one year use calendar subtraction with the first NAV on or after the target. Volatility is the sample standard deviation of consecutive daily NAV percentage returns multiplied by the square root of 252, with at least two observations. Gaps over seven calendar days make volatility unavailable. Zero values remain numeric zero. Conflicting duplicate NAVs invalidate the affected series. Colours in the client rank funds within a row and reverse the scale for volatility.
+Returns are non-annualized absolute NAV changes. The 1M, 3M, 6M and 1Y periods subtract calendar months (clamped at month end) and select the first valid NAV strictly after the target. With no explicit date, each scheme's latest NAV date anchors these periods. Volatility is the sample standard deviation of consecutive valid decimal NAV returns multiplied by the square root of 252 and then 100, with at least two returns. Filter returns by their own dates strictly after the target; retain their preceding NAV even when it is outside the window. Missing dates are not filled or rejected solely because of a long gap. Zero values remain numeric zero. Conflicting duplicate NAVs invalidate the affected series. Colours in the client rank funds within a row and reverse the scale for volatility.
+
+## Scheme-level returns and volatility
+
+The all-scheme engine includes every source scheme and separates Direct/Regular
+and Growth/IDCW variants. See [the calculation engine guide](scheme-performance-engine.md)
+for methodology, storage, request/response examples, tests and CSV reconciliation.
+
+- `POST /api/performance/calculate-all`: calculate and persist all schemes.
+- `POST /api/performance/:schemeId/calculate`: calculate and persist one scheme.
+- `GET /api/performance`: retrieve persisted metrics for all schemes.
+- `GET /api/performance/:schemeId`: retrieve one scheme's persisted metrics.
+
+Calculation bodies accept optional `asOfDate: YYYY-MM-DD`. GET queries accept
+optional `asOfDate` and `period` (`1M`, `3M`, `6M`, `1Y`, `SI`). Use the unambiguous
+`source:schemeCode` identity, such as `SIF:13`; provider IDs such as `SIF-13` also
+resolve when unique. POST requests require the configured admin Bearer key.
+GET returns the most recent stored calculation date per scheme when no date is
+specified; it returns that exact calculation date when one is requested.
 

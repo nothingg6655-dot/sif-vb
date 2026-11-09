@@ -1,4 +1,6 @@
 import type { PreferredNavRow } from '../repositories/funds.js';
+import { computeSchemePerformance } from './scheme-performance-calculator.js';
+import { corePeriodIds, legacyReturnMetric } from './performance-adapter.js';
 import {
   absoluteReturn, addMonth, groupSeries, isoDate, lastAtOrBefore,
   monthEnd, monthLabel, monthStart, monthlyBoundaryObservations, normalizeObservations,
@@ -99,8 +101,8 @@ function metric(
 
 function targetForPeriod(period: TrailingPeriodId, toDate: string): string | null {
   if (period === 'r1w') return shiftDays(toDate, 7);
-  if (period === 'r1m') return shiftDays(toDate, 30);
-  if (period === 'r3m') return shiftDays(toDate, 90);
+  if (period === 'r1m') return shiftMonths(toDate, 1);
+  if (period === 'r3m') return shiftMonths(toDate, 3);
   if (period === 'r6m') return shiftMonths(toDate, 6);
   if (period === 'r1y') return shiftMonths(toDate, 12);
   if (period === 'r2y') return shiftMonths(toDate, 24);
@@ -123,6 +125,10 @@ function calculateTrailingMetric(
     return metric(observations[0], end, observations[0]?.date ?? null, 'inception-observation');
   }
   const target = targetForPeriod(period, toDate)!;
+  if (corePeriodIds[period]) {
+    return metric(selectReferenceObservation(observations, target, 'strictly-after'), end,
+      target, 'calendar-months:first-strictly-after');
+  }
   if (!observations[0] || observations[0].date > target) {
     return unavailableMetric(
       period === 'ytd' ? 'year-start:on-or-before' : 'target:first-on-or-after',
@@ -146,7 +152,7 @@ function seriesWarnings(series: FundSeries, datasetLatestDate: string): string[]
   return [...warnings].sort();
 }
 
-export function calculateUnifiedPerformance(rows: PreferredNavRow[], toDate: string) {
+export function calculateUnifiedPerformance(rows: PreferredNavRow[], toDate: string, requestedAsOfDate: string | null = toDate) {
   const series = groupSeries(rows, toDate);
   const datasetLatestDate = series.map((fund) => fund.observations.at(-1)?.date ?? '')
     .sort().at(-1) ?? '';
@@ -155,10 +161,18 @@ export function calculateUnifiedPerformance(rows: PreferredNavRow[], toDate: str
     const inception = fund.observations[0];
     const warnings = seriesWarnings(fund, datasetLatestDate);
     const invalid = warnings.includes('conflicting_duplicate_observation');
+    const calculationDate = requestedAsOfDate ?? latest?.date ?? toDate;
+    const calculated = invalid ? null : computeSchemePerformance({
+      scheme: { schemeId: `${fund.source}:${fund.schemeCode}`, source: fund.source,
+        schemeCode: String(fund.schemeCode), externalSchemeId: null,
+        schemeName: fund.fullName, plan: 'Regular', option: 'Growth', amc: null },
+      observations: fund.observations,
+    }, calculationDate);
     const returns = Object.fromEntries(trailingPeriodDefinitions.map(({ id }) => [
       id,
       invalid ? unavailableMetric('invalid-series', targetForPeriod(id, toDate), 'invalid', warnings)
-        : calculateTrailingMetric(fund.observations, id, toDate),
+        : corePeriodIds[id] && calculated ? legacyReturnMetric(calculated, corePeriodIds[id]!)
+          : calculateTrailingMetric(fund.observations, id, toDate),
     ])) as Record<TrailingPeriodId, ReturnMetric>;
     return {
       id: fund.displayOrder,
@@ -168,6 +182,7 @@ export function calculateUnifiedPerformance(rows: PreferredNavRow[], toDate: str
       scheme: { source: fund.source, schemeCode: fund.schemeCode, plan: 'Regular', option: 'Growth' },
       latestNav: latest ? numeric(latest.nav) : null,
       latestDate: latest?.date ?? null,
+      asOfDate: calculationDate,
       inceptionDate: inception?.date ?? null,
       dataQualityStatus: invalid ? 'invalid' : warnings.length ? 'warning' : 'ok',
       dataQualityWarnings: warnings,
@@ -177,13 +192,13 @@ export function calculateUnifiedPerformance(rows: PreferredNavRow[], toDate: str
   return {
     success: true,
     asOfDate: toDate,
-    methodology: 'sif-unified-returns-v1',
+    methodology: 'calendar-strict-sample252-v1',
     referenceSelection: {
       daily: 'immediately preceding available observation',
       oneWeek: '7 calendar days, first NAV on or after target',
-      oneMonth: '30 calendar days, first NAV on or after target',
-      threeMonths: '90 calendar days, first NAV on or after target',
-      sixMonthsAndYears: 'calendar subtraction, first NAV on or after target',
+      oneMonth: '1 calendar month, first NAV strictly after target',
+      threeMonths: '3 calendar months, first NAV strictly after target',
+      sixMonthsAndYears: 'calendar subtraction, first NAV strictly after target',
       ytd: 'last NAV on or before 1 January',
     },
     periods: trailingPeriodDefinitions,

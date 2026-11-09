@@ -86,9 +86,10 @@ def read_nav_upload_text(path: Path, expected: ManifestFile) -> dict[tuple[int, 
     return result
 
 
-def prepare_source() -> PreparedSource:
+def prepare_source(manifest: Manifest | None = None) -> PreparedSource:
     config = TigzigConfig.from_env()
-    manifest = fetch_manifest(config.base_url, timeout_seconds=config.timeout_seconds)
+    if manifest is None:
+        manifest = fetch_manifest(config.base_url, timeout_seconds=config.timeout_seconds)
     tables = {}
     files_processed = []
     for dataset, expected in manifest.files.items():

@@ -160,13 +160,30 @@ unchanged and made zero inserts or updates. Details are in
 .\.venv\Scripts\python.exe -m ingestion.tigzig.worker scheduler
 ```
 
-The scheduler runs in `Asia/Kolkata` at 05:20, 12:00, 12:15, 18:00, and 21:00;
-all times, retry limits, capped exponential backoff, jitter, misfire grace, and
-startup recovery are environment-configurable. Every trigger validates the complete
-manifest snapshot so related files remain transactionally coherent; unchanged hashes
-avoid source writes. A stable PostgreSQL session advisory lock prevents overlap across
+The scheduler runs every two hours in `Asia/Kolkata` at 00:00, 02:00, through
+22:00 daily. `TIGZIG_SCHEDULE_INTERVAL_HOURS` defaults to `2` and must divide 24
+evenly. Retry limits, capped exponential backoff, jitter, misfire grace, and
+startup recovery are environment-configurable. Every check compares the three Parquet
+checksums and NAV timestamp CSV checksum with committed imports. An unchanged snapshot
+records a successful check audit with zero source inserts or updates and skips downloads,
+validation, staging, and analytics refresh. A changed snapshot is fully validated and
+imported atomically; conditional UPSERTs still preserve unchanged rows. Explicit
+`revalidate` bypasses the checksum shortcut. A stable PostgreSQL session advisory lock prevents overlap across
 processes and is held through preparation, retry delays, and commit. Startup recovery
 marks audits left `running` by a terminated lock owner as `interrupted` before syncing.
+
+On Windows, install the persistent **SIF NAV Sync** task instead of leaving a
+terminal scheduler running:
+
+```powershell
+.\scripts\install_nav_schedule.ps1
+```
+
+It uses the project virtual environment and current absolute paths, with daily
+triggers at every even hour in IST. One-shot runs write `logs/nav-sync-YYYY-MM-DD.log`.
+The task requests wake from sleep and catches a missed run when available; the
+computer must be on, online, and the user logged in. Use one scheduling mechanism
+to avoid duplicate checks.
 
 Structured JSON logs and `tigzig_sync_runs` carry job identity, trigger, manifest,
 file/download state, counters, timestamps, and bounded errors. Forced revalidation

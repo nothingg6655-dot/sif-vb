@@ -11,7 +11,7 @@ import {
 } from './benchmark.js';
 import { calculateDailyTicker } from './daily-change.js';
 import {
-  calculateHeatmap, calculatePerformance, groupSeries, percentageReturn,
+  calculateHeatmap, calculatePerformance, displayDate, groupSeries, percentageReturn, shiftMonths,
 } from './performance.js';
 import {
   calculateAnnualAnalytics, calculateBenchmarkMonthlyReturns, calculateMonthlyAnalytics,
@@ -101,13 +101,29 @@ export async function heatmap(pool: pg.Pool, window: '3m'|'6m'|'12m'|'all', toDa
 }
 
 export async function performance(
-  pool: pg.Pool, toDate: string, from1m?: string, from3m?: string,
+  pool: pg.Pool, toDate: string, from1m?: string, from3m?: string, requestedAsOfDate: string | null = toDate,
 ) {
-  return calculatePerformance(await readPerformanceNav(pool, toDate), toDate, from1m, from3m);
+  const rows = await readPerformanceNav(pool, toDate);
+  if (from1m || from3m) {
+    return calculatePerformance(rows, toDate, from1m ?? shiftMonths(toDate, 1), from3m ?? shiftMonths(toDate, 3), {
+      id: 'calendar-strict-custom-targets-v1', oneMonthSelection: 'strictly-after',
+      threeMonthSelection: 'strictly-after', zeroReturnAsNull: false, fallbackToInception: false,
+    });
+  }
+  const calculated = calculateUnifiedPerformance(rows, toDate, requestedAsOfDate);
+  return {
+    success: true, isBadData: calculated.funds.some((fund) => fund.dataQualityStatus === 'invalid'),
+    performanceMap: Object.fromEntries(calculated.funds.map((fund) => [String(fund.id), {
+      changePct: fund.returns.si.value, return1m: fund.returns.r1m.value,
+      return3m: fund.returns.r3m.value, latestNav: fund.latestNav,
+      latestDate: fund.latestDate ? displayDate(fund.latestDate) : null,
+      inceptionDate: fund.inceptionDate ? displayDate(fund.inceptionDate) : null,
+    }])),
+  };
 }
 
-export async function unifiedPerformance(pool: pg.Pool, toDate: string) {
-  return calculateUnifiedPerformance(await readPerformanceNav(pool, toDate), toDate);
+export async function unifiedPerformance(pool: pg.Pool, toDate: string, requestedAsOfDate: string | null = toDate) {
+  return calculateUnifiedPerformance(await readPerformanceNav(pool, toDate), toDate, requestedAsOfDate);
 }
 
 export async function monthlyAnalytics(

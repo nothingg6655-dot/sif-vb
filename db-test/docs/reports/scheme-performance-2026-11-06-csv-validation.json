@@ -1,0 +1,627 @@
+{
+  "dataSource": "csv",
+  "sourceCsv": "C:\\Users\\shris\\Aikyam\\Projects\\Mutual Fund Guru - Vinayak Bhosale(SIF Project)\\Backennd\\db-test\\data\\tigzig\\sif_nav.csv",
+  "sourceSha256": "fc49fc06ba71f754bd86f995313b01dd302acdeff0a8b9a8e8221ab147a11680",
+  "engineReport": "Backennd\\db-test\\docs\\reports\\scheme-performance-2026-11-06.json",
+  "schemesChecked": 139,
+  "periodsChecked": 695,
+  "discrepantSchemes": [
+    "SIF:175",
+    "SIF:176",
+    "SIF:177",
+    "SIF:178"
+  ],
+  "discrepancies": [
+    {
+      "schemeId": "SIF:175",
+      "period": "1M",
+      "field": "absoluteReturn",
+      "engine": -1.29,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "1M",
+      "field": "annualizedVolatility",
+      "engine": 8.87,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "1M",
+      "field": "startingNavDate",
+      "engine": "2026-10-07",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "1M",
+      "field": "observationCount",
+      "engine": 23,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "3M",
+      "field": "absoluteReturn",
+      "engine": 0.3,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "3M",
+      "field": "annualizedVolatility",
+      "engine": 6.14,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "3M",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "3M",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "6M",
+      "field": "absoluteReturn",
+      "engine": 0.3,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "6M",
+      "field": "annualizedVolatility",
+      "engine": 6.14,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "6M",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "6M",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "1Y",
+      "field": "absoluteReturn",
+      "engine": 0.3,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "1Y",
+      "field": "annualizedVolatility",
+      "engine": 6.14,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "1Y",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "1Y",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "SI",
+      "field": "absoluteReturn",
+      "engine": 0.3,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "SI",
+      "field": "annualizedVolatility",
+      "engine": 6.14,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "SI",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:175",
+      "period": "SI",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "1M",
+      "field": "absoluteReturn",
+      "engine": -1.07,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "1M",
+      "field": "annualizedVolatility",
+      "engine": 7.62,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "1M",
+      "field": "startingNavDate",
+      "engine": "2026-10-07",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "1M",
+      "field": "observationCount",
+      "engine": 23,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "3M",
+      "field": "absoluteReturn",
+      "engine": 0.3,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "3M",
+      "field": "annualizedVolatility",
+      "engine": 5.27,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "3M",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "3M",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "6M",
+      "field": "absoluteReturn",
+      "engine": 0.3,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "6M",
+      "field": "annualizedVolatility",
+      "engine": 5.27,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "6M",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "6M",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "1Y",
+      "field": "absoluteReturn",
+      "engine": 0.3,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "1Y",
+      "field": "annualizedVolatility",
+      "engine": 5.27,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "1Y",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "1Y",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "SI",
+      "field": "absoluteReturn",
+      "engine": 0.3,
+      "csvOracle": 0.2
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "SI",
+      "field": "annualizedVolatility",
+      "engine": 5.27,
+      "csvOracle": 0.0
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "SI",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:176",
+      "period": "SI",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "1M",
+      "field": "absoluteReturn",
+      "engine": -1.05,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "1M",
+      "field": "annualizedVolatility",
+      "engine": 6.94,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "1M",
+      "field": "startingNavDate",
+      "engine": "2026-10-07",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "1M",
+      "field": "observationCount",
+      "engine": 23,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "3M",
+      "field": "absoluteReturn",
+      "engine": 0.2,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "3M",
+      "field": "annualizedVolatility",
+      "engine": 4.8,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "3M",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "3M",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "6M",
+      "field": "absoluteReturn",
+      "engine": 0.2,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "6M",
+      "field": "annualizedVolatility",
+      "engine": 4.8,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "6M",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "6M",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "1Y",
+      "field": "absoluteReturn",
+      "engine": 0.2,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "1Y",
+      "field": "annualizedVolatility",
+      "engine": 4.8,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "1Y",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "1Y",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "SI",
+      "field": "absoluteReturn",
+      "engine": 0.2,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "SI",
+      "field": "annualizedVolatility",
+      "engine": 4.8,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "SI",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:177",
+      "period": "SI",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "1M",
+      "field": "absoluteReturn",
+      "engine": -0.82,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "1M",
+      "field": "annualizedVolatility",
+      "engine": 5.6,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "1M",
+      "field": "startingNavDate",
+      "engine": "2026-10-07",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "1M",
+      "field": "observationCount",
+      "engine": 23,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "3M",
+      "field": "absoluteReturn",
+      "engine": 0.2,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "3M",
+      "field": "annualizedVolatility",
+      "engine": 3.88,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "3M",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "3M",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "6M",
+      "field": "absoluteReturn",
+      "engine": 0.2,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "6M",
+      "field": "annualizedVolatility",
+      "engine": 3.88,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "6M",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "6M",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "1Y",
+      "field": "absoluteReturn",
+      "engine": 0.2,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "1Y",
+      "field": "annualizedVolatility",
+      "engine": 3.88,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "1Y",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "1Y",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "SI",
+      "field": "absoluteReturn",
+      "engine": 0.2,
+      "csvOracle": 0.1
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "SI",
+      "field": "annualizedVolatility",
+      "engine": 3.88,
+      "csvOracle": 1.12
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "SI",
+      "field": "startingNavDate",
+      "engine": "2026-09-01",
+      "csvOracle": "2026-11-04"
+    },
+    {
+      "schemeId": "SIF:178",
+      "period": "SI",
+      "field": "observationCount",
+      "engine": 48,
+      "csvOracle": 2
+    }
+  ],
+  "referenceFunds": [
+    {
+      "fund": "qSIF",
+      "schemeId": "SIF:7",
+      "expected1m": -1.03,
+      "actual1m": -1.03,
+      "matches": true
+    },
+    {
+      "fund": "Altiva",
+      "schemeId": "SIF:11",
+      "expected1m": 0.3,
+      "actual1m": 0.3,
+      "matches": true
+    },
+    {
+      "fund": "Magnum",
+      "schemeId": "SIF:13",
+      "expected1m": 1.27,
+      "actual1m": 1.27,
+      "matches": true
+    },
+    {
+      "fund": "Titanium",
+      "schemeId": "SIF:29",
+      "expected1m": 4.73,
+      "actual1m": 4.73,
+      "matches": true
+    },
+    {
+      "fund": "iSIF",
+      "schemeId": "SIF:35",
+      "expected1m": 3.06,
+      "actual1m": 3.06,
+      "matches": true
+    },
+    {
+      "fund": "Arudha",
+      "schemeId": "SIF:40",
+      "expected1m": 0.41,
+      "actual1m": 0.41,
+      "matches": true
+    },
+    {
+      "fund": "Apex",
+      "schemeId": "SIF:80",
+      "expected1m": 1.28,
+      "actual1m": 1.28,
+      "matches": true
+    }
+  ]
+}
