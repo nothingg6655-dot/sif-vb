@@ -2,12 +2,12 @@
 services:
   - type: web
     name: sif-vb
-    runtime: node
-    rootDir: db-test/backend
-    plan: free
+    runtime: docker
+    dockerfilePath: ./db-test/backend/Dockerfile
+    dockerContext: .
+    # Retain this existing service's approved plan. Free instances sleep; choose
+    # an always-on paid plan in the dashboard for unattended schedules.
     region: singapore
-    buildCommand: npm ci --include=dev && npm run build
-    startCommand: npm start
     healthCheckPath: /health
     envVars:
       - key: NODE_VERSION
@@ -44,3 +44,17 @@ services:
         value: info
       - key: ADMIN_API_KEY
         generateValue: true
+      - key: INTERNAL_SCHEDULERS_ENABLED
+        value: "true"
+      - key: SCHEDULER_SCOPE
+        value: render
+      - key: SCHEDULER_PGUSER
+        value: sif_ingestion.pduxixfhejkslwafxplw
+      - key: SCHEDULER_PGPASSWORD
+        sync: false
+      - key: SCHEDULER_PYTHON
+        value: /opt/venv/bin/python
+      - key: FACTSHEET_DATA_DIR
+        value: /app/db-test/data/factsheets
+      - key: FACTSHEET_MAX_WORKERS
+        value: "1"

@@ -1,6 +1,7 @@
 import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { resolve } from 'node:path';
 import { promisify } from 'node:util';
 import type pg from 'pg';
 import { z } from 'zod';
@@ -89,7 +90,7 @@ function unknownData(summary: string): MonitorData {
   return { lastCheckedAt: null, freshness: 'unknown', summary, metrics: {}, issues: [] };
 }
 
-async function boundedCheck<T>(check: Promise<T>): Promise<T> {
+export async function boundedCheck<T>(check: Promise<T>): Promise<T> {
   let timer: ReturnType<typeof setTimeout> | undefined;
   try {
     return await Promise.race([check, new Promise<never>((_resolve, reject) => {
@@ -120,9 +121,9 @@ const sourceStateSchema = z.object({ sources: z.record(z.string(), z.object({
 })) });
 const manifestSchema = z.object({ 'PDF Count': z.number().int().nonnegative() });
 
-export async function readFactsheetData(now = new Date()): Promise<MonitorData> {
+export async function readFactsheetData(now = new Date(), directory = process.env.FACTSHEET_DATA_DIR): Promise<MonitorData> {
   try {
-    const base = new URL('../../../../SIF/output/', import.meta.url);
+    const base = directory ? pathToFileURL(resolve(directory) + '/') : new URL('../../../../SIF/output/', import.meta.url);
     // src/services and dist/services have identical depth relative to Backennd.
     const [coverageRaw, stateRaw, manifestRaw] = await Promise.all([
       readFile(new URL('latest/coverage.json', base), 'utf8'),

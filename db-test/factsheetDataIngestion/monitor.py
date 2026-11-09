@@ -11,6 +11,7 @@ import threading
 import tempfile
 import copy
 import calendar
+import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor
@@ -201,7 +202,8 @@ class Publisher:
         from playwright.sync_api import sync_playwright
         result=[]
         with sync_playwright() as pw:
-            browser=pw.chromium.launch(channel='msedge',headless=True)
+            options={'channel':'msedge'} if sys.platform=='win32' else {'args':['--no-sandbox','--disable-dev-shm-usage']}
+            browser=pw.chromium.launch(headless=True,**options)
             try:
                 for url in self.profile['pages']:
                     page=browser.new_page()
@@ -566,7 +568,7 @@ def run_once(profiles,directory,browser=True,offline=False):
                         'listing_verified':False,'errors':[str(e)],'scheme_files':scheme_files}
                 result.pop('json_sha256',None);result.pop('json_path',None)
                 return p,(result,saved)
-        with ThreadPoolExecutor(max_workers=4) as pool:
+        with ThreadPoolExecutor(max_workers=max(1,min(4,int(os.environ.get('FACTSHEET_MAX_WORKERS','4'))))) as pool:
             for p,(result,funds) in pool.map(work,profiles):
                 state['sources'][p['id']]=result;all_funds.update(funds)
                 LOG.info('%s: %s; %s schemes',p['fund_house'],result['status'],len(funds))

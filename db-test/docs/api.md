@@ -11,7 +11,15 @@ numbers after finite-value checks. Errors use:
 
 Read-only monitoring used by the frontend's Sync & Freshness page. Returns
 `{success:true,data:{checkedAt,timezone,backend,jobs}}` with exactly two jobs:
-`factsheets` and `nav`. The backend reads the registered Windows tasks
+`factsheets` and `nav`. With `INTERNAL_SCHEDULERS_ENABLED=true`, both jobs run
+inside the backend process using its server clock and IST calendar schedules.
+The endpoint reads durable `sif_scheduler_jobs` records and live NAV audit data;
+no Windows tasks or local files are needed by the production API. Factsheet
+coverage survives redeploys in the stored data snapshot. A heartbeat older than
+two minutes explicitly marks the scheduler unavailable; data freshness is checked
+independently. Overdue jobs waiting for the active worker display as queued.
+
+With internal scheduling disabled (legacy local mode), the backend reads Windows tasks
 `SIF Factsheet Monitor` and `SIF NAV Sync` using the fixed helper in
 `backend/scripts/read-scheduler-status.ps1`. Each job includes the actual schedule,
 execution state, last and next run timestamps, exit code, and data checks.

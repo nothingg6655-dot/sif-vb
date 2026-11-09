@@ -1,0 +1,5 @@
+# Match the versions verified with the existing factsheet extraction adapters.
+PyMuPDF==1.28.2
+requests==2.34.2
+playwright==1.64.1
+beautifulsoup4==4.15.0

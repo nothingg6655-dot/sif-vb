@@ -47,12 +47,26 @@ export function readConfig(env: NodeJS.ProcessEnv = process.env) {
   if (!['127.0.0.1', 'localhost', '::1'].includes(host) && adminApiKey === null) {
     throw new Error('ADMIN_API_KEY is required when HOST is not loopback');
   }
+  const schedulerEnabled = env.INTERNAL_SCHEDULERS_ENABLED === 'true';
+  if (env.INTERNAL_SCHEDULERS_ENABLED && !['true', 'false'].includes(env.INTERNAL_SCHEDULERS_ENABLED)) {
+    throw new Error('INTERNAL_SCHEDULERS_ENABLED must be true or false');
+  }
+  if (schedulerEnabled && (!env.SCHEDULER_PGUSER || !env.SCHEDULER_PGPASSWORD)) {
+    throw new Error('Internal schedulers require dedicated SCHEDULER_PGUSER and SCHEDULER_PGPASSWORD credentials');
+  }
   return {
     host,
     port: integer(env, 'PORT', 3000, 65535),
     logLevel,
     syncFreshnessMaxMinutes: integer(env, 'SYNC_FRESHNESS_MAX_MINUTES', 1440, 525600),
     adminApiKey,
+    scheduler: {
+      enabled: schedulerEnabled,
+      scope: env.SCHEDULER_SCOPE ?? 'render',
+      python: env.SCHEDULER_PYTHON ?? 'python3',
+      user: env.SCHEDULER_PGUSER ?? '',
+      password: env.SCHEDULER_PGPASSWORD ?? '',
+    },
     database: {
       host: databaseHost,
       port: integer(env, 'PGPORT', 5432, 65535),
