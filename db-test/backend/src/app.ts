@@ -19,12 +19,24 @@ export async function buildApp(config: AppConfig = readConfig()) {
   pool.on('error', () => app.log.error('Idle database connection failed'));
   app.addHook('onClose', async () => { await scheduler?.close(); await pool.end(); });
   app.addHook('onRequest', async (request, reply) => {
+    reply.header('X-SIF-Release', 'render-internal-scheduler-2');
+    reply.header('X-SIF-Scheduler-Mode', config.scheduler.enabled ? 'internal' : 'disabled');
     reply.header('Access-Control-Allow-Origin', '*');
     reply.header('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS');
     reply.header('Access-Control-Allow-Headers', '*');
     if (request.method === 'OPTIONS') {
       return reply.status(204).send();
     }
+  });
+  // Safe deployment identity: lets operators distinguish a live rollout from a
+  // previous healthy instance without exposing environment values or secrets.
+  app.get('/api/sync/runtime', async (_request, reply) => {
+    reply.header('Cache-Control', 'no-store');
+    return { success: true, data: {
+      release: 'render-internal-scheduler-2',
+      commit: process.env.RENDER_GIT_COMMIT?.slice(0, 40) ?? null,
+      internalSchedulersEnabled: config.scheduler.enabled,
+    } };
   });
   try {
     await verifyDatabase(pool, config.database.database);

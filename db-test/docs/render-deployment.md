@@ -147,11 +147,17 @@ The production API origin is `https://sif-vb.onrender.com`:
 
 ```text
 https://sif-vb.onrender.com/health
+https://sif-vb.onrender.com/api/sync/runtime
 https://sif-vb.onrender.com/api/analytics/category-comparison
 https://sif-vb.onrender.com/api/analytics/monthly-heatmap?range=all
 ```
 
 `/health` should return `{"status":"ok","database":"connected"}`.
+`/api/sync/runtime` identifies the actual running commit and reports
+`internalSchedulersEnabled: true` when the deployment has activated its internal
+workers. A 404 means an older instance is still serving the URL; `false` means the
+live deployment has not enabled internal scheduling. The endpoint contains no
+credentials and disables caching.
 The sync-status admin endpoint requires `Authorization: Bearer <ADMIN_API_KEY>`;
 the public app must not contain that key.
 
